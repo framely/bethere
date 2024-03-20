@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['16']
+        node-version: ["20"]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -20,8 +20,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: CI Command
-        env:
-          CICD_TOKEN: ${{ secrets.CICD }}
         run: |
           set -ex 
           npm install && yarn build
@@ -31,11 +29,14 @@ jobs:
           CICD_TOKEN: ${{ secrets.CICD }}
         run: |
           set -ex
-          cd docs/.vitepress/dist
-          echo "opencui.io" > CNAME
-          git config --global user.name  "github action"
-          git config --global user.email "hui.cheng@naturali.io"
-          git init
-          git add -A
-          git commit -m 'deploy'
-          git push -f https://${GITHUB_ACTOR}:${CICD_TOKEN}@github.com/framely/framely.github.io master:gh-pages
+
+          git config user.name  "github action"
+          git config user.email "hui.cheng@naturali.io"
+
+          cp -a docs/.vitepress/dist .
+          echo "bethere.ai" > dist/CNAME
+          find . -maxdepth 1 -not -path . -not -path ./dist -not -path ./.git -exec rm -rf {} \;
+          git checkout gh-pages
+
+          cp -a dist/* . && rm -rf dist
+          git add -A && git commit -m 'deploy' && git push
