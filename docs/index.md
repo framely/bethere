@@ -1,11 +1,11 @@
 ---
 layout: home
-title: OpenCUI
+title: BeThere
 hero:  
   name: |
-    Build conversational interface with 
-    power of LLMs and precision of code
-  tagline: Focus on design, and we'll take care of everything else.
+    Be there for your user, anytime,
+    and be dependable in a personalized way.
+  tagline: Take full advantage of the power of LLMs and sound software engineering.
   actions:
     - theme: brand
       text: Start building
