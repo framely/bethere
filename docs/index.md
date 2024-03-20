@@ -3,9 +3,9 @@ layout: home
 title: BeThere
 hero:  
   name: |
-    Be There,
-    Dependably Useful,
-    All the Time.
+    Be there,
+    Dependably useful,
+    All the time.
   tagline: With the power of LLMs and sound software engineering.
   actions:
     - theme: brand
