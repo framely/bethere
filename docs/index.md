@@ -31,8 +31,8 @@ cta :
     link: https://build.opencui.io
 
 columnFooter :
-  - title: OpenCUI
-    tagline: Ground up Conversational User Interface (CUI) framework for LLM era 
+  - title: BeThere
+    tagline: Make your businees available, any time.
     logo: /images/logo.png
     footerItems:
       - title: Social
