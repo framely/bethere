@@ -3,7 +3,7 @@ import { sidebar, navbar } from "./configs";
 
 export default {
   base: '/',
-  title: 'OpenCUI',
+  title: 'BeThere',
   appearance: 'force-dark',
   head: [
     [
@@ -37,7 +37,7 @@ export default {
     sidebar: sidebar.en,
     // footer
     footer: {
-      copyright: 'OpenCUI, Inc © 2024 All rights reserved'
+      copyright: 'BeThere, Inc © 2024 All rights reserved'
     }
   },
 
