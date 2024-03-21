@@ -92,7 +92,7 @@ The app should be available for use within an hour, but might take up to 24 hour
 
 
 ## Set up Google Calendar reservation provider
-To use Google Calendar Reservation Provider, you can follow steps in [Wire and Configure](/reference/providers/native.md#wire-and-configure) to accomplish the following:
+To use Google Calendar Reservation Provider, you can follow steps in [Wire and Configure](https://opencui.io/reference/providers/native.html#wire-and-configure) to accomplish the following:
 1. Declare service interface [services.opencui.reservation](https://build.opencui.io/org/services.opencui/agent/reservation/struct/service_schema) into your chatbot.
 2. Wire Google Calendar Reservation Provider (*services.opencui.googlCalendarReservation*) to this service interface.
 3. Configuration the integration.
