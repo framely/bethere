@@ -2,7 +2,7 @@
 export const en = [
   {
     text: 'Modules',
-    link: '/reference/restaurant/reuse-component',
+    link: '/reference/hours/reuse-component',
     activeMatch: '/reference/',
   },
   {
