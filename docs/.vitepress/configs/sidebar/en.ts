@@ -14,6 +14,7 @@ export const en = {
       items: [
         { text: 'Overview', link: '/reference/reservation/overview' },
         { text: 'Reservation API', link: '/reference/reservation/reservation-api' },
+        { text: 'Table reservation CUI design', link: '/reference/reservation/reservation-cui-design' },
         { text: 'Reuse reservation module', link: '/reference/reservation/reuse-reservation-module' },
         { text: 'Google calendar provider', link: '/reference/reservation/google-calendar-reservation' }
       ],
