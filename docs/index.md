@@ -4,7 +4,7 @@ title: BeThere
 hero:  
   name: |
     Build agent that
-    Help your users and your business.
+    Help your users 24x7.
   tagline: With the power of LLMs and sound software engineering.
   actions:
     - theme: brand
