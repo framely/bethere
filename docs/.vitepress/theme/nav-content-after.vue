@@ -13,7 +13,7 @@ const toggleAppearance = function (v) {
 </script>
 
 <template #nav-bar-content-after>
-  <a :href="'https://build.opencui.io/config_bot'" :target="'_blank'">
+  <a :href="'https://build.opencui.io/copilot'" :target="'_blank'">
     <button class="button-start">
       Get started
     </button>
