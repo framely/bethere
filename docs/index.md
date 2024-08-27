@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Start building
-      link: https://build.opencui.io
+      link: https://build.opencui.io/config_bot
       type: primary
 contentCards:
   - title: Deterministic behavior for high impact query and natural converage for rest
