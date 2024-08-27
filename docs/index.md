@@ -4,7 +4,7 @@ title: BeThere
 hero:  
   name: |
     Build agent that
-    always be there for your users,
+    always be there,
     via chat.
   tagline: With the power of LLMs and sound software engineering.
   actions:
