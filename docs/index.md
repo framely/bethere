@@ -4,7 +4,7 @@ title: BeThere
 hero:  
   name: |
     Never mishandle a lead.
-  tagline: With the coverage of LLMs and precision of code.
+  tagline: Build agent with the power of LLMs and precision of code.
   actions:
     - theme: brand
       text: Start building
