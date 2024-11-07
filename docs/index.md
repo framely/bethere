@@ -3,8 +3,7 @@ layout: home
 title: BeThere
 hero:  
   name: |
-    Build agent that
-    always ready to help.
+    Expertly Handle Every Lead.
   tagline: With the coverage of LLMs and precision of code.
   actions:
     - theme: brand
