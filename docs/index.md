@@ -3,8 +3,8 @@ layout: home
 title: BeThere
 hero:  
   name: |
-    Never mishandle a lead.
-  tagline: Build agent with the power of LLMs and precision of code.
+    Build a frontdesk agent that never mishandles a lead.
+  tagline: Compound AI With the power of LLMs and precision of code.
   actions:
     - theme: brand
       text: Start building
