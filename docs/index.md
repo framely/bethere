@@ -1,9 +1,9 @@
 ---
 layout: home
-title: OpenCUI
+title: BeThere
 hero:  
-  name: Never Build an Agent from Scratch
-  tagline: A component-based platform lets conversation designers and developers come together to build conversational experiences that get results.
+  name: With OpenCUI, Never Build an Agent from Scratch
+  tagline: A component-based platform by BeThere lets conversation designers and developers come together to build conversational experiences that get results.
 
 
   actions:
@@ -41,8 +41,8 @@ cta :
     link: https://build.opencui.io/copilot
 
 columnFooter :
-  - title: OpenCUI
-    tagline: A component system that promotes reuse instead of starting from scratch every time.
+  - title: BeThere
+    tagline: We build OpenCUI, so you don't have to agents from scratch.
     logo: /images/logo.png
     footerItems:
       - title: Social
