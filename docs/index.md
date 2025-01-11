@@ -2,7 +2,7 @@
 layout: home
 title: BeThere
 hero:  
-  name: With OpenCUI, Never Build an Agent from Scratch
+  name: Never Build an Agent from Scratch, with OpenCUI
   tagline: A component-based platform by BeThere lets conversation designers and developers come together to build conversational experiences that get results.
 
 
