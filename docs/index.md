@@ -42,7 +42,7 @@ cta :
 
 columnFooter :
   - title: BeThere
-    tagline: We build OpenCUI, so you don't have to agents from scratch.
+    tagline: We build OpenCUI, so you don't have to build agents from scratch.
     logo: /images/logo.png
     footerItems:
       - title: Social
