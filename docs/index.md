@@ -1,37 +1,48 @@
 ---
 layout: home
-title: BeThere
+title: OpenCUI
 hero:  
-  name: |
-    Build a frontdesk agent that never mishandles a lead.
-  tagline: Compound AI With the power of LLMs and precision of code.
+  name: Never Build an Agent from Scratch
+  tagline: A component-based platform lets conversation designers and developers come together to build conversational experiences that get results.
+
+
   actions:
     - theme: brand
-      text: Start building
-      link: https://build.opencui.io/copilot
+      text: Let's Build
+      link: https://build.opencui.io/
       type: primary
 contentCards:
-  - title: Deterministic behavior for high impact query and natural converage for rest
-    details: Automatically switching between software engineering and prompt engineering, our dual-process approach always deliver cost-effective conversational experience for both your APIs and content.
+  - title: Three-Layer Architecture for Multilingual and Multiplatform Services
+    details: By separating language perception, interaction logic, and backend services, a three-layer architecture naturally delivers a consistent user experience across languages while enabling seamless transitions between web, mobile, and chat platforms.
+    image: images/architecture.png
+    left: true
+  - title: Statechart-based Interaction Logic for Control and Flexibility
+    details: Conversation flows offer precision, but enumerating all possible flows is impractical. Prompt engineering provides broad coverage but lacks control. Statechart-based interaction logic, built by annotating service schemas, achieve both through this factorized and declarative approach.
+    image: images/schema.png
+    left: false
+  - title: Agentic Dialogue Understanding for Production Accuracy
+    details: No LLM achieves 100% accuracy on standard function-calling datasets, let alone for custom use cases. By decomposing dialogue understanding into manageable subproblems, leveraging retrieval-augmented in-context learning using fine-tuned model for inference, and intelligently merging the solutions, our agentic dialogue understanding provides a cost-effective solution to achieve the accuracy required for production.
+   
+    image: images/language.png
+    left: true
+  - title: Open, Modular Design for Limitless Extensions.
+    details: Sounds great, but how does it integrate with your existing system? With its modular design and open-architecture runtime, you can easily build extensions that connect seamlessly to your infrastructure—and beyond.
+    image: images/composable.png
+    left: false
+  - title: Dual Process for Coverage
+    details: Seamlessly switch between software-engineered System 2, offering deterministic conversational services on APIs, and prompt-engineered System 1, utilizing retrieval-augmented generation for unstructured text. Our dual-process approach consistently delivers a cost-effective conversational experience, providing control for high-impact queries and coverage for the rest.
     image: images/system1.png
     left: true
-  - title: Understand Dialog with Zero or Few-Shot Learning
-    details: Labeling training data for each additional intent is slow, expensive, and now unnecessary with LLMs. Without this step, you can focus on interaction logic and move at warp speed.
-    image: images/language.png
-    left: false
-  - title: Focus on Service with Schema-based Interaction Logic 
-    details: Enumerating all possible conversation flows imperatively often results in a poor user experience and high costs. Schema-based declarative interaction logic changes that.
-    image: images/schema.png
-    left: true
+
 
 cta :
-  - details: Import what you need, customize and deploy.
-    title: Get started
-    link: https://build.opencui.io
+  - details: With copilot, you can build a table reservation agent by simply answering questions.
+    title: Try it yourself 
+    link: https://build.opencui.io/copilot
 
 columnFooter :
-  - title: BeThere
-    tagline: Make your businees available, any time.
+  - title: OpenCUI
+    tagline: A component system that promotes reuse instead of starting from scratch every time.
     logo: /images/logo.png
     footerItems:
       - title: Social
@@ -47,7 +58,5 @@ columnFooter :
           - text: Privacy policy
             link: /policy/privacy
 
-video :
-  - link: videos/intro.mp4
 ---
 
