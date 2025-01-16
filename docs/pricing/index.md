@@ -42,7 +42,7 @@ layout: home
           'Channel integrations',
           'Contact center integration',
           'Priority support',
-          '50k messages/mo'
+          '50k messages/mo',
           'Usage based billing beyond that',
         ],
         buttonText: 'Start to build',
