@@ -8,7 +8,7 @@ layout: home
 
 <Pricing :pricingPlan="{
     title:'Build agents, serve users',
-    tagline: `Pick up the right tools and start to build.`,
+    tagline: 'Pick up the right tools and start to build.',
     cards: [
       {
         package:'Build',
