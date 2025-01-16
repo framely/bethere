@@ -56,7 +56,7 @@ layout: home
         features: [
           'Export agent for private deployment',
           'Bring your own LLM',
-          '1-1 training and onboarding'
+          '1-1 training and onboarding',
           'Integrations development',
           'Named support',
           'Custom contracting',
