@@ -33,7 +33,7 @@ layout: home
         package:'Serve',
         price: '$50',
         badge: 'per agent/mo',
-        tagline: 'Serve users with deployed conversational experiences.',
+        tagline: 'Serve users with customized conversational experiences.',
         features: [
           'Production environment',
           'Unlimited dependency update',
