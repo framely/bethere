@@ -14,12 +14,6 @@ export const en = {
   ],
   '/reference/': [
     {
-      text: 'Essentials',
-      collapsed: false,
-      items: [
-      ],
-    },
-    {
       text: 'Quickstart',
       collapsed: false,
       items: [
