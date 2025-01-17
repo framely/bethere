@@ -14,6 +14,15 @@ export const en = {
   ],
   '/reference/': [
     {
+      text: 'Essentials',
+      collapsed: false,
+      items: [
+        { text: '3 Layers', link: '/reference/guide/3layers' },
+        { text: '5 Levels', link: '/reference/essentials/5levels-cui' },
+        { text: 'Key concepts', link: '/reference/guide/concepts' },
+      ],
+    },
+    {
       text: 'Quickstart',
       collapsed: false,
       items: [
@@ -26,7 +35,6 @@ export const en = {
         { text: 'Deploy a chatbot', link: '/reference/guide/deploy-to-channel' },
         { text: 'Get a team', link: '/reference/guide/are-you-ready' },
         { text: 'OpenCUI workflow', link: '/reference/guide/opencui-flow' },
-        { text: 'Key concepts', link: '/reference/guide/concepts' }
       ],
     },
     {
