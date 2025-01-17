@@ -17,7 +17,6 @@ export const en = {
       text: 'Essentials',
       collapsed: false,
       items: [
-        { text: '3 Layers', link: '/reference/essentials/3layers' },
       ],
     },
     {
