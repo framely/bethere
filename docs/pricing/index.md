@@ -12,8 +12,8 @@ layout: home
     cards: [
       {
         package:'Build',
-        price: 'Billed Monthly',
-        badge: '$20 per builder/mo',
+        price: '$20',
+        badge: 'per builder/mo',
         tagline: 'Build and sell conversational components.',
         features: [
           'Public modules',
@@ -31,8 +31,8 @@ layout: home
       },
       {
         package:'Serve',
-        price: 'Billed Monthly',
-        badge: '$50 per agent/mo',
+        price: '$50',
+        badge: 'per agent/mo',
         tagline: 'Serve users with deployed conversational experiences.',
         features: [
           'Production environment',
@@ -50,8 +50,8 @@ layout: home
       },
       {
         package:'Developement',
-        price: 'Billed Annually',
-        badge: 'custom',
+        price: 'Custom',
+        badge: 'Billed Annually',
         tagline: 'Enterprise-grade integrations and private deployments.',
         features: [
           'Export agent for private deployment',

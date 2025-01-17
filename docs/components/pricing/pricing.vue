@@ -128,7 +128,7 @@ defineProps({
       }
 
       .card-head-price{
-        font-size: 14px;
+        font-size: 48px;
         font-weight: 600;
       }
       .badge-price {
