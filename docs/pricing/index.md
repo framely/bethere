@@ -7,8 +7,8 @@ layout: home
 </script>
 
 <Pricing :pricingPlan="{
-    title:'Build agents, serve users',
-    tagline: 'Pick up the right tools and start to build.',
+    title:'Simple membership billing for builders and agents',
+    tagline: 'Usage-based pricing for OpenCUI-hosted agents.',
     cards: [
       {
         package:'Build',
@@ -63,7 +63,7 @@ layout: home
           'Advanced security',
         ],
         buttonText: 'Contact Sales',
-        link: 'https://build.opencui.io'
+        link: 'mailto:sean.wu@bethere.ai'
       }
     ]
   }" 
