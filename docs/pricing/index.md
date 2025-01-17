@@ -24,7 +24,7 @@ layout: home
           'Knowledgebase',
           'Multiple languages',
           'Basic support',
-          'Open-sourced NLU model',
+          'Open sourced NLU models',
         ],
         buttonText: 'Start 30-day trial',
         link: 'https://build.opencui.io'
@@ -38,7 +38,7 @@ layout: home
           'Production environment',
           'Unlimited dependency update',
           'Quick-start deployment',
-          'Managed NLU model',
+          'Managed NLU models',
           'Channel integrations',
           'Contact center integration',
           'Priority support',
