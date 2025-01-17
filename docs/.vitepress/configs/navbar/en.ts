@@ -2,7 +2,7 @@
 export const en = [
   {
     text: 'Why OpenCUI',
-    link: '/essentials/index',
+    link: '/whyopencui/',
   },
   {
     text: 'Resources',
