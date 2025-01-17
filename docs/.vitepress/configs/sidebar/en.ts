@@ -20,7 +20,7 @@ export const en = {
         { text: '3 Layers', link: '/reference/essentials/3layers' },
         { text: '5 levels', link: '/reference/essentials/5levels-cui' },
         { text: 'components', link: '/reference/essentials/components' },
-        { text: 'Key concepts', link: '/reference/guide/concepts' }
+        { text: 'Key concepts', link: '/reference/guide/concepts' },
       ],
     },
     {
