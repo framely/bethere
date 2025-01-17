@@ -52,7 +52,7 @@ layout: home
         package:'Developement',
         price: 'Billed Annually',
         badge: 'custom',
-        tagline: 'For companies that want the ultimate conversational experience.',
+        tagline: 'Enterprise-grade integrations and private deployments.',
         features: [
           'Export agent for private deployment',
           'Bring your own LLM',
