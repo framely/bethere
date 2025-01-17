@@ -18,9 +18,6 @@ export const en = {
       collapsed: false,
       items: [
         { text: '3 Layers', link: '/reference/essentials/3layers' },
-        { text: '5 levels', link: '/reference/essentials/5levels-cui' },
-        { text: 'components', link: '/reference/essentials/components' },
-        { text: 'Key concepts', link: '/reference/guide/concepts' },
       ],
     },
     {
