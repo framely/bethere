@@ -14,6 +14,15 @@ export const en = {
   ],
   '/reference/': [
     {
+      text: 'Essentials',
+      collapsed: false,
+      items: [
+        { text: '3 Layers', link: '/reference/guide/3layers' },
+        { text: '5 Levels', link: '/reference/essentials/5levels-cui' },
+        { text: 'Key concepts', link: '/reference/guide/concepts' },
+      ],
+    },
+    {
       text: 'Quickstart',
       collapsed: false,
       items: [
