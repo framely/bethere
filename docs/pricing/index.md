@@ -24,7 +24,7 @@ layout: home
           'Knowledgebase',
           'Multiple languages',
           'Basic support',
-          'Standard NLU model',
+          'Open-sourced NLU model',
         ],
         buttonText: 'Start 30-day trial',
         link: 'https://build.opencui.io'
@@ -38,7 +38,7 @@ layout: home
           'Production environment',
           'Unlimited dependency update',
           'Quick-start deployment',
-          'Larger NLU model',
+          'Managed NLU model',
           'Channel integrations',
           'Contact center integration',
           'Priority support',
@@ -51,7 +51,7 @@ layout: home
       {
         package:'Developement',
         price: 'Custom',
-        badge: 'Billed Annually',
+        badge: '',
         tagline: 'Enterprise-grade integrations and private deployments.',
         features: [
           'Export agent for private deployment',
