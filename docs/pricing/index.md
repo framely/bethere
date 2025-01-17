@@ -14,7 +14,7 @@ layout: home
         package:'Build',
         price: '$20',
         badge: 'per builder/mo',
-        tagline: 'Build and sell conversational components.',
+        tagline: 'Everything you need to build, test and sell conversational components.',
         features: [
           'Public modules',
           'Public chatbot',
@@ -33,7 +33,7 @@ layout: home
         package:'Serve',
         price: '$50',
         badge: 'per agent/mo',
-        tagline: 'Serve users with customized conversational experiences.',
+        tagline: 'Everything you need to serve users with imported conversational experiences.',
         features: [
           'Production environment',
           'Unlimited dependency update',
@@ -52,7 +52,7 @@ layout: home
         package:'Developement',
         price: 'Custom',
         badge: '',
-        tagline: 'Enterprise-grade integrations and private deployments.',
+        tagline: 'Anything else needed, including enterprise-grade integrations and private deployments.',
         features: [
           'Export agent for private deployment',
           'Bring your own LLM',
