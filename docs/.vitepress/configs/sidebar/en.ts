@@ -14,7 +14,7 @@ export const en = {
   ],
   '/reference/': [
     {
-      text: 'Essentials',
+      text: 'CUI Development, Reimagined',
       collapsed: false,
       items: [
         { text: 'Schema-grounded CUI development', link: '/reference/essentials/3layers' },
