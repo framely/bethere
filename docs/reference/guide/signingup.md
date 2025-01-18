@@ -60,7 +60,7 @@ Ready to unlock the power of OpenCUI and build chatbots that truly shine? Dive i
 
 ### Dive Deeper
 
-- **3 Layers of Grandeur**: Understand the magic behind OpenCUI's architecture. Discover the principle of separation of concerns, where each layer tackles a specific task, leading to clean, efficient development, see [Chatbot in 3 layers](3layers).
+- **3 Layers of Grandeur**: Understand the magic behind OpenCUI's architecture. Discover the principle of separation of concerns, where each layer tackles a specific task, leading to clean, efficient development, see [Chatbot in 3 layers](../essentials/3layers).
 
 <br>
 Remember: OpenCUI's type-based approach might be different, but with these resources and your creativity, you'll be crafting mind-blowing chatbots in no time. So, grab this guide, embrace the power of OpenCUI, and let your conversational dreams take flight!
