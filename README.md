@@ -13,9 +13,12 @@ For users from VuePress v1, please check out the [migration guide](https://v2.vu
 
 For users who want to follow our progress or contribute to this project, please check out the [roadmap](https://github.com/vuepress/vuepress-next/discussions/68).
 
-## Documentation
+## Local development
 
-https://www.opencui.io/
+```
+yarn
+yarn dev
+```
 
 ## Contribution
 
