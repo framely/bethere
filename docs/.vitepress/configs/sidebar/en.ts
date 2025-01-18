@@ -17,8 +17,8 @@ export const en = {
       text: 'Essentials',
       collapsed: false,
       items: [
+        { text: 'Schema-grounded CUI development', link: '/reference/essentials/3layers' },
         { text: 'Key concepts', link: '/reference/essentials/concepts' },
-        { text: '3 Layers', link: '/reference/essentials/3layers' },
         { text: '5 Levels', link: '/reference/essentials/5levels-cui' },
       ],
     },
