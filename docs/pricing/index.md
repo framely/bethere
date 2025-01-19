@@ -13,7 +13,7 @@ layout: home
       {
         package:'Build',
         price: '$20',
-        badge: 'per builder/mo',
+        badge: '/mo per builder',
         tagline: 'Build and sell conversational components.',
         features: [
           'Public modules',
@@ -32,7 +32,7 @@ layout: home
       {
         package:'Serve',
         price: '$50',
-        badge: 'per agent/mo',
+        badge: '/mo per agent',
         tagline: 'Serve users with deployed conversational experiences.',
         features: [
           'Production environment',
@@ -51,7 +51,7 @@ layout: home
       {
         package:'Developement',
         price: 'Custom',
-        badge: 'Billed Annually',
+        badge: '',
         tagline: 'Enterprise-grade integrations and private deployments.',
         features: [
           'Export agent for private deployment',

@@ -35,7 +35,7 @@ defineProps({
         </div>
 
         <div class="card-body">
-          <ul>
+          <ul class="list-style">
             <li v-for="list in card.features" :key="list">
               <p class="text-light">{{ list }}</p>
             </li>
@@ -65,13 +65,6 @@ defineProps({
   display: flex;
   margin: auto;
   flex-direction: column;
-
-  .text-light {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--vp-c-text-2);
-    padding-top: 8px;
-  }
 
   .pricing-top-info {
     margin: 2.5rem;
@@ -118,11 +111,17 @@ defineProps({
 
       .card-head-package{
         font-weight: 600;
+        text-transform: uppercase;
+        font-size: .75rem;
+        background: var(--vp-c-brand);
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-right: auto;
       }
 
       .price-badge-container {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         flex-wrap: wrap;
         padding-top: 24px;
       }
@@ -132,12 +131,8 @@ defineProps({
         font-weight: 600;
       }
       .badge-price {
-        background: var(--vp-c-bg-icon);
-        padding: 2px 8px;
-        color: var(--vp-c-brand) !important;
-        border-radius: 4px;
-        //height: 20px;
-        margin-left: 6px;
+        margin-left: .5rem;
+        font-weight: 600;
       }
 
       .text-tagline{
@@ -156,6 +151,18 @@ defineProps({
       .card-body {
         height: 100%;
         padding: 32px 32px;
+
+        .list-style{
+          list-style: none;
+          padding-left: 0;
+        }
+
+        .text-light {
+          font-size: .875rem;
+          font-weight: 500;
+          color: var(--vp-c-text-1);
+          line-height: 1.6;
+        }
       }
 
       .card-footer {
@@ -200,7 +207,7 @@ defineProps({
     .cards {
       display: flex;
       flex-direction: column;
-      padding: 0 0.5rem;
+      padding: 0 0.25rem;
       .card {
         min-width: fit-content;
       }
