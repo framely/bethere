@@ -4,7 +4,7 @@ OpenCUI copilot as an example. The OpenCUI copilot is designed to provide onboar
 causal chatbot developer. Copilot is a special chatbot in that it helps user indirectly instead of doing things 
 directly on user's behalf.
 
-To gain a basic understanding, it is important to first learn [key concepts](../reference/guide/concepts.md) about 
+To gain a basic understanding, it is important to first learn [key concepts](../reference/essentials/concepts.md) about 
 [type systems](https://opencui.io/essentials/#cui-creates-callable-instances) and dialog annotations. Unlike other 
 flow based approach, OpenCUI allow you to build effective conversational user interface in a schema grounded fashion,
 based on the observation that all user interaction are designed to create function object based on user input. This 

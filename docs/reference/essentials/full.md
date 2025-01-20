@@ -7,10 +7,7 @@ Flowcharts have been used to design user experiences for applications with graph
 ## Flow is not enough
  There is a fundamental difference between GUI applications and conversational user interfaces (CUIs) ones: with a GUI, users interact with your application through pre-defined pathways. For example, on a date-picker page, users cannot specify a destination. Developers have full control over the interaction, so they only need to define the desired behavior for these predefined interaction paths to create a usable GUI experience.
 
-
 The need to change their mind mid-conversation is one reason why users cannot stick to the "happy path" you designed for them. Sometimes, users may also need to take a detour, interacting with the chatbot to obtain side information or handle other tasks before returning to their original objectives. In conversation, users expect that they can freely express their needs, so the chatbot must be able to react to any reasonable input for the interaction to feel natural and usable. Unfortunately, attempting to explicitly cover all possible conversation paths using flow-based logic is a hopeless endeavor, as several people in the thread have pointed out.
-
-
 
 The flow-based approach, widely used in building user interface applications, models both user input and system response as turn-by-turn chains. Defining the system’s response in the chain gives developers complete control over interactions, making it easier to achieve business objectives and provide an excellent user experience.
 

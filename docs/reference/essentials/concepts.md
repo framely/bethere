@@ -1,21 +1,16 @@
-# Key concepts
-
-OpenCUI is a platform for chatbot builder to build and manage type-based chatbots. Here are the key concepts for building chatbots on OpenCUI.
-
-#### Organization
-There are two kinds of accounts on the OpenCUI, personal account and organization account. Organization account is like a container for your team's shared work, and it also manages each person's access to these shared work. Each person will have their own personal OpenCUI account. People can collaborate on projects by joining the hosting organization account. 
+# Key concepts in OpenCUI
+OpenCUI is a conversational user interface (CUI) platform that enables designers and builders to create, test, and operate CUI components or chatbots—also known as agents, assitant, or copilots. Here are the key concepts in OpenCUI. 
 
 #### Projects
-Projects are the basic unit of work on OpenCUI. Builder can decide whether their projects are public or private. Projects can be copied (cloned) or imported. There are three types of projects: chatbots, modules and providers. Here is a diagram for how they are typically used together to provide conversational experience:
-
+Projects are the fundamental unit of work in OpenCUI. Builders can choose to make their projects public or private. Projects can be copied (cloned) or imported. There are different types of projects: chatbots, modules, providers and knowledge base. The following diagram illustrates how these components typically work together to deliver a conversational experience:
 ![relationship](/images/guide/use-service/relationship.png)
 
 ##### Chatbots
-A chatbot is an application that provides services to users through a conversational user interface (CUI). A service is an interface for a business capability that usually consists of a set of Application Programming Interface(API) functions. These interfaces decouple the client from the provider, allowing software to be developed independently and reused across various applications and systems.
+A chatbot is an application that delivers services to users through a conversational user interface (CUI). A service represents a business capability, typically exposed as a set of API functions. Services (also known as interface) decouple the CUI from the actual capability provider (or implementation), enabling independent development and reuse across various applications and systems.
 
-In order to invoke API functions in a conversational manner, the chatbot needs to create an instance of a function type through conversations, which implies that chatbot also needs to create instances for the input parameters of the function or attributes of composite types in a more general sense.
+To invoke API functions conversationally, a chatbot must instantiate function types through dialogue. This means it also needs to generate instances for the input parameters of functions or, more generally, the attributes of composite types.
 
-To help the chatbot create instances for arbitrary types, OpenCUI allows builders to add dialog annotations to types. From this perspective, a chatbot is essentially a set of dialog annotated types, including skills, frames, dialog acts, entities, and services.
+To facilitate this, OpenCUI allows builders to add dialog annotations to types, enabling chatbots to create instances for arbitrary data structures. From this perspective, a chatbot is essentially a collection of dialog-annotated types, including skills, frames, dialog acts, entities, and services."
 
 ##### Modules
 

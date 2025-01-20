@@ -1,16 +1,11 @@
-# Chatbot in 3 layers
+# CUI Development: Start with Services, Not Conversations
+Businesses allocate resources to develop conversational user interface (CUI) applications like chatbots and agents because they aim to provide conversational access to their services. Conversational interfaces enable users to interact with the business through natural language, making the process more intuitive and accessible. 
 
-Built on the principle of separation of concerns, modern GUI library or frameworks, such as React and Vue, divides application into model, view and controller, with each specific responsibility taken care of by different group of people. These framework has made it more affordable for businesses to build functional web and mobile applications. According to Gartner, chatbot deployment costs can range from $50,000 to a few million U.S. dollars, thus is substantially more expensive. It is not surprising that chatbots are generally built by these deep pocketed business like Bank of America, for example. Is it possible to adopt the same idea to make chatbot development more cost-effective?
+In this context, a service represents a specific business capability or functionality that delivers value to users. These services are often implemented as a collection of Application Programming Interfaces (APIs), which are functions that can be invoked by other software systems. Each API is essentially a compount type, defined by a schema that specifies the input and output parameters, along with their respective data types. The goal of a Conversational User Interface (CUI) is to gather values of the respective types for each required input parameter through conversation, enabling the API to be triggered and the service to be delivered to the user.
 
-### Separation of Concerns
-The principle of separation of concerns allows for efficient and effective software development by dividing the software into distinct horizontal layers, each addressing a separate concern. Each concern is governed by a set of cohesive principles and is applicable across different domains.
+This perspecive suggests that we can develop CUI components or applications in a schema-grounded approach. And this approach is best described if we model CUI development in three layers  
 
-Furthermore, layers are interact with other layer through predefined interfaces between different concerns, so work from different teams can fit together to deliver the desired functionality. In modern web application development, it is common to divide the system into back-end for business logic, front-end for interaction logic, and UI component for appearance. The interface between back-end and front-end can be described through OpenAPI, and the interface between interaction logic and appearance can be defined using JavaScript and frameworks such as antd for React. With each concern handled by people with corresponding specialization, we can greatly increase the both the quality and productivity of the work.
-
-### Chatbot in 3 layers
-Generally, businesses build chatbot to provide their services through conversational user interface. As more and more business use chatbot as way to directly communicate with their users, regardless which channel they come from and what language they speak, it becomes clear that chatbot should be modeled in the 3 layers as follows.
-
-![three layers](/images/guide/pingpong/3layers.png)
+![three layers](/images/architecture.png)
 
 #### Service schema
 Services are typically implemented in the back-end, and exposed by a set of API functions. These functions can be defined by some API scheme, mainly details the function signature, including data types for their parameters and returns. While there are new APIs specifically designed because of chatbots, all service APIs can be shared between different frontends: including web and mobile apps. So one can safely assume the back-end service is already available, or it can be taken care of as a separate concern.

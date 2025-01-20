@@ -14,7 +14,7 @@ layout: home
         package:'Build',
         price: '$20',
         badge: '/mo per builder',
-        tagline: 'Build and sell conversational components.',
+        tagline: 'Everything you need to build, test and sell conversational components.',
         features: [
           'Public modules',
           'Public chatbot',
@@ -24,7 +24,7 @@ layout: home
           'Knowledgebase',
           'Multiple languages',
           'Basic support',
-          'Standard NLU model',
+          'Open sourced NLU models',
         ],
         buttonText: 'Start 30-day trial',
         link: 'https://build.opencui.io'
@@ -33,12 +33,12 @@ layout: home
         package:'Serve',
         price: '$50',
         badge: '/mo per agent',
-        tagline: 'Serve users with deployed conversational experiences.',
+        tagline: 'Everything you need to serve users with imported conversational experiences.',
         features: [
           'Production environment',
           'Unlimited dependency update',
           'Quick-start deployment',
-          'Larger NLU model',
+          'Managed NLU models',
           'Channel integrations',
           'Contact center integration',
           'Priority support',
@@ -52,7 +52,7 @@ layout: home
         package:'Developement',
         price: 'Custom',
         badge: '',
-        tagline: 'Enterprise-grade integrations and private deployments.',
+        tagline: 'Anything else needed, including enterprise-grade integrations and private deployments.',
         features: [
           'Export agent for private deployment',
           'Bring your own LLM',
