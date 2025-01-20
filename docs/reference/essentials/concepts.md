@@ -1,62 +1,68 @@
-# Key concepts in OpenCUI
-OpenCUI is a conversational user interface (CUI) platform that enables designers and builders to create, test, and operate CUI components or chatbots—also known as agents, assitant, or copilots. Here are the key concepts in OpenCUI. 
+# Key concept in OpenCUI
+OpenCUI is a conversational user interface (CUI) platform that enables builders, including designers and developers to build, test, and operate CUI components or application, also known as chatbots, agents, assitant, or copilots. Here are the key concepts in OpenCUI. 
 
-#### Projects
-Projects are the fundamental unit of work in OpenCUI. Builders can choose to make their projects public or private. Projects can be copied (cloned) or imported. There are different types of projects: chatbots, modules, providers and knowledge base. The following diagram illustrates how these components typically work together to deliver a conversational experience:
+## Projects
+Projects are the fundamental unit of work in OpenCUI. Builders can choose to make their projects public or private. There are different types of projects: chatbots, modules, providers and knowledge base. The following diagram illustrates how these components typically work together to deliver a conversational experience:
+
 ![relationship](/images/guide/use-service/relationship.png)
 
-##### Chatbots
-A chatbot is an application that delivers services to users through a conversational user interface (CUI). A service represents a business capability, typically exposed as a set of API functions. Services (also known as interface) decouple the CUI from the actual capability provider (or implementation), enabling independent development and reuse across various applications and systems.
-
-To invoke API functions conversationally, a chatbot must instantiate function types through dialogue. This means it also needs to generate instances for the input parameters of functions or, more generally, the attributes of composite types.
-
-To facilitate this, OpenCUI allows builders to add dialog annotations to types, enabling chatbots to create instances for arbitrary data structures. From this perspective, a chatbot is essentially a collection of dialog-annotated types, including skills, frames, dialog acts, entities, and services."
-
-##### Modules
-
+### Modules
 Modules are reusable conversational components. For example, a CUI date picker is a simple module that gets the user's preferred date. Modules can be combined to form larger modules for more complex use cases, or they can be imported into the chatbot to add new conversational functionalities.
 
-##### Providers
-A service can have one or more providers that connect the chatbot to the backend implementation for its functionalities. Providers can be shared by different chatbots in the same organization. OpenCUI supports three types of providers: PostgreSQL (OpenCUI hosted), RESTful, and native providers.
+A module usually defined on top of a service (not always). A service is simply an interface erepresents a capability, typically exposed as a set of API functions. Services (also known as interface) decouple the CUI from the actual capability provider (or implementation).
 
-#### Type systems
-Services can be described by their schema, using description languages such as [OpenAPI](https://swagger.io/docs/specification/data-models/). Such language requires a type system because APIs involve the exchange of data between different systems or components, and data types provide a way to ensure that the exchanged data is well-formed, consistent, and interoperable. OpenCUI's type system supports not only primitive types and enums, but also lists and user-defined types with polymorphism support, making it easy to build conversational interfaces for arbitrary services.
+### Providers
+A service can have one or more providers that link the chatbot to its backend implementation, enabling it to perform its functions. Providers can be shared across different chatbots within the same organization, promoting reusability. Thanks to OpenCUI's open architecture design, it supports a variety of provider types. Some examples include:
+1. PostgreSQL (OpenCUI-hosted): A relational database provider for managing structured data.
+2. RESTful Providers: For connecting to web services and APIs using the REST architecture.
+3. Native Providers: Allowing for integration with backend systems using kotlin code.
+
+### Chatbots
+A chatbot is an application that delivers services to users through a conversational user interface (CUI), it is also known as agents, copilots, assistant etc. Chatbots, or CUI applications, are typically rely on imported modules for the CUI capabilities, so that builder does not need to start from scratch. 
+
+### Knowledge
+Not every thing is stored in the structured representation, like APIs or databases. Sometime, useful information can be stored in unstrcutured format. Knowledge is simply a collection of articles or documents that the system can reference to answer user queries. The knowledge base can be populated with structured information that the agent can search to provide responses. These information can be surfaced to users using RAG system.
+
+
+## Type systems​
+Services can be described by their schema, using description languages such as OpenAPI. Such language requires a type system because APIs involve the exchange of data between different systems or components, and data types provide a way to ensure that the exchanged data is well-formed, consistent, and interoperable. OpenCUI's type system supports not only primitive types and enums, but also lists and user-defined types with polymorphism support, making it easy to build conversational interfaces for arbitrary services.
 
 To invoke a function through conversations, we need to create an object of that function's type. To do this, OpenCUI allows you to define CUI types (also known as components), such as skills (think of functions), frames (needed by their parameters), and entities (primitive types), in three steps. First, declare the type and its component, which will be mapped to the hosting language's data types (currently Java/Kotlin) so that they can be used to invoke service functions. Second, use dialog annotations to define interaction logic. Lastly, use exemplars and templates to control how natural text is converted to structured representation, and vice versa.
 
-##### Skills
+### Skills​
 Generally, a skill is essentially a function that a user can access through conversations. As a CUI data type for functions, it is designed to define a self-contained conversational component that delivers some functionality to a user. This means that all three aspects of conversational service delivery need to be defined on top of the corresponding data type:
 
-1. Collect what the user wants through slot filling. You can add slots in the **Slots** section of a skill.
-2. Invoke functions using the collected slot value as an input parameter. The invoked function can be a native function defined in the current skill, or a function from the slot of the current skill, in a nested sense like `slot.function()`. You can add service slots in the **Services** section of a skill.
-3. Verbalize the service result and render it in the channel.
+Collect what the user wants through slot filling. You can add slots in the Slots section of a skill.
+Invoke functions using the collected slot value as an input parameter. The invoked function can be a native function defined in the current skill, or a function from the slot of the current skill, in a nested sense like slot.function(). You can add service slots in the Services section of a skill.
+Verbalize the service result and render it in the channel.
+At the language level, skills can be expressed mainly by verb phrases or full sentences. When expressed in a full sentence, the subject needs to be in the first person. Examples of such utterances include: "Book me a table for two for Sunday evening" or "I would like to make a reservation on Sunday".
 
-At the language level, skills can be expressed mainly by verb phrases or full sentences. When expressed in a full sentence, the subject needs to be in the first person. Examples of such utterances include: *"Book me a table for two for Sunday evening"* or *"I would like to make a reservation on Sunday"*.
-
-##### Frames
+### Frames​
 In OpenCUI, a frame is a standard object-oriented class type with support for composition and polymorphism behaviors. Frames typically map to parameter types for your function at schema level.
 
-With inheritance, we can easily support conversations like *"What symptoms do you have?"* by defining an interface symptom frame and multiple concrete frames, each for an actual symptom. Since each concrete frame can have different interaction logic, when we try to fill an interface Frame slot, we can naturally get the conversational experience we need.
+With inheritance, we can easily support conversations like "What symptoms do you have?" by defining an interface symptom frame and multiple concrete frames, each for an actual symptom. Since each concrete frame can have different interaction logic, when we try to fill an interface Frame slot, we can naturally get the conversational experience we need.
 
-At the language level, a Frame represents objects with properties and is typically expressed in a noun phrase such as *"large, spicy noodle"*. 
+At the language level, a Frame represents objects with properties and is typically expressed in a noun phrase such as "large, spicy noodle".
 
-##### Dialog acts
-Dialog act is another CUI data type in OpenCUI and is designed to help map structured meaning back to natural text.
 
-##### Entities
+### Entities​
 Entity is your primitive type in OpenCUI, and it is basic building block for complex data type. Entity type can have subtypes. For example, cell phone models could be partitioned into feature phone and smartphone, and smartphone can be further partitioned to iPhone and android phones.
 
-For each entity type, there are many entity entries. Each entity entry provides a set of expressions that are considered to be trigger for that entry, or when one of expression is mentioned, we consider user prefer the corresponding entry. 
+For each entity type, there are many entity entries. Each entity entry provides a set of expressions that are considered to be trigger for that entry, or when one of expression is mentioned, we consider user prefer the corresponding entry.
 
-#### Annotations
+### Dialog acts​
+Dialog act is another CUI data type in OpenCUI and is designed to help map structured meaning back to natural text.
+
+
+## Annotations
 After these types are defined at schema level, builder can add annotation on top of it to control the every aspect of this component. An example will be what if a user did not specify a value for a required slot, how do we prompt them in a given language.
 
-##### Dialog annotations
+### Dialog annotations
 In cases where users do not provide all the information needed in a single utterance, you need to design a conversation to help chatbot get the user's preference for a given option. This can be done in OpenCUI by adding various dialog annotations. 
 
 Dialog annotations can be defined both on slot and type level. Slot level annotations defines how individual slot can be filled. This includes whether the slot can take multiple values, whether it needs confirmation. For frame slot, whether the polymorphism is allowed. Type level annotations are related to multi-slot filling where values for slots need to collectively make business sense. This includes annotations like value recommendations and value check. Value recommendation provides a user with candidate list so that they can pick one from that instead of input something that is invalid. Value check makes sure agent catch user input error as early as possible so that conversation can be efficient. Dialog annotations are naturally separated into interaction related and language related, each can be handled by different set of people. This makes multiple language support easy.
 
-##### Backend annotations
+### Backend annotations
 OpenCUI allow you to build hosted SQL provider declaratively using annotations and SQL. 
 - Declare all data types first required the service APIs and their implementation helper functions;
 - Add storage annotation to help OpenCUI infer corresponding table schema;
