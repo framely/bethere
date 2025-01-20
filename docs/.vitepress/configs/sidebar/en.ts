@@ -14,12 +14,11 @@ export const en = {
   ],
   '/reference/': [
     {
-      text: 'Essentials',
+      text: 'CUI Development, Reimagined',
       collapsed: false,
       items: [
         { text: 'Schema-grounded CUI development', link: '/reference/essentials/3layers' },
         { text: 'Key concepts', link: '/reference/essentials/concepts' },
-        { text: '5 Levels', link: '/reference/essentials/5levels-cui' },
       ],
     },
     {
