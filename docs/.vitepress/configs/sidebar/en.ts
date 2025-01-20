@@ -14,11 +14,15 @@ export const en = {
   ],
   '/reference/': [
     {
-      text: 'CUI Development, Reimagined',
+      text: 'CUI Reimagined',
       collapsed: false,
       items: [
-        { text: 'Schema-grounded CUI development', link: '/reference/essentials/3layers' },
+        { text: 'Schema-grounded CUI', link: '/reference/essentials/3layers' },
         { text: 'Key concepts', link: '/reference/essentials/concepts' },
+        { text: 'Conversational Component', link: '/reference/essentials/components' },
+        { text: '5 levels CUI', link: '/reference/essentials/5levels-cui' },
+        { text: 'Document requirements', link: '/reference/essentials/document-requirement-for-cui' },
+        { text: 'Dual process', link: '/reference/essentials/dual-process' },
       ],
     },
     {
