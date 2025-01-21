@@ -5,7 +5,7 @@ export const en = [
     link: '/whyopencui/',
   },
   {
-    text: 'Resources',
+    text: 'Documents',
     link: '/reference/essentials/3layers',
     activeMatch: '/reference/',
   },
