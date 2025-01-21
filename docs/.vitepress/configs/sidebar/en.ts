@@ -82,7 +82,7 @@ export const en = {
     },
     {
       text: 'Extension',
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: 'Extensions', link: '/reference/providers/extension' },
         { text: 'Native provider', link: '/reference/providers/native' }
