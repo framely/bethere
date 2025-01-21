@@ -1,6 +1,6 @@
-# Fill strategy
+# Ask strategy
 
-Fill strategy is the rule that determines how to interact with the user to obtain the information needed to complete a service. It decides whether or not to prompt the user for the information, and it also defines how other dialog annotations should work together.
+The Ask Strategy annotation determines whether to prompt the user for a slot, under what conditions, and how other dialog annotations should work together to guide the interaction.
 
 A slot is a piece of information that is needed to complete a task. For example, in a restaurant reservation service, the slots might be `date`, `time`, and `number of guests`. When you set the fill strategy to a slot and it is configured to be filled by user interaction, you can configure the dialog annotations based on your business logic. The OpenCUI framework will use a five-stage slot filling process to help you interact with users and converge on a servable request.
 
@@ -46,7 +46,7 @@ If the condition is met, the chatbot would ask the user for the name of the even
 4. In the **Prompt** field, enter the question that can be used to ask users for information. 
 :::
 
-## Gated 
+## Conditionoal 
 
 Gated strategy is a boolean gate that is used to first introduce a topic before asking detailed questions about it. It can be a helpful way to ensure that the chatbot is only asking questions that are relevant to the user's needs. It can also be especially useful in situations where the user may be sensitive about the information they are providing, as it allows the user to control how much information they share.
 
@@ -93,7 +93,11 @@ The Recover only strategy can be useful for the following use cases:
 
 - **When the business has a behavior or choice that they do not want to promote, but they still need to handle if it is required.** For example, a business may not want to promote a specific product, but they still need to handle it if the user asks about it.
 
-## Direct fill
+
+# Fill mode
+A slot can be filled by user input using dialog understanding module, it can also be filled by event, both synchrounous and asynchrounous events.
+
+## Synchronous events
 
 Direct fill means that the chatbot will not ask the user for information. Instead, it will fill the value directly from a source, such as a database or other slot. This can be helpful in situations where the information is easily accessible and does not need to be collected from the user.
 
@@ -107,7 +111,7 @@ The direct fill strategy can be useful for reducing the number of questions that
 2. In the **Fill strategy** section, select **Direct fill**.
 :::
 
-## External event
+## Asynchronous event
 
 The External event strategy means that the chatbot will not fill the slot with information itself. Instead, it will wait for an external event to occur before filling the slot. This can be useful in situations where the chatbot needs to work with external software, such as a payment processor or other asynchronous events.
 
