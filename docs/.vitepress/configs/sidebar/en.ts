@@ -19,17 +19,12 @@ export const en = {
       items: [
         { text: 'Schema-grounded CUI', link: '/reference/essentials/3layers' },
         { text: 'Key concepts', link: '/reference/essentials/concepts' },
-        { text: 'Conversational Component', link: '/reference/essentials/components' },
-        { text: '5 levels CUI', link: '/reference/essentials/5levels-cui' },
-        { text: 'Document requirements', link: '/reference/essentials/document-requirement-for-cui' },
-        { text: 'Dual process', link: '/reference/essentials/dual-process' },
       ],
     },
     {
       text: 'Quickstart',
       collapsed: false,
       items: [
-        { text: 'Get started', link: '/reference/guide/signingup' },
         { text: 'Clone an echo chatbot', link: '/reference/guide/clone-simple-chatbot' },
         { text: 'Build an echo chatbot', link: '/reference/guide/build-simple-chatbot' },
         { text: 'Reuse an hours module', link: '/reference/guide/reuse-component' },
