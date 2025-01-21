@@ -6,7 +6,7 @@ export const en = [
   },
   {
     text: 'Resources',
-    link: '/reference/guide/signingup',
+    link: '/reference/essentials/3layers',
     activeMatch: '/reference/',
   },
   {
