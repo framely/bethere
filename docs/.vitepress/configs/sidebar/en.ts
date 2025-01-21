@@ -34,6 +34,9 @@ export const en = {
             { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
           ],
         },   
+        { text: 'Document design', link: '/reference/essentials/document-requirement-for-cui' },
+        { text: '5 levels of CUI', link: '/reference/essentials/5levels-cui' },
+        { text: 'Dual processes', link: '/reference/essentials/dual-process' },
       ],
     },
     {
@@ -79,15 +82,27 @@ export const en = {
     },
     {
       text: 'Extension',
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: 'Extensions', link: '/reference/providers/extension' },
         { text: 'Native provider', link: '/reference/providers/native' }
       ]
     },
     {
+      text: 'Platform',
+      collapsed: true,
+      items: [
+        { text: 'Multilingual', link: '/reference/platform/multilingual' },
+        { text: 'Testing', link: '/reference/platform/testing' },
+        { text: 'Deployment', link: '/reference/platform/deployment' },
+        { text: 'Version control', link: '/reference/platform/versioncontrol' },
+        { text: 'Access control', link: '/reference/platform/access' },
+        { text: 'Reusability', link: '/reference/platform/reusability' }
+      ]
+    },
+    {
       text: 'Conversation Design',
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: 'Overview', link: '/reference/conversation-design/conversation-design' },
         { text: 'Get started', link: '/reference/conversation-design/get-started' },
@@ -97,18 +112,6 @@ export const en = {
         { text: 'Test and iterate', link: '/reference/conversation-design/test-and-iterate' },
         { text: 'Design for the long tail', link: '/reference/conversation-design/design-for-long-tail' },
         { text: 'Scale your design', link: '/reference/conversation-design/scale-your-design' },
-      ]
-    },
-    {
-      text: 'Platform',
-      collapsed: false,
-      items: [
-        { text: 'Multilingual', link: '/reference/platform/multilingual' },
-        { text: 'Testing', link: '/reference/platform/testing' },
-        { text: 'Deployment', link: '/reference/platform/deployment' },
-        { text: 'Version control', link: '/reference/platform/versioncontrol' },
-        { text: 'Access control', link: '/reference/platform/access' },
-        { text: 'Reusability', link: '/reference/platform/reusability' }
       ]
     },
     {
