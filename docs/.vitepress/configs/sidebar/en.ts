@@ -17,7 +17,7 @@ export const en = {
       text: 'CUI Reimagined',
       collapsed: false,
       items: [
-        { text: 'Schema-grounded CUI', link: '/reference/essentials/3layers' },
+        { text: 'Schema-driven CUI', link: '/reference/essentials/3layers' },
         { text: 'Key concepts', link: '/reference/essentials/concepts' },
       ],
     },
@@ -113,16 +113,6 @@ export const en = {
     {
       text: "Glossary",
       link: '/reference/glossary'
-    }
-  ],
-  '/policy/': [
-    {
-      text: 'Terms of service',
-      link: '/policy/terms'
-    },
-    {
-      text: 'Privacy policy',
-      link: '/policy/privacy'
     }
   ]
 }
