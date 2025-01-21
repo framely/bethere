@@ -22,7 +22,7 @@ export const en = {
         { text: 'Types', link: '/reference/essentials/concepts' },
         {
           text: 'Dialog Annotations',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'Overview', link: '/reference/annotations/overview' },
             { text: 'Ask strategy', link: '/reference/annotations/fillstrategy' },
