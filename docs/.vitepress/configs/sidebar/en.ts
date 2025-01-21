@@ -20,6 +20,20 @@ export const en = {
         { text: 'Schema-driven CUI', link: '/reference/essentials/3layers' },
         { text: 'Projects', link: '/reference/essentials/projects' },
         { text: 'Types', link: '/reference/essentials/concepts' },
+        {
+          text: 'Dialog Annotations',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/reference/annotations/overview' },
+            { text: 'Ask strategy', link: '/reference/annotations/fillstrategy' },
+            { text: 'Initialization', link: '/reference/annotations/init' },
+            { text: 'Value recommendation', link: '/reference/annotations/valuerec' },
+            { text: 'Value check', link: '/reference/annotations/valuecheck' },
+            { text: 'Confirmation', link: '/reference/annotations/confirmation' },
+            { text: 'State transition', link: '/reference/annotations/transition' },
+            { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
+          ],
+        },   
       ],
     },
     {
@@ -35,21 +49,7 @@ export const en = {
         { text: 'Get a team', link: '/reference/guide/are-you-ready' },
         { text: 'OpenCUI workflow', link: '/reference/guide/opencui-flow' },
       ],
-    },
-    {
-      text: 'Dialog Annotations',
-      collapsed: false,
-      items: [
-        { text: 'Overview', link: '/reference/annotations/overview' },
-        { text: 'Ask strategy', link: '/reference/annotations/fillstrategy' },
-        { text: 'Initialization', link: '/reference/annotations/init' },
-        { text: 'Value recommendation', link: '/reference/annotations/valuerec' },
-        { text: 'Value check', link: '/reference/annotations/valuecheck' },
-        { text: 'Confirmation', link: '/reference/annotations/confirmation' },
-        { text: 'State transition', link: '/reference/annotations/transition' },
-        { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
-      ],
-    },    
+    }, 
     {
       text: 'Providers',
       collapsed: false,
