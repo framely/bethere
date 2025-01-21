@@ -1,30 +1,6 @@
-# Key concept in OpenCUI
+# Type systems​
 OpenCUI is a conversational user interface (CUI) platform that enables builders, including designers and developers to build, test, and operate CUI components or application, also known as chatbots, agents, assitant, or copilots. Here are the key concepts in OpenCUI. 
 
-## Projects
-Projects are the fundamental unit of work in OpenCUI. Builders can choose to make their projects public or private. There are different types of projects: chatbots, modules, providers and knowledge base. The following diagram illustrates how these components typically work together to deliver a conversational experience:
-
-![relationship](/images/guide/use-service/relationship.png)
-
-### Modules
-Modules are reusable conversational components. For example, a CUI date picker is a simple module that gets the user's preferred date. Modules can be combined to form larger modules for more complex use cases, or they can be imported into the chatbot to add new conversational functionalities.
-
-A module usually defined on top of a service (not always). A service is simply an interface erepresents a capability, typically exposed as a set of API functions. Services (also known as interface) decouple the CUI from the actual capability provider (or implementation).
-
-### Providers
-A service can have one or more providers that link the chatbot to its backend implementation, enabling it to perform its functions. Providers can be shared across different chatbots within the same organization, promoting reusability. Thanks to OpenCUI's open architecture design, it supports a variety of provider types. Some examples include:
-1. PostgreSQL (OpenCUI-hosted): A relational database provider for managing structured data.
-2. RESTful Providers: For connecting to web services and APIs using the REST architecture.
-3. Native Providers: Allowing for integration with backend systems using kotlin code.
-
-### Chatbots
-A chatbot is an application that delivers services to users through a conversational user interface (CUI), it is also known as agents, copilots, assistant etc. Chatbots, or CUI applications, are typically rely on imported modules for the CUI capabilities, so that builder does not need to start from scratch. 
-
-### Knowledge
-Not every thing is stored in the structured representation, like APIs or databases. Sometime, useful information can be stored in unstrcutured format. Knowledge is simply a collection of articles or documents that the system can reference to answer user queries. The knowledge base can be populated with structured information that the agent can search to provide responses. These information can be surfaced to users using RAG system.
-
-
-## Type systems​
 Services can be described by their schema, using description languages such as OpenAPI. Such language requires a type system because APIs involve the exchange of data between different systems or components, and data types provide a way to ensure that the exchanged data is well-formed, consistent, and interoperable. OpenCUI's type system supports not only primitive types and enums, but also lists and user-defined types with polymorphism support, making it easy to build conversational interfaces for arbitrary services.
 
 To invoke a function through conversations, we need to create an object of that function's type. To do this, OpenCUI allows you to define CUI types (also known as components), such as skills (think of functions), frames (needed by their parameters), and entities (primitive types), in three steps. First, declare the type and its component, which will be mapped to the hosting language's data types (currently Java/Kotlin) so that they can be used to invoke service functions. Second, use dialog annotations to define interaction logic. Lastly, use exemplars and templates to control how natural text is converted to structured representation, and vice versa.

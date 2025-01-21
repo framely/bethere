@@ -18,7 +18,8 @@ export const en = {
       collapsed: false,
       items: [
         { text: 'Schema-driven CUI', link: '/reference/essentials/3layers' },
-        { text: 'Key concepts', link: '/reference/essentials/concepts' },
+        { text: 'Projects', link: '/reference/essentials/projects' },
+        { text: 'Types', link: '/reference/essentials/concepts' },
       ],
     },
     {
@@ -36,11 +37,11 @@ export const en = {
       ],
     },
     {
-      text: 'CUI components',
+      text: 'Dialog Annotations',
       collapsed: false,
       items: [
         { text: 'Overview', link: '/reference/annotations/overview' },
-        { text: 'Fill strategy', link: '/reference/annotations/fillstrategy' },
+        { text: 'Ask strategy', link: '/reference/annotations/fillstrategy' },
         { text: 'Initialization', link: '/reference/annotations/init' },
         { text: 'Value recommendation', link: '/reference/annotations/valuerec' },
         { text: 'Value check', link: '/reference/annotations/valuecheck' },
