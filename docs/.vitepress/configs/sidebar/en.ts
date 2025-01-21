@@ -34,6 +34,9 @@ export const en = {
             { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
           ],
         },   
+        { text: 'Document design', link: '/reference/essentials/document-requirement-for-cui' },
+        { text: '5 levels of CUI', link: '/reference/essentials/5levels-cui' },
+        { text: 'Dual processes', link: '/reference/essentials/dual-process' },
       ],
     },
     {
