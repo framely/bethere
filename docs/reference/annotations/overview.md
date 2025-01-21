@@ -11,7 +11,7 @@ The statechart for a compound type can be broken down into individual statechart
 4. [Value check](./valuecheck.md): Examines the proposed value to determine if it is servable based on business rules.
 5. [Confirmation](./confirmation.md): Gives users a second chance to verify the proposed value.
 
-By systematically deciding the actions on these states with annotations, builders can build an effective CUI interaction logic for creating instance of this slot. 
+By systematically defining the actions on these states using annotations such as [Ask strategy](./fillstrategy.md), builders can build an effective CUI interaction logic for creating instance of this slot. 
 
 ## Advanced annotations
 Slot-level annotations are designed for common use cases, prioritizing convenience over flexibility. The underlying mechanism of type-based conversational user interfaces, including the five stages of slot filling, is implemented as a [statecharts](https://statecharts.dev/), also known as composite state machines. If certain CUI behaviors cannot be defined by these high-level annotations, builders can leverge [state transitions](./transition.md) for finer control. State transitions defines arbitrary actions based on the current state, user input, and any custom conditions defined on the type. 
