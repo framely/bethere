@@ -89,8 +89,20 @@ export const en = {
       ]
     },
     {
+      text: 'Platform',
+      collapsed: true,
+      items: [
+        { text: 'Multilingual', link: '/reference/platform/multilingual' },
+        { text: 'Testing', link: '/reference/platform/testing' },
+        { text: 'Deployment', link: '/reference/platform/deployment' },
+        { text: 'Version control', link: '/reference/platform/versioncontrol' },
+        { text: 'Access control', link: '/reference/platform/access' },
+        { text: 'Reusability', link: '/reference/platform/reusability' }
+      ]
+    },
+    {
       text: 'Conversation Design',
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: 'Overview', link: '/reference/conversation-design/conversation-design' },
         { text: 'Get started', link: '/reference/conversation-design/get-started' },
@@ -100,18 +112,6 @@ export const en = {
         { text: 'Test and iterate', link: '/reference/conversation-design/test-and-iterate' },
         { text: 'Design for the long tail', link: '/reference/conversation-design/design-for-long-tail' },
         { text: 'Scale your design', link: '/reference/conversation-design/scale-your-design' },
-      ]
-    },
-    {
-      text: 'Platform',
-      collapsed: false,
-      items: [
-        { text: 'Multilingual', link: '/reference/platform/multilingual' },
-        { text: 'Testing', link: '/reference/platform/testing' },
-        { text: 'Deployment', link: '/reference/platform/deployment' },
-        { text: 'Version control', link: '/reference/platform/versioncontrol' },
-        { text: 'Access control', link: '/reference/platform/access' },
-        { text: 'Reusability', link: '/reference/platform/reusability' }
       ]
     },
     {
