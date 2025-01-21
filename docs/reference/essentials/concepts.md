@@ -1,9 +1,11 @@
 # Type systems​
-OpenCUI is a conversational user interface (CUI) platform that enables builders, including designers and developers to build, test, and operate CUI components or application, also known as chatbots, agents, assitant, or copilots. Here are the key concepts in OpenCUI. 
 
-Services can be described by their schema, using description languages such as OpenAPI. Such language requires a type system because APIs involve the exchange of data between different systems or components, and data types provide a way to ensure that the exchanged data is well-formed, consistent, and interoperable. OpenCUI's type system supports not only primitive types and enums, but also lists and user-defined types with polymorphism support, making it easy to build conversational interfaces for arbitrary services.
+To invoke a function, we need to create an object of that function's type. 
 
-To invoke a function through conversations, we need to create an object of that function's type. To do this, OpenCUI allows you to define CUI types (also known as components), such as skills (think of functions), frames (needed by their parameters), and entities (primitive types), in three steps. First, declare the type and its component, which will be mapped to the hosting language's data types (currently Java/Kotlin) so that they can be used to invoke service functions. Second, use dialog annotations to define interaction logic. Lastly, use exemplars and templates to control how natural text is converted to structured representation, and vice versa.
+To do this, OpenCUI allows you to define CUI types (also known as components), such as skills (think of functions), frames (needed by their parameters), and entities (primitive types), in three steps. First, declare the type and its component, which will be mapped to the hosting language's data types (currently Java/Kotlin) so that they can be used to invoke service functions. Second, use dialog annotations to define interaction logic. Lastly, use exemplars and templates to control how natural text is converted to structured representation, and vice versa.
+
+On OpenCUI, all skills are implementations of a special runtime interface IIntent, thanks to the built-in polymorphism support. Furthermore, every chatbot is started with a built-in skill that has a slot of List<IIntent> type. As a result, slot filling, or instantiating the slot type, becomes one of the most important aspects that chatbot builders need to consider.
+
 
 ### Skills​
 Generally, a skill is essentially a function that a user can access through conversations. As a CUI data type for functions, it is designed to define a self-contained conversational component that delivers some functionality to a user. This means that all three aspects of conversational service delivery need to be defined on top of the corresponding data type:
