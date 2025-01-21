@@ -4,7 +4,7 @@ To invoke a function, we need to create an object of that function's type.
 
 To do this, OpenCUI allows you to define CUI types (also known as components), such as skills (think of functions), frames (needed by their parameters), and entities (primitive types), in three steps. First, declare the type and its component, which will be mapped to the hosting language's data types (currently Java/Kotlin) so that they can be used to invoke service functions. Second, use dialog annotations to define interaction logic. Lastly, use exemplars and templates to control how natural text is converted to structured representation, and vice versa.
 
-On OpenCUI, all skills are implementations of a special runtime interface IIntent, thanks to the built-in polymorphism support. Furthermore, every chatbot is started with a built-in skill that has a slot of List<IIntent> type. As a result, slot filling, or instantiating the slot type, becomes one of the most important aspects that chatbot builders need to consider.
+On OpenCUI, all skills are implementations of a special runtime interface IIntent, thanks to the built-in polymorphism support. Furthermore, every chatbot is started with a built-in skill that has a slot of `List<IIntent>` type. As a result, slot filling, or instantiating the slot type, becomes one of the most important aspects that chatbot builders need to consider.
 
 
 ### Skills​
