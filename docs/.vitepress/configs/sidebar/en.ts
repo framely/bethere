@@ -19,7 +19,7 @@ export const en = {
       items: [
         { text: 'Schema-driven CUI', link: '/reference/essentials/3layers' },
         { text: 'Projects', link: '/reference/essentials/projects' },
-        { text: 'Types', link: '/reference/essentials/concepts' },
+        { text: 'Type system', link: '/reference/essentials/concepts' },
         {
           text: 'Dialog Annotations',
           collapsed: true,
@@ -34,9 +34,23 @@ export const en = {
             { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
           ],
         },   
-        { text: 'Document design', link: '/reference/essentials/document-requirement-for-cui' },
-        { text: '5 levels of CUI', link: '/reference/essentials/5levels-cui' },
         { text: 'Dual processes', link: '/reference/essentials/dual-process' },
+        {
+          text: 'Conversation Design',
+          collapsed: true,
+          items: [
+            { text: 'Overview', link: '/reference/conversation-design/conversation-design' },
+            { text: 'Get started', link: '/reference/conversation-design/get-started' },
+            { text: 'Gathering requirements', link: '/reference/conversation-design/gathering-requirements' },
+            { text: 'Design interactions', link: '/reference/conversation-design/design-interactions' },
+            { text: 'Key use cases', link: '/reference/conversation-design/key-use-cases' },
+            { text: 'Test and iterate', link: '/reference/conversation-design/test-and-iterate' },
+            { text: 'Design for the long tail', link: '/reference/conversation-design/design-for-long-tail' },
+            { text: 'Scale your design', link: '/reference/conversation-design/scale-your-design' },
+            { text: 'Document design', link: '/reference/essentials/document-requirement-for-cui' },
+            { text: '5 levels of CUI', link: '/reference/essentials/5levels-cui' },
+          ]
+        },
       ],
     },
     {
@@ -98,20 +112,6 @@ export const en = {
         { text: 'Version control', link: '/reference/platform/versioncontrol' },
         { text: 'Access control', link: '/reference/platform/access' },
         { text: 'Reusability', link: '/reference/platform/reusability' }
-      ]
-    },
-    {
-      text: 'Conversation Design',
-      collapsed: true,
-      items: [
-        { text: 'Overview', link: '/reference/conversation-design/conversation-design' },
-        { text: 'Get started', link: '/reference/conversation-design/get-started' },
-        { text: 'Gathering requirements', link: '/reference/conversation-design/gathering-requirements' },
-        { text: 'Design interactions', link: '/reference/conversation-design/design-interactions' },
-        { text: 'Key use cases', link: '/reference/conversation-design/key-use-cases' },
-        { text: 'Test and iterate', link: '/reference/conversation-design/test-and-iterate' },
-        { text: 'Design for the long tail', link: '/reference/conversation-design/design-for-long-tail' },
-        { text: 'Scale your design', link: '/reference/conversation-design/scale-your-design' },
       ]
     },
     {
