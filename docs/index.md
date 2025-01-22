@@ -48,7 +48,9 @@ columnFooter :
       - title: Social
         items:
           - text: Medium
-            link: https://medium.com/opencui-official
+            link: https://opencui.medium.com/
+          - text: Discord
+            link: https://discord.gg/4Fqb6NtC
           - text: LinkedIn
             link: https://www.linkedin.com/company/10969501/
       - title: Legal

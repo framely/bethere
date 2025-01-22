@@ -1,57 +1,45 @@
 # Type systems​
+Triggering APIs involves the exchange of data between different systems or components. Defining these API functions with a type system, such as [OpenAPI](https://swagger.io/docs/specification/data-models/), ensures that the exchanged data is well-formed, consistent, and interoperable. 
 
-To invoke a function, we need to create an object of that function's type. 
+By specifying a type for a slot, the function’s capability is limited or extended to process only data that conforms to that type. The types of parameters thus define the scope of what the function can handle. Additionally, features like polymorphism and generics can significantly expand a function’s scope by enabling it to work with multiple types in a controlled manner.
 
-To do this, OpenCUI allows you to define CUI types (also known as components), such as skills (think of functions), frames (needed by their parameters), and entities (primitive types), in three steps. First, declare the type and its component, which will be mapped to the hosting language's data types (currently Java/Kotlin) so that they can be used to invoke service functions. Second, use dialog annotations to define interaction logic. Lastly, use exemplars and templates to control how natural text is converted to structured representation, and vice versa.
+To invoke an API function conversationally, a chatbot must create an object of that function's type by interacting with users to capture their preferences. OpenCUI elevates existing OpenAPI data types to the CUI level by attaching dialog annotations to their schemas. The resulting CUI-level type can be thought of as a CUI component, as it not only defines what constitutes a valid instance of the type but also how to create such an instance through conversation. These CUI types can then be used as slot types within larger CUI types, enabling the development of increasingly complex conversational behaviors.
 
-On OpenCUI, all skills are implementations of a special runtime interface IIntent, thanks to the built-in polymorphism support. Furthermore, every chatbot is started with a built-in skill that has a slot of `List<IIntent>` type. As a result, slot filling, or instantiating the slot type, becomes one of the most important aspects that chatbot builders need to consider.
-
-
-### Skills​
-Generally, a skill is essentially a function that a user can access through conversations. As a CUI data type for functions, it is designed to define a self-contained conversational component that delivers some functionality to a user. This means that all three aspects of conversational service delivery need to be defined on top of the corresponding data type:
-
-Collect what the user wants through slot filling. You can add slots in the Slots section of a skill.
-Invoke functions using the collected slot value as an input parameter. The invoked function can be a native function defined in the current skill, or a function from the slot of the current skill, in a nested sense like slot.function(). You can add service slots in the Services section of a skill.
-Verbalize the service result and render it in the channel.
-At the language level, skills can be expressed mainly by verb phrases or full sentences. When expressed in a full sentence, the subject needs to be in the first person. Examples of such utterances include: "Book me a table for two for Sunday evening" or "I would like to make a reservation on Sunday".
-
-### Frames​
-In OpenCUI, a frame is a standard object-oriented class type with support for composition and polymorphism behaviors. Frames typically map to parameter types for your function at schema level.
-
-With inheritance, we can easily support conversations like "What symptoms do you have?" by defining an interface symptom frame and multiple concrete frames, each for an actual symptom. Since each concrete frame can have different interaction logic, when we try to fill an interface Frame slot, we can naturally get the conversational experience we need.
-
-At the language level, a Frame represents objects with properties and is typically expressed in a noun phrase such as "large, spicy noodle".
-
+Instead of supporting only primitive types and simple compound types with primitive-typed slots, OpenCUI supports generic type lists, polymorphism, and nested compound types, making it easy to build conversational interfaces for any OpenAPI-definable service. Specifically, OpenCUI allows the definition of three input types—entities, frames, and skills—and one output type: dialog act.
 
 ### Entities​
-Entity is your primitive type in OpenCUI, and it is basic building block for complex data type. Entity type can have subtypes. For example, cell phone models could be partitioned into feature phone and smartphone, and smartphone can be further partitioned to iPhone and android phones.
+An entity is a primitive type at CUI level and serves as the basic building block for more complex data types. Examples for entity includes movie title, time, etc. 
 
-For each entity type, there are many entity entries. Each entity entry provides a set of expressions that are considered to be trigger for that entry, or when one of expression is mentioned, we consider user prefer the corresponding entry.
+To recognize a value from conversation, an entity requires a recognizer to extract mentions from user utterance and normalize them into a value. A common type of recognizer is the list recognizer, where an entity is defined by multiple entity entries, each associated with a set of expressions that serve as triggers. When a user mentions one of these expressions, it is recognized and interpreted as the user's preference for the corresponding entity entry. Other types of recognizers include regex-based and LLM-based approaches.
+
+To model real-world *is-a* relationships, OpenCUI allows entities to have subtypes, enabling hierarchical categorization. For example, cell phone models can be categorized into feature phones and smartphones, with smartphones further divided into iPhones and Android phones.
+
+### Skills​
+A  skill is essentially a function that a user can access through conversations. As a CUI data type for functions, it is self-contained conversational component that delivers some functionality to a user. A skill does the following things:
+
+1. Collect what the user wants through slot filling. The slots can be add at schema level.
+2. Invoke functions using the collected slot value as an input parameter. The invoked function can be a native function defined in the current skill, or a function from the service slot.
+3. Verbalize the service result and render it for the channel in the response section.
+
+At the language level, skills can be expressed mainly by verb phrases or full sentences. When expressed in a full sentence, the subject needs to be in the first person. Examples of such utterances include: "Book me a table for two for Sunday evening" or "I would like to make a reservation on Sunday". One can add exemplar to the skills, and simply redeploy chatbot to hot fix the dialog understanding issues.
+
+On OpenCUI, all skills are implementations of a special runtime interface IIntent, thanks to the built-in polymorphism support. Furthermore, every chatbot is started with a skill Main that has a slot of `List<IIntent>` type. 
+
+### Frames​
+In OpenCUI, a *Frame* is a user-defined compound type that supports composition and polymorphism at the CUI level. Frames are typically used as parameter types for functions at the schema level or as attribute types for constructing more complex frames.  
+
+With inheritance, OpenCUI enables natural conversational interactions. For example, a conversation like *"What symptoms do you have?"* can be modeled by defining an interface *Symptom* frame along with multiple concrete frames, each representing a specific symptom. Since each concrete frame can have distinct interaction logic, filling an interface slot dynamically adapts to provide the appropriate conversational experience.  
+
+At the language level, a *Frame* represents objects with properties and is typically expressed as a noun phrase, such as *"large, spicy noodle."* Additionally, by adding exemplars to skills and redeploying the chatbot, builders can quickly address and refine dialog understanding issues.
+
+### Multi-value
+
+A slot can be declared as *multi-valued*, meaning it can hold multiple instances of a given type. At the schema level, this is represented as `List<T>`.  
+
+When a slot is multi-valued, OpenCUI automatically prompts the user with *"Do you want more of $T?"* after an instance of `T` is created. If the user responds affirmatively, the conversation for type `T` repeats to collect another instance, allowing for a flexible and natural way to gather multiple values.
 
 ### Dialog acts​
-Dialog act is another CUI data type in OpenCUI and is designed to help map structured meaning back to natural text.
 
+A *Dialog Act* is another CUI data type in OpenCUI, designed to map structured meaning back to natural language. OpenCUI supports various dialog acts, such as *Inform* and *Notify*.  
 
-## Annotations
-After these types are defined at schema level, builder can add annotation on top of it to control the every aspect of this component. An example will be what if a user did not specify a value for a required slot, how do we prompt them in a given language.
-
-### Dialog annotations
-In cases where users do not provide all the information needed in a single utterance, you need to design a conversation to help chatbot get the user's preference for a given option. This can be done in OpenCUI by adding various dialog annotations. 
-
-Dialog annotations can be defined both on slot and type level. Slot level annotations defines how individual slot can be filled. This includes whether the slot can take multiple values, whether it needs confirmation. For frame slot, whether the polymorphism is allowed. Type level annotations are related to multi-slot filling where values for slots need to collectively make business sense. This includes annotations like value recommendations and value check. Value recommendation provides a user with candidate list so that they can pick one from that instead of input something that is invalid. Value check makes sure agent catch user input error as early as possible so that conversation can be efficient. Dialog annotations are naturally separated into interaction related and language related, each can be handled by different set of people. This makes multiple language support easy.
-
-### Backend annotations
-OpenCUI allow you to build hosted SQL provider declaratively using annotations and SQL. 
-- Declare all data types first required the service APIs and their implementation helper functions;
-- Add storage annotation to help OpenCUI infer corresponding table schema;
-- Use SQL to implement the service APIs; 
-- Add backoffice annotation to define admin interface, including look and feel, and input mode. 
-
-Once you have decided on the data frame that you want to persist, you can simply turn on the storage annotation for that frame. When the storage annotation is turned on for a frame, OpenCUI will automatically create a corresponding table with each slot mapped to a column in the hosting database. You can precisely control how these columns are created, using annotations such as:
-- Not Null: indicates whether a column can host a null value;
-- Default Value: defines the default value for the column;
-- Unique: indicates whether a value in the column needs to be unique and can potentially serve as a key.
-
-The data in these tables also needs to be accessed and manipulated by your operations team. For the SQL provider, they can do so through a web interface called "back office". The back office is automatically created based on the back office annotation, and its user experience can be controlled by annotations such as:
-- Sortable: indicating whether one can sort the entire table by the given column.
-- Input Mode: determining whether a dropdown menu can be used for inputting this column and specifying the available choices.
+To control how a dialog act is verbalized, templates can be added to specify its exact phrasing. These templates can also serve as training examples, enabling the system to generate verbalizations automatically in the future.
