@@ -29,14 +29,14 @@ contentCards:
     details: Sounds great, but how does it integrate with your existing system? With its modular design and open-architecture runtime, you can easily build extensions that connect seamlessly to your infrastructure—and beyond.
     image: images/composable.png
     left: false
-  - title: Dual Process for Coverage
+  - title: Compound AI Systeme for Coverage
     details: Seamlessly switch between software-engineered System 2, offering deterministic conversational services on APIs, and prompt-engineered System 1, utilizing retrieval-augmented generation for unstructured text. Our dual-process approach consistently delivers a cost-effective conversational experience, providing control for high-impact queries and coverage for the rest.
     image: images/system1.png
     left: true
 
 
 cta :
-  - details: With copilot, you can build a table reservation agent by simply answering questions.
+  - details: Can one build a table reservation agent by simply answering questions? Yes, with OpenCUI.
     title: Try it yourself 
     link: https://build.opencui.io/copilot
 
