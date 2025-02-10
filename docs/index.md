@@ -36,7 +36,7 @@ contentCards:
 
 
 cta :
-  - details: Can one build a table reservation agent by simply answering questions? Yes, with OpenCUI.
+  - details: Can one build a table reservation agent by simply answering questions? Yes, with a BeThere copilot.
     title: Try it yourself 
     link: https://build.opencui.io/copilot
 
