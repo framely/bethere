@@ -25,14 +25,10 @@ contentCards:
    
     image: images/language.png
     left: true
-  - title: Open, Modular Design for Limitless Extensions.
-    details: Sounds great, but how does it integrate with your existing system? With its modular design and open-architecture runtime, you can easily build extensions that connect seamlessly to your infrastructure—and beyond.
-    image: images/composable.png
-    left: false
   - title: Compound AI Systeme for Coverage
     details: Seamlessly switch between software-engineered System 2, offering deterministic conversational services on APIs, and prompt-engineered System 1, utilizing retrieval-augmented generation for unstructured text. Our dual-process approach consistently delivers a cost-effective conversational experience, providing control for high-impact queries and coverage for the rest.
     image: images/system1.png
-    left: true
+    left: false
 
 
 cta :
