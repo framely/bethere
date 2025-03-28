@@ -2,8 +2,8 @@
 layout: home
 title: BeThere
 hero:  
-  name: Never Build an Agent from Scratch
-  tagline: "With OpenCUI: A component-based platform by BeThere, bringing conversation designers and developers together to build conversational experiences that get results."
+  name: LLMs hallucinate, but Users expect reliability.
+  tagline: Augment LLMs with proper software engineering for the precision and consistency where needed.
 
 
   actions:
