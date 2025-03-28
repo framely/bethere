@@ -2,7 +2,7 @@
 layout: home
 title: BeThere
 hero:  
-  name: LLMs hallucinate, but Users expect reliability.
+  name: Struggling to get your LLM agent to behave?
   tagline: Augment LLMs with proper software engineering for the precision and consistency where needed.
 
 
