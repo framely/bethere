@@ -3,7 +3,7 @@ layout: home
 title: BeThere
 hero:  
   name: Struggling to get your LLM agent to behave?
-  tagline: Augment LLMs with proper software engineering for the precision and consistency where needed.
+  tagline: Augment LLMs with SOLID software engineering for the precision and consistency where needed.
 
 
   actions:
@@ -12,8 +12,8 @@ hero:
       link: https://build.opencui.io/
       type: primary
 contentCards:
-  - title: Three-Layer Architecture for Multilingual and Multiplatform Services
-    details: By separating language perception, interaction logic, and backend services, a three-layer architecture naturally delivers a consistent user experience across languages while enabling seamless transitions between web, mobile, and chat platforms.
+  - title: Architected for seamless multilingual and multichannel experience
+    details: By separating language perception, interaction logic, and backend services, a three-layer architecture naturally delivers a consistent user experience across languages while enabling seamless transitions between channels.
     image: images/architecture.png
     left: true
   - title: Statechart-based Interaction Logic for Control and Flexibility
@@ -25,7 +25,7 @@ contentCards:
    
     image: images/language.png
     left: true
-  - title: Compound AI Systeme for Coverage
+  - title: Cost-effective precision and coverage with compound AI
     details: Seamlessly switch between software-engineered System 2, offering deterministic conversational services on APIs, and prompt-engineered System 1, utilizing retrieval-augmented generation for unstructured text. Our dual-process approach consistently delivers a cost-effective conversational experience, providing control for high-impact queries and coverage for the rest.
     image: images/system1.png
     left: false
