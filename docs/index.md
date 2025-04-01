@@ -2,43 +2,40 @@
 layout: home
 title: BeThere
 hero:  
-  name: Struggling to get your LLM agent to behave?
-  tagline: Augment LLMs with SOLID software engineering for the precision and consistency where needed.
-
-
+  name: Struggling to get your user-facing AI agent production-ready?
+  tagline: Augment it with SOLID software engineering to ensure reliability and drive real business outcomes.
   actions:
     - theme: brand
       text: Let's Build
       link: https://build.opencui.io/
       type: primary
 contentCards:
-  - title: Architected for seamless multilingual and multichannel experience
-    details: By separating language perception, interaction logic, and backend services, a three-layer architecture naturally delivers a consistent user experience across languages while enabling seamless transitions between channels.
+  - title: Reinvent conversation design for service delivery
+    details: You build agent to serve users, so why focus on conversation flow? With our schema-driven approach, simply attach dialogue annotations to your service schemas. We compile them into nested state machines that guide your agent to negotiate terms effectively and deliver services reliably.
+    image: images/schema.png
+    left: true
+  - title: Context-aware dialogue understanding with maintainability
+    details: No LLM is perfect—so what happens when it fails? Our agentic approach decomposes dialogue understanding into modular subproblems, such as context-aware intent detection and structured information extraction. Each subproblem is solved with retrieval-augmented in-context learning, making it easier to diagnose and fix understanding issues, ensuring production-level accuracy.
+    image: images/language.png
+    left: false
+  - title: Architected for multilingual and multichannel experience
+    details: By separating language perception, interaction logic, and backend services, a three-layer architecture naturally delivers a consistent user experience across languages while enabling seamless transitions between channels. The modular design also make it easy to integrate third-party functionalities.
     image: images/architecture.png
     left: true
-  - title: Statechart-based Interaction Logic for Control and Flexibility
-    details: Conversation flows offer precision, but enumerating all possible flows is impractical. Prompt engineering provides broad coverage but lacks control. Statechart-based interaction logic, built by annotating service schemas, achieve both through this factorized and declarative approach.
-    image: images/schema.png
-    left: false
-  - title: Agentic Dialogue Understanding for Production Accuracy
-    details: No LLM achieves 100% accuracy on standard function-calling datasets, let alone for custom use cases. By decomposing dialogue understanding into manageable subproblems, leveraging retrieval-augmented in-context learning using fine-tuned model for inference, and intelligently merging the solutions, our agentic dialogue understanding provides a cost-effective solution to achieve the accuracy required for production.
-   
-    image: images/language.png
-    left: true
-  - title: Cost-effective precision and coverage with compound AI
-    details: Seamlessly switch between software-engineered System 2, offering deterministic conversational services on APIs, and prompt-engineered System 1, utilizing retrieval-augmented generation for unstructured text. Our dual-process approach consistently delivers a cost-effective conversational experience, providing control for high-impact queries and coverage for the rest.
+  - title: Low-code, high-capability compound AI agent platform
+    details: Designed from the ground up to apply LLM agents in user-facing scenarios, our low-code platform allows seamless switching between software-engineered System 2 for precise, deliberate behavior and prompt-engineered System 1 for common-sense responses at the skill level. This makes it cost-effective to build agent that really works.
     image: images/system1.png
     left: false
 
 
 cta :
-  - details: Can one build a table reservation agent by simply answering questions? Yes, with a BeThere copilot.
-    title: Try it yourself 
-    link: https://build.opencui.io/copilot
+  - details: Be the first to build useful conversational experiences the right way.
+    title: Join the movement
+    link: https://build.opencui.io/
 
 columnFooter :
   - title: BeThere
-    tagline: We build OpenCUI, so you don't have to build agents from scratch.
+    tagline: Be useful, with compound AI, for both your business and users.
     logo: /images/logo.png
     footerItems:
       - title: Social
