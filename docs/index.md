@@ -2,35 +2,35 @@
 layout: home
 title: BeThere
 hero:  
-  name: Struggling to get your user-facing AI agent production-ready?
-  tagline: Augment it with SOLID software engineering to ensure reliability and drive real business outcomes.
+  name: Struggling to get your AI agent production-ready?
+  tagline: Augment prompting with SOLID software engineering for reliability and real business impact.
   actions:
     - theme: brand
       text: Let's Build
       link: https://build.opencui.io/
       type: primary
 contentCards:
-  - title: Reinvent conversation design for service delivery
-    details: You build agent to serve users, so why focus on conversation flow? With our schema-driven approach, simply attach dialogue annotations to your service schemas. We compile them into nested state machines that guide your agent to negotiate terms effectively and deliver services reliably.
+  - title: Schema driven interaction design for service delivery
+    details: You build agent to serve users, so why focus on conversation flow? Simply annotate your service schemas with desired dialog behavior, and we'll compile them into an agent that negotiates details and delivers services reliably.
     image: images/schema.png
     left: true
-  - title: Context-aware dialogue understanding with maintainability
-    details: No LLM is perfect—so what happens when it fails? Our agentic approach decomposes dialogue understanding into modular subproblems, such as context-aware intent detection and structured information extraction. Each subproblem is solved with retrieval-augmented in-context learning, making it easier to diagnose and fix understanding issues, ensuring production-level accuracy.
+  - title: Agentic dialogue understanding for maintainability
+    details: No LLM is perfect—so what happens when it fails? By decomposing dialogue understanding into subproblems, each solved with in-context learning with context-dependent examples, we make it easier to diagnose and fix issues, ensuring production-level accuracy.
     image: images/language.png
     left: false
-  - title: Architected for multilingual and multichannel experience
-    details: By separating language perception, interaction logic, and backend services, a three-layer architecture naturally delivers a consistent user experience across languages while enabling seamless transitions between channels. The modular design also make it easy to integrate third-party functionalities.
+  - title:  Layered Architecture for Expandability
+    details: With a three-layer architecture that separates language perception, interaction logic, and backend services, it’s easy to add support for new languages and channels on the frontend, as well as integrate new third-party functionalities in the backend.
     image: images/architecture.png
     left: true
-  - title: Low-code, high-capability compound AI agent platform
-    details: Designed from the ground up to apply LLM agents in user-facing scenarios, our low-code platform allows seamless switching between software-engineered System 2 for precise, deliberate behavior and prompt-engineered System 1 for common-sense responses at the skill level. This makes it cost-effective to build agent that really works.
+  - title: Compound AI for low-effort, high-programmability
+    details: Every tool has its limits. Our low-code platform lets you pick the right one, using software engineering for precise, deliberate behavior and prompt engineering for common-sense responses at the skill level, to cost-effectively build user-facing agents that truly work.
     image: images/system1.png
     left: false
 
 
 cta :
-  - details: Be the first to build useful conversational experiences the right way.
-    title: Join the movement
+  - details: Be the first to build useful conversational experiences the schema-driven way.
+    title: Get your early access today.
     link: https://build.opencui.io/
 
 columnFooter :
