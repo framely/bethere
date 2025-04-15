@@ -29,8 +29,8 @@ contentCards:
 
 
 cta :
-  - details: Be the first to build useful conversational experiences the schema-driven way.
-    title: Get your early access today.
+  - details: LLMs know the average, but the value will always be in what they don't. So why wait?
+    title: Build differentiated service today.
     link: https://build.opencui.io/
 
 columnFooter :
