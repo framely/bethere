@@ -11,20 +11,20 @@ hero:
       type: primary
 contentCards:
   - title: Schema driven interaction design for service delivery
-    details: You build agent to serve users, so why focus on conversation flow? Simply annotate your service schemas with desired dialog behavior, and we'll compile them into an agent that negotiates details and delivers services reliably.
+    details: You build agents to serve users—so why focus on conversation flows? Just annotate your service schemas with the desired dialog behavior, and we’ll compile them into agents that can negotiate service details and deliver them reliably.
     image: images/schema.png
     left: true
   - title: Agentic dialogue understanding for maintainability
     details: No LLM is perfect—so what happens when it fails? By decomposing dialogue understanding into subproblems, each solved with in-context learning with context-dependent examples, we make it easier to diagnose and fix issues, ensuring production-level accuracy.
     image: images/language.png
     left: false
-  - title:  Layered Architecture for Expandability
-    details: With a three-layer architecture that separates language perception, interaction logic, and backend services, it’s easy to add support for new languages and channels on the frontend, as well as integrate new third-party functionalities in the backend.
-    image: images/architecture.png
-    left: true
-  - title: Compound AI for low-effort, high-programmability
-    details: Every tool has its limits. Our low-code platform lets you pick the right one, using software engineering for precise, deliberate behavior and prompt engineering for common-sense responses at the skill level, to cost-effectively build user-facing agents that truly work.
+  - title: Compound AI for low-effort, high-control development
+    details: Our declarative, low-code platform combines the flexibility of prompt engineering with the rigor of software engineering at skill level, enabling you to craft user-facing agents that are both reliable and cost-effective—designed with precision.
     image: images/system1.png
+    left: true
+  - title:  Modular design for expandability
+    details: We separate language perception, interaction logic, backend services, and connection concerns—making it easy to support new languages and channels, and seamlessly integrate third-party tools.
+    image: images/architecture.png
     left: false
 
 
