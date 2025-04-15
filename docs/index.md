@@ -29,8 +29,8 @@ contentCards:
 
 
 cta :
-  - details: LLMs know the average, but the value will always be in what they don't. So why wait?
-    title: Build differentiated service today.
+  - details: LLMs know the average, but your edge will always be in what they don't. So why wait?
+    title: Build in hybrid today.
     link: https://build.opencui.io/
 
 columnFooter :
