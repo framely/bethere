@@ -30,7 +30,7 @@ contentCards:
 
 cta :
   - details: LLMs know the average, but your edge will always be in what they don't. So why wait?
-    title: Build in hybrid today.
+    title: Build in Hybrid Today
     link: https://build.opencui.io/
 
 columnFooter :
