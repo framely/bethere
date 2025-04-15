@@ -10,7 +10,7 @@ hero:
       link: https://build.opencui.io/
       type: primary
 contentCards:
-  - title: Schema driven interaction design for service delivery
+  - title: Declarative interaction design for service delivery
     details: You build agents to serve users—so why focus on conversation flows? Just annotate your service schemas with the desired dialog behavior, and we’ll compile them into agents that can negotiate service details and deliver them reliably.
     image: images/schema.png
     left: true
@@ -22,8 +22,8 @@ contentCards:
     details: Our declarative, low-code platform combines the flexibility of prompt engineering with the rigor of software engineering at skill level, enabling you to craft user-facing agents that are both reliable and cost-effective—designed with precision.
     image: images/system1.png
     left: true
-  - title:  Modular design for expandability
-    details: We separate language perception, interaction logic, backend services, and connection concerns—making it easy to support new languages and channels, and seamlessly integrate third-party tools.
+  - title:  Modular design for reuse and expandability
+    details: We separate language perception, interaction logic, backend services, and connection concerns—making it easy to support new languages and channels, and seamlessly integrate third-party tools, all within a scalable, component-based architecture.
     image: images/architecture.png
     left: false
 
