@@ -30,7 +30,8 @@ export const en = {
             { text: 'Value recommendation', link: '/reference/annotations/valuerec' },
             { text: 'Value check', link: '/reference/annotations/valuecheck' },
             { text: 'Confirmation', link: '/reference/annotations/confirmation' },
-            { text: 'State transition', link: '/reference/annotations/transition' },
+            { text: 'State transition', link: '/reference/annotations/transition' }, 
+            { text: 'System1', link: '/reference/annotations/system1' },
             { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
           ],
         },   
