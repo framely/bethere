@@ -69,39 +69,38 @@ export const en = {
       ],
     }, 
     {
-      text: 'Providers',
-      collapsed: false,
-      items: [
-        { text: 'Overview', link: '/reference/providers/overview' },
-        { text: 'PostgreSQL provider', link: '/reference/providers/postgrest' }
-      ]
-    },
-    {
-      text: 'Channels',
-      collapsed: false,
-      items: [
-        { text: 'Overview', link: '/reference/channels/overview' },
-        { text: 'Universal Channel', link: '/reference/channels/universalmessage' },
-        { text: 'Google Business Message', link: '/reference/channels/googlebusiness' },
-        { text: 'Messenger', link: '/reference/channels/messenger' },
-        { text: 'WhatsApp', link: '/reference/channels/whatsapp' },
-      ],
-    },
-    {
-      text: 'Supports',
-      collapsed: false,
-      items: [
-        { text: 'Overview', link: '/reference/support/overview' },
-        { text: 'Chatwoot', link: '/reference/support/Chatwoot' }
-      ],
-    },
-    {
-      text: 'Extension',
+      text: 'Extensions',
       collapsed: true,
       items: [
-        { text: 'Extensions', link: '/reference/providers/extension' },
-        { text: 'Native provider', link: '/reference/providers/native' }
-      ]
+        { text: 'Overview', link: '/reference/providers/extension' },
+        {
+          text: 'Providers',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/reference/providers/overview' },
+            { text: 'Native provider', link: '/reference/providers/native' },
+            { text: 'PostgreSQL provider', link: '/reference/providers/postgrest' },
+          ]
+        },
+        {
+          text: 'Channels',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/reference/channels/overview' },
+            { text: 'Universal Channel', link: '/reference/channels/universalmessage' },
+            { text: 'Messenger', link: '/reference/channels/messenger' },
+            { text: 'WhatsApp', link: '/reference/channels/whatsapp' },
+          ],
+        },
+        {
+          text: 'Supports',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/reference/support/overview' },
+            { text: 'Chatwoot', link: '/reference/support/Chatwoot' }
+          ],
+        },
+      ],
     },
     {
       text: 'Platform',
