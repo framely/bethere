@@ -1,33 +1,35 @@
 # Overview
-The goal of OpenCUI is to make it easy to build conversational user interfaces for services. Following best practices, all services on OpenCUI are modeled in two parts: interfaces and implementations, so that the producers and consumers of these functionalities can be developed independently. More importantly, conversational behaviors are based only on these interfaces, which makes it possible to switch to different implementations.
 
-The implementations of interfaces, which we call providers, are available in two kinds: native providers and scripted providers. Native providers are implementations developed in Java/Kotlin, and system-level interfaces are typically implemented in the form of native providers. Scripted providers allow builders to implement in other script languages, such as SQL or JSON. Application-related interfaces, which we call services, are typically implemented in scripted providers.
+The goal of OpenCUI is to make it easy to build conversational user interfaces for services. Following best practices, all services on OpenCUI are modeled in two parts: interfaces and implementations. This separation allows producers and consumers of these functionalities to be developed independently. More importantly, conversational behaviors rely only on these interfaces, making it possible to switch between different implementations seamlessly.
 
-Once you have a provider and the corresponding backend running, you need to wire this provider to its service interface in your chatbot, which allows the chatbot to communicate with the backend.
+The implementations of interfaces, which we call **providers**, come in two types: **native providers** and **scripted providers**. Native providers are implementations developed in Java or Kotlin. Scripted providers allow builders to use other scripting languages to build (SQL) or connect to (JSON) impelementation.
 
-## Native providers
-Native providers are developed in the form of extensions, which are software modules developed to supply one or more providers to the platform. OpenCUI is implemented in Kotlin, so these extensions are naturally developed as standard Kotlin modules using standard toolchains like Gradle and popular framework Spring Boot. Extensions are developed in four simple steps:
+Once you have a provider and the corresponding backend running, you need to wire the provider to its service interface in your chatbot. This enables the chatbot to communicate with the backend.
+
+## Native Providers
+
+Native providers are developed as **extensions**, which are software modules designed to supply one or more providers to the platform. Since OpenCUI is implemented in Kotlin, these extensions are developed as standard Kotlin modules using conventional toolchains like Gradle and the popular Spring Boot framework. Creating an extension involves four simple steps:
 
 1. Define the interface on the OpenCUI platform (builders can only do this at the application level for services).
-2. Generate the code stubs for these interfaces as a basis for implementation.
-3. Develop the extension. You are encouraged to contribute your extension to opencui/extensions.
-4. Register each provider developed in the extension on the platform so that it can be wired to chatbots and provide its version of implementation to these chatbots.
+2. Generate code stubs for these interfaces as a basis for implementation.
+3. Develop the extension. You are encouraged to contribute your extension to `opencui/extensions`.
+4. Register each provider developed in the extension on the platform so it can be wired to chatbots and supply its implementation to them.
 
-These native providers can be registered as external, in which case the builder does not need to make its source available to the OpenCUI platform. However, if a chatbot relies on even one external provider, it cannot be hosted by OpenCUI. Instead, the builder needs to export the generated Kotlin project and build and deploy it according to their DevOps rules. Regardless of whether the providers are external, extension builders need to register their providers on the platform so that we can generate the frontend code for them.
+Native providers can be registered as **external**, in which case the builder does not need to make the source code available to the OpenCUI platform. However, if a chatbot relies on even one external provider, it cannot be hosted by OpenCUI. Instead, the builder must export the generated Kotlin project and handle the build and deployment process according to their own DevOps practices. Regardless of whether providers are external, extension builders must register their providers on the platform so that OpenCUI can generate the corresponding frontend code.
 
-For more details, see [Native Provider](native.md) or [extension](extension.md).
+For more details, see [Native Provider](native.md).
 
-## Scripted providers
- 
-Sometimes, the backend implementations of a service are accessible through some scripted language like SQL or JSON instead of native code. The providers for these backends, known as scripted providers, come in two types: hosted provider type and stub provider type.
+## Scripted Providers
 
-- OpenCUI currently supports only one hosted provider: PostgreSQL. When we say 'hosted,' we mean that OpenCUI manages the backend implementation, which includes the database, tables, and SQL-based function implementation.
-- For stub providers, OpenCUI does not host any data or have explicit knowledge about the data schema. Instead, OpenCUI handles function invocation through them. There will be many stub provider types available, including a Google Sheets-based provider.
+Sometimes, the backend implementation of a service is accessible through a scripting language like SQL or JSON rather than native code. Providers for these backends, known as **scripted providers**, come in two types: **hosted providers** and **stub providers**. In practice, these scripted providers are just native providers that expose some interface for further customization.
 
-Scripted providers are typically defined in three steps:
+- OpenCUI currently supports one hosted provider: **PostgreSQL**. When we say "hosted," we mean that OpenCUI aware the backend implementation, including the database, tables, and SQL-based function logic.
+- For **stub providers**, OpenCUI does not host any data or have explicit knowledge of the data schema. Instead, OpenCUI facilitates function invocation through these providers. Many stub provider types will be available, including Web API provider.
 
-1. Define the service application-dependent interface on the platform.
-2. Decide on the provider type you want. The provider type determines how to access the actual data source and what scripting language to use for each function implementation declared in the service interface.
-3. Use the scripting language required by the provider type to implement the service functions. Functions can also be implemented in Kotlin, known as native functions.
+Creating scripted providers typically involves three steps:
 
-See [PostgreSQL provider](postgrest.md) for details.
+1. Define the service-specific interface on the platform.
+2. Choose the provider type. This determines how the actual data source is accessed and which scripting language is used for implementing each function in the service interface.
+3. Implement the service functions using the scripting language required by the provider type. Functions can also be implemented in Kotlin—these are known as **native functions**.
+
+See [PostgreSQL Provider](postgrest.md) for more details. For now, PostgreSQL provider can be hosted by OpenCUI or Supabase. Pick Supabase for added reliability.
