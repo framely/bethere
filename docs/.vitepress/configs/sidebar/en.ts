@@ -1,25 +1,14 @@
 
 export const en = {
-  '/copilot/': [
-    {
-      text: 'Copilot',
-      items: [
-        { text: 'Why copilot', link: '/copilot/why-copilot' },
-        { text: 'Development overview', link: '/copilot/overview' },
-        { text: 'Implement copilot meta API', link: '/copilot/define-api' },
-        { text: 'Build copilot backend', link: '/copilot/build-copilot' },
-        { text: 'Build copilot frontend', link: '/copilot/opencui-sdk' },
-      ],
-    }
-  ],
   '/reference/': [
     {
       text: 'CUI Reimagined',
       collapsed: false,
-      items: [
-        { text: 'Schema-driven CUI', link: '/reference/essentials/3layers' },
-        { text: 'Projects', link: '/reference/essentials/projects' },
-        { text: 'Type system', link: '/reference/essentials/concepts' },
+      items: [       
+        { text: 'Why hybrid AI', link: '/reference/essentials/dual-process' },
+        { text: 'Services, not conversations', link: '/reference/essentials/3layers' },
+        { text: 'Types, not flows', link: '/reference/essentials/concepts' },
+        { text: 'How to organize types', link: '/reference/essentials/projects' },
         {
           text: 'Dialog Annotations',
           collapsed: true,
@@ -35,7 +24,6 @@ export const en = {
             { text: 'System CUI Components', link: '/reference/annotations/systemcomponent' }
           ],
         },   
-        { text: 'Dual processes', link: '/reference/essentials/dual-process' },
         {
           text: 'Conversation Design',
           collapsed: true,
@@ -64,10 +52,20 @@ export const en = {
         { text: 'Build an hours module', link: '/reference/guide/build-module' },
         { text: 'Build an hours provider', link: '/reference/guide/build-provider' },
         { text: 'Deploy a chatbot', link: '/reference/guide/deploy-to-channel' },
-        { text: 'Get a team', link: '/reference/guide/are-you-ready' },
+        { text: 'Add collaborator', link: '/reference/guide/are-you-ready' },
         { text: 'OpenCUI workflow', link: '/reference/guide/opencui-flow' },
       ],
-    }, 
+    },     
+    {
+      text: 'Copilot',
+      items: [
+        { text: 'Why copilot', link: '/copilot/why-copilot' },
+        { text: 'Development overview', link: '/copilot/overview' },
+        { text: 'Implement copilot meta API', link: '/copilot/define-api' },
+        { text: 'Build copilot backend', link: '/copilot/build-copilot' },
+        { text: 'Build copilot frontend', link: '/copilot/opencui-sdk' },
+      ],
+    },
     {
       text: 'Extensions',
       collapsed: true,

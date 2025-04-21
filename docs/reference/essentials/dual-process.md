@@ -1,4 +1,4 @@
-# Dual process: new paradigm for building chatbot
+# Hybrid AI: new paradigm for building chatbot
 
 ChatGPT has demonstrated that one can build a chatbot capable of generating sensible responses to almost any question based on the collective knowledge encoded in the web dump on which it was trained. Recently, prompt engineering, together with retrieval-augmented generation, has emerged as a new way for businesses to create chatbots that expose business-specific information found in past conversations and existing documents, without the need to write a single line of conversation flow code.
 
