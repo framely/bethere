@@ -78,6 +78,7 @@ export const en = {
             { text: 'Overview', link: '/reference/providers/overview' },
             { text: 'Native provider', link: '/reference/providers/native' },
             { text: 'PostgreSQL provider', link: '/reference/providers/postgrest' },
+            { text: 'Web API provider', link: '/reference/providers/restful' },
           ]
         },
         {

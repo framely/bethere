@@ -21,7 +21,7 @@ For more details, see [Native Provider](native.md).
 
 ## Scripted Providers
 
-Sometimes, the backend implementation of a service is accessible through a scripting language like SQL or JSON rather than native code. Providers for these backends, known as **scripted providers**, come in two types: **hosted providers** and **stub providers**.
+Sometimes, the backend implementation of a service is accessible through a scripting language like SQL or JSON rather than native code. Providers for these backends, known as **scripted providers**, come in two types: **hosted providers** and **stub providers**. In practice, these scripted providers are just native providers that expose some interface for further customization.
 
 - OpenCUI currently supports one hosted provider: **PostgreSQL**. When we say "hosted," we mean that OpenCUI aware the backend implementation, including the database, tables, and SQL-based function logic.
 - For **stub providers**, OpenCUI does not host any data or have explicit knowledge of the data schema. Instead, OpenCUI facilitates function invocation through these providers. Many stub provider types will be available, including Web API provider.
@@ -32,4 +32,4 @@ Creating scripted providers typically involves three steps:
 2. Choose the provider type. This determines how the actual data source is accessed and which scripting language is used for implementing each function in the service interface.
 3. Implement the service functions using the scripting language required by the provider type. Functions can also be implemented in Kotlin—these are known as **native functions**.
 
-See [PostgreSQL Provider](postgrest.md) for more details.
+See [PostgreSQL Provider](postgrest.md) for more details. For now, PostgreSQL provider can be hosted by OpenCUI or Supabase. Pick Supabase for added reliability.
