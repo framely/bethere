@@ -1,6 +1,6 @@
 # System1: Leveraging LLMs in Conversational Skills
 
-System1 is an approach to building conversational experiences that uses large language models (LLMs) to enhance flexibility, coverage, and naturalness. On this platform, prompt engineering based system1 are integrated in three distinct ways, each serving a unique purpose:
+System1 is an approach to building conversational experiences that uses large language models (LLMs) to enhance flexibility, coverage, and naturalness. On this platform, prompt engineered system1 can be integrated in three distinct ways, each serving a unique purpose:
 
 ---
 
