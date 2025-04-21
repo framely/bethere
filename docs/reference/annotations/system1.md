@@ -61,4 +61,4 @@ System1 unifies three LLM usage patterns to create expressive and resilient conv
 | Action                     | Deterministic    | Natural Language | Fluent and adaptive user messaging           |
 | Fallback                   | Non-deterministic| Natural Language | Handling errors, edge cases, or unknown input|
 
-By blending these approaches, prompt engineering based system1 can add to software engineering bases system1 both precision and creativity in conversation design.
+By blending these approaches, prompt-engineered system1 can add to software software-engineered system2 for both precision and creativity in conversation design.
