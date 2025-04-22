@@ -57,16 +57,6 @@ export const en = {
       ],
     },     
     {
-      text: 'Copilot',
-      items: [
-        { text: 'Why copilot', link: '/copilot/why-copilot' },
-        { text: 'Development overview', link: '/copilot/overview' },
-        { text: 'Implement copilot meta API', link: '/copilot/define-api' },
-        { text: 'Build copilot backend', link: '/copilot/build-copilot' },
-        { text: 'Build copilot frontend', link: '/copilot/opencui-sdk' },
-      ],
-    },
-    {
       text: 'Extensions',
       collapsed: true,
       items: [
