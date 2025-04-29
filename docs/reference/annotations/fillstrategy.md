@@ -1,12 +1,16 @@
-# Ask strategy
+# Prompting strategy
 
-The Ask Strategy annotation determines whether to prompt the user for a slot, under what conditions, and how other dialog annotations should work together to guide the interaction.
+The prompting strategy, also known as asking strategy, annotation determines whether to prompt the user for a slot, under what conditions, and how other dialog annotations should work together to guide the interaction.
 
 A slot is a piece of information that is needed to complete a task. For example, in a restaurant reservation service, the slots might be `date`, `time`, and `number of guests`. When you set the fill strategy to a slot and it is configured to be filled by user interaction, you can configure the dialog annotations based on your business logic. The OpenCUI framework will use a five-stage slot filling process to help you interact with users and converge on a servable request.
 
 The best fill strategy to use will depend on the specific task and your business needs. By understanding the different fill strategies, you can choose the one that is most likely to result in a successful interaction.
 
 Here is a more detailed explanation of each fill strategy.
+
+## Never ask
+Never ask strategy is a good choice for scenarios where chatbot can specify it value based on the current state of the converation or some API call. 
+For example, if a chatbot is connected to a database of customer information, it can use the direct fill strategy to fill the slot for the user's name. The chatbot would not need to ask the user for their name, as it can simply retrieve the name from the database.
 
 ## Always ask
 
@@ -46,35 +50,10 @@ If the condition is met, the chatbot would ask the user for the name of the even
 4. In the **Prompt** field, enter the question that can be used to ask users for information. 
 :::
 
-## Conditionoal 
 
-Gated strategy is a boolean gate that is used to first introduce a topic before asking detailed questions about it. It can be a helpful way to ensure that the chatbot is only asking questions that are relevant to the user's needs. It can also be especially useful in situations where the user may be sensitive about the information they are providing, as it allows the user to control how much information they share.
+## User mention first
 
-The Gated strategy can only be applied to **frame slots**. Therefore, to take advantage of this strategy, **you first need to define a frame to host closely related slots**. When you set the fill strategy to Gated, you should **provide the boolean gate question**.
-
-The Gated strategy will ask the user a yes-or-no question once and then wait for one of three types of answers:
-
-- **Yes**: If the user answers yes, the chatbot will follow the depth-first rule and start filling nested slots one at a time in their natural order.
-
-- **Slot value**: If the user answers with a slot value, the chatbot will assume the gate is open and start filling nested slots with the user's input.
-
-- **No**: If the user answers no, the frame slot will simply be skipped (neither asked nor filled).
-
-For example, if you want to find out what symptoms a patient has, a chatbot can ask about symptoms in a more polite and sensitive way by first asking the patient whether they have any symptoms such as *"Do you have any symptoms?"*. If the patient says yes, the chatbot could then ask more detailed questions about the symptom: *"How long have you had a fever?"*, *"Is it intermittent or continuous?"*, *"What is your highest recorded temperature?"* If the patient says no, the chatbot can move on to the next topic.
-
-This can help to improve the user experience by ensuring that the chatbot only asks for the information that is relevant to the user's needs.
-
-::: details More detailed explanation of how to set the Gated strategy
-![Gated](/images/annotation/fillstrategy/gated.png)
-1. Go to the **slot detail page**, and select the **Annotation** tab.
-2. In the **Fill strategy** section, select **Gated**.
-3. In the **Gated** field, provide the boolean gate question.
-4. In **Affirmatives** and **Negatives** field, you can customize how the system understands user utterances that are interpreted as `yes` or `no` based context.
-:::
-
-## Recover only
-
-Recover only strategy is a way to protect user privacy and make chatbots more user-friendly. It means that the chatbot will not ask the user for information unless the user specifically provides it. 
+User mention first, or recover only strategy is a way to protect user privacy and make chatbots more user-friendly. It means that the chatbot will not ask the user for information unless the user specifically provides it. 
 
 For example, if a business does not need to know the user's age, they can use the Recover only strategy. This means that the chatbot will not ask the user for their age unless the user says something like *"I am 25 years old"*.
 
@@ -93,41 +72,8 @@ The Recover only strategy can be useful for the following use cases:
 
 - **When the business has a behavior or choice that they do not want to promote, but they still need to handle if it is required.** For example, a business may not want to promote a specific product, but they still need to handle it if the user asks about it.
 
+# Fill with natural language
+A slot can always be filled with structured event or by code directly, but it can also be configured to be filled with natural language using dialog understanding module, particularly is the slot is used to capture user's perference.
 
-# Fill mode
-A slot can be filled by user input using dialog understanding module, it can also be filled by event, both synchrounous and asynchrounous events.
-
-## Synchronous events
-
-Direct fill means that the chatbot will not ask the user for information. Instead, it will fill the value directly from a source, such as a database or other slot. This can be helpful in situations where the information is easily accessible and does not need to be collected from the user.
-
-For example, if a chatbot is connected to a database of customer information, it can use the direct fill strategy to fill the slot for the user's name. The chatbot would not need to ask the user for their name, as it can simply retrieve the name from the database.
-
-The direct fill strategy can be useful for reducing the number of questions that the chatbot asks, improving the accuracy of the information, making the chatbot more scalable. **However, it does not ask the user if the value is problematic.** This means that the chatbot may fill the slot with incorrect or outdated information. This can be a drawback in some cases, such as when the information is sensitive or confidential.
-
-::: details More detailed explanation of how to set the Direct fill strategy
-![Direct fill strategy](/images/annotation/fillstrategy/direct_fill.png)
-1. Go to the **slot detail page**, and select the **Annotation** tab.
-2. In the **Fill strategy** section, select **Direct fill**.
-:::
-
-## Asynchronous event
-
-The External event strategy means that the chatbot will not fill the slot with information itself. Instead, it will wait for an external event to occur before filling the slot. This can be useful in situations where the chatbot needs to work with external software, such as a payment processor or other asynchronous events.
-
-For example, if a chatbot is trying to book a flight, it can use the external event strategy to wait for the user to complete the payment process. Once the payment is complete, the chatbot will receive an event from the payment processor and then fill the slot with the flight information.
-
-When you set fill strategy to external event, you should:
-
-- **Provide a message to inform the user of the conversation state.** This should let the user know the chatbot is waiting for an external event to occur before filling the slot.
-
-- **Configure the third-party software to send an event to resume the skill.** Different third-party software have different mechanisms for doing this.
-
-- **Handle errors that may occur when the external event does not occur or when the event is received incorrectly.** For example, you may need to retry the request or notify the user that the booking could not be completed.
-
-::: details More detailed explanation of how to set the External event strategy
-![External event strategy](/images/annotation/fillstrategy/external_event.png)
-1. Go to the **slot detail page**, and select the **Annotation** tab.
-2. In the **Fill strategy** section, select **External event**.
-3. In the **Inform** field, provide a message to inform the user of the conversation state. 
-:::
+# Blocking until filled
+A slot can be filled synchrounously or asynchrounously. When **Blocking until filled" is turned on, chatbot will wait for answer from user or some system event. For example, if a chatbot is trying to book a flight, it can use the external event strategy to wait for the user to complete the payment process. Once the payment is complete, the chatbot will receive an event from the payment processor and then fill the slot with the flight information. When it is turned off, chatbot can keep this topic on hold and move onto some other topic.
