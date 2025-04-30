@@ -1,13 +1,10 @@
 # Fill strategy
 There are three high-level decisions that impact how slots are filled:
+1. Should the user be prompted if the slot is missing a value?
+2. Can the slot be filled using natural language?
+3. Should the conversation be blocked until the slot is filled?
 
-Should the user be prompted if the slot is missing a value?
-
-Can the slot be filled using natural language?
-
-Should the conversation be blocked until the slot is filled?
-
-# Prompting strategy
+## Prompting strategy
 
 The prompting strategy, also known as asking strategy, annotation determines whether to prompt the user for a slot, under what conditions, and how other dialog annotations should work together to guide the interaction.
 
@@ -37,8 +34,6 @@ The **condition** is an expression that determines whether or not the chatbot sh
 // If the user wants to book a table for more than 10 people, ask for the name of the event
 numberOfGuest > 10
 ```
-
-
 
 ### User mention first
 
