@@ -8,10 +8,10 @@ The statechart for a compound type can be broken down into individual statechart
 1. [Initialization](./init.md): In this state, the system attempts to fill the slots based on business logic first.
 2. [Ask](./templateandexemplar.md#prompt): In this state, a SlotRequest dialog act can be used to prompt the user for a choice for the given slot.
 3. [Value recommendation](./valuerec.md): In this state, a list of candidates based on the business production system is provided for users to select from. This ensures the user choices are both relevant and servable, avoiding wasted turns due to unservable user selections.
-4. [Value check](./valuecheck.md): Examines the proposed value to determine if it is servable based on business rules.
+4. [System check](./valuecheck.md): Examines the proposed value to determine if it is servable based on business rules.
 5. [Confirmation](./confirmation.md): Gives users a second chance to verify the proposed value.
 
-By systematically defining the actions on these states using annotations such as [Ask strategy](./fillstrategy.md), builders can build an effective CUI interaction logic for creating instance of this slot. 
+By systematically defining the actions on these states using annotations such as [Fill strategy](./fillstrategy.md), builders can build an effective CUI interaction logic for creating instance of this slot. 
 
 ## Advanced annotations
 Slot-level annotations are designed for common use cases, prioritizing convenience over flexibility. The underlying mechanism of type-based conversational user interfaces, including the five stages of slot filling, is implemented as a [statecharts](https://statecharts.dev/), also known as composite state machines. If certain CUI behaviors cannot be defined by these high-level annotations, builders can leverge [state transitions](./transition.md) for finer control. State transitions defines arbitrary actions based on the current state, user input, and any custom conditions defined on the type. 
