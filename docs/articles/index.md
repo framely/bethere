@@ -9,20 +9,29 @@ layout: home
 <Article :articles="{
   items: [{
     info: {
+      title:'Prompt Engineering will never be fully deterministic',
+      description: ['If you are holding the hope that LLM will one day make the prompt engineering deterministic, you are holding the wrong hope. Prompt engineering is operated in a unnormalized distributed semantics space, it requires less setup, at the cost of less predictability.'],
+      image: './../images/blog/banner/prompt_engineer_not_deterministic.png',
+      author: 'Sean Wu',
+      date: '5/28/2025'
+    },
+    path:'./prompt-engineer-not-deterministic.md'
+},{
+    info: {
       title:'Table reservation CUI design',
       description: ['The high-level design of a conversational user interface (CUI) for table reservation. It includes detailed descriptions of each functionality, providing a shared understanding among stakeholders.'],
       image: './../images/blog/banner/tutorial_reservation_cui.png',
       author: 'Sunny May',
-      date: '4/19/2023'
+      date: '4/19/2025'
     },
-    path:'./reservation-cui-design.html'
+    path:'./reservation-cui-design.md'
 },{
     info: {
       title:'Reuse reservation module to build chatbot',
       description: ['Reuse a pre-defined module to build a table reservation chatbot and manage resources in Google Calendar and Google Admin, allowing for quick integration of reservation functionality into your chatbot.'],
       image: './../images/blog/banner/tutorial_reservation_chatbot.png',
       author: 'Sunny May',
-      date: '4/27/2023'
+      date: '4/27/2025'
     },
     path:'./reuse-reservation-module.html'
 },{
@@ -31,7 +40,7 @@ layout: home
       description: ['Utilize a pre-defined service to build CUI in a module. The step-by-step guide takes table reservation as an example and shows how to customize the service to fit your business needs.'],
       image: './../images/blog/banner/tutorial_reservation_module.png',
       author: 'Sunny May',
-      date: '3/2/2023'
+      date: '3/2/2025'
     },
     path:'./build-reservation-module.html'
 },{
@@ -40,7 +49,7 @@ layout: home
       description: ['Create powerful custom chatbots with schema-driven development. Define interaction logic by starting from a schema, and then use contextual snippets to describe conversational behavior.'],
       image: './../images/blog/banner/from-schema-to-snippets.png',
       author: 'Bird Zeng',
-      date: '2/25/2023'
+      date: '2/25/2025'
     },
     path:'./from-schema-to-snippets.html'
 },{
@@ -49,7 +58,7 @@ layout: home
       description: ['Revolutionize chatbot development with open-source CUI framework. Streamline the process with a three-layer approach and necessary adaptations for CUI-based nature to deliver business results.'],
       image: './../images/blog/banner/chatbot_development_with_opencui.png',
       author: 'Sean Wu',
-      date: '1/3/2023'
+      date: '1/3/2025'
     },
     path:'./chatbot-development-with-opencui.html'
 }]
