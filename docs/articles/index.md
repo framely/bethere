@@ -11,7 +11,7 @@ layout: home
     info: {
       title:'Prompt Engineering will never be fully deterministic',
       description: ['If you are holding the hope that LLM will one day make the prompt engineering deterministic, you are holding the wrong hope. Prompt engineering is operated in a unnormalized distributed semantics space, it requires less setup, at the cost of less predictability.'],
-      image: './../images/blog/banner/prompt_engineer_not_deterministic.png',
+      image: './../images/blog/banner/prompt.png',
       author: 'Sean Wu',
       date: '5/28/2025'
     },
