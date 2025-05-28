@@ -15,7 +15,7 @@ layout: home
       author: 'Sean Wu',
       date: '5/28/2025'
     },
-    path:'./prompt-engineer-not-deterministic.md'
+    path:'./prompt-engineer-not-deterministic.html'
 },{
     info: {
       title:'Table reservation CUI design',
@@ -24,7 +24,7 @@ layout: home
       author: 'Sunny May',
       date: '4/19/2025'
     },
-    path:'./reservation-cui-design.md'
+    path:'./reservation-cui-design.html'
 },{
     info: {
       title:'Reuse reservation module to build chatbot',
