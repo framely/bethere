@@ -37,7 +37,7 @@ export default {
     sidebar: sidebar.en,
     // footer
     footer: {
-      copyright: 'BeThere, Inc © 2025 All rights reserved'
+      copyright: 'BeThere, Inc © 2026 All rights reserved'
     }
   },
 
