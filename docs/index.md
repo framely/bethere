@@ -2,12 +2,12 @@
 layout: home
 title: BeThere
 hero:  
-  name: Struggling to get your AI agent production-ready?
-  tagline: Augment prompting with SOLID software engineering for reliability and real business impact.
+  name: Bethere, Where and When your user need you.
+  tagline: With user facing ai agent that you can trust.
   actions:
     - theme: brand
       text: Let's Build
-      link: https://build.opencui.io/
+      link: https://www.bethere.ai/
       type: primary
 contentCards:
   - title: Declarative interaction design for service delivery
