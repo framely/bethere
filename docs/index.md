@@ -1,42 +1,8 @@
 ---
-layout: home
-title: BeThere
-hero:  
-  name: Always be.there, where and when your users need you.
-  tagline: The easiest way to build user-facing agents you can trust.
-  actions:
-    - theme: brand
-      text: Start Building
-      link: https://build.opencui.io/
-      type: primary
-    - theme: alt
-      text: Read the Docs
-      link: /reference/guide/index
-contentCards:
-  - title: Programmable, deterministic interaction logic
-    details: Close enough is not good enough. You need deterministic interaction logic that can be programmed and tested. Structured conversation is how BeThere makes user-facing agent behavior reliable across real customer journeys.
-    image: images/schema.png
-    left: true
-  - title: Agentic dialog understanding that truly understands
-    details: BeThere uses an agentic dialog understanding pipeline so your agent can understand the nuances of your culture, domain, and business. When needed, you can use natural language to prompt the LLM and fix remaining understanding quirks.
-    image: images/language.png
-    left: false
-  - title: Describe the agent you want. BeThere builds it.
-    details: Powerful agents are not useful if business owners, operators, and product teams cannot build them quickly. With BeThere, they can describe what they want in plain language, refine it with simple feedback, and turn ideas into working user-facing agents fast.
-    image: images/system1.png
-    left: true
-  - title: BeThere on every channel, all the time
-    details: Launch the same agent across web, messaging, and other customer channels without rebuilding from scratch. BeThere keeps the core experience consistent wherever your users show up.
-    image: images/architecture.png
-    left: false
-
-
-cta :
-  - details: Tell us your idea, refine it in plain language, and ship a user-facing agent you can trust.
-    title: Build with BeThere
-    link: https://build.opencui.io/
-
-columnFooter :
+layout: page
+aside: false
+title: Build trustworthy user-facing agent
+columnFooter:
   - title: BeThere
     tagline: Vibe build, configure, and operate trustworthy user-facing agents today.
     logo: /images/logo.png
@@ -55,5 +21,12 @@ columnFooter :
             link: /policy/terms
           - text: Privacy policy
             link: /policy/privacy
-
 ---
+
+<script setup>
+import LandingHome from './components/home/LandingHome.vue'
+import CFooter from './components/footer/columnFooter.vue'
+</script>
+
+<LandingHome />
+<CFooter />
