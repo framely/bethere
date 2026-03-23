@@ -8,7 +8,7 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
   <section class="prompt-hero">
     <div class="shell">
       <h1>Build trustworthy user-facing agent</h1>
-      <p class="tagline">Always be.there, where and when your users need you.</p>
+      <p class="tagline">BeThere for your users, where and when they need you.</p>
 
       <div class="input-shell">
         <label for="home-agent-prompt">What should your user-facing agent do?</label>
