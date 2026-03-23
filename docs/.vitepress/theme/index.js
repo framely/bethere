@@ -14,7 +14,6 @@ export default {
     })
   },
   async enhanceApp({ app }) {
-    console.log('enhanceApp', app);
     if (!import.meta.env.SSR) {
 
       app.use(CookieConsentVue, {

@@ -1,8 +1,8 @@
 ---
 layout: home
-title: Why BeThere
+title: Be.There
 hero:
-  name: Why BeThere
+  name: Always be.there, where and when your users need you.
   tagline: The easiest way to build user-facing agents you can trust.
   actions:
     - theme: brand
@@ -15,24 +15,26 @@ hero:
 contentCards:
   - title: Programmable, deterministic interaction logic
     details: Close enough is not good enough. You need deterministic interaction logic that can be programmed and tested. Structured conversation is how BeThere makes user-facing agent behavior reliable across real customer journeys.
-    image: /images/home/deterministic-interaction-logic.png
+    image: images/home/deterministic-interaction-logic.png
     left: true
   - title: Agentic dialog understanding that truly understands
     details: BeThere uses an agentic dialog understanding pipeline so your agent can understand the nuances of your culture, domain, and business. When needed, you can use natural language to prompt the LLM and fix remaining understanding quirks.
-    image: /images/home/agentic-dialog-understanding.png
+    image: images/home/agentic-dialog-understanding.png
     left: false
   - title: Describe the agent you want. BeThere builds it.
     details: Powerful agents are not useful if business owners, operators, and product teams cannot build them quickly. With BeThere, they can describe what they want in plain language, refine it with simple feedback, and turn ideas into working user-facing agents fast.
-    image: /images/home/idea-to-working-agent.png
+    image: images/home/idea-to-working-agent.png
     left: true
   - title: BeThere on every channel, all the time
     details: Launch the same agent across web, messaging, and other customer channels without rebuilding from scratch. BeThere keeps the core experience consistent wherever your users show up.
-    image: /images/home/multi-channel-agent.png
+    image: images/home/multi-channel-agent.png
     left: false
+
 cta:
   - details: Tell us your idea, refine it in plain language, and ship a user-facing agent you can trust.
     title: Build with BeThere
     link: https://build.opencui.io/
+
 columnFooter:
   - title: BeThere
     tagline: Vibe build, configure, and operate trustworthy user-facing agents today.

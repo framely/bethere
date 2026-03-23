@@ -1,7 +1,7 @@
 
 export const en = [
   {
-    text: 'Why Bethere',
+    text: 'Why BeThere',
     link: '/whyopencui/',
   },
   {
