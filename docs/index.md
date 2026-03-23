@@ -2,44 +2,43 @@
 layout: home
 title: BeThere
 hero:  
-  name: Bethere, Where and When your user need you.
-  tagline: With user facing ai agent that you can trust.
+  name: Always be.there, where and when your users need you.
+  tagline: The easiest way to build user-facing agents you can trust.
   actions:
     - theme: brand
-      text: Let's Build
-      link: https://www.bethere.ai/
+      text: Start Building
+      link: https://build.opencui.io/
       type: primary
+    - theme: alt
+      text: Read the Docs
+      link: /reference/guide/index
 contentCards:
-  - id: 1
-    title: Declarative interaction design for service delivery
-    details: You build agents to serve users—so why focus on conversation flows? Just annotate your service schemas with the desired dialog behavior, and we’ll compile them into agents that can negotiate service details and deliver them reliably.
+  - title: Programmable, deterministic interaction logic
+    details: Close enough is not good enough. You need deterministic interaction logic that can be programmed and tested. Structured conversation is how BeThere makes user-facing agent behavior reliable across real customer journeys.
     image: images/schema.png
     left: true
-  - id: 2
-    title: Agentic dialogue understanding for maintainability
-    details: No LLM is perfect—so what happens when it fails? By decomposing dialogue understanding into subproblems, each solved with in-context learning with context-dependent examples, we make it easier to diagnose and fix issues, ensuring production-level accuracy.
+  - title: Agentic dialog understanding that truly understands
+    details: BeThere uses an agentic dialog understanding pipeline so your agent can understand the nuances of your culture, domain, and business. When needed, you can use natural language to prompt the LLM and fix remaining understanding quirks.
     image: images/language.png
     left: false
-  - id: 3
-    title: Compound AI for low-effort, high-control development
-    details: Our declarative, low-code platform combines the flexibility of prompt engineering with the rigor of software engineering at skill level, enabling you to craft user-facing agents that are both reliable and cost-effective—designed with precision.
+  - title: Describe the agent you want. BeThere builds it.
+    details: Powerful agents are not useful if business owners, operators, and product teams cannot build them quickly. With BeThere, they can describe what they want in plain language, refine it with simple feedback, and turn ideas into working user-facing agents fast.
     image: images/system1.png
     left: true
-  - id: 4
-    title:  Modular design for reuse and expandability
-    details: We separate language perception, interaction logic, backend services, and connection concerns—making it easy to support new languages and channels, and seamlessly integrate third-party tools, all within a scalable, component-based architecture.
+  - title: BeThere on every channel, all the time
+    details: Launch the same agent across web, messaging, and other customer channels without rebuilding from scratch. BeThere keeps the core experience consistent wherever your users show up.
     image: images/architecture.png
     left: false
 
 
 cta :
-  - details: LLMs know the average, but your edge will always be in what they don't. So why wait?
-    title: Build in Hybrid Today
+  - details: Tell us your idea, refine it in plain language, and ship a user-facing agent you can trust.
+    title: Build with BeThere
     link: https://build.opencui.io/
 
 columnFooter :
   - title: BeThere
-    tagline: Be useful, with compound AI, for both your business and users.
+    tagline: Vibe build, configure, and operate trustworthy user-facing agents today.
     logo: /images/logo.png
     footerItems:
       - title: Social
@@ -58,4 +57,3 @@ columnFooter :
             link: /policy/privacy
 
 ---
-
