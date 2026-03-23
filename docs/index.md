@@ -24,9 +24,9 @@ columnFooter:
 ---
 
 <script setup>
-import LandingHome from './components/home/LandingHome.vue'
+import PromptHero from './components/home/PromptHero.vue'
 import CFooter from './components/footer/columnFooter.vue'
 </script>
 
-<LandingHome />
+<PromptHero />
 <CFooter />
