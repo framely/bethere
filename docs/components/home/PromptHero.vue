@@ -1,12 +1,17 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-const fullPlaceholder = 'Build a support agent for our fitness studio that handles membership questions, reschedules classes, and escalates billing issues to a human when confidence is low.'
 const prompt = ref('')
 const placeholder = ref('')
+const promptExamples = [
+  'Build a support agent for our fitness studio that handles membership questions, reschedules classes, and escalates billing issues to a human when confidence is low.',
+  'Create a multilingual retail agent that answers delivery questions, recommends products, and routes refund issues to support.',
+  'Launch a property management agent that triages maintenance requests, updates tenants, and books vendor visits automatically.',
+]
 
 let typingTimeout
 let typingInterval
+let typingResumeTimeout
 
 function stopTyping() {
   if (typingTimeout) {
@@ -17,32 +22,56 @@ function stopTyping() {
     clearInterval(typingInterval)
     typingInterval = undefined
   }
+  if (typingResumeTimeout) {
+    clearTimeout(typingResumeTimeout)
+    typingResumeTimeout = undefined
+  }
 }
 
 function startTyping() {
   if (typeof window === 'undefined') {
-    placeholder.value = fullPlaceholder
+    placeholder.value = promptExamples[0]
     return
   }
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    placeholder.value = fullPlaceholder
+    placeholder.value = promptExamples[0]
     return
   }
 
+  stopTyping()
   placeholder.value = ''
-  let index = 0
 
-  typingTimeout = window.setTimeout(() => {
-    typingInterval = window.setInterval(() => {
-      index += 1
-      placeholder.value = fullPlaceholder.slice(0, index)
+  let exampleIndex = 0
+  let charIndex = 0
+  let deleting = false
 
-      if (index >= fullPlaceholder.length) {
-        stopTyping()
+  const tick = () => {
+    const current = promptExamples[exampleIndex]
+
+    if (!deleting) {
+      charIndex += 1
+      placeholder.value = current.slice(0, charIndex)
+
+      if (charIndex >= current.length) {
+        deleting = true
+        typingResumeTimeout = window.setTimeout(tick, 1500)
+        return
       }
-    }, 18)
-  }, 240)
+    } else {
+      charIndex -= 1
+      placeholder.value = current.slice(0, charIndex)
+
+      if (charIndex <= 0) {
+        deleting = false
+        exampleIndex = (exampleIndex + 1) % promptExamples.length
+      }
+    }
+
+    typingResumeTimeout = window.setTimeout(tick, deleting ? 12 : 18)
+  }
+
+  typingTimeout = window.setTimeout(tick, 240)
 }
 
 onMounted(() => {
@@ -61,7 +90,6 @@ onBeforeUnmount(() => {
       <p class="tagline">BeThere for your users, where and when they need you.</p>
 
       <div class="input-shell">
-        <label for="home-agent-prompt">What should your user-facing agent do?</label>
         <textarea
           id="home-agent-prompt"
           v-model="prompt"
@@ -80,8 +108,6 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 .prompt-hero {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
   padding: 84px 24px 88px;
   color: #f4f7fb;
   background: var(--vp-c-bg);
@@ -113,18 +139,11 @@ h1 {
 .input-shell {
   margin-top: 52px;
   padding: 32px;
-  border: 1px solid rgba(99, 154, 194, 0.22);
-  border-radius: 28px;
-  background: rgba(10, 18, 31, 0.86);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   text-align: left;
-}
-
-label {
-  display: block;
-  margin-bottom: 16px;
-  font-weight: 600;
-  color: #f4f7fb;
 }
 
 textarea {
@@ -179,7 +198,7 @@ textarea:focus {
 
   .input-shell {
     margin-top: 40px;
-    padding: 24px;
+    padding: 24px 0 0;
   }
 
   textarea {
