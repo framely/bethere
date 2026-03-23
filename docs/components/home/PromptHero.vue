@@ -1,22 +1,74 @@
 <script setup>
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-const prompt = ref('Build a support agent for our fitness studio that handles membership questions, reschedules classes, and escalates billing issues to a human when confidence is low.')
+const fullPlaceholder = 'Build a support agent for our fitness studio that handles membership questions, reschedules classes, and escalates billing issues to a human when confidence is low.'
+const prompt = ref('')
+const placeholder = ref('')
+
+let typingTimeout
+let typingInterval
+
+function stopTyping() {
+  if (typingTimeout) {
+    clearTimeout(typingTimeout)
+    typingTimeout = undefined
+  }
+  if (typingInterval) {
+    clearInterval(typingInterval)
+    typingInterval = undefined
+  }
+}
+
+function startTyping() {
+  if (typeof window === 'undefined') {
+    placeholder.value = fullPlaceholder
+    return
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    placeholder.value = fullPlaceholder
+    return
+  }
+
+  placeholder.value = ''
+  let index = 0
+
+  typingTimeout = window.setTimeout(() => {
+    typingInterval = window.setInterval(() => {
+      index += 1
+      placeholder.value = fullPlaceholder.slice(0, index)
+
+      if (index >= fullPlaceholder.length) {
+        stopTyping()
+      }
+    }, 18)
+  }, 240)
+}
+
+onMounted(() => {
+  startTyping()
+})
+
+onBeforeUnmount(() => {
+  stopTyping()
+})
 </script>
 
 <template>
   <section class="prompt-hero">
     <div class="shell">
       <h1>Build trustworthy user-facing agent</h1>
-      <p class="tagline">Always be.there, where and when your users need you.</p>
+      <p class="tagline">BeThere for your users, where and when they need you.</p>
 
       <div class="input-shell">
         <label for="home-agent-prompt">What should your user-facing agent do?</label>
         <textarea
           id="home-agent-prompt"
           v-model="prompt"
+          @focus="stopTyping"
+          @input="stopTyping"
           spellcheck="false"
-          placeholder="Build a trustworthy user-facing agent for..."
+          :placeholder="placeholder"
         />
         <div class="actions">
           <a href="mailto:sean.wu@bethere.ai?subject=Join%20waitlist">Join waitlist</a>
@@ -30,16 +82,13 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
 .prompt-hero {
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 56px 24px 88px;
+  padding: 84px 24px 88px;
   color: #f4f7fb;
-  background:
-    radial-gradient(circle at 20% 0%, rgba(84, 210, 255, 0.16), transparent 28%),
-    radial-gradient(circle at 82% 12%, rgba(151, 136, 255, 0.12), transparent 24%),
-    linear-gradient(180deg, #060b13 0%, #08111d 100%);
+  background: var(--vp-c-bg);
 }
 
 .shell {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
@@ -54,16 +103,16 @@ h1 {
 }
 
 .tagline {
-  margin: 22px auto 0;
-  max-width: 40rem;
+  margin: 28px auto 0;
+  max-width: 34rem;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-  line-height: 1.45;
+  line-height: 1.55;
   color: #d8e6f3;
 }
 
 .input-shell {
-  margin-top: 36px;
-  padding: 28px;
+  margin-top: 52px;
+  padding: 32px;
   border: 1px solid rgba(99, 154, 194, 0.22);
   border-radius: 28px;
   background: rgba(10, 18, 31, 0.86);
@@ -73,7 +122,7 @@ h1 {
 
 label {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-weight: 600;
   color: #f4f7fb;
 }
@@ -101,7 +150,7 @@ textarea:focus {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  margin-top: 24px;
 }
 
 .actions a {
@@ -125,11 +174,12 @@ textarea:focus {
 
 @media (max-width: 719px) {
   .prompt-hero {
-    padding: 36px 18px 64px;
+    padding: 52px 18px 64px;
   }
 
   .input-shell {
-    padding: 20px;
+    margin-top: 40px;
+    padding: 24px;
   }
 
   textarea {
