@@ -24,7 +24,7 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
         />
         <div class="actions">
           <a href="https://build.opencui.io/" target="_blank" rel="noopener noreferrer">Start Building</a>
-          <a class="secondary" href="/whyopencui/">Why BeThere</a>
+          <a class="secondary" href="/whybethere/">Why BeThere</a>
         </div>
       </div>
     </div>
