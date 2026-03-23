@@ -2,7 +2,7 @@
 export const en = [
   {
     text: 'Why BeThere',
-    link: '/whyopencui/',
+    link: '/whybethere/',
   },
   {
     text: 'Guides',
