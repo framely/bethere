@@ -19,7 +19,7 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
           placeholder="Build a trustworthy user-facing agent for..."
         />
         <div class="actions">
-          <a href="https://build.opencui.io/" target="_blank" rel="noopener noreferrer">Start Building</a>
+          <a href="mailto:sean.wu@bethere.ai?subject=Join%20waitlist">Join waitlist</a>
         </div>
       </div>
     </div>
