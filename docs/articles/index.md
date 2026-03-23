@@ -11,11 +11,11 @@ layout: home
     info: {
       title:'Prompt Engineering will never be fully deterministic',
       description: ['If you are holding the hope that LLM will one day make the prompt engineering deterministic, you are holding the wrong hope. Prompt engineering is operated in a unnormalized distributed semantics space, it requires less setup, at the cost of less predictability.'],
-      image: './../images/blog/banner/prompt_engineer_not_deterministic.png',
+      image: './../images/blog/banner/prompt.png',
       author: 'Sean Wu',
       date: '5/28/2025'
     },
-    path:'./prompt-engineer-not-deterministic.md'
+    path:'./prompt-engineer-not-deterministic.html'
 },{
     info: {
       title:'Table reservation CUI design',
@@ -24,7 +24,7 @@ layout: home
       author: 'Sunny May',
       date: '4/19/2025'
     },
-    path:'./reservation-cui-design.md'
+    path:'./reservation-cui-design.html'
 },{
     info: {
       title:'Reuse reservation module to build chatbot',

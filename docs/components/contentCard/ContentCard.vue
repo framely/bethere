@@ -1,8 +1,8 @@
-<script setup >
+<script setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-const { site, frontmatter } = useData()
+const { frontmatter } = useData()
 
 const contentCard = computed(() => {
   if (Array.isArray(frontmatter.value.contentCards)) {
@@ -13,55 +13,74 @@ const contentCard = computed(() => {
 </script>
 
 <template>
-  <div v-if="contentCard.length" class="container-c">
-    <div v-for="contentCard in contentCard" :key="contentCard.details" class="contentCards">
-      <div class="contentCard-card" v-if="contentCard.left">
+  <div
+    v-if="contentCard.length"
+    class="container-c"
+  >
+    <div
+      v-for="card in contentCard"
+      :key="card.id"
+      class="contentCards"
+    >
+      <div
+        class="contentCard-card"
+        :class="{ reverse: !card.left }"
+      >
         <div class="image">
-          <img :src="contentCard.image" alt="" />
+          <img
+            :src="card.image"
+            :alt="card.title"
+          >
         </div>
         <div class="content">
-          <h2 class="title">{{ contentCard.title }}</h2>
-          <p class="desc">{{ contentCard.details }}</p>
-        </div>
-      </div>
-      <div class="contentCard-card" v-else>
-        <div class="content">
-          <h2 class="title">{{ contentCard.title }}</h2>
-          <p class="desc">{{ contentCard.details }}</p>
-        </div>
-        <div class="image">
-          <img :src="contentCard.image" alt="" />
+          <h2 class="title">
+            {{ card.title }}
+          </h2>
+          <p class="desc">
+            {{ card.details }}
+          </p>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 .container-c {
   margin: 2.5rem auto;
   padding: 0 64px;
+
   .contentCards {
     max-width: 1152px;
     margin: 0 auto;
+
     .contentCard-card {
       display: flex;
       flex-direction: row;
       align-items: center;
       padding: 4rem 0;
       gap: 4rem;
+
+      &.reverse {
+        flex-direction: row-reverse;
+      }
+
       .image {
         width: 45%;
       }
+
       .content {
         width: 55%;
         display: flex;
         flex-direction: column;
+
         .title {
           font-weight: 700;
           font-size: 2.25rem;
           line-height: 2.5rem;
           margin-bottom: 1.5rem;
         }
+
         .desc {
           color: var(--vp-c-text-2);
           font-weight: 500;
@@ -78,18 +97,28 @@ const contentCard = computed(() => {
     display: flex;
     flex-direction: column;
     padding: 0 40px;
+
     .contentCards {
+
       .contentCard-card {
         display: flex;
         flex-direction: column;
         padding: 1rem 0;
         gap: 1.5rem;
+
+        &.reverse {
+          flex-direction: column;
+        }
+
         .image {
           width: 100%;
         }
+
         .content {
           width: 100%;
           order: 1;
+          padding: 0 8px;
+          
           .title {
             font-size: 1.75rem;
           }
