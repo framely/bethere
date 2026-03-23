@@ -7,15 +7,11 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
 <template>
   <section class="prompt-hero">
     <div class="shell">
-      <p class="kicker">BeThere</p>
       <h1>Build trustworthy user-facing agent</h1>
       <p class="tagline">Always be.there, where and when your users need you.</p>
-      <p class="subtagline">
-        Describe the agent you want in plain language, then refine it into a reliable experience your team can launch.
-      </p>
 
       <div class="input-shell">
-        <label for="home-agent-prompt">What should your agent do?</label>
+        <label for="home-agent-prompt">What should your user-facing agent do?</label>
         <textarea
           id="home-agent-prompt"
           v-model="prompt"
@@ -23,8 +19,7 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
           placeholder="Build a trustworthy user-facing agent for..."
         />
         <div class="actions">
-          <a href="https://build.opencui.io/" target="_blank" rel="noopener noreferrer">Start Building</a>
-          <a class="secondary" href="/whybethere/">Why BeThere</a>
+          <a href="mailto:sean.wu@bethere.ai?subject=Join%20waitlist">Join waitlist</a>
         </div>
       </div>
     </div>
@@ -49,18 +44,10 @@ const prompt = ref('Build a support agent for our fitness studio that handles me
   text-align: center;
 }
 
-.kicker {
-  margin: 0 0 18px;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #9fdfff;
-}
-
 h1 {
   margin: 0;
   font-family: "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3.4rem, 8vw, 6rem);
+  font-size: clamp(3rem, 7vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
   color: #f7fbff;
@@ -72,14 +59,6 @@ h1 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.45;
   color: #d8e6f3;
-}
-
-.subtagline {
-  margin: 18px auto 0;
-  max-width: 42rem;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #9db0c4;
 }
 
 .input-shell {
@@ -132,17 +111,16 @@ textarea:focus {
   min-width: 150px;
   min-height: 46px;
   padding: 0 18px;
+  border: 1px solid var(--vp-button-brand-border);
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  color: #07111d;
-  background: linear-gradient(135deg, #63e6ff 0%, #32c6be 100%);
+  color: var(--vp-button-brand-text);
+  background: var(--vp-c-brand);
 }
 
-.actions a.secondary {
-  color: #eef8ff;
-  background: rgba(14, 24, 37, 0.8);
-  border: 1px solid rgba(113, 160, 196, 0.3);
+.actions a:hover {
+  background: var(--vp-c-brand-light);
 }
 
 @media (max-width: 719px) {

@@ -13,9 +13,9 @@ const toggleAppearance = function (v) {
 </script>
 
 <template #nav-bar-content-after>
-  <a :href="'https://build.opencui.io'" :target="'_blank'">
+  <a :href="'mailto:sean.wu@bethere.ai?subject=Join%20waitlist'">
     <button class="button-start">
-      Get started
+      Join waitlist
     </button>
   </a>
   <!-- <VPSwitch title="toggle dark mode" class="VPSwitchAppearance" :aria-checked="isDark" @click="toggleAppearance">
