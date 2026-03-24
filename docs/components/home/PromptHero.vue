@@ -1,6 +1,13 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
+const props = defineProps({
+  compact: {
+    type: Boolean,
+    default: false,
+  },
+})
+
 const prompt = ref('')
 const placeholder = ref('')
 const promptExamples = [
@@ -84,10 +91,15 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="prompt-hero">
+  <section
+    class="prompt-hero"
+    :class="{ compact: props.compact }"
+  >
     <div class="shell">
-      <h1>Build trustworthy user-facing agent</h1>
-      <p class="tagline">BeThere for your users, where and when they need you.</p>
+      <template v-if="!props.compact">
+        <h1>90% reliability is not enough for a user-facing agent.</h1>
+        <p class="tagline">Build deterministic agents you can trust to serve your users.</p>
+      </template>
 
       <div class="input-shell">
         <textarea
@@ -111,39 +123,74 @@ onBeforeUnmount(() => {
   padding: 84px 24px 88px;
   color: #f4f7fb;
   background: var(--vp-c-bg);
+  font-family: var(--vp-font-family-base);
+}
+
+.prompt-hero.compact {
+  padding: 0 40px;
+  color: inherit;
+  background: transparent;
 }
 
 .shell {
-  max-width: 960px;
+  max-width: 1152px;
   margin: 0 auto;
+  text-align: center;
+}
+
+.prompt-hero.compact .shell {
+  max-width: 1152px;
   text-align: center;
 }
 
 h1 {
   margin: 0;
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3rem, 7vw, 4rem);
-  line-height: 0.95;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.05em;
   color: #f7fbff;
 }
 
 .tagline {
-  margin: 28px auto 0;
-  max-width: 34rem;
+  margin: 28px 0 0;
+  max-width: 75%;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.55;
   color: #d8e6f3;
 }
 
+.prompt-hero:not(.compact) h1,
+.prompt-hero:not(.compact) .tagline {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
 .input-shell {
   margin-top: 52px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 32px;
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
   text-align: left;
+}
+
+.prompt-hero:not(.compact) .actions {
+  justify-content: flex-start;
+}
+
+.prompt-hero.compact .input-shell {
+  margin: 60px auto 0;
+  padding: 60px 24px;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
 }
 
 textarea {
@@ -196,14 +243,37 @@ textarea:focus {
     padding: 52px 18px 64px;
   }
 
+  .prompt-hero.compact {
+    padding: 0 40px;
+  }
+
   .input-shell {
     margin-top: 40px;
     padding: 24px 0 0;
   }
 
+  .prompt-hero.compact .input-shell {
+    padding: 32px 18px;
+  }
+
   textarea {
     min-height: 220px;
     padding: 18px;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .prompt-hero:not(.compact) h1,
+  .prompt-hero:not(.compact) .tagline {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .input-shell {
+    width: 100%;
   }
 }
 </style>
