@@ -2,7 +2,7 @@
 layout: home
 title: Why BeThere
 hero:
-  name: Don’t let one bad reply tarnish your brand.
+  name: Don’t let one bad reply demage your brand.
   tagline: Build user-facing agents you can trust.
 contentCards:
   - title: Programmable, deterministic interaction logic
@@ -17,8 +17,8 @@ contentCards:
     details: Powerful agents are not useful if business owners, operators, and product teams cannot build them quickly. With BeThere, they can describe what they want in plain language, refine it with simple feedback, and turn ideas into working user-facing agents fast.
     image: /images/home/idea-to-working-agent.svg
     left: true
-  - title: BeThere on every channel, all the time
-    details: Launch the same agent across web, messaging, and other customer channels without rebuilding from scratch. BeThere keeps the core experience consistent wherever your users show up.
+  - title: Any language, on every channel, all the time
+    details: Launch the same agent in any language, across web, messaging, and other customer channels without rebuilding from scratch. BeThere keeps the core experience consistent wherever your users show up.
     image: /images/home/multi-channel-agent.svg
     left: false
 cta:
