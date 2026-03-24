@@ -1,6 +1,13 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
+const props = defineProps({
+  compact: {
+    type: Boolean,
+    default: false,
+  },
+})
+
 const prompt = ref('')
 const placeholder = ref('')
 const promptExamples = [
@@ -84,10 +91,15 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="prompt-hero">
+  <section
+    class="prompt-hero"
+    :class="{ compact: props.compact }"
+  >
     <div class="shell">
-      <h1>Build trustworthy user-facing agent</h1>
-      <p class="tagline">BeThere for your users, where and when they need you.</p>
+      <template v-if="!props.compact">
+        <h1>Build user-facing agents you can trust.</h1>
+        <p class="tagline">Don’t let one random reply demage your brand.</p>
+      </template>
 
       <div class="input-shell">
         <textarea
@@ -111,6 +123,13 @@ onBeforeUnmount(() => {
   padding: 84px 24px 88px;
   color: #f4f7fb;
   background: var(--vp-c-bg);
+  font-family: var(--vp-font-family-base);
+}
+
+.prompt-hero.compact {
+  padding: 0 40px;
+  color: inherit;
+  background: transparent;
 }
 
 .shell {
@@ -119,9 +138,12 @@ onBeforeUnmount(() => {
   text-align: center;
 }
 
+.prompt-hero.compact .shell {
+  max-width: 1152px;
+}
+
 h1 {
   margin: 0;
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
   font-size: clamp(3rem, 7vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
@@ -144,6 +166,13 @@ h1 {
   background: transparent;
   box-shadow: none;
   text-align: left;
+}
+
+.prompt-hero.compact .input-shell {
+  margin: 60px auto 0;
+  padding: 60px 24px;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
 }
 
 textarea {
@@ -196,9 +225,17 @@ textarea:focus {
     padding: 52px 18px 64px;
   }
 
+  .prompt-hero.compact {
+    padding: 0 40px;
+  }
+
   .input-shell {
     margin-top: 40px;
     padding: 24px 0 0;
+  }
+
+  .prompt-hero.compact .input-shell {
+    padding: 32px 18px;
   }
 
   textarea {

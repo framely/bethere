@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import '../styles/index.scss'
+import HomeHeroAfter from './home-hero-after.vue'
 import NavContentAfter from './nav-content-after.vue'
 import HomeFeaturesAfter from './home-features-after.vue'
 import CookieConsentVue from './cookie-consent.js'
@@ -10,6 +11,7 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NavContentAfter),
+      'home-hero-after': () => h(HomeHeroAfter),
       'home-features-after': () => h(HomeFeaturesAfter),
     })
   },
