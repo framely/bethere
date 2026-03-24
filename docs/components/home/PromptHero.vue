@@ -97,8 +97,8 @@ onBeforeUnmount(() => {
   >
     <div class="shell">
       <template v-if="!props.compact">
-        <h1>Build user-facing agents you can trust.</h1>
-        <p class="tagline">Don’t let one random reply demage your brand.</p>
+        <h1>90% reliability is not enough for a user-facing agent.</h1>
+        <p class="tagline">Build deterministic agents you can trust to serve your users.</p>
       </template>
 
       <div class="input-shell">
