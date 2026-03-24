@@ -133,39 +133,57 @@ onBeforeUnmount(() => {
 }
 
 .shell {
-  max-width: 960px;
+  max-width: 1152px;
   margin: 0 auto;
   text-align: center;
 }
 
 .prompt-hero.compact .shell {
   max-width: 1152px;
+  text-align: center;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(3rem, 7vw, 4rem);
-  line-height: 0.95;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.05em;
   color: #f7fbff;
 }
 
 .tagline {
-  margin: 28px auto 0;
-  max-width: 34rem;
+  margin: 28px 0 0;
+  max-width: 75%;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.55;
   color: #d8e6f3;
 }
 
+.prompt-hero:not(.compact) h1,
+.prompt-hero:not(.compact) .tagline {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
 .input-shell {
   margin-top: 52px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 32px;
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
   text-align: left;
+}
+
+.prompt-hero:not(.compact) .actions {
+  justify-content: flex-start;
 }
 
 .prompt-hero.compact .input-shell {
@@ -241,6 +259,21 @@ textarea:focus {
   textarea {
     min-height: 220px;
     padding: 18px;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .prompt-hero:not(.compact) h1,
+  .prompt-hero:not(.compact) .tagline {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .input-shell {
+    width: 100%;
   }
 }
 </style>
