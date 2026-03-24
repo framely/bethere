@@ -154,6 +154,45 @@ html.dark {
   border-right: 1px solid var(--vp-c-divider) !important;
 }
 
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar {
+    > .wrapper {
+      padding: 0 32px;
+    }
+
+    > .container {
+      max-width: calc(var(--vp-layout-max-width) - 64px);
+
+      > .title {
+        position: static;
+        z-index: auto;
+        padding: 0;
+        width: auto;
+        height: calc(var(--vp-nav-height) - 1px);
+        background-color: transparent;
+      }
+
+      > .content {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    .divider {
+      padding-left: 0;
+    }
+  }
+
+  .VPSidebar {
+    top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px));
+    padding-top: 32px;
+  }
+
+  .VPSidebar .curtain {
+    display: none;
+  }
+}
+
 #cc-main {
   --cc-bg: var(--mcc-bg); //var(--vp-c-bg);
   /** Change font **/
