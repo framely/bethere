@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 aside: false
 title: Build trustworthy user-facing agent
 ---

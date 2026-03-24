@@ -2,16 +2,8 @@
 layout: home
 title: Why BeThere
 hero:
-  name: Why BeThere
-  tagline: The easiest way to build user-facing agents you can trust.
-  actions:
-    - theme: brand
-      text: Start Building
-      link: https://build.opencui.io/
-      type: primary
-    - theme: alt
-      text: Read the Docs
-      link: /reference/guide/index
+  name: Don’t let one bad reply tarnish your brand.
+  tagline: Build user-facing agents you can trust.
 contentCards:
   - title: Programmable, deterministic interaction logic
     details: Close enough is not good enough. You need deterministic interaction logic that can be programmed and tested. Structured conversation is how BeThere makes user-facing agent behavior reliable across real customer journeys.

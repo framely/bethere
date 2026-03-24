@@ -35,10 +35,6 @@ export default {
     
     nav: navbar.en,
     sidebar: sidebar.en,
-    // footer
-    footer: {
-      copyright: 'BeThere, Inc © 2026 All rights reserved'
-    }
   },
 
 }
