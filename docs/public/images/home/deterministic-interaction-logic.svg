@@ -1,186 +1,114 @@
 <svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="panelStroke" x1="188" y1="116" x2="1406" y2="556" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#66E3FF"/>
-      <stop offset="0.5" stop-color="#31C4C9"/>
-      <stop offset="1" stop-color="#9286FF"/>
+    <linearGradient id="stroke" x1="210" y1="122" x2="1390" y2="562" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#62E2FF"/>
+      <stop offset="0.52" stop-color="#34C7B8"/>
+      <stop offset="1" stop-color="#9287FF"/>
     </linearGradient>
-    <linearGradient id="flowStroke" x1="492" y1="340" x2="1108" y2="340" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#53DAFF"/>
-      <stop offset="0.5" stop-color="#2FC6BB"/>
-      <stop offset="1" stop-color="#9A8CFF"/>
+    <linearGradient id="panelA" x1="224" y1="138" x2="506" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#112A47"/>
+      <stop offset="1" stop-color="#0A1425"/>
     </linearGradient>
-    <linearGradient id="leftFill" x1="212" y1="146" x2="506" y2="542" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#122844"/>
-      <stop offset="1" stop-color="#0C172A"/>
+    <linearGradient id="panelB" x1="646" y1="104" x2="954" y2="564" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102A40"/>
+      <stop offset="1" stop-color="#091324"/>
     </linearGradient>
-    <linearGradient id="centerFill" x1="656" y1="120" x2="944" y2="568" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#10253F"/>
-      <stop offset="1" stop-color="#0A1528"/>
+    <linearGradient id="panelC" x1="1098" y1="134" x2="1390" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#132846"/>
+      <stop offset="1" stop-color="#0A1425"/>
     </linearGradient>
-    <linearGradient id="rightFill" x1="1098" y1="138" x2="1392" y2="548" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#12263F"/>
-      <stop offset="1" stop-color="#0B1425"/>
+    <linearGradient id="flow" x1="510" y1="342" x2="1090" y2="342" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#62E2FF"/>
+      <stop offset="0.55" stop-color="#34C7B8"/>
+      <stop offset="1" stop-color="#9287FF"/>
     </linearGradient>
-    <linearGradient id="chipFill" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#17334F"/>
-      <stop offset="1" stop-color="#0E2339"/>
-    </linearGradient>
-    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#020714" flood-opacity="0.46"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020712" flood-opacity="0.45"/>
     </filter>
-    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="12" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.325 0 0 0 0 0.855 0 0 0 0 0.996 0 0 0 0.34 0"/>
-      <feBlend in="SourceGraphic" mode="normal"/>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.39 0 0 0 0 0.89 0 0 0 0 1 0 0 0 0.35 0"/>
+      <feBlend in="SourceGraphic"/>
     </filter>
-    <filter id="violetGlow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="16" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.573 0 0 0 0 0.529 0 0 0 0 0.988 0 0 0 0.28 0"/>
-      <feBlend in="SourceGraphic" mode="normal"/>
-    </filter>
-    <marker id="arrowHead" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
-      <path d="M2 2L11 7L2 12" stroke="#79E0F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L11 7L2 12" stroke="#78E2F8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
   </defs>
 
-  <g opacity="0.58">
-    <path d="M106 360H182" stroke="#16304A" stroke-width="1.5"/>
-    <path d="M1418 360H1494" stroke="#18324C" stroke-width="1.5"/>
-    <circle cx="182" cy="360" r="3" fill="#32C6BB"/>
-    <circle cx="1418" cy="360" r="3" fill="#9286FF"/>
+  <g opacity="0.55">
+    <path d="M118 360H198" stroke="#18324C" stroke-width="1.5"/>
+    <path d="M1402 360H1482" stroke="#18324C" stroke-width="1.5"/>
+    <circle cx="198" cy="360" r="3" fill="#34C7B8"/>
+    <circle cx="1402" cy="360" r="3" fill="#9287FF"/>
   </g>
 
-  <g filter="url(#panelShadow)">
-    <rect x="188" y="132" width="324" height="392" rx="30" fill="url(#leftFill)" fill-opacity="0.96"/>
-    <rect x="188.75" y="132.75" width="322.5" height="390.5" rx="29.25" stroke="url(#panelStroke)" stroke-opacity="0.66" stroke-width="1.5"/>
-
-    <rect x="224" y="166" width="252" height="54" rx="22" fill="#0C1A2C"/>
-    <rect x="224.75" y="166.75" width="250.5" height="52.5" rx="21.25" stroke="#64E2FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <circle cx="250" cy="193" r="7" fill="#64E2FF"/>
-    <rect x="268" y="187" width="84" height="12" rx="6" fill="#ECFAFF"/>
-    <rect x="362" y="181" width="88" height="24" rx="12" fill="#112C46"/>
-    <rect x="382" y="187" width="48" height="12" rx="6" fill="#D0F3FF"/>
-
-    <rect x="224" y="242" width="252" height="78" rx="22" fill="#0C1A2C"/>
-    <rect x="224.75" y="242.75" width="250.5" height="76.5" rx="21.25" stroke="#30C4C9" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="248" y="264" width="96" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="248" y="288" width="182" height="8" rx="4" fill="#7C9BB3" fill-opacity="0.46"/>
-    <rect x="248" y="304" width="150" height="8" rx="4" fill="#7C9BB3" fill-opacity="0.32"/>
-    <rect x="386" y="262" width="64" height="38" rx="16" fill="#112944"/>
-    <path d="M406 274H430" stroke="#30C4C9" stroke-width="2.6" stroke-linecap="round"/>
-    <path d="M418 262V286" stroke="#30C4C9" stroke-width="2.6" stroke-linecap="round"/>
-
-    <rect x="224" y="342" width="252" height="112" rx="24" fill="#0C1A2C"/>
-    <rect x="224.75" y="342.75" width="250.5" height="110.5" rx="23.25" stroke="#9286FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="248" y="366" width="74" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="248" y="390" width="204" height="10" rx="5" fill="#203F5F"/>
-    <rect x="248" y="390" width="98" height="10" rx="5" fill="#64E2FF"/>
-    <circle cx="346" cy="395" r="9" fill="#64E2FF" filter="url(#cyanGlow)"/>
-    <rect x="248" y="416" width="186" height="10" rx="5" fill="#203F5F"/>
-    <rect x="248" y="416" width="142" height="10" rx="5" fill="#31C4C9"/>
-    <circle cx="390" cy="421" r="9" fill="#31C4C9" filter="url(#cyanGlow)"/>
+  <g filter="url(#shadow)">
+    <rect x="210" y="132" width="322" height="398" rx="30" fill="url(#panelA)"/>
+    <rect x="210.75" y="132.75" width="320.5" height="396.5" rx="29.25" stroke="url(#stroke)" stroke-opacity="0.66" stroke-width="1.5"/>
+    <rect x="248" y="170" width="246" height="54" rx="22" fill="#0C1A2C"/>
+    <circle cx="274" cy="197" r="8" fill="#62E2FF" filter="url(#glow)"/>
+    <text x="296" y="204" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Customer asks</text>
+    <rect x="248" y="254" width="246" height="82" rx="24" fill="#0C1A2C"/>
+    <rect x="274" y="281" width="168" height="12" rx="6" fill="#EFFBFF"/>
+    <rect x="274" y="309" width="192" height="8" rx="4" fill="#7898B2" fill-opacity="0.45"/>
+    <rect x="248" y="362" width="246" height="98" rx="24" fill="#0C1A2C"/>
+    <rect x="274" y="388" width="118" height="34" rx="17" fill="#112B43"/>
+    <text x="333" y="411" text-anchor="middle" fill="#DFF8FF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">2 people</text>
+    <rect x="274" y="434" width="158" height="10" rx="5" fill="#34C7B8"/>
   </g>
 
-  <g opacity="0.96">
-    <path d="M512 338C572 338 600 338 642 338" stroke="url(#flowStroke)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-    <path d="M516 370C564 370 592 370 628 370" stroke="#31C4C9" stroke-opacity="0.22" stroke-width="1.2" stroke-linecap="round"/>
-    <circle cx="566" cy="338" r="4" fill="#64E2FF"/>
-    <circle cx="606" cy="338" r="4" fill="#31C4C9"/>
+  <path d="M532 338C588 338 612 338 652 338" stroke="url(#flow)" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <circle cx="588" cy="338" r="4" fill="#62E2FF"/>
+  <circle cx="624" cy="338" r="4" fill="#34C7B8"/>
+
+  <g filter="url(#shadow)">
+    <rect x="642" y="100" width="316" height="464" rx="30" fill="url(#panelB)"/>
+    <rect x="642.75" y="100.75" width="314.5" height="462.5" rx="29.25" stroke="url(#stroke)" stroke-opacity="0.68" stroke-width="1.5"/>
+    <rect x="678" y="138" width="244" height="54" rx="22" fill="#0C1A2C"/>
+    <text x="800" y="172" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Calendar check</text>
+    <rect x="684" y="226" width="232" height="230" rx="24" fill="#0C1A2C"/>
+    <g fill="#203B58">
+      <rect x="714" y="266" width="44" height="36" rx="10"/>
+      <rect x="770" y="266" width="44" height="36" rx="10"/>
+      <rect x="826" y="266" width="44" height="36" rx="10"/>
+      <rect x="714" y="316" width="44" height="36" rx="10"/>
+      <rect x="770" y="316" width="44" height="36" rx="10"/>
+      <rect x="826" y="316" width="44" height="36" rx="10"/>
+      <rect x="714" y="366" width="44" height="36" rx="10"/>
+      <rect x="826" y="366" width="44" height="36" rx="10"/>
+    </g>
+    <rect x="770" y="366" width="44" height="36" rx="10" fill="#34C7B8" filter="url(#glow)"/>
+    <path d="M782 384L792 394L808 374" stroke="#071827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="706" y="478" width="188" height="38" rx="19" fill="#10283F"/>
+    <text x="800" y="503" text-anchor="middle" fill="#DFF8FF" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Only open slots offered</text>
   </g>
 
-  <g filter="url(#panelShadow)">
-    <rect x="638" y="108" width="324" height="440" rx="30" fill="url(#centerFill)" fill-opacity="0.97"/>
-    <rect x="638.75" y="108.75" width="322.5" height="438.5" rx="29.25" stroke="url(#panelStroke)" stroke-opacity="0.68" stroke-width="1.5"/>
+  <path d="M958 338C1014 338 1038 338 1078 338" stroke="url(#flow)" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <circle cx="1014" cy="338" r="4" fill="#34C7B8"/>
+  <circle cx="1050" cy="338" r="4" fill="#9287FF"/>
 
-    <rect x="674" y="144" width="252" height="56" rx="22" fill="#0C1A2C"/>
-    <rect x="674.75" y="144.75" width="250.5" height="54.5" rx="21.25" stroke="#64E2FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="700" y="166" width="92" height="12" rx="6" fill="#EFFBFF"/>
-    <rect x="812" y="158" width="88" height="28" rx="14" fill="#102842"/>
-    <circle cx="875" cy="172" r="8" fill="#64E2FF" filter="url(#cyanGlow)"/>
-
-    <rect x="674" y="224" width="252" height="118" rx="24" fill="#0C1A2C"/>
-    <rect x="674.75" y="224.75" width="250.5" height="116.5" rx="23.25" stroke="#31C4C9" stroke-opacity="0.24" stroke-width="1.5"/>
-    <circle cx="724" cy="282" r="18" fill="#112C46"/>
-    <circle cx="800" cy="250" r="18" fill="#112C46"/>
-    <circle cx="800" cy="314" r="18" fill="#112C46"/>
-    <circle cx="876" cy="282" r="18" fill="#112C46"/>
-    <path d="M742 274L782 258" stroke="#64E2FF" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M742 290L782 306" stroke="#31C4C9" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M818 258L858 274" stroke="#9286FF" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M818 306L858 290" stroke="#64E2FF" stroke-width="2.4" stroke-linecap="round"/>
-    <circle cx="724" cy="282" r="6" fill="#64E2FF" filter="url(#cyanGlow)"/>
-    <circle cx="800" cy="250" r="6" fill="#31C4C9" filter="url(#cyanGlow)"/>
-    <circle cx="800" cy="314" r="6" fill="#9286FF" filter="url(#violetGlow)"/>
-    <circle cx="876" cy="282" r="6" fill="#64E2FF" filter="url(#cyanGlow)"/>
-
-    <rect x="674" y="362" width="252" height="70" rx="22" fill="#0C1A2C"/>
-    <rect x="674.75" y="362.75" width="250.5" height="68.5" rx="21.25" stroke="#64E2FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="700" y="388" width="20" height="20" rx="10" fill="#12324C"/>
-    <path d="M707 398L712 403L718 393" stroke="#64E2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="734" y="392" width="98" height="12" rx="6" fill="#EFFBFF"/>
-    <rect x="850" y="392" width="44" height="12" rx="6" fill="#2A4E6B"/>
-
-    <rect x="674" y="450" width="252" height="70" rx="22" fill="#0C1A2C"/>
-    <rect x="674.75" y="450.75" width="250.5" height="68.5" rx="21.25" stroke="#9286FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="700" y="476" width="20" height="20" rx="10" fill="#12324C"/>
-    <path d="M707 486L712 491L718 481" stroke="#31C4C9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="734" y="480" width="112" height="12" rx="6" fill="#EFFBFF"/>
-    <rect x="860" y="474" width="34" height="24" rx="12" fill="#12233A"/>
-    <circle cx="881" cy="486" r="8" fill="#9286FF" filter="url(#violetGlow)"/>
-  </g>
-
-  <g opacity="0.96">
-    <path d="M962 338C1022 338 1050 338 1092 338" stroke="url(#flowStroke)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-    <path d="M966 370C1014 370 1042 370 1078 370" stroke="#9286FF" stroke-opacity="0.22" stroke-width="1.2" stroke-linecap="round"/>
-    <circle cx="1016" cy="338" r="4" fill="#31C4C9"/>
-    <circle cx="1056" cy="338" r="4" fill="#9286FF"/>
-  </g>
-
-  <g filter="url(#panelShadow)">
-    <rect x="1088" y="126" width="324" height="404" rx="30" fill="url(#rightFill)" fill-opacity="0.97"/>
-    <rect x="1088.75" y="126.75" width="322.5" height="402.5" rx="29.25" stroke="url(#panelStroke)" stroke-opacity="0.68" stroke-width="1.5"/>
-
-    <rect x="1124" y="160" width="252" height="58" rx="22" fill="#0C1A2C"/>
-    <rect x="1124.75" y="160.75" width="250.5" height="56.5" rx="21.25" stroke="#64E2FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1148" y="183" width="102" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="1288" y="176" width="62" height="26" rx="13" fill="#10314C"/>
-    <rect x="1302" y="183" width="34" height="12" rx="6" fill="#D5F4FF"/>
-
-    <rect x="1124" y="242" width="116" height="120" rx="24" fill="#0C1A2C"/>
-    <rect x="1124.75" y="242.75" width="114.5" height="118.5" rx="23.25" stroke="#31C4C9" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1150" y="270" width="64" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="1150" y="296" width="64" height="10" rx="5" fill="#21405F"/>
-    <rect x="1150" y="320" width="38" height="28" rx="14" fill="#112B46"/>
-    <path d="M1164 334L1172 342L1188 326" stroke="#31C4C9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <rect x="1258" y="242" width="118" height="120" rx="24" fill="#0C1A2C"/>
-    <rect x="1258.75" y="242.75" width="116.5" height="118.5" rx="23.25" stroke="#64E2FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1284" y="270" width="68" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="1284" y="296" width="68" height="10" rx="5" fill="#21405F"/>
-    <rect x="1284" y="320" width="42" height="28" rx="14" fill="#112B46"/>
-    <path d="M1298 334L1306 342L1322 326" stroke="#64E2FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <rect x="1124" y="386" width="252" height="106" rx="24" fill="#0C1A2C"/>
-    <rect x="1124.75" y="386.75" width="250.5" height="104.5" rx="23.25" stroke="#9286FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1148" y="412" width="94" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="1148" y="438" width="200" height="8" rx="4" fill="#223F5D"/>
-    <rect x="1148" y="438" width="174" height="8" rx="4" fill="url(#flowStroke)"/>
-    <circle cx="1322" cy="442" r="9" fill="#9286FF" filter="url(#violetGlow)"/>
-    <rect x="1148" y="458" width="128" height="8" rx="4" fill="#7D9CB3" fill-opacity="0.42"/>
+  <g filter="url(#shadow)">
+    <rect x="1068" y="132" width="322" height="398" rx="30" fill="url(#panelC)"/>
+    <rect x="1068.75" y="132.75" width="320.5" height="396.5" rx="29.25" stroke="url(#stroke)" stroke-opacity="0.68" stroke-width="1.5"/>
+    <rect x="1106" y="170" width="246" height="54" rx="22" fill="#0C1A2C"/>
+    <text x="1229" y="204" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Booking confirmed</text>
+    <rect x="1106" y="258" width="246" height="86" rx="24" fill="#0C1A2C"/>
+    <path d="M1140 300L1160 320L1202 278" stroke="#62E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1226" y="282" width="86" height="12" rx="6" fill="#EFFBFF"/>
+    <rect x="1226" y="308" width="62" height="8" rx="4" fill="#7898B2" fill-opacity="0.45"/>
+    <rect x="1106" y="374" width="246" height="86" rx="24" fill="#0C1A2C"/>
+    <rect x="1132" y="398" width="76" height="34" rx="17" fill="#112B43"/>
+    <text x="1170" y="421" text-anchor="middle" fill="#DFF8FF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Follow up</text>
+    <rect x="1228" y="398" width="86" height="34" rx="17" fill="#1E3157"/>
+    <text x="1271" y="421" text-anchor="middle" fill="#E7E2FF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Staff note</text>
   </g>
 
   <g>
-    <rect x="234" y="562" width="232" height="42" rx="21" fill="#08111E"/>
-    <rect x="234.75" y="562.75" width="230.5" height="40.5" rx="20.25" stroke="#64E2FF" stroke-opacity="0.34" stroke-width="1.5"/>
-    <text x="350" y="589" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Customer inputs</text>
-
-    <rect x="684" y="562" width="232" height="42" rx="21" fill="#08111E"/>
-    <rect x="684.75" y="562.75" width="230.5" height="40.5" rx="20.25" stroke="#31C4C9" stroke-opacity="0.34" stroke-width="1.5"/>
-    <text x="800" y="589" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Deterministic logic</text>
-
-    <rect x="1134" y="562" width="232" height="42" rx="21" fill="#08111E"/>
-    <rect x="1134.75" y="562.75" width="230.5" height="40.5" rx="20.25" stroke="#9286FF" stroke-opacity="0.34" stroke-width="1.5"/>
-    <text x="1250" y="589" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Reliable journeys</text>
+    <rect x="264" y="588" width="214" height="42" rx="21" fill="#08111E"/>
+    <text x="371" y="615" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Request details</text>
+    <rect x="693" y="588" width="214" height="42" rx="21" fill="#08111E"/>
+    <text x="800" y="615" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Calendar-safe logic</text>
+    <rect x="1122" y="588" width="214" height="42" rx="21" fill="#08111E"/>
+    <text x="1229" y="615" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Confirmed appointment</text>
   </g>
 </svg>

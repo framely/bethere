@@ -1,11 +1,11 @@
 ---
 layout: home
 aside: false
-title: Build trustworthy user-facing agent
+title: AI receptionist for service businesses
 promptHero: true
 columnFooter:
   - title: BeThere
-    tagline: Build, configure, and operate trustworthy user-facing agents today.
+    tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
     logo: /images/logo.png
     footerItems:
       - title: Social

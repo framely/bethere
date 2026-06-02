@@ -7,40 +7,40 @@ layout: home
 </script>
 
 <Pricing :pricingPlan="{
-    title:'Simple membership billing for builders and agents',
-    tagline: 'Usage-based pricing for OpenCUI-hosted agents.',
+    title:'Simple pricing for AI receptionists',
+    tagline: 'Usage-based pricing for BeThere-hosted AI receptionists.',
     cards: [
       {
-        package:'Build',
+        package:'Configure',
         price: '$20',
         badge: '/mo per builder',
-        tagline: 'Everything you need to build, test and sell conversational components.',
+        tagline: 'Everything you need to create, test, and refine an AI receptionist.',
         features: [
-          'Public modules',
-          'Public chatbot',
-          'Dual process support',
+          'Receptionist setup',
+          'Calendar configuration',
+          'Reliable conversation logic',
           'Deploy to test environment',
           'Version control',
           'Knowledgebase',
           'Multiple languages',
           'Basic support',
-          'Open sourced NLU models',
+          'Managed AI models',
         ],
         buttonText: 'Start 30-day trial',
         link: 'https://build.opencui.io'
       },
       {
-        package:'Serve',
+        package:'Deploy',
         price: '$50',
-        badge: '/mo per agent',
-        tagline: 'Everything you need to serve users with imported conversational experiences.',
+        badge: '/mo per receptionist',
+        tagline: 'Everything you need to serve customers through live messaging channels.',
         features: [
           'Production environment',
           'Unlimited dependency update',
           'Quick-start deployment',
-          'Managed NLU models',
-          'Channel integrations',
-          'Contact center integration',
+          'Managed AI models',
+          'Messaging channel integrations',
+          'Human handoff integration',
           'Priority support',
           '50k messages/mo',
           'Usage based billing beyond that',
@@ -49,12 +49,12 @@ layout: home
         link: 'https://build.opencui.io'
       },
       {
-        package:'Developement',
+        package:'Custom',
         price: 'Custom',
         badge: '',
-        tagline: 'Anything else needed, including enterprise-grade integrations and private deployments.',
+        tagline: 'For advanced integrations, enterprise controls, and private deployments.',
         features: [
-          'Export agent for private deployment',
+          'Export receptionist for private deployment',
           'Bring your own LLM',
           '1-1 training and onboarding',
           'Integrations development',

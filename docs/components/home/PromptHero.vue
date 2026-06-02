@@ -11,9 +11,9 @@ const props = defineProps({
 const prompt = ref('')
 const placeholder = ref('')
 const promptExamples = [
-  'Build a support agent for our fitness studio that handles membership questions, reschedules classes, and escalates billing issues to a human when confidence is low.',
-  'Create a multilingual retail agent that answers delivery questions, recommends products, and routes refund issues to support.',
-  'Launch a property management agent that triages maintenance requests, updates tenants, and books vendor visits automatically.',
+  'Create an AI receptionist for my salon that books appointments, checks Google Calendar, and follows up on Messenger.',
+  'Launch an AI receptionist for my restaurant that answers reservation questions and keeps the calendar up to date.',
+  'Build an AI receptionist for my clinic that handles intake, schedules visits, and escalates urgent messages to staff.',
 ]
 
 let typingTimeout
@@ -97,8 +97,8 @@ onBeforeUnmount(() => {
   >
     <div class="shell">
       <template v-if="!props.compact">
-        <h1>90% reliability is not enough for a user-facing agent.</h1>
-        <p class="tagline">Build deterministic agents you can trust to serve your users.</p>
+        <h1>Launch an AI receptionist for your business in minutes.</h1>
+        <p class="tagline">Connect your calendar and customer messaging channels, no coding required.</p>
       </template>
 
       <div class="input-shell">

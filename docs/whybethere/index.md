@@ -2,32 +2,32 @@
 layout: home
 title: Why BeThere
 hero:
-  name: Don’t let one bad reply demage your brand.
-  tagline: Build user-facing agents you can trust.
+  name: Don’t let one bad reply damage your brand.
+  tagline: Launch an AI receptionist you can trust with real customers.
 contentCards:
-  - title: Programmable, deterministic interaction logic
-    details: Close enough is not good enough. You need deterministic interaction logic that can be programmed and tested. Structured conversation is how BeThere makes user-facing agent behavior reliable across real customer journeys.
+  - title: Book appointments without double-booking
+    details: BeThere connects to your calendar so your AI receptionist can check availability, collect the right details, and reserve time safely before customers are confirmed.
     image: /images/home/deterministic-interaction-logic.svg
     left: true
-  - title: Agentic dialog understanding that truly understands
-    details: BeThere uses an agentic dialog understanding pipeline so your agent can understand the nuances of your culture, domain, and business. When needed, you can use natural language to prompt the LLM and fix remaining understanding quirks.
+  - title: Understand the request, then choose the right action
+    details: Your receptionist can answer common questions, book appointments, follow up, or escalate to staff based on your business rules and the customer’s message.
     image: /images/home/agentic-dialog-understanding.svg
     left: false
-  - title: Describe the agent you want. BeThere builds it.
-    details: Powerful agents are not useful if business owners, operators, and product teams cannot build them quickly. With BeThere, they can describe what they want in plain language, refine it with simple feedback, and turn ideas into working user-facing agents fast.
+  - title: Describe your business. BeThere builds the receptionist.
+    details: Tell BeThere what your business does, what customers ask, and which accounts to connect. The platform turns that into a working receptionist you can test and refine.
     image: /images/home/idea-to-working-agent.svg
     left: true
-  - title: Any language, on every channel, all the time
-    details: Launch the same agent in any language, across web, messaging, and other customer channels without rebuilding from scratch. BeThere keeps the core experience consistent wherever your users show up.
+  - title: One receptionist across every customer channel
+    details: Deploy the same receptionist across web chat, Messenger, WhatsApp, Google Business, and other channels while keeping the booking and handoff behavior consistent.
     image: /images/home/multi-channel-agent.svg
     left: false
 cta:
-  - details: Tell us your idea, refine it in plain language, and ship a user-facing agent you can trust.
-    title: Build with BeThere
+  - details: Tell us about your business, connect your calendar and channels, and launch an AI receptionist you can trust.
+    title: Build my receptionist
     link: https://build.opencui.io/
 columnFooter:
   - title: BeThere
-    tagline: Vibe build, configure, and operate trustworthy user-facing agents today.
+    tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
     logo: /images/logo.png
     footerItems:
       - title: Social

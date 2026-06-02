@@ -1,186 +1,84 @@
 <svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="panelStroke" x1="194" y1="112" x2="1408" y2="564" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#66E5FF"/>
-      <stop offset="0.5" stop-color="#2FC8BE"/>
-      <stop offset="1" stop-color="#9889FF"/>
+    <linearGradient id="stroke" x1="244" y1="112" x2="1356" y2="596" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#62E2FF"/>
+      <stop offset="0.52" stop-color="#34C7B8"/>
+      <stop offset="1" stop-color="#9287FF"/>
     </linearGradient>
-    <linearGradient id="flowStroke" x1="518" y1="340" x2="1084" y2="340" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#59DCFF"/>
-      <stop offset="0.5" stop-color="#2FC8BE"/>
-      <stop offset="1" stop-color="#9C8DFF"/>
-    </linearGradient>
-    <linearGradient id="leftFill" x1="226" y1="148" x2="502" y2="540" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#112846"/>
-      <stop offset="1" stop-color="#0B1527"/>
-    </linearGradient>
-    <linearGradient id="midFill" x1="650" y1="112" x2="948" y2="566" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#102540"/>
-      <stop offset="1" stop-color="#0A1425"/>
-    </linearGradient>
-    <linearGradient id="rightFill" x1="1094" y1="130" x2="1392" y2="548" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#12263F"/>
-      <stop offset="1" stop-color="#0A1425"/>
-    </linearGradient>
-    <linearGradient id="chipFill" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#17334F"/>
-      <stop offset="1" stop-color="#102238"/>
-    </linearGradient>
-    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#030813" flood-opacity="0.44"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020712" flood-opacity="0.45"/>
     </filter>
-    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="12" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.349 0 0 0 0 0.867 0 0 0 0 0.996 0 0 0 0.34 0"/>
-      <feBlend in="SourceGraphic" mode="normal"/>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.39 0 0 0 0 0.89 0 0 0 0 1 0 0 0 0.33 0"/>
+      <feBlend in="SourceGraphic"/>
     </filter>
-    <filter id="violetGlow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="15" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.592 0 0 0 0 0.533 0 0 0 0 0.996 0 0 0 0.28 0"/>
-      <feBlend in="SourceGraphic" mode="normal"/>
-    </filter>
-    <marker id="arrowHead" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
-      <path d="M2 2L11 7L2 12" stroke="#79E1FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </marker>
   </defs>
 
-  <g opacity="0.58">
-    <path d="M108 360H184" stroke="#183049" stroke-width="1.5"/>
-    <path d="M1416 360H1492" stroke="#18324C" stroke-width="1.5"/>
-    <circle cx="184" cy="360" r="3" fill="#2FC8BE"/>
-    <circle cx="1416" cy="360" r="3" fill="#9889FF"/>
+  <g opacity="0.66" stroke-width="2" stroke-linecap="round">
+    <path d="M800 342C690 250 594 226 482 216" stroke="#62E2FF"/>
+    <path d="M800 342C684 342 588 342 466 342" stroke="#34C7B8"/>
+    <path d="M800 342C690 438 594 476 482 488" stroke="#9287FF"/>
+    <path d="M800 342C910 250 1006 226 1118 216" stroke="#62E2FF"/>
+    <path d="M800 342C916 342 1012 342 1134 342" stroke="#34C7B8"/>
+    <path d="M800 342C910 438 1006 476 1118 488" stroke="#9287FF"/>
   </g>
 
-  <g filter="url(#panelShadow)">
-    <rect x="194" y="128" width="324" height="404" rx="30" fill="url(#leftFill)" fill-opacity="0.98"/>
-    <rect x="194.75" y="128.75" width="322.5" height="402.5" rx="29.25" stroke="url(#panelStroke)" stroke-opacity="0.66" stroke-width="1.5"/>
-
-    <rect x="230" y="164" width="252" height="56" rx="22" fill="#0C1A2C"/>
-    <rect x="230.75" y="164.75" width="250.5" height="54.5" rx="21.25" stroke="#66E5FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="254" y="186" width="96" height="12" rx="6" fill="#EEF9FF"/>
-    <rect x="388" y="178" width="68" height="28" rx="14" fill="#122E48"/>
-    <rect x="404" y="186" width="36" height="12" rx="6" fill="#D5F4FF"/>
-
-    <rect x="230" y="244" width="252" height="122" rx="24" fill="#0C1A2C"/>
-    <rect x="230.75" y="244.75" width="250.5" height="120.5" rx="23.25" stroke="#2FC8BE" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="254" y="268" width="88" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="254" y="294" width="156" height="8" rx="4" fill="#244361"/>
-    <rect x="254" y="316" width="80" height="36" rx="18" fill="url(#chipFill)"/>
-    <rect x="254.75" y="316.75" width="78.5" height="34.5" rx="17.25" stroke="#66E5FF" stroke-opacity="0.28" stroke-width="1.5"/>
-    <rect x="272" y="328" width="44" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="352" y="316" width="104" height="36" rx="18" fill="url(#chipFill)"/>
-    <rect x="352.75" y="316.75" width="102.5" height="34.5" rx="17.25" stroke="#9889FF" stroke-opacity="0.28" stroke-width="1.5"/>
-    <rect x="376" y="328" width="56" height="12" rx="6" fill="#E8E2FF"/>
-
-    <rect x="230" y="388" width="252" height="108" rx="24" fill="#0C1A2C"/>
-    <rect x="230.75" y="388.75" width="250.5" height="106.5" rx="23.25" stroke="#66E5FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="254" y="414" width="88" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="254" y="440" width="202" height="8" rx="4" fill="#223F5C"/>
-    <rect x="254" y="440" width="162" height="8" rx="4" fill="#2FC8BE"/>
-    <circle cx="416" cy="444" r="9" fill="#2FC8BE" filter="url(#cyanGlow)"/>
-    <rect x="254" y="460" width="136" height="8" rx="4" fill="#7C9CB4" fill-opacity="0.42"/>
+  <g filter="url(#shadow)">
+    <circle cx="800" cy="342" r="142" fill="#0B1628"/>
+    <circle cx="800" cy="342" r="141.25" stroke="url(#stroke)" stroke-opacity="0.7" stroke-width="1.5"/>
+    <circle cx="800" cy="286" r="38" fill="#12324C"/>
+    <path d="M780 286H820" stroke="#62E2FF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M800 266V306" stroke="#62E2FF" stroke-width="5" stroke-linecap="round"/>
+    <text x="800" y="360" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800">AI receptionist</text>
+    <text x="800" y="396" text-anchor="middle" fill="#A9C0D3" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">one setup, many channels</text>
   </g>
 
-  <g opacity="0.96">
-    <path d="M518 338C578 338 606 338 648 338" stroke="url(#flowStroke)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-    <path d="M522 370C570 370 598 370 634 370" stroke="#2FC8BE" stroke-opacity="0.22" stroke-width="1.2" stroke-linecap="round"/>
-    <circle cx="572" cy="338" r="4" fill="#66E5FF"/>
-    <circle cx="612" cy="338" r="4" fill="#2FC8BE"/>
+  <g filter="url(#shadow)">
+    <rect x="270" y="152" width="224" height="112" rx="28" fill="#0C1A2C"/>
+    <rect x="270.75" y="152.75" width="222.5" height="110.5" rx="27.25" stroke="#62E2FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="316" cy="208" r="22" fill="#12324C"/>
+    <text x="382" y="216" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">Web chat</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="242" y="288" width="224" height="112" rx="28" fill="#0C1A2C"/>
+    <rect x="242.75" y="288.75" width="222.5" height="110.5" rx="27.25" stroke="#34C7B8" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="288" cy="344" r="22" fill="#12324C"/>
+    <text x="354" y="352" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">Messenger</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="270" y="424" width="224" height="112" rx="28" fill="#0C1A2C"/>
+    <rect x="270.75" y="424.75" width="222.5" height="110.5" rx="27.25" stroke="#9287FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="316" cy="480" r="22" fill="#1F3158"/>
+    <text x="382" y="488" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">WhatsApp</text>
   </g>
 
-  <g filter="url(#panelShadow)">
-    <rect x="640" y="108" width="320" height="444" rx="30" fill="url(#midFill)" fill-opacity="0.98"/>
-    <rect x="640.75" y="108.75" width="318.5" height="442.5" rx="29.25" stroke="url(#panelStroke)" stroke-opacity="0.68" stroke-width="1.5"/>
-
-    <rect x="676" y="144" width="248" height="56" rx="22" fill="#0C1A2C"/>
-    <rect x="676.75" y="144.75" width="246.5" height="54.5" rx="21.25" stroke="#66E5FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="704" y="166" width="92" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="832" y="158" width="66" height="28" rx="14" fill="#122E48"/>
-    <rect x="848" y="166" width="34" height="12" rx="6" fill="#D5F4FF"/>
-
-    <circle cx="800" cy="300" r="88" fill="#0C1A2C"/>
-    <circle cx="800" cy="300" r="87.25" stroke="#66E5FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <circle cx="800" cy="300" r="58" fill="#112C46"/>
-    <circle cx="800" cy="300" r="8" fill="#66E5FF" filter="url(#cyanGlow)"/>
-    <path d="M800 242V272" stroke="#66E5FF" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M858 300H828" stroke="#2FC8BE" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M800 358V328" stroke="#9889FF" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M742 300H772" stroke="#66E5FF" stroke-width="2.4" stroke-linecap="round"/>
-    <circle cx="800" cy="230" r="14" fill="#122E48"/>
-    <circle cx="870" cy="300" r="14" fill="#122E48"/>
-    <circle cx="800" cy="370" r="14" fill="#122E48"/>
-    <circle cx="730" cy="300" r="14" fill="#122E48"/>
-    <circle cx="800" cy="230" r="5" fill="#66E5FF" filter="url(#cyanGlow)"/>
-    <circle cx="870" cy="300" r="5" fill="#2FC8BE" filter="url(#cyanGlow)"/>
-    <circle cx="800" cy="370" r="5" fill="#9889FF" filter="url(#violetGlow)"/>
-    <circle cx="730" cy="300" r="5" fill="#66E5FF" filter="url(#cyanGlow)"/>
-
-    <rect x="676" y="416" width="248" height="64" rx="22" fill="#0C1A2C"/>
-    <rect x="676.75" y="416.75" width="246.5" height="62.5" rx="21.25" stroke="#2FC8BE" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="702" y="442" width="20" height="12" rx="6" fill="#2FC8BE"/>
-    <rect x="734" y="442" width="94" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="846" y="436" width="52" height="24" rx="12" fill="#13283F"/>
-    <circle cx="876" cy="448" r="8" fill="#9889FF" filter="url(#violetGlow)"/>
-
-    <rect x="676" y="496" width="248" height="30" rx="15" fill="#0C1A2C"/>
-    <rect x="676.75" y="496.75" width="246.5" height="28.5" rx="14.25" stroke="#66E5FF" stroke-opacity="0.18" stroke-width="1.5"/>
-    <rect x="698" y="505" width="68" height="12" rx="6" fill="#F0FBFF"/>
-    <rect x="782" y="505" width="58" height="12" rx="6" fill="#23405D"/>
-    <rect x="856" y="505" width="42" height="12" rx="6" fill="#E9E2FF"/>
+  <g filter="url(#shadow)">
+    <rect x="1106" y="152" width="224" height="112" rx="28" fill="#0C1A2C"/>
+    <rect x="1106.75" y="152.75" width="222.5" height="110.5" rx="27.25" stroke="#62E2FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="1152" cy="208" r="22" fill="#12324C"/>
+    <text x="1218" y="216" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">Calendar</text>
   </g>
-
-  <g opacity="0.96">
-    <path d="M960 338C1020 338 1048 338 1090 338" stroke="url(#flowStroke)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-    <path d="M964 370C1012 370 1040 370 1076 370" stroke="#9889FF" stroke-opacity="0.22" stroke-width="1.2" stroke-linecap="round"/>
-    <circle cx="1014" cy="338" r="4" fill="#2FC8BE"/>
-    <circle cx="1054" cy="338" r="4" fill="#9889FF"/>
+  <g filter="url(#shadow)">
+    <rect x="1134" y="288" width="224" height="112" rx="28" fill="#0C1A2C"/>
+    <rect x="1134.75" y="288.75" width="222.5" height="110.5" rx="27.25" stroke="#34C7B8" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="1180" cy="344" r="22" fill="#12324C"/>
+    <text x="1246" y="352" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">Staff</text>
   </g>
-
-  <g filter="url(#panelShadow)">
-    <rect x="1084" y="126" width="324" height="408" rx="30" fill="url(#rightFill)" fill-opacity="0.98"/>
-    <rect x="1084.75" y="126.75" width="322.5" height="406.5" rx="29.25" stroke="url(#panelStroke)" stroke-opacity="0.68" stroke-width="1.5"/>
-
-    <rect x="1120" y="160" width="252" height="86" rx="24" fill="#0C1A2C"/>
-    <rect x="1120.75" y="160.75" width="250.5" height="84.5" rx="23.25" stroke="#66E5FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1146" y="184" width="46" height="32" rx="12" fill="#132E48"/>
-    <rect x="1156" y="194" width="26" height="12" rx="6" fill="#D5F4FF"/>
-    <rect x="1212" y="182" width="88" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="1212" y="204" width="124" height="8" rx="4" fill="#244361"/>
-
-    <rect x="1120" y="264" width="252" height="86" rx="24" fill="#0C1A2C"/>
-    <rect x="1120.75" y="264.75" width="250.5" height="84.5" rx="23.25" stroke="#2FC8BE" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1146" y="288" width="46" height="32" rx="12" fill="#132E48"/>
-    <path d="M1158 304H1180" stroke="#2FC8BE" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M1169 293V315" stroke="#2FC8BE" stroke-width="2.4" stroke-linecap="round"/>
-    <rect x="1212" y="286" width="92" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="1212" y="308" width="132" height="8" rx="4" fill="#244361"/>
-
-    <rect x="1120" y="368" width="252" height="86" rx="24" fill="#0C1A2C"/>
-    <rect x="1120.75" y="368.75" width="250.5" height="84.5" rx="23.25" stroke="#9889FF" stroke-opacity="0.24" stroke-width="1.5"/>
-    <rect x="1146" y="392" width="46" height="32" rx="12" fill="#132E48"/>
-    <path d="M1158 412L1168 420L1180 402" stroke="#9889FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="1212" y="390" width="84" height="10" rx="5" fill="#F0FBFF"/>
-    <rect x="1212" y="412" width="144" height="8" rx="4" fill="#244361"/>
-
-    <path d="M1088 205C1046 205 1010 226 996 258" stroke="#66E5FF" stroke-opacity="0.26" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M1088 307C1036 307 1002 306 978 306" stroke="#2FC8BE" stroke-opacity="0.24" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M1088 411C1044 411 1008 390 994 358" stroke="#9889FF" stroke-opacity="0.24" stroke-width="1.5" stroke-linecap="round"/>
-    <circle cx="996" cy="258" r="4" fill="#66E5FF"/>
-    <circle cx="978" cy="306" r="4" fill="#2FC8BE"/>
-    <circle cx="994" cy="358" r="4" fill="#9889FF"/>
+  <g filter="url(#shadow)">
+    <rect x="1106" y="424" width="224" height="112" rx="28" fill="#0C1A2C"/>
+    <rect x="1106.75" y="424.75" width="222.5" height="110.5" rx="27.25" stroke="#9287FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="1152" cy="480" r="22" fill="#1F3158"/>
+    <text x="1218" y="488" text-anchor="middle" fill="#EFFBFF" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">Google Biz</text>
   </g>
 
   <g>
-    <rect x="236" y="562" width="240" height="42" rx="21" fill="#08111E"/>
-    <rect x="236.75" y="562.75" width="238.5" height="40.5" rx="20.25" stroke="#66E5FF" stroke-opacity="0.34" stroke-width="1.5"/>
-    <text x="356" y="589" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Single agent definition</text>
-
-    <rect x="680" y="562" width="240" height="42" rx="21" fill="#08111E"/>
-    <rect x="680.75" y="562.75" width="238.5" height="40.5" rx="20.25" stroke="#2FC8BE" stroke-opacity="0.34" stroke-width="1.5"/>
-    <text x="800" y="589" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Channel orchestration</text>
-
-    <rect x="1124" y="562" width="240" height="42" rx="21" fill="#08111E"/>
-    <rect x="1124.75" y="562.75" width="238.5" height="40.5" rx="20.25" stroke="#9889FF" stroke-opacity="0.34" stroke-width="1.5"/>
-    <text x="1244" y="589" text-anchor="middle" fill="#F1FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Consistent channels</text>
+    <circle cx="800" cy="342" r="8" fill="#62E2FF" filter="url(#glow)"/>
+    <circle cx="466" cy="342" r="5" fill="#34C7B8"/>
+    <circle cx="1134" cy="342" r="5" fill="#34C7B8"/>
+    <circle cx="482" cy="216" r="5" fill="#62E2FF"/>
+    <circle cx="1118" cy="216" r="5" fill="#62E2FF"/>
+    <circle cx="482" cy="488" r="5" fill="#9287FF"/>
+    <circle cx="1118" cy="488" r="5" fill="#9287FF"/>
   </g>
 </svg>

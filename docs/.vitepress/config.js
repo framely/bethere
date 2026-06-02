@@ -20,7 +20,7 @@ export default {
       gtag('config', 'G-L6RW3F0FPM');`
     ]
   ],
-  description: 'Type-based Approach for Chatbot Development',
+  description: 'AI receptionist for service businesses, connected to calendars and messaging channels',
   lastUpdated: '上次更新时间', // string | boolean
   docsDir: 'docs',
   themeConfig: {
