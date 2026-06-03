@@ -3,6 +3,8 @@ layout: home
 aside: false
 title: AI receptionist for service businesses
 promptHero: true
+homeVideo: /videos/dhl_1015.mp4
+homeVideoPoster: /images/home/dhl_1015-cover.png
 contentCardsEyebrow: What Happens After The Prompt
 contentCardsTitle: Three things a real receptionist has to get right.
 contentCardsIntro: "BeThere keeps the AI focused on the work: understand the request, follow the rules, and finish the job in the systems your team already uses."
