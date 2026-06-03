@@ -3,23 +3,37 @@ layout: home
 aside: false
 title: AI receptionist for service businesses
 promptHero: true
+contentCardsEyebrow: What Happens After The Prompt
+contentCardsTitle: Three things a real receptionist has to get right.
+contentCardsIntro: "BeThere keeps the AI focused on the work: understand the request, follow the rules, and finish the job in the systems your team already uses."
 contentCards:
-  - title: Book appointments without double-booking
-    details: BeThere connects to your calendar so your AI receptionist can check availability, collect the right details, and reserve time safely before customers are confirmed.
+  - step: 01
+    title: Understand the ask
+    details: Turn messy customer messages into a clear service, time, customer profile, and next step.
     image: /images/home/deterministic-interaction-logic.svg
+    outcomeText: No half-finished booking requests.
+    points:
+      - Structured intake
+      - Missing details requested
     left: true
-  - title: Understand the request, then choose the right action
-    details: Your receptionist can answer common questions, book appointments, follow up, or escalate to staff based on your business rules and the customer's message.
+  - step: 02
+    title: Stay inside the rules
+    details: Use calendar availability, service duration, lead time, staff assignment, and escalation policies as guardrails.
     image: /images/home/agentic-dialog-understanding.svg
+    outcomeText: Valid options only. No invented policy.
+    points:
+      - Calendar-safe choices
+      - Escalation for exceptions
     left: false
-  - title: Describe your business. BeThere builds the receptionist.
-    details: Tell BeThere what your business does, what customers ask, and which accounts to connect. The platform turns that into a working receptionist you can test and refine.
+  - step: 03
+    title: Finish the job
+    details: Confirm the booking, write it to the calendar, send follow-up, and keep context for staff handoff.
     image: /images/home/idea-to-working-agent.svg
+    outcomeText: The chat becomes operational work.
+    points:
+      - Confirmed actions
+      - Shared conversation context
     left: true
-  - title: One receptionist across every customer channel
-    details: Deploy the same receptionist across web chat, Messenger, WhatsApp, Google Business, and other channels while keeping the booking and handoff behavior consistent.
-    image: /images/home/multi-channel-agent.svg
-    left: false
 columnFooter:
   - title: BeThere
     tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
