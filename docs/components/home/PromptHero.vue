@@ -1,92 +1,9 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
-
 const props = defineProps({
   compact: {
     type: Boolean,
     default: false,
   },
-})
-
-const prompt = ref('')
-const placeholder = ref('')
-const promptExamples = [
-  'Create an AI receptionist for my salon that books appointments, checks Google Calendar, and follows up on Messenger.',
-  'Launch an AI receptionist for my restaurant that answers reservation questions and keeps the calendar up to date.',
-  'Build an AI receptionist for my clinic that handles intake, schedules visits, and escalates urgent messages to staff.',
-]
-
-let typingTimeout
-let typingInterval
-let typingResumeTimeout
-
-function stopTyping() {
-  if (typingTimeout) {
-    clearTimeout(typingTimeout)
-    typingTimeout = undefined
-  }
-  if (typingInterval) {
-    clearInterval(typingInterval)
-    typingInterval = undefined
-  }
-  if (typingResumeTimeout) {
-    clearTimeout(typingResumeTimeout)
-    typingResumeTimeout = undefined
-  }
-}
-
-function startTyping() {
-  if (typeof window === 'undefined') {
-    placeholder.value = promptExamples[0]
-    return
-  }
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    placeholder.value = promptExamples[0]
-    return
-  }
-
-  stopTyping()
-  placeholder.value = ''
-
-  let exampleIndex = 0
-  let charIndex = 0
-  let deleting = false
-
-  const tick = () => {
-    const current = promptExamples[exampleIndex]
-
-    if (!deleting) {
-      charIndex += 1
-      placeholder.value = current.slice(0, charIndex)
-
-      if (charIndex >= current.length) {
-        deleting = true
-        typingResumeTimeout = window.setTimeout(tick, 1500)
-        return
-      }
-    } else {
-      charIndex -= 1
-      placeholder.value = current.slice(0, charIndex)
-
-      if (charIndex <= 0) {
-        deleting = false
-        exampleIndex = (exampleIndex + 1) % promptExamples.length
-      }
-    }
-
-    typingResumeTimeout = window.setTimeout(tick, deleting ? 12 : 18)
-  }
-
-  typingTimeout = window.setTimeout(tick, 240)
-}
-
-onMounted(() => {
-  startTyping()
-})
-
-onBeforeUnmount(() => {
-  stopTyping()
 })
 </script>
 
@@ -101,18 +18,8 @@ onBeforeUnmount(() => {
         <p class="tagline">Connect your calendar and customer messaging channels, no coding required.</p>
       </template>
 
-      <div class="input-shell">
-        <textarea
-          id="home-agent-prompt"
-          v-model="prompt"
-          @focus="stopTyping"
-          @input="stopTyping"
-          spellcheck="false"
-          :placeholder="placeholder"
-        />
-        <div class="actions">
-          <a href="mailto:sean.wu@bethere.ai?subject=Join%20waitlist">Join waitlist</a>
-        </div>
+      <div class="actions">
+        <a href="mailto:sean.wu@bethere.ai?subject=Join%20waitlist">Join waitlist</a>
       </div>
     </div>
   </section>
@@ -169,54 +76,27 @@ h1 {
   text-align: left;
 }
 
-.input-shell {
-  margin-top: 52px;
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-  padding: 32px;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  text-align: left;
+  padding: 0 1rem;
 }
 
 .prompt-hero:not(.compact) .actions {
   justify-content: flex-start;
 }
 
-.prompt-hero.compact .input-shell {
+.prompt-hero.compact .actions {
   margin: 60px auto 0;
-  padding: 60px 24px;
+  padding: 32px 24px;
   border-radius: 12px;
   background: var(--vp-c-bg-soft);
-}
-
-textarea {
-  width: 100%;
-  min-height: 260px;
-  padding: 22px 24px;
-  border: 1px solid rgba(94, 136, 171, 0.32);
-  border-radius: 22px;
-  resize: vertical;
-  background: rgba(5, 10, 18, 0.9);
-  color: #edf6ff;
-  font: inherit;
-  line-height: 1.75;
-  outline: none;
-}
-
-textarea:focus {
-  border-color: rgba(99, 230, 255, 0.54);
-  box-shadow: 0 0 0 4px rgba(54, 186, 255, 0.1);
-}
-
-.actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 24px;
+  justify-content: center;
 }
 
 .actions a {
@@ -247,18 +127,14 @@ textarea:focus {
     padding: 0 40px;
   }
 
-  .input-shell {
+  .actions {
     margin-top: 40px;
-    padding: 24px 0 0;
+    width: 100%;
+    padding: 0;
   }
 
-  .prompt-hero.compact .input-shell {
-    padding: 32px 18px;
-  }
-
-  textarea {
-    min-height: 220px;
-    padding: 18px;
+  .prompt-hero.compact .actions {
+    padding: 28px 18px;
   }
 
   h1 {
@@ -270,10 +146,6 @@ textarea:focus {
     width: 100%;
     max-width: 100%;
     padding: 0;
-  }
-
-  .input-shell {
-    width: 100%;
   }
 }
 </style>
