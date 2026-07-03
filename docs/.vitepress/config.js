@@ -4,8 +4,35 @@ import { sidebar, navbar } from "./configs";
 export default {
   base: '/',
   title: 'BeThere',
-  appearance: 'force-dark',
+  appearance: true,
   head: [
+    [
+      'script',
+      { id: 'theme-mode' },
+      `;(() => {
+        const storageKey = 'vitepress-theme-appearance';
+        const defaultKey = 'bethere-theme-default';
+        const themeOptions = ['light', 'dark', 'auto'];
+        const params = new URLSearchParams(window.location.search);
+        const requestedTheme = params.get('theme');
+        const savedTheme = localStorage.getItem(storageKey);
+        let theme = 'light';
+
+        if (themeOptions.includes(requestedTheme)) {
+          theme = requestedTheme;
+          localStorage.setItem(defaultKey, 'light');
+        } else if (localStorage.getItem(defaultKey)) {
+          theme = themeOptions.includes(savedTheme) ? savedTheme : 'light';
+        } else {
+          localStorage.setItem(defaultKey, 'light');
+        }
+
+        localStorage.setItem(storageKey, theme);
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', theme === 'dark' || (theme === 'auto' && prefersDark));
+      })()`
+    ],
     [
       'script',
       { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-L6RW3F0FPM' }

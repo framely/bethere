@@ -28,7 +28,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 .prompt-hero {
   padding: 84px 24px 88px;
-  color: #f4f7fb;
+  color: var(--vp-c-text-1);
   background: var(--vp-c-bg);
   font-family: var(--vp-font-family-base);
 }
@@ -56,7 +56,7 @@ h1 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.05em;
-  color: #f7fbff;
+  color: var(--vp-c-text-1);
 }
 
 .tagline {
@@ -64,7 +64,7 @@ h1 {
   max-width: 75%;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.55;
-  color: #d8e6f3;
+  color: var(--vp-c-text-2);
 }
 
 .prompt-hero:not(.compact) h1,
