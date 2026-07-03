@@ -19,7 +19,7 @@ const props = defineProps({
       </template>
 
       <div class="actions">
-        <a href="mailto:sean.wu@bethere.ai?subject=Join%20waitlist">Join waitlist</a>
+        <a href="https://buildmate.bethere.ai">Join waitlist</a>
       </div>
     </div>
   </section>
