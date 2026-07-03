@@ -3,28 +3,19 @@ layout: home
 aside: false
 title: AI receptionist for service businesses
 promptHero: true
-features:
+contentCards:
   - title: 01 Specialist
     details: Answer a few questions about one business function. BeThere turns that into a specialist agent with structured behavior.
-    icon:
-      src: /images/home/deterministic-interaction-logic.svg
-      alt: Specialist
-      width: 180
-      height: 120
+    image: /images/home/deterministic-interaction-logic.svg
+    left: true
   - title: 02 Coordinator
     details: Route each customer request to the right specialist, keep conversation context, and decide when to ask, act, or escalate.
-    icon:
-      src: /images/home/agentic-dialog-understanding.svg
-      alt: Coordinator
-      width: 180
-      height: 120
+    image: /images/home/agentic-dialog-understanding.svg
+    left: false
   - title: 03 Deploy
     details: Connect calendars, messaging channels, and staff handoff rules, then launch where customers already reach your business.
-    icon:
-      src: /images/home/idea-to-working-agent.svg
-      alt: Deploy
-      width: 180
-      height: 120
+    image: /images/home/idea-to-working-agent.svg
+    left: true
 columnFooter:
   - title: BeThere
     tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
