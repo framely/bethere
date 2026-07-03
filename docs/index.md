@@ -3,37 +3,28 @@ layout: home
 aside: false
 title: AI receptionist for service businesses
 promptHero: true
-contentCardsEyebrow: How It Works
-contentCardsTitle: From a few answers to a deployed AI front desk.
-contentCardsIntro: "BeThere turns your business rules into specialist agents, coordinates them around each customer request, and deploys the experience to your customer channels."
-contentCards:
-  - step: 01
-    title: Specialist
-    details: Answer a few questions about one business function, such as reservations, intake, FAQs, follow-up, or handoff. BeThere turns that into a specialist agent with structured behavior.
-    image: /images/home/deterministic-interaction-logic.svg
-    outcomeText: Each specialist handles one job clearly.
-    points:
-      - Business rules captured
-      - Required questions defined
-    left: true
-  - step: 02
-    title: Coordinator
-    details: A coordinator routes each customer request to the right specialist, keeps the conversation context, and decides when to ask, act, or escalate.
-    image: /images/home/agentic-dialog-understanding.svg
-    outcomeText: The front desk stays organized across tasks.
-    points:
-      - Specialist routing
-      - Shared customer context
-    left: false
-  - step: 03
-    title: Deploy
-    details: Connect calendars, messaging channels, and staff handoff rules, then launch the AI front desk where customers already reach your business.
-    image: /images/home/idea-to-working-agent.svg
-    outcomeText: Your structured interaction goes live.
-    points:
-      - Calendar and channel setup
-      - Ready for real customers
-    left: true
+features:
+  - title: 01 Specialist
+    details: Answer a few questions about one business function. BeThere turns that into a specialist agent with structured behavior.
+    icon:
+      src: /images/home/deterministic-interaction-logic.svg
+      alt: Specialist
+      width: 180
+      height: 120
+  - title: 02 Coordinator
+    details: Route each customer request to the right specialist, keep conversation context, and decide when to ask, act, or escalate.
+    icon:
+      src: /images/home/agentic-dialog-understanding.svg
+      alt: Coordinator
+      width: 180
+      height: 120
+  - title: 03 Deploy
+    details: Connect calendars, messaging channels, and staff handoff rules, then launch where customers already reach your business.
+    icon:
+      src: /images/home/idea-to-working-agent.svg
+      alt: Deploy
+      width: 180
+      height: 120
 columnFooter:
   - title: BeThere
     tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
