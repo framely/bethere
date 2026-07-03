@@ -63,7 +63,7 @@ layout: home
           'Advanced security',
         ],
         buttonText: 'Contact Sales',
-        link: 'mailto:sean.wu@bethere.ai'
+        link: 'https://buildmate.bethere.ai'
       }
     ]
   }" 
