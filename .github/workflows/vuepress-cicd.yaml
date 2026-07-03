@@ -22,7 +22,7 @@ jobs:
       - name: CI Command
         run: |
           set -ex 
-          npm install && yarn build
+          npm ci && npm run build
       - name: CD Command
         if: startsWith(github.event.head_commit.message, 'Merge pull request')
         env:
