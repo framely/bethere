@@ -1,5 +1,5 @@
 <template #nav-bar-content-after>
-  <a :href="'mailto:sean.wu@bethere.ai?subject=Join%20waitlist'">
+  <a href="https://buildmate.bethere.ai">
     <button class="button-start">
       Join waitlist
     </button>
