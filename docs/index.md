@@ -3,38 +3,36 @@ layout: home
 aside: false
 title: AI receptionist for service businesses
 promptHero: true
-homeVideo: /videos/dhl_1015.mp4
-homeVideoPoster: /images/home/dhl_1015-cover.png
-contentCardsEyebrow: What Happens After The Prompt
-contentCardsTitle: Three things a real receptionist has to get right.
-contentCardsIntro: "BeThere keeps the AI focused on the work: understand the request, follow the rules, and finish the job in the systems your team already uses."
+contentCardsEyebrow: How It Works
+contentCardsTitle: From a few answers to a deployed AI front desk.
+contentCardsIntro: "BeThere turns your business rules into specialist agents, coordinates them around each customer request, and deploys the experience to your customer channels."
 contentCards:
   - step: 01
-    title: Understand the ask
-    details: Turn messy customer messages into a clear service, time, customer profile, and next step.
+    title: Specialist
+    details: Answer a few questions about one business function, such as reservations, intake, FAQs, follow-up, or handoff. BeThere turns that into a specialist agent with structured behavior.
     image: /images/home/deterministic-interaction-logic.svg
-    outcomeText: No half-finished booking requests.
+    outcomeText: Each specialist handles one job clearly.
     points:
-      - Structured intake
-      - Missing details requested
+      - Business rules captured
+      - Required questions defined
     left: true
   - step: 02
-    title: Stay inside the rules
-    details: Use calendar availability, service duration, lead time, staff assignment, and escalation policies as guardrails.
+    title: Coordinator
+    details: A coordinator routes each customer request to the right specialist, keeps the conversation context, and decides when to ask, act, or escalate.
     image: /images/home/agentic-dialog-understanding.svg
-    outcomeText: Valid options only. No invented policy.
+    outcomeText: The front desk stays organized across tasks.
     points:
-      - Calendar-safe choices
-      - Escalation for exceptions
+      - Specialist routing
+      - Shared customer context
     left: false
   - step: 03
-    title: Finish the job
-    details: Confirm the booking, write it to the calendar, send follow-up, and keep context for staff handoff.
+    title: Deploy
+    details: Connect calendars, messaging channels, and staff handoff rules, then launch the AI front desk where customers already reach your business.
     image: /images/home/idea-to-working-agent.svg
-    outcomeText: The chat becomes operational work.
+    outcomeText: Your structured interaction goes live.
     points:
-      - Confirmed actions
-      - Shared conversation context
+      - Calendar and channel setup
+      - Ready for real customers
     left: true
 columnFooter:
   - title: BeThere

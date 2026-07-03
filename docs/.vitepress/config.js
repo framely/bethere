@@ -4,7 +4,7 @@ import { sidebar, navbar } from "./configs";
 export default {
   base: '/',
   title: 'BeThere',
-  appearance: true,
+  appearance: false,
   head: [
     [
       'script',
