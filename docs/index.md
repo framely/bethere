@@ -9,11 +9,12 @@ contentCards:
     image: /images/home/deterministic-interaction-logic.svg
     left: true
   - title: 02. Configure Coordinator Agent
-    details: Add a coordinator, connect specialists with channels, and configure them, via OAuth.
+    details: Add a coordinator, connect specialists with channels, and configure them in a chat session, via OAuth.
     image: /images/home/agentic-dialog-understanding.svg
     left: false
   - title: 03. Deploy and Operate
-    details: In the same chat session, deploy and operate them.
+    details: Deploy coordinators to dev to test, or to prod to serve customers. Monitor activity and take over conversations wh
+        en needed.
     image: /images/home/idea-to-working-agent.svg
     left: true
 columnFooter:
