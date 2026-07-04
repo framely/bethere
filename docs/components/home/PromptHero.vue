@@ -15,7 +15,7 @@ const props = defineProps({
     <div class="shell">
       <template v-if="!props.compact">
         <h1>Launch an AI front desk that strictly follows your business rules.</h1>
-        <p class="tagline">As easy as 1, 2, 3: just answer a few questions.</p>
+        <p class="tagline">Easy as 1, 2, 3. Just answer a few questions.</p>
       </template>
 
       <div class="actions">
