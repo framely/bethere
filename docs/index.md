@@ -4,7 +4,7 @@ aside: false
 title: AI specialist for service businesses
 hero:
   name: Launch an AI specialist that strictly follows your business rules.
-  tagline: Easy as 1, 2, 3. Just answer a few questions.
+  tagline: Just answer a few questions.
   actions:
     - theme: brand
       text: Join waitlist
