@@ -1,16 +1,14 @@
 # You Don’t Need an Omnipotent AI Agent
 
-The most impressive AI demos make one agent look capable of doing almost anything. It can answer questions, search the web, update a CRM, book a meeting, issue a refund, write a report, and decide what to do next.
+A frontier-model-based agent—powered by one of the most capable general-purpose AI systems—can appear capable of almost anything. It can answer questions, search the web, update a CRM, book a meeting, issue a refund, write a report, and decide what to do next. That breadth is exciting—until the agent fails in an unexpected way. AI capability is jagged: a model can perform a difficult task well and still make a basic mistake.
 
-That may be an exciting demonstration of intelligence. It is a poor design for dependable business operations.
-
-A business does not need an agent with unlimited ability and authority. It needs an agent that completes a specific job, follows the business rules, and knows when to stop. In other words, it needs an **AI specialist**.
+We do not ask every employee to run the entire business. We give people defined roles, appropriate permissions, and clear escalation paths. AI agents should work the same way. A business does not need one agent responsible for everything. It needs an agent that completes a specific job, follows the business rules, and knows when to stop. It needs an **AI specialist**.
 
 ## Capability Is Not the Same as Reliability
 
-It is tempting to judge an agent by the number of tasks it can perform. But every new capability also creates new ways for the agent to fail.
+A frontier-model-based agent can perform tasks that once required several separate systems. But broader capability does not automatically make the agent more reliable. Every additional tool, permission, and open-ended goal introduces another decision it must get right.
 
-An agent that can use ten tools must choose the right tool, at the right time, with the right inputs, under the right policy. If it can pursue open-ended goals, it must also decide which actions are appropriate. If it has broad access to business systems, a misunderstanding can become a real operational mistake.
+An agent with access to ten tools must select the right one, at the right time, with the right inputs, under the right policy. With broad access to business systems, even a small misunderstanding can become a real operational mistake.
 
 For a business, the important question is not:
 
@@ -18,9 +16,9 @@ For a business, the important question is not:
 
 It is:
 
-> How reliably can this agent complete the job we assigned to it?
+> Which job can this agent complete reliably, within its rules and permissions?
 
-The second question leads to a very different architecture.
+That shift—from maximizing capability to defining reliable outcomes—leads to a very different architecture.
 
 ## A Specialist Is Narrow by Design
 
