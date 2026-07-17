@@ -9,6 +9,15 @@ layout: home
 <Article :articles="{
   items: [{
     info: {
+      title:'You don’t need an omnipotent AI agent. You need a specialist.',
+      description: ['The best business agent is not the one that can do everything. It is the narrowest agent that can complete a specific task reliably, under explicit rules and permissions.'],
+      image: './../images/blog/banner/prompt.png',
+      author: 'Sean Wu',
+      date: '7/17/2026'
+    },
+    path:'./why-ai-agents-should-be-specialists.html'
+},{
+    info: {
       title:'Prompt Engineering will never be fully deterministic',
       description: ['If you are holding the hope that LLM will one day make the prompt engineering deterministic, you are holding the wrong hope. Prompt engineering is operated in a unnormalized distributed semantics space, it requires less setup, at the cost of less predictability.'],
       image: './../images/blog/banner/prompt.png',
