@@ -5,8 +5,8 @@
     <div class="article-page">
       <div class="blog-title">
         <div class="top-info-title">
-          <h1>CUI Corner</h1>
-          <p>Democratizing great conversational experiences, one blog at a time.</p>
+          <h1>AI Specialist Corner</h1>
+          <p>Narrow, rule-following agents built to complete specific business tasks reliably.</p>
         </div>
       </div>
       <ArticleList :items="articles.items" />
