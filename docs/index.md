@@ -10,11 +10,11 @@ hero:
       text: Join waitlist
       link: https://buildmate.bethere.ai
 contentCards:
-  - title: 01. Customize Specialist Agents
-    details: Pick a specialist, customize it based on your own business rules, conversationally.
+  - title: 01. Customize AI Specialists
+    details: Pick a specialist type, customize it based on your own business rules, conversationally.
     image: /images/home/deterministic-interaction-logic.svg
     left: true
-  - title: 02. Configure Coordinator Agent
+  - title: 02. Configure Coordinator
     details: Add a coordinator, connect specialists with channels, and configure them in a chat session, via OAuth.
     image: /images/home/agentic-dialog-understanding.svg
     left: false
