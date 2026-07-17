@@ -1,8 +1,14 @@
 ---
 layout: home
 aside: false
-title: AI receptionist for service businesses
-promptHero: true
+title: AI specialist for service businesses
+hero:
+  name: Launch an AI specialist that strictly follows your business rules.
+  tagline: Easy as 1, 2, 3. Just answer a few questions.
+  actions:
+    - theme: brand
+      text: Join waitlist
+      link: https://buildmate.bethere.ai
 contentCards:
   - title: 01. Customize Specialist Agents
     details: Pick a specialist, customize it based on your own business rules, conversationally.
