@@ -12,8 +12,6 @@
           <div v-if="info.description">
             <p class="blog-card-info-description">{{ info.description[0] }}</p>
           </div>
-          <div class="blog-card-info-bottom">
-          </div>
           <a :href="path">
             Read more →
           </a>
@@ -49,6 +47,7 @@ defineProps({
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
     position: relative;
     top: 0;
     transition: top ease 0.5s;
@@ -63,20 +62,21 @@ defineProps({
   }
 
   .blog-card-image {
+    display: block;
+    width: 16rem;
     min-width: 16rem;
     height: 10rem;
     border-radius: 6px;
     object-fit: cover;
-    //background-color: var(--c-bg-light);
-    margin-top: 3.5rem;
-    //margin-left: 1.5rem;
+    margin: 0;
   }
 
   .blog-card-info {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     color: var(--c-text);
-    padding-top: 1rem;
 
     >a {
       color: var(--vp-c-brand);
@@ -86,8 +86,9 @@ defineProps({
   .blog-card-info-title {
     font-size: 20px;
     font-weight: 700;
-    border-bottom: none;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    border: 0;
   }
 
   .blog-card-info-description {
@@ -97,20 +98,6 @@ defineProps({
     margin-bottom: 1.5rem;
   }
 
-  .blog-card-info-bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 0.5rem;
-    color: var(--vp-c-text-3);
-    font-size: 12px;
-    font-weight: normal;
-  }
-
-  .author {
-    text-transform: uppercase;
-  }
 }
 
 @media (max-width:960px) {
@@ -123,12 +110,15 @@ defineProps({
 @media (max-width:719px) {
   .article-wrapper {
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: stretch;
     .blog-card {
       flex-direction: column-reverse;
     }
     .blog-card-image {
-      width: 640px;
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
   }
 }
