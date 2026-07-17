@@ -11,7 +11,7 @@ layout: home
     info: {
       title:'You don’t need an omnipotent AI agent. You need a specialist.',
       description: ['The best business agent is not the one that can do everything. It is the narrowest agent that can complete a specific task reliably, under explicit rules and permissions.'],
-      image: './../images/blog/banner/prompt.png',
+      image: './../images/blog/banner/ai-specialist-vs-omnipotent-agent.png',
       author: 'Sean Wu',
       date: '7/17/2026'
     },
