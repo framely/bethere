@@ -1,4 +1,4 @@
-# You Don’t Need an Omnipotent AI Agent. You Need a Specialist.
+# You Don’t Need an Omnipotent AI Agent
 
 The most impressive AI demos make one agent look capable of doing almost anything. It can answer questions, search the web, update a CRM, book a meeting, issue a refund, write a report, and decide what to do next.
 
