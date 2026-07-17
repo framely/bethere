@@ -6,7 +6,6 @@
       <div v-if="index > 0" class="blog-card-divider"></div>
       <div class="blog-card">
         <div class="blog-card-info">
-          <div class="blog-card-time">{{ info.date }}</div>
           <div v-if="info.title">
             <h2 class="blog-card-info-title">{{ info.title }}</h2>
           </div>
@@ -61,13 +60,6 @@ defineProps({
     }
 
     margin-bottom: 1.5rem;
-  }
-
-  .blog-card-time {
-    margin-bottom: 0.75rem;
-    color: var(--vp-c-text-3);
-    font-size: 0.8rem;
-    font-weight: 500;
   }
 
   .blog-card-image {
