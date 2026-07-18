@@ -1,8 +1,7 @@
 # You Don’t Need an Omnipotent AI Agent
 
-A frontier-model-based agent—powered by one of the most capable general-purpose AI systems—can appear capable of almost anything. It can answer questions, search the web, update a CRM, book a meeting, issue a refund, write a report, and decide what to do next. That breadth is exciting—until the agent fails in an unexpected way. AI capability is jagged: a model can perform a difficult task well and still make a basic mistake.
-
-We do not ask every employee to run the entire business. We give people defined roles, appropriate permissions, and clear escalation paths. AI agents should work the same way. A business does not need one agent responsible for everything. It needs an agent that completes a specific job, follows the business rules, and knows when to stop. It needs an **AI specialist**.
+A frontier-model-based agent—powered by one of the most capable general-purpose AI systems—can appear capable of almost anything. It can answer questions, search the web, update a CRM, book a meeting, issue a refund, write a report, and decide what to do next. That breadth is exciting.
+But businesses do not ask every employee to be able to run the entire business. We give people defined roles, appropriate permissions, and clear escalation paths. AI agents should work the same way. A business does not need one agent responsible for everything. It needs an agent that completes a specific job, follows the business rules, and knows when to stop. It needs an **AI specialist**.
 
 ## Capability Is Not the Same as Reliability
 
