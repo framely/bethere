@@ -26,9 +26,7 @@ That shift—from exploring capability to exploiting verified capability—dicta
 
 ## Maintainable Operations Require Specialists
 
-As services mature, users expect a stable and consistent experience, and a change to one part of that experience should not affect another.
-
-Meeting that expectation requires change isolation. Teams must be able to modify one operational capability without introducing regressions elsewhere. An appointment policy should be changeable without altering lead qualification; replacing an FAQ tool should not affect refunds.
+As services mature, users expect a stable, consistent experience: changes to one part of the service should not affect another. Meeting that expectation requires change isolation. Teams must be able to modify one operational capability without introducing regressions elsewhere. An appointment policy should be changeable without altering lead qualification; replacing an FAQ tool should not affect refunds.
 
 An omnipotent agent provides no stable boundary between these capabilities. Its workflows share prompts, tools, permissions, context, and assumptions. Every added responsibility expands the behavior the team must understand and verify, while every change risks affecting unrelated parts of the service.
 
@@ -40,21 +38,11 @@ Specialists create those boundaries. Each specialist owns one job, one set of ru
 - audit permissions against a clearly defined responsibility; and
 - assign failures and improvements to an accountable owner.
 
-Customers should not need to know which specialist handles their request. A coordinator can receive the conversation, identify the task, and route it to the appropriate specialist:
-
-```text
-Customer
-   ↓
-Coordinator
-   ├── Appointment specialist
-   ├── FAQ specialist
-   ├── Lead-qualification specialist
-   └── Human escalation
-```
-
-The coordinator does not need permission to perform every business action. Its job is to maintain context and delegate work. Each specialist keeps its own rules, tools, tests, and authority.
+Customers should not need to know which specialist handles their request. A coordinator can receive the conversation, identify the task, and route it to the appropriate specialist. The coordinator does not need permission to perform every business action. Each specialist keeps its own rules, tools, tests, and authority.
 
 This structure gives users one coherent service while allowing the business to improve it one bounded capability at a time. New capabilities become new specialists, and existing specialists can evolve without requiring the entire system to be reverified. A broadly capable model may still power each specialist; specialization constrains its operational responsibility, not its intelligence.
+
+Building an AI system for operations is no different from building any other mature service: maintainability depends on clear boundaries that isolate change.
 
 ## AI Specialists Make Operations Reliable
 
