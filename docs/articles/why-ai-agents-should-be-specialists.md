@@ -5,7 +5,7 @@ But businesses do not ask every employee to be able to run the entire business. 
 
 ## Capability Is Not the Same as Reliability
 
-A frontier-model-based agent can perform tasks that once required several separate systems. But broader capability does not automatically make the agent more reliable. Every additional tool, permission, and open-ended goal introduces another decision it must get right.
+A frontier-model-based agent can perform tasks that once required several separate systems. But broader capability does not automatically make the agent more reliable. Capability that has not been verified in the context where it will be used is not a business outcome; it is an untested assumption. Verification takes deliberate effort: defining expected behavior, testing realistic edge cases, and repeating those checks when models, tools, rules, or permissions change. Every additional tool, permission, and open-ended goal introduces both another decision the agent must get right and more behavior the business must verify.
 
 An agent with access to ten tools must select the right one, at the right time, with the right inputs, under the right policy. With broad access to business systems, even a small misunderstanding can become a real operational mistake.
 
@@ -15,9 +15,9 @@ For a business, the important question is not:
 
 It is:
 
-> Which job can this agent complete reliably, within its rules and permissions?
+> Which job has this agent been verified to complete reliably, within its rules and permissions?
 
-That shift—from maximizing capability to defining reliable outcomes—leads to a very different architecture.
+That shift—from maximizing unverified capability to delivering verified, reliable outcomes—leads to a very different architecture.
 
 ## A Specialist Is Narrow by Design
 
