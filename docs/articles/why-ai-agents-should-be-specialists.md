@@ -6,15 +6,15 @@ But exploration and exploitation have different requirements. Exploration discov
 
 An omnipotent AI agent can help a business explore possibilities. To exploit those possibilities reliably, the business needs **AI specialists**: agents that complete specific jobs, follow business rules, operate with limited permissions, and know when to stop.
 
-## Exploration Is Not Exploitation
+## Exploration and Exploitation Need Different Kinds of Intelligence
 
-During exploration, breadth is an advantage. A general-purpose agent can move across domains, combine tools in unexpected ways, and quickly reveal which workflows are worth pursuing. False starts are useful because the goal is to learn.
+During exploration, a business moves from 0 to 1: discovering and proving a new capability. Breadth is an advantage. A general-purpose agent can move across domains, combine tools in unexpected ways, and quickly reveal which workflows are worth pursuing. False starts are useful because the goal is to learn.
 
-During exploitation, the standard changes. The agent is no longer demonstrating what could be done; it is doing real work for customers and employees. A wrong answer, an incorrect booking, or an unauthorized refund is not an interesting experiment. It is an operational failure.
+During exploitation, a business moves from 1 to n: turning that proven capability into repeatable, dependable operations. The standard changes. The agent is no longer demonstrating what could be done; it is doing real work for customers and employees. A wrong answer, an incorrect booking, or an unauthorized refund is not an interesting experiment. It is an operational failure.
 
 A promising demonstration therefore is not yet a dependable business capability. Before a workflow enters operation, the business must define what success means, constrain how the work is performed, and verify the behavior under realistic conditions.
 
-For a business, the important question is not:
+For a business scaling from 1 to n, the important question is not:
 
 > How much can this agent do?
 
