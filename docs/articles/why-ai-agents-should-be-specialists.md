@@ -44,26 +44,18 @@ This structure gives users one coherent service while allowing the business to i
 
 Building an AI system for operations is no different from building any other mature service: maintainability depends on clear boundaries that isolate change.
 
-## AI Specialists Make Operations Reliable
+## Reliable Operations Require an Operational Harness
 
-Making an operational system buildable does not automatically make it reliable, but it creates something finite enough to verify. Unverified capability is not a business outcome; it is an untested assumption. Operational work creates value only when the system produces the intended result consistently and handles failure safely.
+A capable model is not, by itself, a reliable operation. Reliability comes from an operational harness: the contracts, tools, permissions, deterministic rules, validation, monitoring, and escalation paths that surround the model. The model can reason flexibly, but the harness defines what it may do, what success means, and how failure is handled.
 
-An AI specialist makes reliability achievable by starting with a bounded promise. It is responsible for a defined business task, such as:
-
-- booking an appointment;
-- qualifying a sales lead;
-- answering questions from an approved knowledge base;
-- collecting the information required for an insurance claim;
-- rescheduling a service visit; or
-- routing an exceptional case to the right person.
-
-Each specialist turns an explored possibility into an operational contract. That contract defines:
+Specialists make this harness finite enough to build and verify. For each bounded business task, the harness turns an explored possibility into an operational contract. It defines:
 
 - which outcome the specialist is responsible for;
 - which information it must collect;
 - which tools and data it may access;
 - which business rules it must follow;
-- how a successful result is validated; and
+- how actions and outcomes are validated;
+- how behavior is tested and monitored; and
 - when the work must be escalated.
 
 Consider a business that wants AI to handle service appointments. During exploration, a general-purpose agent can prototype the conversation, identify the systems involved, and reveal rules the team may not have documented. Once that workflow enters operation, an appointment specialist follows a smaller, explicit contract:
@@ -76,9 +68,9 @@ Consider a business that wants AI to handle service appointments. During explora
 6. Create the appointment once validation succeeds.
 7. Escalate requests outside the supported policy.
 
-The experience can still be conversational. The model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while deterministic business logic decides what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
+The experience can still be conversational. The model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while the harness uses deterministic business logic to decide what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
 
-The model provides flexibility where language is ambiguous. The operational contract provides control where outcomes matter. Narrowness does not make the agent unintelligent; it makes the agent accountable.
+Reliability comes from this combination: the model handles ambiguity, while the harness controls decisions with operational consequences. Better models can improve conversation and reasoning, but they do not remove the need for scoped authority, explicit validation, monitoring, and safe failure paths. The harness turns AI capability into an accountable operation.
 
 ## AI Specialists Make Operations Economical
 
