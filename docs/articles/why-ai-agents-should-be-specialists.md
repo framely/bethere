@@ -24,11 +24,21 @@ It is:
 
 That shift—from exploring capability to exploiting verified capability—dictates we need AI specialist for business operations.
 
-## AI Specialists Make Operations Buildable and Maintainable
+## Maintainable Operations Require Specialists
 
-AI specialists make operations buildable through a divide-and-conquer strategy. Divide operations into units small enough to specify, implement, test, and own; then coordinate those units to support broader business needs. Instead of trying to build an agent that “runs operations,” a team can build an appointment specialist, an FAQ specialist, or a lead-qualification specialist with a clear definition of done.
+As services mature, users expect a stable and consistent experience, and a change to one part of that experience should not affect another.
 
-An omnipotent agent has no stable implementation boundary. Many workflows share one set of prompts, tools, permissions, and assumptions, so every added responsibility expands the behavior the team must understand and verify. A specialist creates a bounded unit of delivery: one job, one set of rules, a limited collection of tools, and an accountable owner.
+Meeting that expectation requires change isolation. Teams must be able to modify one operational capability without introducing regressions elsewhere. An appointment policy should be changeable without altering lead qualification; replacing an FAQ tool should not affect refunds.
+
+An omnipotent agent provides no stable boundary between these capabilities. Its workflows share prompts, tools, permissions, context, and assumptions. Every added responsibility expands the behavior the team must understand and verify, while every change risks affecting unrelated parts of the service.
+
+Specialists create those boundaries. Each specialist owns one job, one set of rules, a limited collection of tools and permissions, its own tests, and an accountable owner. Teams can then:
+
+- update appointment rules without destabilizing lead qualification;
+- replace a model and rerun only the tests for the affected tasks;
+- trace an action to a specific rule, tool, and specialist;
+- audit permissions against a clearly defined responsibility; and
+- assign failures and improvements to an accountable owner.
 
 Customers should not need to know which specialist handles their request. A coordinator can receive the conversation, identify the task, and route it to the appropriate specialist:
 
@@ -44,19 +54,7 @@ Coordinator
 
 The coordinator does not need permission to perform every business action. Its job is to maintain context and delegate work. Each specialist keeps its own rules, tools, tests, and authority.
 
-The overall system can appear broad to the customer without making any one agent an all-powerful operator. New discoveries can become new specialists, allowing the system to expand one bounded capability at a time.
-
-The same boundaries that make specialists buildable also make them maintainable. Business operations change: policies are revised, tools are replaced, permissions evolve, models improve, and new failure modes emerge. The goal is change isolation—modifying one specialist should not cause unrelated specialists to regress or require the entire system to be reverified.
-
-Because each specialist owns a specific operational responsibility, teams can:
-
-- update appointment rules without destabilizing lead qualification;
-- replace a model and rerun only the tests for the affected tasks;
-- trace an action to a specific rule, tool, and specialist;
-- audit permissions against a clearly defined responsibility; and
-- assign failures and improvements to an accountable owner.
-
-This is not an argument against general intelligence or better AI models. A model may possess broad knowledge while the agent built around it has a narrow operational role. More capable models can improve both exploration and the quality of individual specialists without expanding every specialist's responsibility.
+This structure gives users one coherent service while allowing the business to improve it one bounded capability at a time. New capabilities become new specialists, and existing specialists can evolve without requiring the entire system to be reverified. A broadly capable model may still power each specialist; specialization constrains its operational responsibility, not its intelligence.
 
 ## AI Specialists Make Operations Reliable
 
