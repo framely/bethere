@@ -22,7 +22,7 @@ It is:
 
 > Which job has this agent been verified to complete reliably, within its rules and permissions?
 
-That shift—from exploring capability to exploiting verified capability—leads to a very different architecture.
+That shift—from exploring capability to exploiting verified capability—is the essence of business operations.
 
 ## Verification Takes Work
 
