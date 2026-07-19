@@ -60,31 +60,21 @@ Consider a business that wants AI to handle service appointments. During explora
 6. **Testing and monitoring:** Test normal and exceptional cases, verify calendar changes, and record failures.
 7. **Escalation:** Route requests outside the supported policy to the appropriate person.
 
-The experience can still be conversational. The model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while the harness uses deterministic business logic to decide what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
+Probabilistic LLM inference and deterministic software engineering must work together. In this example, the model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while the harness uses deterministic business logic to decide what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
 
 Reliability comes from this combination: the model handles ambiguity, while the harness controls decisions with operational consequences. Better models can improve conversation and reasoning, but they do not remove the need for scoped authority, explicit validation, monitoring, and safe failure paths. The harness turns AI capability into an accountable operation.
 
-## AI Specialists Make Operations Economical
+## Economical Operations Use Just Enough Intelligence
 
-AI specialists make operations economical by reducing the total cost of producing a verified outcome. That cost is not limited to model tokens or API calls. It includes the effort required to specify, verify, monitor, support, and improve the complete system.
+Specialist boundaries make an operation maintainable, and the operational harness makes it reliable. Together, they also make its economics measurable. The relevant cost is not the price of a model call; it is the total cost of a verified outcome, including inference, tools, testing, monitoring, maintenance, and recovery.
 
-Verification takes deliberate work. Teams must define expected behavior, test normal and exceptional cases, observe real outcomes, and repeat those checks whenever models, prompts, tools, rules, or permissions change. The broader the agent's role, the larger and more expensive this verification surface becomes.
+Once a responsibility and its harness are bounded, a team can determine how much intelligence the task actually needs. A routine FAQ or appointment change does not require the same reasoning capacity as an unusual insurance claim. The goal is not to use the most capable model available, but one with just enough intelligence to satisfy the specialist's operational contract consistently.
 
-An agent with access to ten tools must select the right one, at the right time, with the right inputs, under the right policy. A team must verify not only that each tool works, but that the agent chooses correctly among them across many possible situations. Giving the agent even more tools may increase its apparent capability while making dependable operation less economical.
+Often, that means using a smaller, specialized model inside a specialist agent. Open-source models can be self-hosted, lowering inference costs while keeping data, inference, and access controls entirely within the business's infrastructure. This can provide stronger privacy and isolation, although safety still depends on the operational harness and the security of the deployment. The team can evaluate candidate models against the specialist's test suite and select the least expensive one that meets its accuracy, latency, privacy, and reliability requirements. If a smaller model passes the same contract, a larger model adds cost without improving the verified business outcome.
 
-Specialization makes the cost tractable. Instead of trying to verify an open-ended claim such as “the agent can run our operations,” a team can verify a bounded claim such as “the agent can reschedule an eligible appointment according to this policy.” Finite responsibilities lead to finite test suites, clearer monitoring, and less expensive incident recovery.
+Not every part of the task requires model intelligence. Probabilistic inference can interpret flexible human language, while deterministic software applies business rules, controls tools, and validates state changes. People can handle exceptions that require judgment or authority. In the appointment example, the model interprets “after lunch,” but the harness—not the model—decides which times are available and whether a fee applies.
 
-An economical architecture uses intelligence where it adds value and simpler controls where flexibility is unnecessary:
-
-- Use AI to understand flexible human language.
-- Use explicit rules to control business behavior.
-- Use scoped tools to perform approved actions.
-- Use validation to confirm important state changes.
-- Use people to handle exceptions that require judgment or authority.
-
-Specialization also makes it practical to use open-source models. Instead of defaulting to a frontier model for every request, a team can evaluate smaller models against the specialist's bounded test suite and choose one that is smart enough to pass. For suitable workloads, an open-source model can reduce inference costs and provide more deployment control without sacrificing the verified outcome.
-
-Each specialist can be optimized independently for its volume, latency, model capability, and risk. A routine FAQ does not need the same reasoning budget as an unusual insurance claim. The relevant measure is the total cost of each verified outcome—including hosting, monitoring, and maintenance—not the apparent intelligence of the model or the price of a single call. The goal is to use a model that is smart enough for the job and economical to operate.
+Each specialist can therefore be optimized independently: use a smaller, specialized model for routine work, a more capable model where ambiguity or risk demands it, and a person when the request exceeds the specialist's authority. Just enough intelligence is not a compromise; it is how a business pays only for intelligence that improves a verified outcome.
 
 ## Make AI Specialists the Foundation of Operations
 
