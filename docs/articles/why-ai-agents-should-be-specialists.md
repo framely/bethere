@@ -46,27 +46,19 @@ Building an AI system for operations is no different from building any other mat
 
 ## Reliable Operations Require an Operational Harness
 
-A capable model is not, by itself, a reliable operation. Reliability comes from an operational harness: the contracts, tools, permissions, deterministic rules, validation, monitoring, and escalation paths that surround the model. The model can reason flexibly, but the harness defines what it may do, what success means, and how failure is handled.
+To make a service delivered by an AI agent consistent and reliable, a capable model is not enough. The agent needs an operational harness: the contracts, tools, permissions, deterministic rules, validation, monitoring, and escalation paths that surround the model. The model can reason flexibly, but the harness defines what it may do, what success means, and how failure is handled.
 
-Specialists make this harness finite enough to build and verify. For each bounded business task, the harness turns an explored possibility into an operational contract. It defines:
+Building that harness is not free. In practice, it is often the most time-consuming part of putting an AI agent into operation. That is why specialization matters: bounding the agent's responsibility keeps the harness finite enough to build and verify, turning each business task into an explicit operational contract.
 
-- which outcome the specialist is responsible for;
-- which information it must collect;
-- which tools and data it may access;
-- which business rules it must follow;
-- how actions and outcomes are validated;
-- how behavior is tested and monitored; and
-- when the work must be escalated.
+Consider a business that wants AI to handle service appointments. During exploration, a general-purpose agent can prototype the conversation, identify the systems involved, and reveal rules the team may not have documented. Once that workflow enters operation, its harness gives the appointment specialist an explicit contract:
 
-Consider a business that wants AI to handle service appointments. During exploration, a general-purpose agent can prototype the conversation, identify the systems involved, and reveal rules the team may not have documented. Once that workflow enters operation, an appointment specialist follows a smaller, explicit contract:
-
-1. Identify the requested service.
-2. Collect the required customer details.
-3. Check availability through the approved calendar service.
-4. Apply duration, location, staffing, and business-hour rules.
-5. Ask the customer to confirm the selected time.
-6. Create the appointment once validation succeeds.
-7. Escalate requests outside the supported policy.
+1. **Outcome:** Create or reschedule a valid service appointment.
+2. **Information:** Collect the requested service, customer details, location, and preferred time.
+3. **Tools and data:** Access availability and customer records only through approved services.
+4. **Business rules:** Apply duration, location, staffing, business-hour, and cancellation policies.
+5. **Validation:** Confirm the selected time and required details before changing the calendar.
+6. **Testing and monitoring:** Test normal and exceptional cases, verify calendar changes, and record failures.
+7. **Escalation:** Route requests outside the supported policy to the appropriate person.
 
 The experience can still be conversational. The model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while the harness uses deterministic business logic to decide what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
 
