@@ -64,9 +64,7 @@ Probabilistic LLM inference and deterministic software engineering must work tog
 
 Reliability comes from this combination: the model handles ambiguity, while the harness controls decisions with operational consequences. Better models can improve conversation and reasoning, but they do not remove the need for scoped authority, explicit validation, monitoring, and safe failure paths. The harness turns AI capability into an accountable operation.
 
-## Economical Operations Use Just Enough Intelligence
-
-Specialist boundaries make an operation maintainable, and the operational harness makes it reliable. Together, they also make its economics measurable. The relevant cost is not the price of a model call; it is the total cost of a verified outcome, including inference, tools, testing, monitoring, maintenance, and recovery.
+## Just Enough Intelligence
 
 Once a responsibility and its harness are bounded, a team can determine how much intelligence the task actually needs. A routine FAQ or appointment change does not require the same reasoning capacity as an unusual insurance claim. The goal is not to use the most capable model available, but one with just enough intelligence to satisfy the specialist's operational contract consistently.
 
@@ -78,7 +76,7 @@ Each specialist can therefore be optimized independently: use a smaller, special
 
 ## Make AI Specialists the Foundation of Operations
 
-An omnipotent agent is useful for discovering what AI could do across a business, but it is not an operating model. Its openness makes it difficult to specify, verify, operate economically, and maintain over time.
+An omnipotent agent is useful for discovering what AI could do across a business and can even help build AI specialists, but it is not an operating model. Its openness makes it difficult to specify, verify, operate economically, and maintain over time.
 
 AI specialists are the operating model. Each specialist turns one proven capability into a bounded business function with a clear outcome, limited authority, measurable performance, and accountable ownership. Specialists can be verified independently, operated with a model that is smart enough for the job, and changed without causing unrelated workflows to regress.
 
