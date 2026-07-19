@@ -60,7 +60,7 @@ Consider a business that wants AI to handle service appointments. During explora
 6. **Testing and monitoring:** Test normal and exceptional cases, verify calendar changes, and record failures.
 7. **Escalation:** Route requests outside the supported policy to the appropriate person.
 
-The experience can still be conversational. The model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while the harness uses deterministic business logic to decide what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
+Probabilistic LLM inference and deterministic software engineering must work together. In this example, the model can interpret a request such as “Can we move it to sometime after lunch tomorrow?” while the harness uses deterministic business logic to decide what “available” means, which times may be offered, and whether the appointment can be changed without a fee.
 
 Reliability comes from this combination: the model handles ambiguity, while the harness controls decisions with operational consequences. Better models can improve conversation and reasoning, but they do not remove the need for scoped authority, explicit validation, monitoring, and safe failure paths. The harness turns AI capability into an accountable operation.
 
