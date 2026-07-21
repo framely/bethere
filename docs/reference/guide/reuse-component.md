@@ -18,14 +18,14 @@ A module of a service paired with a compatible provider is all you need to provi
 
 
 ## Before you start
-- Log in to [OpenCUI](https://build.opencui.io/login).
+- Log in to [OpenCUI](https://buildmate.bethere.ai/login).
 - We assume that you have finished [clone a simple chatbot](clone-simple-chatbot.md).
 - We assume that you have finished [build a simple chatbot](build-simple-chatbot.md).
 
 ## Pick a module
 OpenCUI is designed to promote reusability of both frontend and provider. When you want to add some functionalities to your chatbot, pick a module that meets your needs. Make sure the module of choice has a compatible provider, preferably OpenCUI hosted one like PostgreSQL provider so that you can try them with the least effort. Reusing a module allows you to quickly increase the scope of the service that you offer conversationally, without incurring the high costs and long lead times associated with developing from scratch.
 
-This guide will show you how to reuse an existing [module](https://build.opencui.io/org/me.quickstart/agent/hours/struct/service_schema) along with a compatible [provider](https://build.opencui.io/org/me.quickstart/agent/hoursProvider/struct/service_schema), to field users' questions about your business hours. 
+This guide will show you how to reuse an existing [module](https://buildmate.bethere.ai/org/me.quickstart/agent/hours/struct/service_schema) along with a compatible [provider](https://buildmate.bethere.ai/org/me.quickstart/agent/hoursProvider/struct/service_schema), to field users' questions about your business hours.
 
 Here is an example that illustrates how this chatbot can helps users get business hours:
 
@@ -59,11 +59,11 @@ The backend for other provider is assumed to be deployed as a completely separat
    - Creating the tables for hosting data for the first time, or altering table structure based on changed annotations.
    - Deleting all composite types and creating them again for use as function parameters or returns.
    - Making these tables available for both the back office and chatbot through RESTful APIs.
-   
+
 Once the backend is deployed, you need to populate it with your business data. For this use case, you set the business hours for each day of the week, as well as the hours for special occasions.
 
 ### Clone provider: Hours
-To clone the Hours provider, inside [hoursProvider](https://build.opencui.io/org/me.quickstart/agent/hoursProvider/struct/service_schema), click **Clone** and set its **Project label** to `hoursProvider` (it is ok to set to something else, but let's use this label in the quickstart).
+To clone the Hours provider, inside [hoursProvider](https://buildmate.bethere.ai/org/me.quickstart/agent/hoursProvider/struct/service_schema), click **Clone** and set its **Project label** to `hoursProvider` (it is ok to set to something else, but let's use this label in the quickstart).
 
 ### Deploy PostgreSQL backend
 <!-- change this line if we change the button from deploy to deploy backend -->
@@ -74,11 +74,11 @@ To deploy PostgreSQL backend, click **Deploy backend** button in the upper-right
 ### Populate database
 Before the backend can serve relevant information, you need to populate the database with your business hours. You can do this using the [backoffice](../providers/postgrest.md#access-backoffice). For every organization that uses at least one PostgreSQL provider, OpenCUI also creates a web application for that organization to manage the data in the backend. You can access the back office as follows:
 1. Inside the provider `hoursProvider`, select the **Settings** tab, click **Configuration** on the left sidebar.
-2. Copy and paste the **URL** to your browser, use **Admin email** and **Admin password** to log into backoffice. 
+2. Copy and paste the **URL** to your browser, use **Admin email** and **Admin password** to log into backoffice.
 
 <!--Need to add the screen shot back if we decide, my suggestion is NOT, as it is not helping with ui element alignment. -->
 
-In the PostgreSQL backoffice, tables are grouped into namespaces on the left sidebar. The namespace is identified by a provider label, and the table is referenced by a frame type label. 
+In the PostgreSQL backoffice, tables are grouped into namespaces on the left sidebar. The namespace is identified by a provider label, and the table is referenced by a frame type label.
 
 #### Set up business hours
 Each business has different hours and unique special days. This provider uses a table called 'Hours' to keep a record of this business-specific hours information. Before serving actual user queries, you need to populate this table with your hours.
@@ -108,8 +108,8 @@ Reusing the conversational functionality in a module is simple: just import the 
 
 ### Import the module
 To import the module that meets your needs into a chatbot, follow these steps:
-1. In the [hours module](https://build.opencui.io/org/me.quickstart/agent/hours/struct/service_schema), click **Import** in the top-right corner of the page.
-2. Select the chatbot you want to import into and **Save**. If you don't have a chatbot yet, you need to create or clone one before importing. 
+1. In the [hours module](https://buildmate.bethere.ai/org/me.quickstart/agent/hours/struct/service_schema), click **Import** in the top-right corner of the page.
+2. Select the chatbot you want to import into and **Save**. If you don't have a chatbot yet, you need to create or clone one before importing.
 
 ![import service](/images/guide/use-service/import-service.png)
 
@@ -117,8 +117,8 @@ To import the module that meets your needs into a chatbot, follow these steps:
 For each service that is referenced in the chatbot, you need to wire a provider to it so that the chatbot, or the module imported into the chatbot, can actually access the service implementation. You can wire different providers to the same service under different environments.
 
 To wire the provider `hoursProvider` to the module `hours` service in chatbot's debug environment, follow these steps:
-1. In chatbot's **Settings** tab, go to the **Integrations** page. 
-2. In **Debug service provider** section, select `me.quickstart.hours.IHours` in the **Select service** selector. 
+1. In chatbot's **Settings** tab, go to the **Integrations** page.
+2. In **Debug service provider** section, select `me.quickstart.hours.IHours` in the **Select service** selector.
 3. Fill in the following information in the popup window and **Save**:
    - Enter a unique label such as `Test`. This can be used to identify the service in the chatbot's logs.
    - Select the provider `hoursProvider` for this service. Note that all compatible providers will appear in the drop-down menu.

@@ -7,7 +7,7 @@ In the previous guide, you learned how to use a cloned PostgreSQL provider in co
 
 ## Before you start
 
-- Log in to [OpenCUI](https://build.opencui.io/login).
+- Log in to [OpenCUI](https://buildmate.bethere.ai/login).
 - [Build a simple chatbot](./build-simple-chatbot.md) for how to build a skill with entity slots.
 - [Reuse a full-stack module](./reuse-component.md) to get familiar with the functionality we try to build here.
 
@@ -22,7 +22,7 @@ Keep the **Provider type** to be PostgreSQL, and **Deploy mode** to be OpenCUI-h
 
 ## Import the service
 To implement a service, you need definitions for all types required by that service. This can be done by importing the module where the service is defined. Here are the steps to follow:
-- Enter the [hours module](https://build.opencui.io/org/me.quickstart/agent/hours/struct/service_schema) where the service is declared, and **Import** it into the provider you just created.
+- Enter the [hours module](https://buildmate.bethere.ai/org/me.quickstart/agent/hours/struct/service_schema) where the service is declared, and **Import** it into the provider you just created.
 
 ## Create local types
 Sometimes, to simplify development, you may need intermediate functions. This, along with other reasons, may require defining additional types. However, for the service you want to implement here, this is not necessary, so we can skip this step.

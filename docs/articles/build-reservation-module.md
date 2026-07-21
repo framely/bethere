@@ -12,10 +12,10 @@ author: Sunny May
 # Build a reservation module
 In the previous guide on [build an hours module](../reference/guide/build-module.md), we showed you how to declare a service and build a conversational user interface (CUI) in the same module. In this guide, we'll demonstrate how to build CUI on top of a predefined [generic reservation service](./reservation/reservation-api).
 
-The table reservation module assists users in booking, viewing, or canceling reservations in a restaurant setting. This guide will only implement "[making a reservation](./reservation-cui-design.md#make-a-reservation)" as an example. Exposing viewing and canceling reservations should be similar, and you can check the [table reservation module](https://build.opencui.io/org/me.restaurant/agent/tableReservation/struct/type) to see how it is done.
+The table reservation module assists users in booking, viewing, or canceling reservations in a restaurant setting. This guide will only implement "[making a reservation](./reservation-cui-design.md#make-a-reservation)" as an example. Exposing viewing and canceling reservations should be similar, and you can check the [table reservation module](https://buildmate.bethere.ai/org/me.restaurant/agent/tableReservation/struct/type) to see how it is done.
 
 ## Before you start
-1. Log in to [OpenCUI](https://build.opencui.io/login).
+1. Log in to [OpenCUI](https://buildmate.bethere.ai/login).
 2. It is highly recommended that you follow through the [Quickstart guide](../reference/guide/index).
 3. It is useful to go over [reservation cui design](./reservation-cui-design.md)
 4. It is useful to go over [adding table reservation functionality](./reuse-reservation-module.md)
@@ -29,7 +29,7 @@ To create a module, fill out the project creation form with the following settin
 
 ## Import the service
 To use functions declared in the reservation APIs, you need to import that service first.
-1. Enter the [reservation module](https://build.opencui.io/org/services.opencui/agent/reservation/struct/service_schema) where the service is declared and import it into the `tableReservation` module you just created.
+1. Enter the [reservation module](https://buildmate.bethere.ai/org/services.opencui/agent/reservation/struct/service_schema) where the service is declared and import it into the `tableReservation` module you just created.
 
 ## Prepare types for the service
 It is common practice for APIs to be designed to be as generic as possible so that the same backend can be used for different domains. Typically, these APIs are defined using abstract types that can be customized into different concrete types for different domains.
@@ -66,7 +66,7 @@ To implement the [make a reservation](./reservation-cui-design.md#make-a-reserva
 - `userIdentifier`: A unique identifier for the user making the reservation.
 - `location`: The specified place that owns resources. Here, it should be the location of your restaurant.
 - `resourceType`: The type of the resource since . Here, it should be "table".
-- `duration`: The resource duration of the reservation. 
+- `duration`: The resource duration of the reservation.
 - `number`: The number of guests attending the reservation.
 - `date`: The date of the reservation.
 - `time`: The time of the reservation.
@@ -75,11 +75,11 @@ For this module, you will be handling a simpler case, with the following assumpt
 1. The restaurant exists in only one location.
 2. The only resource can be booked for this restaurant is `table`.
 3. The duration is fixed for all the tables by restaurant.
-4. The number of guests determines which table the user can book (its capacity need to be greater than or equals to the party size). 
- 
+4. The number of guests determines which table the user can book (its capacity need to be greater than or equals to the party size).
+
 Note that not all slots are designed for user input; some slots may be implied or supplied by the backend, but they are included as slots to make it easier to use the generic reservation APIs. Based the above assumptions, location, resource type, and duration will be provided by business so no need for user to input.
 
-#### Schema layer: declare a skill 
+#### Schema layer: declare a skill
 
 
 ##### Create the skill
@@ -87,7 +87,7 @@ Inside the `tableReservation` module and **Types** page, under the **Structure**
 1. Create a skill labeled as `MakeReservation`.
 
 ##### Add slots
-To prompt a user for a specific day, use the [DatePicker](../reference/plugins/components/datepicker/index.md) frame. Ensure that the `components` module exists under the **Dependencies** tab before proceeding. If it does not, import the [components module](https://build.opencui.io/org/io.opencui/agent/components/struct/frame/63c8aea6517f06c1880e3cff) to the `tableReservation` module first. 
+To prompt a user for a specific day, use the [DatePicker](../reference/plugins/components/datepicker/index.md) frame. Ensure that the `components` module exists under the **Dependencies** tab before proceeding. If it does not, import the [components module](https://buildmate.bethere.ai/org/io.opencui/agent/components/struct/frame/63c8aea6517f06c1880e3cff) to the `tableReservation` module first.
 
 Inside the `MakeReservation` skill and **Schema** tab, under the **Structure** view.
 1. In the **Slots** section, add the following slots:
@@ -123,10 +123,10 @@ Inside the `MakeReservation` skill and **Schema** tab, under the **Structure** v
       ```kotlin
       // If the resourceList is empty, just return an empty list
       if(resourceList.isEmpty()) return emptyList()
-   
+
       // Get a list of unique capacities in ascending order
       val capacityList = (reservation.listResource(location!!, resourceType!!, null, null, 0) as List<Table>).map{it -> it.capacity!!}.distinct().sorted()
-   
+
       // Find the minimum capacity which is not smaller than the number of people
       var capacity:Int ?= null
       for(i in capacityList){
@@ -135,10 +135,10 @@ Inside the `MakeReservation` skill and **Schema** tab, under the **Structure** v
             break
          }
       }
-   
+
       // Return an empty list if there is no suitable capacity
       if(capacity == null) return emptyList()
-   
+
       // Filter the tables by the capacity
       val filteredResource = (resourceList as List<Table>).filter{
          it.capacity == capacity!!
@@ -154,11 +154,11 @@ Inside the `MakeReservation` skill and **Schema** tab, under the **Structure** v
    - Return Type: **kotlin.Boolean**, not null
    - Implementation:
      ```kotlin
-     return if (date == null){ 
+     return if (date == null){
         filterTables(reservation.listResource(location!!, resourceType!!, null, null, duration!!)).isNotEmpty()
-      } else if (date != null && time == null){ 
+      } else if (date != null && time == null){
         filterTables(reservation.listResource(location!!, resourceType!!, date, null, duration!!)).isNotEmpty()
-      } else{ 
+      } else{
         filterTables(reservation.listResource(location!!, resourceType!!, date, time, duration!!)).isNotEmpty()
       }
      ```
@@ -171,13 +171,13 @@ Inside the `MakeReservation` skill and **Schema** tab, under the **Structure** v
      ```kotlin
      // Get available tables resource
      val availableResources = filterTables(reservation.listResource(location!!, resourceType!!, datePicker!!.date!!, timePicker!!.time!!, duration!!))
-    
+
      // Make a reservation if there is an available table
      return if (availableResources.isNotEmpty()){
         reservation.makeReservation(userIdentifier!!.userId!!, datePicker!!.date!!, timePicker!!.time!!, duration!!, availableResources.first()) != null
      } else{
         false
-     } 
+     }
      ```
 
 #### Annotate type: MakeReservation
@@ -196,7 +196,7 @@ During the slot filling process, the following dialog annotations will be used.
    - `number`: There is at least one table that can seat the requested number of guests.
    - `datePicker`: There is at least one table available within the business's restrictions and the values (number and date) provided by the user.
    - `timePicker`: There is at least one table available within the business's restrictions and the values (number, date, and time) provided by the user.
-   
+
 4. [Confirmation](../reference/annotations/confirmation.md): Once the user has provided all required values, you can ask them to confirm their choices.
 
 Now, add the following dialog annotations to the **MakeReservation** skill:
@@ -231,7 +231,7 @@ Now, add the following dialog annotations to the **MakeReservation** skill:
      ```
    - Names: number of people
    - Prompt: How many people will you need the reservation for?
-   - Value check template : 
+   - Value check template :
      ```kotlin
      - There is no available table for `${number}` people, please choose another number.
      ```
@@ -248,7 +248,7 @@ Now, add the following dialog annotations to the **MakeReservation** skill:
      ```kotlin
      There is no available table for `${number}` on `${datePicker!!.date!!.expression()}`, please choose another date.
      ```
-  
+
 6. **`timePicker` slot:**
    - Fill strategy: Always Ask
    - Value check with the following Condition:
@@ -265,7 +265,7 @@ Now, add the following dialog annotations to the **MakeReservation** skill:
 ##### Add type level annotations
 - Confirmation with the following Condition:
   ```kotlin
-  number != null && datePicker!!.date != null && timePicker!!.time != null 
+  number != null && datePicker!!.date != null && timePicker!!.time != null
   ```
 - Confirmation template :
   ```kotlin

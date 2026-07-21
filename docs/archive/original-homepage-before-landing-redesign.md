@@ -1,13 +1,13 @@
 ---
 layout: home
-title: Be.There
+title: BeThere
 hero:
-  name: Always be.there, where and when your users need you.
+  name: Always be there, where and when your users need you.
   tagline: The easiest way to build user-facing agents you can trust.
   actions:
     - theme: brand
       text: Start Building
-      link: https://build.opencui.io/
+      link: https://buildmate.bethere.ai/
       type: primary
     - theme: alt
       text: Read the Docs
@@ -33,7 +33,7 @@ contentCards:
 cta:
   - details: Tell us your idea, refine it in plain language, and ship a user-facing agent you can trust.
     title: Build with BeThere
-    link: https://build.opencui.io/
+    link: https://buildmate.bethere.ai/
 
 columnFooter:
   - title: BeThere

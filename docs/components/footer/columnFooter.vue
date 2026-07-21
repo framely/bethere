@@ -24,6 +24,7 @@ const columnFooter = computed(() => {
           <div class="footer-info-title">{{ columnFooter.title }}</div>
         </div>
         <div class="footer-info-tagline">{{ columnFooter.tagline }}</div>
+        <div v-if="columnFooter.legalEntity" class="footer-info-legal">{{ columnFooter.legalEntity }}</div>
       </div>
 
       <div class="footer-column-wrapper">
@@ -86,6 +87,13 @@ const columnFooter = computed(() => {
   font-weight: 500;
   font-size: 1rem;
   //line-height: 2rem;
+}
+
+.footer-info-legal {
+  margin-top: 12px;
+  color: var(--vp-c-text-3);
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .footer-column-wrapper {

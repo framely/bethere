@@ -1,5 +1,5 @@
 # From Beginner to Master
-OpenCUI is a platform that helps you create conversational interfaces for your services. It assumes that your services are already developed and deployed. Once you declare your services on the [platform](https://build.opencui.io), you can use a declarative approach to build the conversational interface for them.
+OpenCUI is a platform that helps you create conversational interfaces for your services. It assumes that your services are already developed and deployed. Once you declare your services on the [platform](https://buildmate.bethere.ai), you can use a declarative approach to build the conversational interface for them.
 
 To make the most of OpenCUI, it's important to understand its type-based conceptual model, which is different from the more common flow-based approach. We have created a series of tutorials that will guide you through the process of understanding the conceptual model and becoming skilled at using OpenCUI to create excellent conversational experiences.
 
@@ -30,4 +30,4 @@ OpenCUI is a platform primarily for chatbot product managers, but to successfull
 #### [OpenCUI workflow](opencui-flow)
 OpenCUI uses a Git-like version control system to make collaboration on projects easy. This guide will show you the workflow for using it.
 
-For the impatient, [you can get started now](https://build.opencui.io).
+For the impatient, [you can get started now](https://buildmate.bethere.ai).

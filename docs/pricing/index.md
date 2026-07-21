@@ -27,7 +27,7 @@ layout: home
           'Managed AI models',
         ],
         buttonText: 'Start 30-day trial',
-        link: 'https://build.opencui.io'
+        link: 'https://buildmate.bethere.ai'
       },
       {
         package:'Deploy',
@@ -46,7 +46,7 @@ layout: home
           'Usage based billing beyond that',
         ],
         buttonText: 'Start to build',
-        link: 'https://build.opencui.io'
+        link: 'https://buildmate.bethere.ai'
       },
       {
         package:'Custom',
@@ -90,7 +90,7 @@ cards:
                 -  Development environment
                 -  Community Support
       buttonText: Start to build
-      link: https://build.opencui.io
+      link: https://buildmate.bethere.ai
 
     - package: Business
       price: Custom
@@ -105,6 +105,6 @@ cards:
                 - Custom Integrations
                 - Advanced security, performance and customer success
       buttonText: What are you waiting for?
-      link: https://build.opencui.io
+      link: https://buildmate.bethere.ai
 
 --- -->

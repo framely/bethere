@@ -31,7 +31,7 @@ If you used *Developer Password(AppSecret)* before but didn't store it, you can 
 ![config whitelist](/images/channelConfig/wechat/config-whitelist.png)
 
 ## Configure WeChat from OpenCUI
-1. On OpenCUI platform, go to service component [io.opencui.channel](https://build.opencui.io/org/io.opencui/agent/channel/struct/service_schema): 
+1. On OpenCUI platform, go to service component [io.opencui.channel](https://buildmate.bethere.ai/org/io.opencui/agent/channel/struct/service_schema):
    1. Click **Import** button on the second topbar.
    2. Select the chatbot you want to configure WeChat channel and **Save**.
 
@@ -47,7 +47,7 @@ If you used *Developer Password(AppSecret)* before but didn't store it, you can 
    ![select a channel](/images/channelConfig/overview/select-channel.png)
    *Wire WeChat channel*
 
-3. Continue inside the dialog, configure WeChat integration as following: 
+3. Continue inside the dialog, configure WeChat integration as following:
    - **Label**: Enter channel label, should be **unique**.
    - **App ID**: Paste the developer ID you copied during the WeChat Official Account setup above.
    - **App Secret**: Paste the developer password you copied during the WeChat Official Account setup above.

@@ -20,7 +20,7 @@ OpenCUI is your canvas, your playground, your springboard to chatbot stardom. Gr
 Since OpenCUI is GitHub-friendly, you can conveniently sign in using your existing GitHub account. Skip the hassle of creating a new account, sign in directly with your Github credentials, which making it easier than ever to jump in and start building.
 
 **If you already have a Github account**:
-1. Head over to [OpenCUI platform](https://build.opencui.io/) and click "**Sign in with GitHub**".
+1. Head over to [OpenCUI platform](https://buildmate.bethere.ai/) and click "**Sign in with GitHub**".
 2. Follow the prompts to authorize OpenCUI to access your Github profile.
 3. That's it! You're now logged in and ready to explore the world of OpenCUI.
 

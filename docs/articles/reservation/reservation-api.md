@@ -1,7 +1,7 @@
 # Reservation API reference
 Version: v0.44.0
 
-The Reservation API ([services.opencui.reservation.IReservation](https://build.opencui.io/org/services.opencui/agent/reservation/struct/service_schema)) is designed for booking scenarios, and provides functionality for creating, querying, and canceling reservations. This API exposes most of the features available in the reservation scenario.
+The Reservation API ([services.opencui.reservation.IReservation](https://buildmate.bethere.ai/org/services.opencui/agent/reservation/struct/service_schema)) is designed for booking scenarios, and provides functionality for creating, querying, and canceling reservations. This API exposes most of the features available in the reservation scenario.
 
 - To utilize this service, ensure that you have an existing provider that implements it.
 - To invoke this service, make sure you import it into your project and add a corresponding service slot within your target skill/frame type.

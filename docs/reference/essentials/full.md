@@ -93,4 +93,4 @@ Large language models have fundamentally changed natural language understanding 
 ## Parting words
 According to Gates, only two technologies have ever struck him as "revolutionary": the first is the modern graphical user interface (GUI). With its ease of use and gradually reduced cost of building GUI applications over the years, GUI applications have forever changed human civilization. Now, it is that time again — conversational user interface (CUI) has the potential to remove any barriers for any user to access any services. We hope type-based OpenCUI can help you build the great conversational experience your user deserve, without trapping you in the implementation details.
 
-For the impatient, [you can get started now](https://build.opencui.io).
+For the impatient, [you can get started now](https://buildmate.bethere.ai).

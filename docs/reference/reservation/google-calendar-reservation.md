@@ -93,7 +93,7 @@ The app should be available for use within an hour, but might take up to 24 hour
 
 ## Set up Google Calendar reservation provider
 To use Google Calendar Reservation Provider, you can follow steps in [Wire and Configure](https://opencui.io/reference/providers/native.html#wire-and-configure) to accomplish the following:
-1. Declare service interface [services.opencui.reservation](https://build.opencui.io/org/services.opencui/agent/reservation/struct/service_schema) into your chatbot.
+1. Declare service interface [services.opencui.reservation](https://buildmate.bethere.ai/org/services.opencui/agent/reservation/struct/service_schema) into your chatbot.
 2. Wire Google Calendar Reservation Provider (*services.opencui.googlCalendarReservation*) to this service interface.
 3. Configuration the integration.
 
@@ -141,7 +141,7 @@ Now sign in to your [Google Admin console](https://admin.google.com/), do the fo
 ### Resources in OpenCUI
 As reservation service interface declares abstract **Resource**, you need to specify your concrete resources in your Module or Chatbot by declaring subclasses of Resource abstract frame. If you want to add any features to your resource, such as table size, nickname, service items, etc., which can be used to interact with customers and filter on the business side, you need to add them as slots for your concrete resources.
 
-Now sign in to [OpenCUI project](https://build.opencui.io/), do the following:
+Now sign in to [OpenCUI project](https://buildmate.bethere.ai/), do the following:
 
 #### 1. Declare subclass of Resource
 1. **Create** a concrete frame. Go to **Frames** page, click **Create**, type the frame Label and press the ENTER/RETURN key.
