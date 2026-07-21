@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import '../styles/index.scss'
 import NavContentAfter from './nav-content-after.vue'
 import HomeFeaturesAfter from './home-features-after.vue'
+import CFooter from '../../components/footer/columnFooter.vue'
 import CookieConsentVue from './cookie-consent.js'
 
 const themeStorageKey = 'vitepress-theme-appearance'
@@ -39,6 +40,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NavContentAfter),
       'home-features-after': () => h(HomeFeaturesAfter),
+      'layout-bottom': () => h(CFooter),
     })
   },
   async enhanceApp({ app, router }) {
