@@ -41,14 +41,14 @@ BeThere connects to Google only after a user authorizes access through Google OA
 | --- | --- |
 | Google account profile, name, profile image, account identifier, and email address | To sign you in, create and secure your BeThere account, display your account identity, associate an authorized Google connection with the correct BeThere workspace, and communicate about the Service. |
 | Gmail sending access | To send messages, such as confirmations and follow-ups, from the Gmail account you authorize and only as directed by the workflows you configure. BeThere does not use Gmail access to read or synchronize your inbox. |
-| Google Calendar calendars and events | To find availability and to create, view, update, reschedule, or cancel appointment and reservation events requested through your configured workflows. |
-| Google Workspace customer, buildings, rooms, and calendar resources | To discover, create, update, and manage the authorized organization’s buildings, rooms, and other calendar resources; check availability; and reserve those resources with calendar events. |
+| Google Calendar calendars and events | To find availability; create, update, or delete business and reservation calendars you direct BeThere to manage; and create, view, update, reschedule, or cancel appointment and reservation events requested through your configured workflows. |
+| Google Workspace buildings, rooms, and calendar resources | To discover, create, update, and manage the authorized organization’s buildings, rooms, and other calendar resources; check availability; and reserve those resources with calendar events. |
 | Google spreadsheets you select | To read and update business data in the specific Google Sheets files you choose through the Google file picker. The drive.file permission limits access to files selected for use with BeThere or created by BeThere; BeThere does not browse unrelated Drive files. |
 | OAuth access tokens, refresh tokens, granted scopes, and authorized-account metadata | To maintain the connections you authorize and make permitted Google API requests without requiring you to reconnect for every action. |
 
 ### Storage and protection
 
-BeThere stores OAuth tokens in a restricted secret store separately from ordinary project configuration. Project files and browser-visible configuration use secret references rather than exposing the token values. We use transport encryption when communicating with Google and apply access controls and other safeguards designed to prevent unauthorized access, use, or disclosure.
+BeThere stores OAuth tokens in access-controlled platform secret storage. When a connected provider runs, BeThere may copy the credentials it needs into local runtime configuration that is excluded from version control and redacted from browser-visible views. We use transport encryption when communicating with Google and apply access controls and other safeguards designed to prevent unauthorized access, use, or disclosure.
 
 Calendar, Gmail, Workspace resource, and selected spreadsheet data may be processed and retained when needed to complete the workflow you requested, maintain the resulting appointment, message, configuration, or business record, provide support, protect the Service, or comply with law. We retain Google user data only for as long as needed for these purposes and the connected BeThere account. We then delete or de-identify it, subject to limited retention in security records or backups and any legal obligations.
 
