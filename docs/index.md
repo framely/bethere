@@ -30,10 +30,6 @@ columnFooter:
     tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
     logo: /images/logo.png
     footerItems:
-      - title: Product
-        items:
-          - text: Open BeThere
-            link: https://buildmate.bethere.ai/
       - title: Legal
         items:
           - text: Terms of Service
