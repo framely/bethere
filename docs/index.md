@@ -28,7 +28,6 @@ contentCards:
 columnFooter:
   - title: BeThere
     tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
-    legalEntity: BeThere is a service provided by OpenCUI, Inc.
     logo: /images/logo.png
     footerItems:
       - title: Legal

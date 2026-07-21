@@ -1,9 +1,9 @@
 # Terms of Service
 Effective date: July 21, 2026
 
-These Terms of Service (“Terms”) govern your access to and use of the public website at [bethere.ai](https://bethere.ai/), the application at [buildmate.bethere.ai](https://buildmate.bethere.ai/), and the software, products, integrations, and features made available under the BeThere name (collectively, the “Service”). BeThere is a service provided and operated by OpenCUI, Inc. In these Terms, “BeThere,” “we,” “us,” and “our” refer to OpenCUI, Inc. as the provider and operator of the Service.
+These Terms of Service (“Terms”) govern your access to and use of the public website at [bethere.ai](https://bethere.ai/), the application at [buildmate.bethere.ai](https://buildmate.bethere.ai/), and the software, products, integrations, and features made available under the BeThere name (collectively, the “Service”). In these Terms, “BeThere,” “we,” “us,” and “our” refer to the provider and operator of the Service.
 
-By clicking your consent (for example, “Continue,” “Sign in,” or “Sign up”) or by using the Service, you enter into an agreement with OpenCUI, Inc. and agree to these Terms.
+By clicking your consent (for example, “Continue,” “Sign in,” or “Sign up”) or by using the Service, you enter into an agreement with BeThere and agree to these Terms.
 
 Please read these Terms carefully before accessing or using BeThere. If you have comments or questions, contact us using the information at the end of these Terms.
 
@@ -179,7 +179,7 @@ No instance of waiver by BeThere of its rights or remedies under these terms and
 
 ### 12.6 Contact
 
-OpenCUI, Inc. / BeThere Legal
+BeThere Legal
 [contact@bethere.ai](mailto:contact@bethere.ai)
 
 For information about how we handle data, see the [BeThere Privacy Policy](/policy/privacy).

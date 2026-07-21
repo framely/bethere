@@ -2,7 +2,7 @@
 
 Effective date: July 21, 2026
 
-BeThere is a service provided and operated by OpenCUI, Inc. This Privacy Policy explains how OpenCUI, Inc., doing business through the BeThere service (“BeThere,” “we,” “us,” or “our”), collects, uses, stores, and shares information when you use the BeThere website at [bethere.ai](https://bethere.ai/), the BeThere application at [buildmate.bethere.ai](https://buildmate.bethere.ai/), and related BeThere services (collectively, the “Service”).
+This Privacy Policy explains how BeThere (“we,” “us,” or “our”) collects, uses, stores, and shares information when you use the BeThere website at [bethere.ai](https://bethere.ai/), the BeThere application at [buildmate.bethere.ai](https://buildmate.bethere.ai/), and related BeThere services (collectively, the “Service”).
 
 ## 1. Information we collect
 
@@ -119,7 +119,7 @@ We may update this Policy as the Service or legal requirements change. We will u
 
 ## 12. Contact us
 
-OpenCUI, Inc. / BeThere Privacy
+BeThere Privacy
 [contact@bethere.ai](mailto:contact@bethere.ai)
 
 For the terms governing use of the Service, see the [BeThere Terms of Service](/policy/terms).
