@@ -1,8 +1,8 @@
 {
-  "name": "VuePress",
-  "short_name": "VuePress",
-  "description": "Vue-powered Static Site Generator",
-  "start_url": "/index.html",
+  "name": "BeThere",
+  "short_name": "BeThere",
+  "description": "AI specialists for service businesses",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#4282fd",
