@@ -11,7 +11,7 @@ hero:
       link: https://buildmate.bethere.ai
 contentCards:
   - title: 01. Customize AI Specialists
-    details: Pick a specialist type, customize it to your business rules, and connect Google Calendar, Gmail, Workspace resources, and selected Sheets.
+    details: Pick a specialist type and customize it conversationally to follow your business rules. Connect your providers securely with OAuth.
     image: /images/home/customize-specialist.webp
     alt: A business owner turns a guided conversation into a checklist and branching business rules for an AI specialist.
     left: true
@@ -39,15 +39,3 @@ columnFooter:
           - text: Contact Support
             link: mailto:contact@bethere.ai
 ---
-
-## Google integrations
-
-BeThere requests access to Google data only when you connect a Google-powered feature:
-
-- **Google Sign-In** uses your basic account identity to create and secure your BeThere session.
-- **Gmail** sends confirmations and follow-ups from the account you authorize; BeThere does not read or synchronize your inbox.
-- **Google Calendar** checks availability and manages appointment or reservation events.
-- **Google Workspace resources** lets an authorized Workspace administrator connect bookable rooms, buildings, and other calendar resources.
-- **Google Sheets** uses Google Picker and `drive.file` access so you choose the spreadsheets BeThere can use; it cannot browse unrelated Drive files.
-
-Each integration is optional and requested when you configure that feature. You can revoke a connection from your Google Account at any time. See the [Privacy Policy](/policy/privacy) for details about how Google user data is accessed, used, stored, shared, and deleted.
