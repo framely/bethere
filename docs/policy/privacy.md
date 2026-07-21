@@ -62,7 +62,7 @@ We share Google user data only:
 - when required by applicable law; or
 - as part of a merger, acquisition, or sale of assets, subject to applicable notice and consent requirements.
 
-We do not sell Google user data, share it with advertising platforms or data brokers, use it for personalized or interest-based advertising, use it to determine creditworthiness, or allow humans to read it except with the user’s affirmative permission for specific data, when necessary for security or support, when required by law, or when the data has been aggregated and de-identified for internal operations.
+We do not sell Google user data, share it with advertising platforms or data brokers, use it for personalized or interest-based advertising, use it to determine creditworthiness, or use raw or derived Google Workspace API data to train or improve generalized artificial intelligence or machine-learning models. We do not allow humans to read Google user data except with the user’s affirmative permission for specific data, when necessary for security or support, when required by law, or when the data has been aggregated and de-identified for internal operations.
 
 BeThere’s use and transfer to any other application of information received from Google APIs will adhere to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including its Limited Use requirements.
 
