@@ -13,7 +13,7 @@ Follow these steps to configure:
 2. Under **Business Messages**, click **Create partner account**.
 3. Enter your partner information:
 
-| Field           | Value                                                     |   
+| Field           | Value                                                     |
 |:----------------|:----------------------------------------------------------|
 | Your name       | Your full name                                            |
 | Partner name    | Your organization's name                                  |
@@ -43,7 +43,7 @@ Your browser downloads the service account key. Store it in a secure location. Y
 ![create agent](/images/channelConfig/googlebusiness/create-agent.png)
 
 ## Configure Google Business Message from OpenCUI
-1. On OpenCUI platform, go to service component [io.opencui.channel](https://build.opencui.io/org/io.opencui/agent/channel/struct/service_schema): 
+1. On OpenCUI platform, go to service component [io.opencui.channel](https://buildmate.bethere.ai/org/io.opencui/agent/channel/struct/service_schema):
    1. Click **Import** button on the second topbar.
    2. Select the chatbot you want to configure Google Business Message channel and **Save**.
 
@@ -59,13 +59,13 @@ Your browser downloads the service account key. Store it in a secure location. Y
    ![select a channel](/images/channelConfig/overview/select-channel.png)
    *Wire Google Business Message channel*
 
-3. Continue inside the dialog, configure Google Business Message integration as following: 
+3. Continue inside the dialog, configure Google Business Message integration as following:
 
     - **Label**: Enter channel label, should be **unique**.
-    - **Client Token**: Enter any private token you desire. :clipboard: Copy this value. This will be used to configure the Google Business Message Webhook. 
+    - **Client Token**: Enter any private token you desire. :clipboard: Copy this value. This will be used to configure the Google Business Message Webhook.
     - **Credential**: Copy and paste the service account key you downloaded from Business Communications Developer Console.
     - **Locale**: Select locale which determines the default language used by your bot.
-    - **Callback URL**: :clipboard: Copy this value after setting the label and locale. This will be used to configure the Google Business Message Webhook. 
+    - **Callback URL**: :clipboard: Copy this value after setting the label and locale. This will be used to configure the Google Business Message Webhook.
 
     ![add channel](/images/channelConfig/googlebusiness/add-channel.png)
 
@@ -100,7 +100,7 @@ A webhook is a partner-created HTTPS callback that specifies how your agent shou
 2. Under **Agent test URLs**, click the **Android button** or **iOS button**.
     - Scan the QR code with the corresponding mobile device, or click **Copy Android URL** or **Copy iOS URL** to copy the agent's test URL.
     - You can also click **Send** to send the URLs to your email address.
-3. Open the URL in your mobile device. (iOS devices require the Google Maps app.) 
+3. Open the URL in your mobile device. (iOS devices require the Google Maps app.)
 4. Now you can start a conversation with your chatbot. :tada:
 
 ![test](/images/channelConfig/googlebusiness/test.png)

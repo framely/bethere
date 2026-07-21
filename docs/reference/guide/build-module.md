@@ -6,7 +6,7 @@ The Service is a special singleton type in a module with service enabled. It all
 In the previous guide, we showed how your chatbot can handle various business hours queries using the "hours" module. In this guide, we will show you how to build such a module in two parts: first declare the service, then define the conversational user interface on top of that. Both essentially involve defining a set of types, with types needed by the service requiring no dialog annotations.
 
 ## Before you start
-- Log in to [OpenCUI](https://build.opencui.io/login).
+- Log in to [OpenCUI](https://buildmate.bethere.ai/login).
 - [Build a simple chatbot](./build-simple-chatbot.md) for how to build a skill with entity slots.
 - [Reuse a full-stack component](./reuse-component.md) to get familiar with the functionality you will build here.
 
@@ -107,7 +107,7 @@ Inside the `hours` module and **Types** page, under the **Structure** view.
 ##### Add slots
 To prompt a user for a specific day, use the [DatePicker](../plugins/components/datepicker/index.md) frame. This frame simplifies the process of entering a date and is an official CUI component declared in the `components` module. 
 
-Before proceeding, ensure that the `components` module exists under the **Dependencies** tab. If it doesn't, import [components module](https://build.opencui.io/org/io.opencui/agent/components/struct/frame/63c8aea6517f06c1880e3cff) to the `hours` module first. After successful import, go back to `hours` module and refresh your webpage.
+Before proceeding, ensure that the `components` module exists under the **Dependencies** tab. If it doesn't, import [components module](https://buildmate.bethere.ai/org/io.opencui/agent/components/struct/frame/63c8aea6517f06c1880e3cff) to the `hours` module first. After successful import, go back to `hours` module and refresh your webpage.
 
 Inside the `ShowHours` skill and **Schema** tab, under the **Structure** view.
 

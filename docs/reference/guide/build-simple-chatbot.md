@@ -53,7 +53,7 @@ It is common for composite types to have slots, and then you have to decide whet
 
 ## Before you start
 
-- Log in to [OpenCUI](https://build.opencui.io/login).
+- Log in to [OpenCUI](https://buildmate.bethere.ai/login).
 - [Clone a simple chatbot](clone-simple-chatbot.md) to get an idea of what to build.
 
 ## Create chatbot: pingpong

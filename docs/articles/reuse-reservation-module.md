@@ -18,7 +18,7 @@ OpenCUI offers a convenient way for developers to share modules, allowing for th
 
 To leverage a pre-existing module, the initial step is to identify a module that aligns with your requirements. Subsequently, you can import the module into your chatbot and directly leverage its functionalities. These modules are developed and maintained by other builders, assuring their quality. Moreover, you retain the flexibility to update these modules, ensuring that your chatbot remains up-to-date with the latest features and capabilities. For more background and details about modules, see "[Reuse an hours module](../reference/guide/reuse-component.md)".
 
-To demonstrate the reuse of modules, we will focus on the [tableReservation](https://build.opencui.io/org/demo.opencui/agent/tableReservation/struct/type?page=0&list_type=all&search=&category=ALL) module. This module allows chatbots to facilitate tasks such as making, viewing, and canceling table reservations. Below is an example of a user interaction with a chatbot utilizing the table reservation module:
+To demonstrate the reuse of modules, we will focus on the [tableReservation](https://buildmate.bethere.ai/org/demo.opencui/agent/tableReservation/struct/type?page=0&list_type=all&search=&category=ALL) module. This module allows chatbots to facilitate tasks such as making, viewing, and canceling table reservations. Below is an example of a user interaction with a chatbot utilizing the table reservation module:
 
 ``` json
 User: "Hi, I'd like to reserve a table, please."
@@ -41,7 +41,7 @@ Before reusing the `tableReservation` module, it is crucial to grasp the followi
 3. [Google Calendar provider](./reservation/google-calendar-reservation.md): Backend used by the chatbot to store reservations, requiring a Google Workspace account.
 
 ## Before you start
-1. Log in to [OpenCUI](https://build.opencui.io/login).
+1. Log in to [OpenCUI](https://buildmate.bethere.ai/login).
 2. Refer to the [quickstart guide](../reference/guide/index) to familiarize yourself with OpenCUI basics.
 3. Set up [Google Workspace](./reservation/google-calendar-reservation#set-up-google-workspace) and [service account](./reservation/google-calendar-reservation#set-up-service-account).
 
@@ -228,7 +228,7 @@ Let's proceed with creating a table reservation chatbot and reusing the function
 
 ### Import the module
 1. Create a chatbot and add the **English(en)** language.
-2. [Import](../reference/platform/reusability.md#import-1) the [table reservation module](https://build.opencui.io/org/demo.opencui/agent/tableReservation/struct/type?page=0&list_type=all&search=&category=ALL) into your chatbot.
+2. [Import](../reference/platform/reusability.md#import-1) the [table reservation module](https://buildmate.bethere.ai/org/demo.opencui/agent/tableReservation/struct/type?page=0&list_type=all&search=&category=ALL) into your chatbot.
 
 ### Configure restaurant inforamtion
 To tailor the reservation process to your restaurant's needs, follow these steps to configure restaurant information in corresponding types:
@@ -271,4 +271,4 @@ The image below depicts the process of how the reservation is successfully compl
 ![message process](/images/blog/tutorial-reuse-reservation/message-process.png)
 
 
-::tada:: Congratulations on building your table reservation chatbot! For more exploration, refer to the [Test cases](../reference/platform/testing.md#test-cases) in the [tableReservationBot](https://build.opencui.io/org/me.test/agent/tableReservationBot/en/type?page=0&list_type=all&search=&category=ALL) chatbot.
+::tada:: Congratulations on building your table reservation chatbot! For more exploration, refer to the [Test cases](../reference/platform/testing.md#test-cases) in the [tableReservationBot](https://buildmate.bethere.ai/org/me.test/agent/tableReservationBot/en/type?page=0&list_type=all&search=&category=ALL) chatbot.

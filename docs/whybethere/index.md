@@ -24,24 +24,24 @@ contentCards:
 cta:
   - details: Tell us about your business, connect your calendar and channels, and launch an AI receptionist you can trust.
     title: Build my receptionist
-    link: https://build.opencui.io/
+    link: https://buildmate.bethere.ai/
 columnFooter:
   - title: BeThere
     tagline: Create and deploy an AI receptionist connected to your calendar and messaging channels.
     logo: /images/logo.png
     footerItems:
-      - title: Social
+      - title: Product
         items:
-          - text: Medium
-            link: https://opencui.medium.com/
-          - text: Discord
-            link: https://discord.gg/4Fqb6NtC
-          - text: LinkedIn
-            link: https://www.linkedin.com/company/10969501/
+          - text: Google integrations
+            link: /#google-integrations
+          - text: Open BeThere
+            link: https://buildmate.bethere.ai/
       - title: Legal
         items:
           - text: Terms of Service
             link: /policy/terms
           - text: Privacy policy
             link: /policy/privacy
+          - text: Contact Support
+            link: mailto:contact@bethere.ai
 ---
