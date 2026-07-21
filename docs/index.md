@@ -12,16 +12,18 @@ hero:
 contentCards:
   - title: 01. Customize AI Specialists
     details: Pick a specialist type, customize it based on your own business rules, conversationally.
-    image: /images/home/deterministic-interaction-logic.svg
+    image: /images/home/customize-specialist.webp
+    alt: A business owner turns a guided conversation into a checklist and branching business rules for an AI specialist.
     left: true
   - title: 02. Configure Coordinator
     details: Add a coordinator, connect specialists with channels, and configure them in a chat session, via OAuth.
-    image: /images/home/agentic-dialog-understanding.svg
+    image: /images/home/configure-coordinator.webp
+    alt: A central coordinator securely connects focused specialists with calendars, messaging, and phone channels.
     left: false
   - title: 03. Deploy and Operate
-    details: Deploy coordinators to dev to test, or to prod to serve customers. Monitor activity and take over conversations wh
-        en needed.
-    image: /images/home/idea-to-working-agent.svg
+    details: Deploy coordinators to dev to test, or to prod to serve customers. Monitor activity and take over conversations when needed.
+    image: /images/home/deploy-operate.webp
+    alt: A tested conversation passes through deployment into live monitoring with human handoff available.
     left: true
 columnFooter:
   - title: BeThere

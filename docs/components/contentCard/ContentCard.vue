@@ -17,7 +17,13 @@ const contentCard = computed(() => {
     <div v-for="contentCard in contentCard" :key="contentCard.details" class="contentCards">
       <div class="contentCard-card" v-if="contentCard.left">
         <div class="image">
-          <img :src="contentCard.image" alt="" />
+          <img
+            :src="contentCard.image"
+            :alt="contentCard.alt || ''"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
         </div>
         <div class="content">
           <h2 class="title">{{ contentCard.title }}</h2>
@@ -30,7 +36,13 @@ const contentCard = computed(() => {
           <p class="desc">{{ contentCard.details }}</p>
         </div>
         <div class="image">
-          <img :src="contentCard.image" alt="" />
+          <img
+            :src="contentCard.image"
+            :alt="contentCard.alt || ''"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
@@ -51,6 +63,14 @@ const contentCard = computed(() => {
       gap: 4rem;
       .image {
         width: 45%;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border: 1px solid rgba(66, 130, 253, 0.1);
+          border-radius: 20px;
+        }
       }
       .content {
         width: 55%;
@@ -86,6 +106,10 @@ const contentCard = computed(() => {
         gap: 1.5rem;
         .image {
           width: 100%;
+
+          img {
+            border-radius: 18px;
+          }
         }
         .content {
           width: 100%;
