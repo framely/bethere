@@ -7,7 +7,7 @@ hero:
   tagline: A smart enough, reliable AI agent—in just a few questions.
   actions:
     - theme: brand
-      text: Join waitlist
+      text: Add a specialist
       link: https://buildmate.bethere.ai
 contentCards:
   - title: 01. Customize AI Specialists

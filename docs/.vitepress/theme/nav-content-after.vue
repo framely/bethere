@@ -1,7 +1,7 @@
 <template #nav-bar-content-after>
   <a href="https://buildmate.bethere.ai">
     <button class="button-start">
-      Join waitlist
+      Start to build
     </button>
   </a>
 </template>
