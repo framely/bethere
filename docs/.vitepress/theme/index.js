@@ -3,7 +3,11 @@ import DefaultTheme from 'vitepress/theme'
 import NavContentAfter from './nav-content-after.vue'
 import HomeFeaturesAfter from './home-features-after.vue'
 import CFooter from '../../components/footer/columnFooter.vue'
-import CookieConsentVue from './cookie-consent.js'
+import CookieConsentVue, { CookieConsent } from './cookie-consent.js'
+import {
+  captureWebsitePageview,
+  setWebsiteAnalyticsConsent,
+} from './analytics.mjs'
 import '../styles/index.scss'
 
 const themeStorageKey = 'vitepress-theme-appearance'
@@ -34,6 +38,10 @@ function applyUrlTheme(href = window.location.href) {
   )
 }
 
+function syncWebsiteAnalyticsConsent() {
+  setWebsiteAnalyticsConsent(CookieConsent.acceptedCategory('analytics'))
+}
+
 export default {
   ...DefaultTheme,
   Layout() {
@@ -51,9 +59,16 @@ export default {
       router.onAfterRouteChanged = async (to) => {
         await onAfterRouteChanged?.(to)
         applyUrlTheme(to)
+        captureWebsitePageview(to)
       }
 
       app.use(CookieConsentVue, {
+        onConsent: syncWebsiteAnalyticsConsent,
+        onChange: ({ changedCategories }) => {
+          if (changedCategories.includes('analytics')) {
+            syncWebsiteAnalyticsConsent()
+          }
+        },
         categories: {
           necessary: {
             enabled: true,  // this category is enabled by default
