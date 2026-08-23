@@ -13,6 +13,8 @@
   --bethere-hover-surface: #f5f5f5;
   --bethere-primary-hover: #404040;
   --bethere-primary-active: #525252;
+  --bethere-brand-mark-saturation: 0.55;
+  --bethere-brand-mark-brightness: 0.92;
 
   --vp-c-bg: var(--bethere-canvas);
   --vp-c-bg-alt: var(--bethere-raised-surface);
@@ -83,6 +85,8 @@ html.dark {
   --bethere-hover-surface: #262626;
   --bethere-primary-hover: #e5e5e5;
   --bethere-primary-active: #d4d4d4;
+  --bethere-brand-mark-saturation: 0.35;
+  --bethere-brand-mark-brightness: 1.08;
 }
 
 html,
@@ -93,6 +97,12 @@ body {
 
 body {
   letter-spacing: normal;
+}
+
+img[src$='/images/logo.png'] {
+  filter:
+    saturate(var(--bethere-brand-mark-saturation))
+    brightness(var(--bethere-brand-mark-brightness));
 }
 
 a,
