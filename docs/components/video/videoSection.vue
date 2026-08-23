@@ -30,6 +30,7 @@ const video = computed(() => {
   .video-player {
     height: 100%;
     width: 100%;
+    border: 1px solid var(--vp-c-divider);
     border-radius: 12px;
   }
 }

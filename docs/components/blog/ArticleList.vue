@@ -17,7 +17,7 @@
           </a>
         </div>
         <div>
-          <img class="blog-card-image" :src="info.image" />
+          <img class="blog-card-image" :src="info.image" :alt="info.title || ''" />
         </div>
       </div>
     </article>
@@ -48,16 +48,7 @@ defineProps({
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    position: relative;
-    top: 0;
-    transition: top ease 0.5s;
     gap: 1rem;
-
-    &:hover {
-      border-radius: 6px;
-      top: -10px;
-    }
-
     margin-bottom: 1.5rem;
   }
 
@@ -66,7 +57,8 @@ defineProps({
     width: 16rem;
     min-width: 16rem;
     height: 10rem;
-    border-radius: 6px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
     object-fit: cover;
     margin: 0;
   }
@@ -79,13 +71,20 @@ defineProps({
     color: var(--c-text);
 
     >a {
-      color: var(--vp-c-brand);
+      color: var(--vp-c-text-1);
+      text-decoration: underline;
+      text-decoration-color: var(--vp-c-border);
+      text-underline-offset: 3px;
+
+      &:hover {
+        text-decoration-color: currentcolor;
+      }
     }
   }
 
   .blog-card-info-title {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0 1.5rem;
     padding: 0;
     border: 0;

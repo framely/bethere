@@ -9,11 +9,3 @@ import Video from '../../components/video/videoSection.vue'
   <ContentCard />
   <Cta />
 </template>
-
-<style lang="scss">
-.home-features-after {
-  width: 100%;
-  height: 200px;
-  background: red;
-}
-</style>
