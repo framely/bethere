@@ -1,186 +1,280 @@
 :root {
-  /**
-   * The default theme CSS variables that can be overridden:
-   * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
-   * -------------------------------------------------------------------------- */
+  color-scheme: light;
 
-  // Color Base
-  --vp-c-brand: #4282fd;
-  --vp-c-brand-light: #5F95FE;
+  // Shared BeThere foundation. VitePress variables below map to these tokens.
+  --bethere-canvas: #ffffff;
+  --bethere-foreground: #262626;
+  --bethere-muted-foreground: #737373;
+  --bethere-border: #e5e5e5;
+  --bethere-border-interactive: #d4d4d4;
+  --bethere-navigation: var(--bethere-canvas);
+  --bethere-raised-surface: #f5f5f5;
+  --bethere-selected-surface: #f5f5f5;
+  --bethere-hover-surface: #f5f5f5;
+  --bethere-primary-hover: #404040;
+  --bethere-primary-active: #525252;
 
-  // hero name
-  --vp-home-hero-name-color: var(--vp-c-text-1);
-  //--vp-home-hero-name-color: transparent;
-  //--vp-home-hero-name-background: -webkit-linear-gradient(326deg, #5280F5, #39C0EE);
+  --vp-c-bg: var(--bethere-canvas);
+  --vp-c-bg-alt: var(--bethere-raised-surface);
+  --vp-c-bg-elv: var(--bethere-raised-surface);
+  --vp-c-bg-soft: var(--bethere-canvas);
+  --vp-c-text-1: var(--bethere-foreground);
+  --vp-c-text-2: var(--bethere-muted-foreground);
+  --vp-c-text-3: var(--bethere-muted-foreground);
+  --vp-c-border: var(--bethere-border-interactive);
+  --vp-c-divider: var(--bethere-border);
+  --vp-c-gutter: var(--bethere-border);
+  --vp-c-neutral: var(--bethere-foreground);
+  --vp-c-neutral-inverse: var(--bethere-canvas);
+  --vp-c-gray-1: var(--bethere-border-interactive);
+  --vp-c-gray-2: var(--bethere-border);
+  --vp-c-gray-3: var(--bethere-hover-surface);
+  --vp-c-gray-soft: var(--bethere-hover-surface);
+  --vp-c-default-1: var(--bethere-border-interactive);
+  --vp-c-default-2: var(--bethere-hover-surface);
+  --vp-c-default-3: var(--bethere-hover-surface);
+  --vp-c-default-soft: var(--bethere-hover-surface);
+  --vp-c-brand-1: var(--bethere-foreground);
+  --vp-c-brand-2: var(--bethere-primary-hover);
+  --vp-c-brand-3: var(--bethere-foreground);
+  --vp-c-brand-soft: var(--bethere-hover-surface);
+  --vp-c-brand: var(--bethere-foreground);
+  --vp-home-hero-name-color: var(--bethere-foreground);
+  --vp-home-hero-name-background: none;
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+  --vp-nav-bg-color: var(--bethere-navigation);
+  --vp-code-block-bg: var(--bethere-raised-surface);
+  --vp-code-tab-bg: var(--bethere-raised-surface);
+  --vp-c-bg-icon: var(--bethere-hover-surface);
 
-  // hero image bg
-  --vp-home-hero-image-background-image: -webkit-linear-gradient(-45deg, #5280F520 80%, #C9EBFF20 50%);
-  --vp-home-hero-image-filter: blur(72px);
+  --vp-button-brand-border: var(--bethere-foreground);
+  --vp-button-brand-text: var(--bethere-canvas);
+  --vp-button-brand-bg: var(--bethere-foreground);
+  --vp-button-brand-hover-border: var(--bethere-primary-hover);
+  --vp-button-brand-hover-text: var(--bethere-canvas);
+  --vp-button-brand-hover-bg: var(--bethere-primary-hover);
+  --vp-button-brand-active-border: var(--bethere-primary-active);
+  --vp-button-brand-active-text: var(--bethere-canvas);
+  --vp-button-brand-active-bg: var(--bethere-primary-active);
+  --vp-button-alt-border: var(--bethere-border-interactive);
+  --vp-button-alt-text: var(--bethere-foreground);
+  --vp-button-alt-bg: var(--bethere-canvas);
+  --vp-button-alt-hover-border: var(--bethere-border-interactive);
+  --vp-button-alt-hover-text: var(--bethere-foreground);
+  --vp-button-alt-hover-bg: var(--bethere-hover-surface);
+  --vp-button-alt-active-border: var(--bethere-border-interactive);
+  --vp-button-alt-active-text: var(--bethere-foreground);
+  --vp-button-alt-active-bg: var(--bethere-selected-surface);
 
-  // Colors Theme
-  --vp-c-border: #eaecef;
-  --vp-c-border-dark: #dfe2e5;
-
-  // Component: Button
-  --vp-button-brand-bg: var(--vp-c-brand);
-  --vp-button-brand-border: var(--vp-c-brand-light);
-  --vp-button-brand-hover-border: var(--vp-c-brand-light);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
-
-  /**
-   * We added, not in vitepress
-   * -------------------------------------------------------------------------- */
-
-  // background colors
-  --vp-c-bg-icon: #4282fd10;
-
-  // layout vars, blog and pricing page are using it
   --homepage-width: 960px;
-
-  --mcc-bg: #fff;
-  --mcc-title: #2c2f31;
-  --mcc-content: #5e6266;
-
-  /**
-   * Change hero size
-   * Hide hero image, step 1 we just hide it.
-  .main{
-    align-self: center;
-  }
-  .image-container{
-    width: 500px;
-    height: 500px;
-    transform: translate(16px, 0px);
-    .image-src{
-      max-width: 500px;
-      max-height: 500px;
-    }
-  }
-  @media (max-width:960px) {
-    .container{
-      row-gap: 50px;
-    }
-    .image-container{
-      transform: translate(0px, 0px);
-      .image-src{
-        max-width: 420px;
-        max-height: 450px;
-      }
-    }
-  }
-  // End hero size
-   * -------------------------------------------------------------------------- */
-
-  /**
-   * Change main name, tagline, actions alignment
-   * -------------------------------------------------------------------------- */
-  .main {
-
-    .text,
-    .tagline {
-      max-width: 75%;
-    }
-
-    .name {
-      font-size: 6vw;
-      line-height: 1.04;
-      max-width: 75%;
-    }
-  }
-
-  @media (min-width:1600px) {
-    .main {
-      .name {
-        font-size: 4.8rem;
-      }
-    }
-  }
-
-  @media (max-width:960px) {
-    .main {
-      .name {
-        font-size: 9vw;
-        max-width: 100%;
-        line-height: 1.2;
-      }
-    }
-  }
-
-  /* End change main */
-
 }
 
 html.dark {
-  // brand colors
-  --vp-c-brand: #4282fd;
-  --vp-c-brand-light: #5F95FE;
-
-  // border colors
-  --vp-c-border: #3e4c5a;
-  --vp-c-border-dark: #34404c;
-
-  --mcc-bg: #242C31;
-  --mcc-title: #e1e4e7;
-  --mcc-content: #aebbc5;
+  color-scheme: dark;
+  --bethere-canvas: #000000;
+  --bethere-foreground: #f5f5f5;
+  --bethere-muted-foreground: #a3a3a3;
+  --bethere-border: #262626;
+  --bethere-border-interactive: #525252;
+  --bethere-navigation: var(--bethere-canvas);
+  --bethere-raised-surface: #171717;
+  --bethere-selected-surface: #262626;
+  --bethere-hover-surface: #262626;
+  --bethere-primary-hover: #e5e5e5;
+  --bethere-primary-active: #d4d4d4;
 }
 
-// custom component styles
+html,
+body {
+  background-color: var(--bethere-canvas);
+  color: var(--bethere-foreground);
+}
 
-.VPNavBar.has-sidebar {
+body {
+  letter-spacing: normal;
+}
 
-  >.container {
+a,
+button {
+  transition-duration: 150ms;
+}
 
-    >.title {
-      border-bottom: 1px solid var(--vp-c-divider);
-      background-color: var(--vp-c-bg);
+:focus-visible {
+  outline: 2px solid var(--bethere-foreground);
+  outline-offset: 2px;
+}
 
-      >.VPNavBarTitle.has-sidebar {
-        >.title {
-          border-bottom: none;
-        }
-      }
-    }
+.VPNavBar,
+.VPNavBar.screen-open,
+.VPNavScreen,
+.VPNavBar .content-body {
+  background-color: var(--bethere-navigation);
+}
 
-    >.content {
-      .curtain {
-        border-top: 1px solid var(--vp-c-divider);
-      }
-    }
-  }
+.VPNavBar .divider-line {
+  background-color: var(--bethere-border);
+}
+
+.VPNavBarTitle .title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+.VPNavBarMenuLink,
+.VPNavScreenMenuLink {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 
 .VPSidebar {
-  background-color: var(--vp-c-bg) !important;
-  border-right: 1px solid var(--vp-c-divider) !important;
+  background-color: var(--bethere-navigation) !important;
+  border-right: 1px solid var(--bethere-border) !important;
+}
+
+.VPSidebarItem .text,
+.VPSidebarItem .link {
+  letter-spacing: normal;
+}
+
+.VPHomeHero .main {
+  width: 100%;
+}
+
+.VPHomeHero .name,
+.VPHomeHero .text {
+  max-width: 60rem;
+  font-size: clamp(3rem, 6vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: normal;
+}
+
+.VPHomeHero .tagline {
+  max-width: 48rem;
+  padding-top: 20px;
+  color: var(--bethere-muted-foreground);
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: normal;
+}
+
+.VPHomeHero .actions {
+  padding-top: 28px;
+}
+
+.VPButton.medium,
+.VPButton.big {
+  min-height: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.VPButton:active,
+.button-start:active,
+.button-cta:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 18%);
+}
+
+.vp-doc {
+  color: var(--bethere-foreground);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  color: var(--bethere-foreground);
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.vp-doc h1 {
+  font-size: clamp(2rem, 4vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.vp-doc h2 {
+  border-top-color: var(--bethere-border);
+  font-size: 24px;
+}
+
+.vp-doc h3 {
+  font-size: 20px;
+}
+
+.vp-doc a {
+  color: var(--bethere-foreground);
+  text-decoration: underline;
+  text-decoration-color: var(--bethere-border-interactive);
+  text-underline-offset: 3px;
+}
+
+.vp-doc a:hover {
+  text-decoration-color: currentcolor;
+}
+
+.vp-doc table,
+.vp-doc tr,
+.vp-doc th,
+.vp-doc td,
+.vp-doc img,
+.vp-doc div[class*='language-'] {
+  border-color: var(--bethere-border);
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: var(--bethere-canvas);
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--bethere-border);
+  background-color: var(--bethere-raised-surface);
+}
+
+.vp-doc .custom-block:not(.warning):not(.danger):not(.caution) {
+  border: 1px solid var(--bethere-border);
+  background-color: var(--bethere-canvas);
+}
+
+.VPMenu,
+.VPLocalNav,
+.VPDocAsideOutline,
+.VPFlyout .menu {
+  border-color: var(--bethere-border);
 }
 
 @media (min-width: 960px) {
-  .VPNavBar.has-sidebar {
-    > .wrapper {
-      padding: 0 32px;
-    }
+  .VPNavBar.has-sidebar > .wrapper {
+    padding: 0 32px;
+  }
 
-    > .container {
-      max-width: calc(var(--vp-layout-max-width) - 64px);
+  .VPNavBar.has-sidebar > .wrapper > .container {
+    max-width: calc(var(--vp-layout-max-width) - 64px);
+  }
 
-      > .title {
-        position: static;
-        z-index: auto;
-        padding: 0;
-        width: auto;
-        height: calc(var(--vp-nav-height) - 1px);
-        background-color: transparent;
-      }
+  .VPNavBar.has-sidebar > .wrapper > .container > .title {
+    position: static;
+    z-index: auto;
+    width: auto;
+    height: calc(var(--vp-nav-height) - 1px);
+    padding: 0;
+    background-color: transparent;
+  }
 
-      > .content {
-        padding-right: 0;
-        padding-left: 0;
-      }
-    }
+  .VPNavBar.has-sidebar > .wrapper > .container > .content {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
-    .divider {
-      padding-left: 0;
-    }
+  .VPNavBar.has-sidebar .divider {
+    padding-left: 0;
   }
 
   .VPSidebar {
@@ -193,30 +287,106 @@ html.dark {
   }
 }
 
-#cc-main {
-  --cc-bg: var(--mcc-bg); //var(--vp-c-bg);
-  /** Change font **/
-  // --cc-font-family: Roboto;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
 
-  /** Change button primary color to black **/
-  --cc-btn-primary-bg: #4282fd;
-  --cc-btn-primary-border-color: none;
-  --cc-btn-primary-hover-bg: #5F95FE;
-  // --cc-btn-primary-hover-border-color: #444444;
+::-webkit-scrollbar-track {
+  background-color: var(--bethere-canvas);
+}
 
-  /** Also make toggles the same color as the button **/
-  // --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: var(--bethere-border-interactive);
+  background-clip: content-box;
+}
 
-  /** Make the buttons a bit rounder **/
-  // --cc-btn-border-radius: 10px;
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bethere-muted-foreground);
+}
 
-  --cc-separator-border-color: var(--vp-c-divider);
-
-  .cm__title {
-    color: var(--mcc-title);
+@media (max-width: 719px) {
+  .VPHomeHero .name,
+  .VPHomeHero .text {
+    max-width: 100%;
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+    line-height: 1.1;
   }
 
-  .cm__desc {
-    color: var(--mcc-content) !important;
+  .VPHomeHero .tagline {
+    padding-top: 16px;
+  }
+}
+
+#cc-main,
+html.dark #cc-main {
+  --cc-font-family: var(--vp-font-family-base);
+  --cc-modal-border-radius: 16px;
+  --cc-btn-border-radius: 8px;
+  --cc-bg: var(--bethere-raised-surface);
+  --cc-primary-color: var(--bethere-foreground);
+  --cc-secondary-color: var(--bethere-muted-foreground);
+  --cc-link-color: var(--bethere-foreground);
+  --cc-btn-primary-bg: var(--bethere-foreground);
+  --cc-btn-primary-color: var(--bethere-canvas);
+  --cc-btn-primary-border-color: var(--bethere-foreground);
+  --cc-btn-primary-hover-bg: var(--bethere-primary-hover);
+  --cc-btn-primary-hover-color: var(--bethere-canvas);
+  --cc-btn-primary-hover-border-color: var(--bethere-primary-hover);
+  --cc-btn-secondary-bg: var(--bethere-canvas);
+  --cc-btn-secondary-color: var(--bethere-foreground);
+  --cc-btn-secondary-border-color: var(--bethere-border-interactive);
+  --cc-btn-secondary-hover-bg: var(--bethere-hover-surface);
+  --cc-btn-secondary-hover-color: var(--bethere-foreground);
+  --cc-btn-secondary-hover-border-color: var(--bethere-border-interactive);
+  --cc-separator-border-color: var(--bethere-border);
+  --cc-toggle-on-bg: var(--bethere-foreground);
+  --cc-toggle-off-bg: var(--bethere-muted-foreground);
+  --cc-toggle-on-knob-bg: var(--bethere-canvas);
+  --cc-toggle-off-knob-bg: var(--bethere-canvas);
+  --cc-toggle-readonly-bg: var(--bethere-border-interactive);
+  --cc-toggle-readonly-knob-bg: var(--bethere-canvas);
+  --cc-section-category-border: var(--bethere-border);
+  --cc-cookie-category-block-bg: var(--bethere-canvas);
+  --cc-cookie-category-block-border: var(--bethere-border);
+  --cc-cookie-category-block-hover-bg: var(--bethere-hover-surface);
+  --cc-cookie-category-block-hover-border: var(--bethere-border-interactive);
+  --cc-cookie-category-expanded-block-bg: transparent;
+  --cc-cookie-category-expanded-block-hover-bg: var(--bethere-hover-surface);
+  --cc-webkit-scrollbar-bg: var(--bethere-canvas);
+  --cc-webkit-scrollbar-hover-bg: var(--bethere-muted-foreground);
+  --cc-footer-bg: var(--bethere-canvas);
+  --cc-footer-color: var(--bethere-muted-foreground);
+  --cc-footer-border-color: var(--bethere-border);
+}
+
+#cc-main .cm,
+#cc-main .pm {
+  border: 1px solid var(--bethere-border);
+  box-shadow: 0 16px 40px rgb(0 0 0 / 18%);
+}
+
+#cc-main .cm__btn[data-role='necessary'] {
+  color: var(--cc-btn-secondary-color);
+  border-color: var(--cc-btn-secondary-border-color);
+  background-color: var(--cc-btn-secondary-bg);
+}
+
+#cc-main .cm__btn[data-role='necessary']:hover {
+  color: var(--cc-btn-secondary-hover-color);
+  border-color: var(--cc-btn-secondary-hover-border-color);
+  background-color: var(--cc-btn-secondary-hover-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

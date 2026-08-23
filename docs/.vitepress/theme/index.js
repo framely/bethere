@@ -1,10 +1,10 @@
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import '../styles/index.scss'
 import NavContentAfter from './nav-content-after.vue'
 import HomeFeaturesAfter from './home-features-after.vue'
 import CFooter from '../../components/footer/columnFooter.vue'
 import CookieConsentVue from './cookie-consent.js'
+import '../styles/index.scss'
 
 const themeStorageKey = 'vitepress-theme-appearance'
 const themeDefaultKey = 'bethere-theme-default'

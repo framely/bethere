@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-const { site, frontmatter } = useData()
+const { frontmatter } = useData()
 
 const columnFooter = computed(() => {
   if (Array.isArray(frontmatter.value.columnFooter)) {
@@ -44,9 +44,10 @@ const columnFooter = computed(() => {
 
 <style lang="scss" scoped>
 .container-f {
-  padding: 0 40px;
-  margin: 80px auto 0 auto;
-  background-color: inherit;
+  padding: 64px clamp(24px, 4.5vw, 64px);
+  margin: 96px auto 0;
+  border-top: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg);
 }
 
 .footer-wrapper {
@@ -55,7 +56,7 @@ const columnFooter = computed(() => {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .footer-info-wrapper {
@@ -79,14 +80,15 @@ const columnFooter = computed(() => {
 
 .footer-info-title {
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 20px;
+  letter-spacing: normal;
 }
 
 .footer-info-tagline {
   color: var(--vp-c-text-3);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1rem;
-  //line-height: 2rem;
+  line-height: 1.6;
 }
 
 .footer-info-legal {
@@ -115,9 +117,15 @@ const columnFooter = computed(() => {
 
 .footer-item-list {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--vp-c-text-3);
   padding-top: 4px;
+
+  a:hover {
+    color: var(--vp-c-text-1);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 @media (max-width: 719px) {

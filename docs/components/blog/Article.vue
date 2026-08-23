@@ -48,14 +48,17 @@ defineProps({
 
   h1 {
     font-weight: 600;
-    line-height: 3.0;
+    line-height: 1.2;
     text-align: left;
     font-size: 36px;
+    letter-spacing: normal;
   }
 
   p {
     text-align: left;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
     color: var(--vp-c-text-2);
     padding-bottom: 1rem;
   }

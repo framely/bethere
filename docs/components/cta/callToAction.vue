@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-const { site, frontmatter } = useData()
+const { frontmatter } = useData()
 
 const cta = computed(() => {
   if (Array.isArray(frontmatter.value.cta)) {
@@ -16,8 +16,8 @@ const cta = computed(() => {
   <div v-if="cta.length" class="container-s">
     <div v-for="cta in cta" :key="cta.details">
       <h2>{{ cta.details }}</h2>
-      <a :href="cta.link" target="_blank" rel="noopener noreferrer">
-        <button class="button-cta">{{ cta.title }}</button>
+      <a class="button-cta" :href="cta.link" target="_blank" rel="noopener noreferrer">
+        {{ cta.title }}
       </a>
     </div>
   </div>
@@ -32,16 +32,14 @@ const cta = computed(() => {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    background-color: var(--vp-c-bg-soft);
-    //background-color: inherit;
-    //border: 1px solid var(--vp-c-bg-soft);
+    background-color: var(--vp-c-bg);
+    border: 1px solid var(--vp-c-divider);
     border-radius: 12px;
     justify-content: center;
     padding: 60px 24px;
 
     h2 {
-      //border: none;
-      font-weight: 500;
+      font-weight: 600;
       text-align: center;
       line-height: 36px;
       font-size: 24px;
@@ -51,16 +49,23 @@ const cta = computed(() => {
   }
 }
 .button-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
   padding: 0 20px;
-  line-height: 38px;
+  line-height: 1;
   text-align: center;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid var(--vp-button-brand-border);
   color: var(--vp-button-brand-text);
-  background-color: var(--vp-c-brand);
+  background-color: var(--vp-button-brand-bg);
+
   &:hover {
-    background: var(--vp-c-brand-light);
+    color: var(--vp-button-brand-hover-text);
+    border-color: var(--vp-button-brand-hover-border);
+    background-color: var(--vp-button-brand-hover-bg);
   }
 }
 </style>
