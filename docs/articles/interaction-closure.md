@@ -125,14 +125,14 @@ Soft interaction surface
                          |
                          v
 Interaction Closure
-  Deterministic mapping where possible; bounded LLM fallback
+  Governed handling, convergence, explicit outcomes
                          |
                          v
 Rigid business core
-  Closure state machine: guards, obligations, authority, outcomes
+  Requirements, validation, policy, authority, outcomes
 ```
 
-Interaction Closure is the experience-level promise. A closure-oriented state machine is the implementation at its core. The state machine owns the canonical interaction acts, unresolved obligations, guarded transitions, and permitted terminal outcomes. The LLM does not own those rules.
+Interaction Closure describes a business guarantee, not a particular technical architecture. It defines what must remain true across the interaction: every supported input receives governed handling, equivalent meaning converges on the same business result, and every path reaches an explicit outcome. How a system provides those guarantees is an implementation decision.
 
 “Rigid” does not mean that business rules can never change. It means they change through an explicit business decision, not accidentally because a user chose different words or an LLM improvised a different interaction path.
 
@@ -211,7 +211,7 @@ Adding more branches does not solve the underlying problem. Each new piece of in
 
 A flow models the paths the designer expects. It can become larger, but it does not become genuinely free-form. Conversation requires a model that remains correct across the paths users actually take.
 
-## A State Machine at the Core, an LLM as Fallback
+## One Way to Implement Interaction Closure
 
 Interaction Closure does not begin by drawing a preferred sequence of utterances. It begins with business meaning and closure conditions.
 
@@ -231,7 +231,7 @@ These requirements have dependencies, but the user's expression of them has no r
 
 Interaction Closure therefore treats relevant interactions as deterministically invokable. Once an utterance is interpreted as a business interaction act, the same act applied to the same business state produces the same governed transition. The user does not need to be standing on the “correct” dialog node before providing a value or correction.
 
-The core can be implemented as a fully connected invocation surface over a guarded state machine: from any relevant conversational state, the user can supply, revise, reject, or inquire about any supported part of the interaction. “Fully connected” does not mean that every business transition is permitted. Validation, dependencies, confirmation, and authorization still guard business state changes. It means every supported user move has defined handling instead of being accepted only on one expected path.
+Interaction Closure does not require a specific implementation. One practical design is a fully connected invocation surface over a guarded state machine: from any relevant conversational state, the user can supply, revise, reject, or inquire about any supported part of the interaction. “Fully connected” does not mean that every business transition is permitted. Validation, dependencies, confirmation, and authorization still guard business state changes. It means every supported user move has defined handling instead of being accepted only on one expected path.
 
 At the surface, deterministic handlers should map input directly whenever meaning is already known. The LLM is the fallback for the part that cannot be enumerated: interpreting free-form language, resolving references, separating compound utterances, and proposing canonical interaction acts. Its proposal still passes through the state machine, which may accept it, reject it, or open a clarification obligation.
 
@@ -385,6 +385,6 @@ The promise is simple:
 
 That is how a business can offer flexible conversation and still deliver predictable interaction.
 
-At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. The scalable architecture is soft at the surface and rigid at the core: use the LLM as a bounded language fallback, and use Interaction Closure to guarantee the business result.
+At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. The scalable requirement is a soft interaction surface connected to a rigid business core. Interaction Closure defines that contract independently of the technology used to implement it.
 
-That separation is what allows the conversational interface to become a dependable business channel rather than an impressive demonstration.
+That separation is what allows the conversational interface to become a dependable business channel rather than an impressive demonstration. A guarded state machine with bounded LLM interpretation is one way to build it; it is not the definition of Interaction Closure itself.
