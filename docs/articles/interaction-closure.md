@@ -17,40 +17,37 @@ Because free-form interaction solves only the **surface** of the problem. It imp
 
 The voice model makes the interaction surface soft, but the business still needs a rigid core.
 
-## Why Work Needs Workflow
+## Why Businesses Need Workflow
 
 For backend work, that rigid core is workflow.
 
-An LLM can reason about a task, choose a tool, and propose what to do next. If LLM capability were enough, a business could describe the desired process in a prompt and let the model carry it out.
+An LLM can reason about a task, choose a tool, and propose what to do next. In theory, a business could encode its standard operating procedure step by step in a prompt and let the model carry out the work.
 
-That is not how reliable work is built.
+This is not how reliable work is carried out.
 
-Business work has dependencies and consequences. Inputs must be validated. Some steps must occur before others. Actions may require approval. Network calls fail, operations time out, and partially completed work may need to be retried or compensated. The business must know whether the work completed, failed, paused, or escalated.
+Once a business knows the best way to carry out the work, execution should no longer be an open-ended exploration. A business process captures that best practice: how the work is decomposed, which steps depend on others, what each step must produce, and how failure is handled.
 
-A prompt can describe those expectations, but a description is not operational control. It does not by itself provide durable execution state, enforce approval gates, make side effects idempotent, retry failed operations, compensate partial work, or prove that the required terminal result was reached.
+Business processes have dependencies and consequences. Inputs must be validated, some steps must precede others, and consequential actions may require approval. Calls fail, operations time out, and partially completed work may need to be retried or compensated. The business must always know whether the work completed, failed, paused, or escalated.
 
-A workflow provides the control structure around that work. It defines:
+In a prompt-based solution, the steps remain instructions that the model must interpret and apply at runtime. A prompt can describe every expected step, branch, and rule, but description is not enforcement. Even with precise instructions, the model can skip a step, apply the wrong rule, repeat an action, or proceed out of order. On every run, it must infer the current state, decide which rule applies, and remember which side effects have already occurred. Changes in wording, context, or model behavior can change the next step even when the business state is equivalent.
 
-- the preconditions for starting;
-- the steps and dependencies involved;
-- the decisions, approvals, and permissions that govern progress;
-- retry, timeout, compensation, and escalation behavior;
-- the allowed side effects; and
-- the terminal outcomes by which success or failure is measured.
+Failure exposes the difference. If a request times out after creating a reservation, should the system retry or check whether the reservation already exists? If approval is missing, can the process continue? If only half the work completed, what must be compensated? Telling an LLM to handle these cases is not the same as providing durable state, idempotency, enforced approval gates, or verifiable recovery.
 
-An LLM may operate inside a workflow step, but it does not own the operational contract. The workflow determines what the model is allowed to do, what must happen next, and whether the result satisfies the business requirement.
+A workflow takes the code-based approach. It turns the process into an executable structure that:
+
+- enforces preconditions, dependencies, permissions, and approvals;
+- persists state so work can be inspected, resumed, tested, and audited;
+- controls retries, timeouts, compensation, escalation, and side effects;
+- records the terminal outcome of the work; and
+- assigns each step to the simplest suitable component: deterministic code, a specialized small model, or a larger model when open-ended reasoning is genuinely required.
+
+This code-based approach is what businesses have adopted for reliable production work. Not because an end-to-end large model is incapable of completing the process, but because a known process should not be rediscovered on every run. The workflow codifies the best practice once, and different component models can perform the bounded steps for which they are best suited.
+
+The business gains reliability and lower cost at the same time. The workflow keeps known transitions consistent, while deterministic code and smaller specialized models avoid paying a large model to reason through the entire process.
+
+A model may operate inside a workflow step, but it does not own the operational contract. The workflow determines what the component must do, what happens next, and whether its result satisfies the business requirement.
 
 This is why reliable agentic fulfillment needs **workflow over LLM**. The model contributes flexible reasoning; the workflow makes the work bounded, observable, recoverable, and verifiable.
-
-Workflow remains the dominant control structure not because an end-to-end LLM is incapable of following a process. A capable model can often reason through the same sequence and reach the intended result. The difference is operational:
-
-- deterministic steps produce more repeatable results than asking a model to infer the next step each time;
-- known transitions execute faster and more cheaply in code than through repeated model inference;
-- workflow state can be inspected, resumed, tested, and audited directly;
-- retries and side effects can be controlled without relying on the model to remember what already happened; and
-- the LLM can be reserved for the steps where ambiguity or reasoning actually adds value.
-
-Using an LLM as the entire execution layer makes the business pay for intelligence even when the next step is already known. It also makes reliability depend on the model repeatedly reconstructing a process the business could define once.
 
 Workflow demonstrates a principle businesses already accept: **an LLM's intelligence is not a substitute for a business-owned control structure**.
 
