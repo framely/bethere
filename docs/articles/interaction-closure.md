@@ -5,19 +5,21 @@ description:
     - Interaction Closure keeps conversation soft at the user-facing surface and rigid at the business-logic core.
 ---
 
-# Interaction Closure: The Voice AI That Businesses Need
+# Interaction Closure: What Business Voice AI Needs
 
-OpenAI's current [GPT-Realtime-2.1](https://developers.openai.com/api/docs/models/gpt-realtime-2.1) supports speech-to-speech conversations, configurable reasoning, instruction following, and tool use for complex voice-agent workflows. Users can explain a problem naturally, add context, change direction, and respond in their own words.
+OpenAI's [GPT-Realtime-2.1](https://developers.openai.com/api/docs/models/gpt-realtime-2.1) supports speech-to-speech conversations, configurable reasoning, instruction following, and tool use for complex voice-agent workflows. Users can explain a problem naturally, add context, change direction, and respond in their own words.
 
-Yet these advances have not produced an equally large change in how businesses operate inbound phone lines. Many calls are still handled by people, rigid phone trees, or automation limited to a narrow set of requests. A compelling free-form voice demonstration does not automatically become an agent that a business can trust to represent it across every incoming call.
+Yet these advances alone have not transformed how businesses operate inbound phone lines. Many calls are still handled by people, rigid phone trees, or automation limited to a narrow set of requests. A compelling free-form voice demonstration does not automatically become an agent that a business can trust to represent it across every incoming call.
 
 Why has better voice AI not translated into broader business adoption?
 
-Because free-form interaction solves only the **surface** of the problem. It improves how naturally a user and model can communicate. It does not ensure that every conversational path follows the same requirements, validation, policies, confirmation rules, authority boundaries, and permitted business outcomes.
+Because free-form interaction solves only the **surface** of the problem. It improves how naturally a user and model can communicate. It does not ensure that every conversational path remains governed by the applicable requirements, validation rules, policies, confirmation steps, authority boundaries, and permitted business outcomes.
 
-The voice model makes the interaction surface soft, but the business still needs a rigid core. Businesses already know how to place deterministic control around flexible capability in another domain: they use workflow to make backend work reliable.
+The voice model makes the interaction surface soft, but the business still needs a rigid core.
 
 ## Why Work Needs Workflow
+
+For backend work, that rigid core is workflow.
 
 An LLM can reason about a task, choose a tool, and propose what to do next. If LLM capability were enough, a business could describe the desired process in a prompt and let the model carry it out.
 
