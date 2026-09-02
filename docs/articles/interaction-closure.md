@@ -21,19 +21,21 @@ The voice model makes the interaction surface soft, but the business still needs
 
 For backend work, that rigid core is workflow.
 
-An LLM can reason about a task, choose a tool, and propose what to do next. In theory, a business could encode its standard operating procedure step by step in a prompt and let the model carry out the work.
+Getting from zero to one is exploration: the business is discovering the best way to do the work. Scaling beyond one means capturing that best practice in a repeatable business process—how the work is decomposed, which steps depend on others, what each step must produce, and how failure is handled.
 
-This is not how reliable work is carried out.
+Business processes have dependencies and consequences. Inputs must be validated, some steps must precede others, and consequential actions may require approval. Service calls fail, operations time out, and partially completed work may need to be retried or compensated. The business must always know whether the work completed, failed, paused, or escalated.
 
-Once a business knows the best way to carry out the work, execution should no longer be an open-ended exploration. A business process captures that best practice: how the work is decomposed, which steps depend on others, what each step must produce, and how failure is handled.
+In theory, a business could encode its standard operating procedure step by step in a prompt and let the model carry out the work.
 
-Business processes have dependencies and consequences. Inputs must be validated, some steps must precede others, and consequential actions may require approval. Calls fail, operations time out, and partially completed work may need to be retried or compensated. The business must always know whether the work completed, failed, paused, or escalated.
+In practice, however, businesses rarely rely on prompts alone for repeatable production work.
 
-In a prompt-based solution, the steps remain instructions that the model must interpret and apply at runtime. A prompt can describe every expected step, branch, and rule, but description is not enforcement. Even with precise instructions, the model can skip a step, apply the wrong rule, repeat an action, or proceed out of order. On every run, it must infer the current state, decide which rule applies, and remember which side effects have already occurred. Changes in wording, context, or model behavior can change the next step even when the business state is equivalent.
+Why? Because a prompt describes what the model should do; it does not guarantee what the system will do. The model interprets the instructions again on every run, so it can skip, repeat, reorder, or misapply a step. Changes in wording, context, or model behavior can change the execution even when the business state is the same.
 
-Failure exposes the difference. If a request times out after creating a reservation, should the system retry or check whether the reservation already exists? If approval is missing, can the process continue? If only half the work completed, what must be compensated? Telling an LLM to handle these cases is not the same as providing durable state, idempotency, enforced approval gates, or verifiable recovery.
+In a repeatable business process, even an occasional mistake matters. A missed approval, duplicate reservation, or incorrect retry can change a real business outcome. More instructions may reduce these errors, but they do not provide durable state, idempotency, or enforced recovery.
 
-A workflow takes the code-based approach. It turns the process into an executable structure that:
+A prompt-first approach also raises cost on two fronts. First, it spends model inference on decisions the business has already made. Second, because one model must understand and coordinate the entire process, it often requires a more capable—and more expensive—model even when the individual steps could be handled by smaller specialized models.
+
+A workflow takes an executable, code-enforced approach. It turns the process into a structure that:
 
 - enforces preconditions, dependencies, permissions, and approvals;
 - persists state so work can be inspected, resumed, tested, and audited;
@@ -41,234 +43,15 @@ A workflow takes the code-based approach. It turns the process into an executabl
 - records the terminal outcome of the work; and
 - assigns each step to the simplest suitable component: deterministic code, a specialized small model, or a larger model when open-ended reasoning is genuinely required.
 
-This code-based approach is what businesses have adopted for reliable production work. Not because an end-to-end large model is incapable of completing the process, but because a known process should not be rediscovered on every run. The workflow codifies the best practice once, and different component models can perform the bounded steps for which they are best suited.
+For repeatable production work, businesses prefer this approach—not because a large model cannot complete the process, but because known work should not be rediscovered on every run. The workflow defines the process once, keeps known transitions consistent, and assigns each step to deterministic code or the smallest capable model. Reliability improves while cost decreases.
 
-The business gains reliability and lower cost at the same time. The workflow keeps known transitions consistent, while deterministic code and smaller specialized models avoid paying a large model to reason through the entire process.
-
-A model may operate inside a workflow step, but it does not own the operational contract. The workflow determines what the component must do, what happens next, and whether its result satisfies the business requirement.
-
-This is why reliable agentic fulfillment needs **workflow over LLM**. The model contributes flexible reasoning; the workflow makes the work bounded, observable, recoverable, and verifiable.
-
-Workflow demonstrates a principle businesses already accept: **an LLM's intelligence is not a substitute for a business-owned control structure**.
-
-If an LLM is not enough to govern business work, it should not be expected to govern business interaction by itself either. Interaction needs its own control structure—one designed for a user whose next input cannot be scheduled like the next step in a workflow.
+Models may operate inside workflow steps, but the workflow owns the operational contract: what each component may do, what happens next, and what constitutes a valid result. This is **workflow over LLM**—models provide flexible reasoning; workflow provides business-owned control.
 
 ## Why Inbound Automation Still Falls Short
 
-Backend work normally begins after the objective has been established. An inbound interaction begins before the business knows what the user wants.
+If an LLM is not enough to govern business work, it should not be expected to govern business interaction by itself either. After all, interaction is far more complex than a happy-path process: users can say whatever they want, in any order, while the business must still enforce its rules and guide the interaction to a business-valid outcome.
 
-AI voice agents already answer real calls, and adoption is accelerating. The important question is not why voice AI is absent. It is why more businesses are not yet willing to give an AI agent broad, independent authority over their inbound phone lines.
-
-The obstacle is no longer simply whether a machine can transcribe speech or produce a natural voice. Modern systems can sound convincing, recognize many intents, call tools, and complete useful tasks. The harder problem is whether the business can predict what the agent will do across the full range of calls it may receive.
-
-An inbound phone line is an open interaction surface:
-
-- the caller chooses the topic, wording, timing, and order;
-- one utterance may contain several requests or corrections;
-- speech recognition can distort names, numbers, dates, and negation;
-- the caller may interrupt before hearing an important condition;
-- identity, consent, payment, health, or account information may be involved;
-- an answer can immediately create a reservation, issue a refund, change an account, or make another business commitment; and
-- an unsupported or emotionally sensitive request must be handed to a person without trapping the caller in a loop.
-
-A web application can disable a button, mark a field as required, display all available choices, and keep a confirmation visible before submission. A phone call has none of those persistent visual controls. The agent must recreate them through interaction while the caller remains free to say anything next.
-
-It is tempting to apply the same structure to a conversational user interface (CUI): greet the user, identify an intent, ask for required information, confirm the request, and call a backend workflow. This produces a dialog flow—a happy path followed by branches for the cases the designer expects.
-
-The problem is that a workflow controls the progression of work, but a business does not control the progression of a user's expression.
-
-A dialog flow can control what the system asks next. It cannot control what the user says next.
-
-A flow gains predictability by restricting flexibility. It expects the user to select one of the paths the designer represented. Adding branches can cover more expected cases, but it does not change the underlying assumption that the conversation must remain inside an enumerated path.
-
-Users provide several answers at once. They answer questions the system has not asked yet. They omit information they assume is obvious. They change an earlier answer, introduce a new constraint, reject a recommendation, switch topics, or interrupt the assistant halfway through a sentence. In voice conversations, barge-in, false starts, pauses, and self-corrections make this even more apparent.
-
-The system controls its own output, but it never controls the user's next input. A control structure based on a preferred path is therefore not enough. Conversation needs a structure that lets the user control the path while the business controls how every supported path resolves.
-
-Giving control to an LLM solves the path problem but creates an assurance problem. The model can adapt to input that was not represented in a flow, but the business interaction logic then exists implicitly in prompts and probabilistic inference. A fluent response can still omit a required disclosure, misunderstand a correction, lose an earlier constraint, confirm the wrong value, or invoke a tool too early.
-
-The two common approaches therefore fail in opposite directions:
-
-| Approach | Interaction surface | Business core |
-|---|---|---|
-| Dialog flow | Rigid: users must remain on modeled paths | Rigid: rules are explicit on those paths |
-| Pure LLM interaction | Soft: users can express themselves freely | Soft: behavior remains prompt- and model-dependent |
-
-A flow keeps the core rigid by making the surface rigid. A pure LLM makes the surface soft by allowing the core to become soft. Business conversation needs a soft surface and a rigid core at the same time.
-
-Current industry research reflects this difference between enthusiasm and operational trust. Twilio's 2025 customer-engagement survey found broad reported business value from AI, while only 15% of consumers said they absolutely trusted brands with their data and 54% wanted to know when they were interacting with AI. A Genesys study similarly found that four out of five consumers wanted clear governance of AI interactions, while only 31% of business leaders reported comprehensive organization-wide AI governance. These are not measures of Interaction Closure, but they illustrate the environment in which businesses decide whether an AI agent may represent them on a live call. ([Twilio](https://investors.twilio.com/node/13751/pdf), [Genesys](https://www.genesys.com/company/newsroom/announcements/genesys-study-finds-agentic-ai-is-advancing-but-governance-gaps-threaten-consumer-trust))
-
-The deployment gap is therefore not only a model-capability gap. It is an **interaction-assurance gap**. Inbound automation needs a control structure that does not depend on controlling the user's path and does not leave business interaction authority inside an LLM.
-
-## Interaction Closure: Prepare for Every Input and Return to Business Logic
-
-Interaction Closure is a business-defined interaction contract that ensures every supported conversational path resolves according to business logic, regardless of how users express their intent or the order in which they provide information.
-
-Its design principle is:
-
-> **Soft at the interaction surface. Rigid at the business core.**
-
-The surface must be soft because human expression is variable. Users should be able to speak naturally, provide information in any order, combine several answers, interrupt, correct themselves, and use wording the designer did not anticipate.
-
-The core must be rigid because business meaning cannot vary with phrasing. Required information, validation, dependencies, permissions, confirmation, and allowed outcomes must remain governed by the same business logic on every conversational path.
-
-Interaction Closure connects these two layers:
-
-```text
-Soft interaction surface
-  Natural language, arbitrary order, interruption, correction
-                         |
-                         v
-Interaction Closure
-  Governed handling, convergence, explicit outcomes
-                         |
-                         v
-Rigid business core
-  Requirements, validation, policy, authority, outcomes
-```
-
-Interaction Closure describes a business guarantee, not a particular technical architecture. It defines what must remain true across the interaction: every supported input receives governed handling, equivalent meaning converges on the same business result, and every path reaches an explicit outcome. How a system provides those guarantees is an implementation decision.
-
-“Rigid” does not mean that business rules can never change. It means they change through an explicit business decision, not accidentally because a user chose different words or an LLM improvised a different interaction path.
-
-Preparing for every input does not mean predicting every sentence a user might say. That is impossible. It means every input has a governed way back to business logic. An input may:
-
-- supply or revise information for an active interaction;
-- resolve several outstanding obligations at once;
-- invoke another supported business interaction;
-- conflict with information that must be clarified;
-- be ambiguous and require disambiguation; or
-- fall outside the supported domain and require a defined refusal or handoff.
-
-The user is never required to return to the expected dialog node. Instead, Interaction Closure interprets the input, invokes the relevant business interaction, applies its rules, and determines what remains unresolved:
-
-```text
-User input in any supported wording or order
-        |
-        v
-Interpret the business interaction act
-        |
-        v
-Invoke validation, correction, and dependency rules
-        |
-        v
-Update resolved and unresolved obligations
-        |
-        v
-Continue, close, reject, defer, or hand off
-```
-
-Interaction Closure does not force the user back onto a scripted path. It brings the **meaning** of every supported path back under business logic.
-
-It does not prescribe what users must say or when they must say it. It defines what the interaction must resolve before it can close:
-
-- which information is required;
-- which values are valid;
-- how ambiguity and conflicts are handled;
-- how earlier information may be corrected;
-- when options or recommendations must be presented;
-- when confirmation is required;
-- when the business is authorized to act; and
-- which completed, rejected, deferred, or escalated outcomes are allowed.
-
-An interaction obligation is closed when it reaches an explicit business result. Closing one obligation does not mean the entire conversation must end; a conversation can contain several nested interactions with different closure states. Ambiguity can open a clarification obligation instead of permitting action. The overall request may eventually close as completed, rejected, deferred, cancelled, or handed off when that is what business logic requires.
-
-The central invariant is:
-
-> **Different expression or order + equivalent meaning = the same business-valid interaction result.**
-
-The language and conversational path may vary. The business interaction contract must not.
-
-## A Flow Controls Only One Side of the Conversation
-
-Flows work well when a system controls the order of execution. A workflow can perform step A, evaluate a condition, choose step B or C, retry a failed operation, and eventually reach a terminal outcome. Even a workflow with many branches remains path-oriented: its designer specifies the routes through which work may proceed.
-
-A dialog flow applies the same idea to conversation. It specifies a system prompt, lists expected user responses, and connects each response to another node. This works when the user behaves like the next step in the workflow.
-
-But the user is not a workflow step.
-
-Suppose a restaurant assistant asks:
-
-> What day would you like the reservation?
-
-The user might respond with any of the following:
-
-- “Friday.”
-- “Friday at seven, outside if possible.”
-- “Actually, make the one I mentioned earlier Friday.”
-- “Two people—does Friday around seven have anything?”
-- “Not Thursday. Friday. And change the name to Priya.”
-- “Before that, what is your cancellation policy?”
-
-Only the first answer follows the expected edge in a simple dialog flow. The other answers may contain multiple values, corrections, preferences, references to earlier state, another business question, or all of them together.
-
-Adding more branches does not solve the underlying problem. Each new piece of information can arrive before, during, or after every other piece. As supported intents, values, corrections, and interruptions grow, enumerating conversational paths becomes combinatorial.
-
-A flow models the paths the designer expects. It can become larger, but it does not become genuinely free-form. Conversation requires a model that remains correct across the paths users actually take.
-
-## One Way to Implement Interaction Closure
-
-Interaction Closure does not begin by drawing a preferred sequence of utterances. It begins with business meaning and closure conditions.
-
-For a reservation, the business may need to resolve:
-
-- the requested operation, such as creating or changing a reservation;
-- the reservation being changed, when applicable;
-- party size;
-- date and time;
-- required constraints and optional preferences;
-- customer identity;
-- availability;
-- confirmation; and
-- permission to commit the change.
-
-These requirements have dependencies, but the user's expression of them has no required order. The user may provide party size before the date, correct the time after availability is checked, or state a seating preference before the assistant asks about it.
-
-Interaction Closure therefore treats relevant interactions as deterministically invokable. Once an utterance is interpreted as a business interaction act, the same act applied to the same business state produces the same governed transition. The user does not need to be standing on the “correct” dialog node before providing a value or correction.
-
-Interaction Closure does not require a specific implementation. One practical design is a fully connected invocation surface over a guarded state machine: from any relevant conversational state, the user can supply, revise, reject, or inquire about any supported part of the interaction. “Fully connected” does not mean that every business transition is permitted. Validation, dependencies, confirmation, and authorization still guard business state changes. It means every supported user move has defined handling instead of being accepted only on one expected path.
-
-At the surface, deterministic handlers should map input directly whenever meaning is already known. The LLM is the fallback for the part that cannot be enumerated: interpreting free-form language, resolving references, separating compound utterances, and proposing canonical interaction acts. Its proposal still passes through the state machine, which may accept it, reject it, or open a clarification obligation.
-
-```text
-User expression
-      |
-      v
-Known mapping? ------ no ------> Bounded LLM interpretation
-      |                              |
-     yes                             v
-      +---------------------> Canonical interaction act
-                                     |
-                                     v
-                          Closure state machine
-                                     |
-                                     v
-                    Continue, close, reject, or hand off
-```
-
-This division keeps routine input cheap and repeatable, while preserving the LLM's flexibility for language that genuinely needs interpretation. More importantly, the probabilistic layer can suggest meaning but cannot bypass business rules or manufacture authority.
-
-This makes Interaction Closure **convergent**. Semantically equivalent sequences of interaction acts reach the same resolved result even when their wording and order differ.
-
-## Why LLM-Based Interaction Is Not Enough
-
-Large language models are valuable precisely because users do not speak in canonical commands. An LLM can help recognize that “outside if possible” is a preference, that “make that seven” corrects a time, or that “the one we talked about earlier” refers to an existing reservation.
-
-But recognizing language and governing interaction are different responsibilities.
-
-In a pure LLM-based CUI, the model decides what the user means, which information is still required, what to ask next, when to validate, whether to confirm, and when to invoke a tool. The interaction logic exists implicitly in prompts and probabilistic inference.
-
-This produces conversational flexibility, but it gives the model authority over business interaction. Equivalent requests may follow materially different logic. A change in phrasing, model version, or context can change whether the system requests confirmation, treats a preference as mandatory, or acts before all preconditions are satisfied.
-
-Interaction Closure places a business-defined control structure over the LLM. The model is used when flexible expression needs interpretation and when a natural response needs rendering. Closure logic decides how proposed acts affect the interaction, what remains unresolved, and whether the business may proceed.
-
-> **The LLM controls linguistic form. Business logic controls closure.**
-
-This does not make every part of the system deterministic. Speech recognition and language understanding remain probabilistic. When their interpretation is ambiguous or insufficiently confident, however, Interaction Closure produces a defined clarification or safe failure outcome instead of allowing the model to improvise an operational decision.
-
-## One Meaning, Many Conversational Paths
-
-Consider three customers making the same reservation request.
+For example, consider three customers making the same reservation request.
 
 The first follows a designed sequence:
 
@@ -292,7 +75,7 @@ The second provides everything at once:
 User: Book an outdoor table for two this Friday around seven under Priya.
 ```
 
-The third provides information through corrections and interruption:
+The third provides information through correction and interruption:
 
 ```text
 User: Can you book Thursday for two—
@@ -300,7 +83,7 @@ Assistant: What time on Thurs—
 User: Sorry, Friday, not Thursday. Around seven. Outside if possible, under Priya.
 ```
 
-These conversations should not be forced through the same sequence. They should converge on the same business meaning:
+All three express the same business meaning:
 
 ```text
 operation: create reservation
@@ -311,75 +94,51 @@ seating: outdoor preferred
 customer: Priya
 ```
 
-The business may then apply the same availability, validation, and confirmation logic in all three cases. If “around seven” is not precise enough for the available inventory, all three paths should produce the same need to present options. If explicit confirmation is required before booking, no path should bypass it merely because the user supplied all values in one sentence.
+In all three cases, the business should apply the same availability, validation, and confirmation logic. These examples expose the central problem with inbound interaction: the business cannot control what callers say, when they say it, or how much information they provide at once, but those differences must not change the governing business result.
 
-Different words and order should change the language experience, not the governing business result.
+For the same reasons businesses need workflow for fulfillment, a pure LLM-based solution does not provide the reliability or cost control required for business interaction. In a pure LLM system, the model must infer the current state, apply requirements, decide when to validate or confirm, and choose when to use tools on every turn. Different wording or context can change its behavior, while using a sufficiently capable model to reconstruct known interaction logic makes every turn more expensive than necessary.
 
-## Why Voice Makes Closure More Important
+A flow works only when the interface can constrain what users may express at each step. Unfortunately, that makes a flow-based solution unsuitable for free-form conversation. It can identify an intent, collect required information, confirm the request, and invoke a backend workflow—but only along paths the designer has modeled. In conversation, a flow controls what the system asks next, not what the user says next. To guarantee consistent business behavior regardless of the user's wording or ordering, the designer would have to define every possible conversational path.
 
-Graphical interfaces can constrain input through visible fields, buttons, disabled actions, and page structure. A form can require a user to enter a value before continuing. Conversation exposes no equivalent physical boundary.
+This gap helps explain why capable voice AI has not yet produced widespread automation of inbound business calls. Business conversation needs the flexibility of an LLM at the surface and the predictability of business logic at the core. Neither pure LLM interaction nor dialog flow provides both. This is the problem Interaction Closure solves.
 
-Voice removes even more structure. Users cannot see the complete set of required values. They often speak while thinking, revise themselves mid-utterance, and interrupt as soon as they understand where the assistant is going. Network delay or synthesized speech may cause turns to overlap. A natural voice assistant must support barge-in without losing valid context or corrupting business state.
+## Interaction Closure: Prepare for Every Input and Return to Business Logic
 
-Adding speech to a dialog flow does not change this control boundary. It changes the transport, not who controls the conversational path.
+Interaction Closure is a business-defined interaction contract that preserves the essential advantage of an LLM—a soft surface that can interpret preferences, corrections, references, and compound requests—while giving the business core the same kind of explicit control that workflow provides for fulfillment. Users may speak naturally, provide information in any order, combine answers, interrupt, and correct themselves, while required information, validation, permissions, confirmation, and allowed outcomes remain governed by the same business logic on every path.
 
-A voice flow can decide what the assistant intended to say next. It cannot guarantee that the user waits, answers only that question, or finishes the current topic first.
+This guarantee becomes especially important in voice. Graphical interfaces can constrain input through visible fields, buttons, disabled actions, and page structure. Voice exposes no equivalent visible boundary: users cannot see all required values, often speak while thinking, revise themselves mid-utterance, and interrupt as soon as they understand where the assistant is going. Network delay and synthesized speech may also cause turns to overlap.
 
-Interaction Closure separates transport timing from interaction meaning. Barge-in may cancel speech playback, but it does not erase already validated business information. A correction updates the intended value while preserving unrelated context. An answer supplied early closes the corresponding obligation so the assistant does not ask for it again later.
+Preparing for every input does not mean predicting every sentence or prescribing what users may say. It means each input has a governed route back to business logic: it may supply or revise information, resolve several requirements, invoke another supported interaction, require clarification, or end in a defined refusal or handoff. The business defines what must be resolved before it may act, and the interaction can close only with an explicit business result. Its rules may change, but only through an explicit decision—not because a user chose different words or an LLM improvised another path.
 
-Without closure, a voice assistant either becomes rigid—forcing users back onto the expected path—or unpredictable—letting an LLM decide how to recover each time.
+The guarantee is simple:
 
-Interaction Closure is not the entire production voice stack. An inbound phone agent also needs accurate speech processing, low latency, barge-in, identity and security controls, reliable fulfillment workflows, observability, and human escalation. Closure supplies the part those capabilities do not: control over how arbitrary user input becomes a business-valid interaction result.
+> **Different expression or order + equivalent meaning = the same business-valid interaction result.**
 
-## Workflow Is to Work What Closure Is to Interaction
+The guarantee does not prescribe a particular technical architecture. One practical implementation uses a fully connected invocation surface over a guarded state machine. Supported user acts can be invoked from any relevant conversational state, while validation, dependencies, confirmation, and authorization guard business state changes. The same act applied to the same business state therefore produces the same governed transition, regardless of the current dialog node.
 
-The words themselves expose the architectural symmetry:
+When free-form language needs interpretation, the LLM proposes a structured business action and renders a natural response. Closure logic decides how that proposal affects the interaction, what remains unresolved, and whether the business may proceed.
 
-- **Work + flow:** organize work into reliable execution paths.
-- **Interaction + closure:** ensure interaction reaches a predictable business result across every supported path.
+> **The LLM controls linguistic form. Business logic controls closure.**
 
-Work needs flow because execution has dependencies and order. Interaction needs closure because expression has no guaranteed order but must still resolve correctly.
+Language understanding remains probabilistic. When meaning is ambiguous, closure logic requires clarification or a safe failure instead of allowing the model to improvise a business decision. Alternate wording, order, correction, and interruption may change the language, but not the business-valid state or outcome.
 
-This leads to two complementary control structures:
-
-> **Workflow over LLM for reliable fulfillment. Interaction Closure over LLM for predictable interaction.**
-
-A backend workflow begins with a structured request and controls how work is performed: API calls, transactions, retries, compensation, and terminal outcomes. A backend agent may handle open-ended fulfillment when the objective is known but the required execution steps are not.
-
-Interaction Closure establishes that objective. It determines what the user and business have agreed to, whether required information and confirmation are present, and whether fulfillment is authorized.
-
-The two responsibilities may interleave. A reservation interaction can call an availability service, present alternatives, collect a new choice, and call the backend again. The distinction is not a strict chronological phase boundary. It is a boundary of authority: the interaction layer governs meaning and agreement; the fulfillment layer governs execution.
-
-## How to Test Interaction Closure
-
-A conversational system should not be verified only with a few natural-sounding transcripts or one happy path. Interaction Closure creates testable invariants:
-
-1. **Paraphrase invariance:** Equivalent expressions resolve to the same interaction act.
-2. **Order invariance:** Independent information supplied in different orders reaches the same resolved state.
-3. **Compound-input handling:** One utterance can close several obligations without skipping their validation.
-4. **Correction integrity:** A correction replaces the intended value without discarding unrelated valid context.
-5. **Interruption continuity:** Barge-in stops the current response without corrupting interaction state.
-6. **Repetition safety:** Repeated information does not trigger duplicate business actions.
-7. **Clarification safety:** Ambiguous, conflicting, or unsupported input prevents premature fulfillment.
-8. **Policy consistency:** Required validation, confirmation, and authorization apply on every conversational path.
-9. **Result convergence:** Conversations with equivalent resolved meaning produce the same business-valid result.
-
-These tests do not require identical assistant wording. Predictability is about interaction semantics, not scripted sentences.
+Interaction Closure is not the entire production voice stack. An inbound phone agent also needs accurate speech processing, low latency, identity and security controls, reliable fulfillment workflows, observability, and human escalation. Closure supplies the part those capabilities do not: control over how arbitrary user input becomes a business-valid interaction result.
 
 ## Let Users Control the Path Without Surrendering Business Logic
 
-Dialog flows are useful for scripting expected exchanges, just as workflows are useful for organizing expected work. But conversation is not a process whose complete path the system controls.
+Workflow and Interaction Closure provide complementary forms of business control:
 
-Users decide what to say, how to say it, and in what order. A capable CUI must accept that freedom without transferring control of business interaction to a probabilistic model.
+- **Workflow** governs how agreed work is executed, including API calls, transactions, retries, compensation, and terminal outcomes.
+- **Interaction Closure** governs meaning and agreement: what the user wants, what remains unresolved, and whether fulfillment is authorized.
 
-Interaction Closure provides the missing structure. It defines the obligations and permitted outcomes of an interaction, makes supported interaction acts invokable from any relevant point, and ensures equivalent conversational paths converge on the result required by business logic.
+The distinction is one of authority: the interaction layer governs meaning and agreement; the fulfillment layer governs execution.
+
+> **Workflow over LLM for reliable fulfillment. Interaction Closure over LLM for predictable interaction.**
+
+Users decide what to say, how to say it, and in what order. Interaction Closure accepts that freedom without transferring control of business interaction to a probabilistic model. It defines the obligations and permitted outcomes, makes supported interaction acts invokable from any relevant point, and ensures equivalent conversational paths converge on the result required by business logic.
 
 The promise is simple:
 
 > **Do not control the user's conversational path. Control how every supported path closes.**
 
-That is how a business can offer flexible conversation and still deliver predictable interaction.
-
-At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. The scalable requirement is a soft interaction surface connected to a rigid business core. Interaction Closure defines that contract independently of the technology used to implement it.
-
-That separation is what allows the conversational interface to become a dependable business channel rather than an impressive demonstration. A guarded state machine with bounded LLM interpretation is one way to build it; it is not the definition of Interaction Closure itself.
+At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. Interaction Closure defines the scalable requirement—a soft interaction surface connected to a rigid business core—and turns conversation into a dependable business channel rather than an impressive demonstration.
