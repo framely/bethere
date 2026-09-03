@@ -4,7 +4,6 @@ date: 2026-08-31
 description:
     - Interaction Closure keeps conversation soft at the user-facing surface and rigid at the business-logic core.
 ---
-
 # Interaction Closure: What Business Voice AI Needs
 
 OpenAI's [GPT-Realtime-2.1](https://developers.openai.com/api/docs/models/gpt-realtime-2.1) supports speech-to-speech conversations, configurable reasoning, instruction following, and tool use for complex voice-agent workflows. Users can explain a problem naturally, add context, change direction, and respond in their own words.
@@ -106,27 +105,23 @@ This gap helps explain why capable voice AI has not yet produced widespread auto
 
 Voice is one of the most immediate ways to express intent: a person only needs to speak. It is already an important channel between customers and businesses, and it may become even more important as computing extends beyond screens. Unlike graphical interfaces, which people learn later in life, spoken interaction is learned from early childhood. That lifelong familiarity creates a high expectation: people expect the system to follow them as they think aloud, provide several details at once, correct themselves, interrupt, and change direction. Yet differences in wording, ordering, corrections, and interruptions create effectively unlimited conversational paths. Those paths must map into a finite set of business interactions, with equivalent paths converging on the same business agreement.
 
-The complete, business-defined structure that carries this out is Interaction Closure:
+Interaction Closure uses an LLM for dialog understanding and rendering, with a business-defined state machine as its control core:
 
 - The LLM interprets the user utterance as a proposed user dialog act.
-- The interaction context records the meaning established so far.
+- The state machine records the interaction context and meaning established so far.
 - Business rules govern consequential or constrained decisions.
 - Common sense handles unconstrained conversation.
 - The resulting system dialog act is rendered as a natural utterance.
 
-Here, closure means that the business's handling of relevant dialog acts is complete, not that the conversation ends.
+Natural-language expressions are effectively unlimited, but each business use case can define a finite set of dialog-act types. These acts may add or revise information, satisfy multiple requirements, invoke a supported operation, request clarification, refuse an unsupported or prohibited request, or hand control to a person. Clarification, refusal, and handoff are part of Interaction Closure, not failures of it.
 
-Completeness does not mean predicting every sentence or prescribing what users may say. Natural-language expressions are effectively unlimited, but the dialog acts they represent can be defined. The LLM maps different expressions into one or more proposed dialog acts. Interaction Closure maintains a structured summary of what has been established, and applicable business logic determines how consequential acts change business state.
+After the LLM maps an expression to one or more proposed user dialog acts, deterministic logic records their meaning in the accumulated interaction context. Applicable business rules govern their effect on business state and the next system dialog act; common sense handles the rest.
 
-The set includes dialog acts that add or revise information, satisfy multiple requirements, invoke another supported operation, request clarification, refuse an unsupported or prohibited request, and hand control to a person when necessary. Clarification, refusal, and handoff are part of Interaction Closure, not failures to achieve it.
-
-These requirements do not prescribe a particular technical architecture. One practical implementation uses a fully connected invocation surface over a guarded state machine. Each applicable dialog act can be invoked from any relevant conversational state, while validation, dependencies, confirmation, and authorization govern its effect on business state. The same dialog act applied to the same business state therefore produces the same governed transition, regardless of the current dialog node.
-
-When free-form language needs interpretation, the LLM proposes one or more dialog acts and renders a natural response. Business logic determines whether those acts are applicable, how they affect the accumulated state, and what the system may do next.
+The state machine provides a fully connected invocation surface in which relevant dialog acts can be invoked from any conversational state, while validation, dependencies, confirmation, and authorization govern their effect on business state.
 
 > **The LLM interprets and renders language. Business logic governs consequential dialog acts.**
 
-Language understanding remains probabilistic. When meaning is ambiguous, unsupported, or insufficiently trusted, the system invokes a defined clarification, refusal, or handoff dialog act instead of allowing the model to improvise a business decision.
+Because language understanding remains probabilistic, ambiguous, unsupported, or low-confidence input invokes a defined clarification, refusal, or handoff dialog act instead of an improvised business decision.
 
 Interaction Closure is not the entire production voice stack. An inbound phone agent also needs accurate speech processing, low latency, identity and security controls, reliable fulfillment workflows, observability, and human escalation. Interaction Closure supplies the part those capabilities do not: a complete business-interaction surface that returns open-ended user input to governed business logic.
 
@@ -134,19 +129,12 @@ This is why Interaction Closure works: it separates expression from control. Var
 
 ## Let Users Control the Path Without Surrendering Business Logic
 
-Workflow and Interaction Closure provide complementary forms of business control:
-
-- **Workflow** governs how agreed work is executed, including API calls, transactions, retries, compensation, and terminal outcomes.
-- **Interaction Closure** governs meaning and agreement: what the user wants, what remains unresolved, and whether fulfillment is authorized.
-
-The distinction is one of authority: the interaction layer governs meaning and agreement; the fulfillment layer governs execution.
+Workflow and Interaction Closure provide complementary forms of business control. Workflow governs how agreed work is executed; Interaction Closure governs business meaning and agreement—what the user wants, what remains unresolved, and whether fulfillment is authorized. The boundary is one of authority: the interaction layer governs meaning and agreement; the fulfillment layer governs execution.
 
 > **Workflow over LLM for reliable fulfillment. Interaction Closure over LLM for predictable interaction.**
 
-Users decide what to say, how to say it, and in what order. Interaction Closure accepts that freedom without transferring control of business interaction to a probabilistic model. It defines the obligations and permitted outcomes, makes supported interaction acts invokable from any relevant point, and ensures equivalent conversational paths converge on the result required by business logic.
-
 The promise is simple:
 
-> **Do not control the user's conversational path. Control how every supported path closes.**
+> **Do not control the user's conversational path. Control the interaction state and system emission according to the business goal.**
 
-At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. Interaction Closure defines the scalable requirement—a soft interaction surface connected to a rigid business core—and turns conversation into a dependable business channel rather than an impressive demonstration.
+At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. Interaction Closure connects a soft interaction surface to a rigid business core, turning conversation into a dependable business channel rather than an impressive demonstration.
