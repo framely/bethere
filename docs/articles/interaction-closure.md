@@ -106,7 +106,7 @@ This gap helps explain why capable voice AI has not yet produced widespread auto
 
 Voice is one of the most immediate ways to express intent: a person only needs to speak. It is already an important channel between customers and businesses, and it may become even more important as computing extends beyond screens. Unlike graphical interfaces, which people learn later in life, spoken interaction is learned from early childhood. That lifelong familiarity creates a high expectation: people expect the system to follow them as they think aloud, provide several details at once, correct themselves, interrupt, and change direction.
 
-Workflow assumes a best-known path: once the customer and business agree on what should be done, the business can govern how the work proceeds. Interaction begins before that agreement and must make a different assumption—convergence. Users may approach the same business understanding through different wording, ordering, corrections, and interruptions, so the interaction layer must allow many conversational paths to converge on the same agreement.
+On the other hand, users may approach the same business understanding through different wording, ordering, corrections, and interruptions, so the interaction layer must allow many conversational paths to converge on the same agreement.
 
 Interaction Closure is the complete, business-defined set of interactions through which open-ended user input is interpreted and returned to business logic. Here, **closure means completeness of the set, not the end of an interaction**. A conversation may continue across any number of interactions; what is complete is the business's definition of how input is handled.
 
