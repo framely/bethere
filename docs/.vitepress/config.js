@@ -1,10 +1,31 @@
 import { FALSE } from "sass";
 import { sidebar, navbar } from "./configs";
 
+const siteUrl = 'https://bethere.ai';
+
+function canonicalUrl(page) {
+  const path = page
+    .replace(/(^|\/)index\.md$/, '$1')
+    .replace(/\.md$/, '');
+
+  return new URL(path, `${siteUrl}/`).href;
+}
+
 export default {
   base: '/',
   cleanUrls: true,
   title: 'BeThere',
+  sitemap: {
+    hostname: siteUrl,
+    transformItems: (items) => items.filter(({ url }) => !url.startsWith('archive/')),
+  },
+  transformHead: ({ page }) => {
+    if (page === '404.md' || page.startsWith('archive/')) {
+      return [['meta', { name: 'robots', content: 'noindex, nofollow' }]];
+    }
+
+    return [['link', { rel: 'canonical', href: canonicalUrl(page) }]];
+  },
   appearance: false,
   head: [
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/icons/favicon-32x32.png' }],

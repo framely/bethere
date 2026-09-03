@@ -15,7 +15,7 @@ layout: home
       author: 'Sean Wu',
       date: '7/17/2026'
     },
-    path:'./why-ai-agents-should-be-specialists.html'
+    path:'./why-ai-agents-should-be-specialists'
 },{
     info: {
       title:'Prompt Engineering will never be fully deterministic',
@@ -24,7 +24,7 @@ layout: home
       author: 'Sean Wu',
       date: '5/28/2025'
     },
-    path:'./prompt-engineer-not-deterministic.html'
+    path:'./prompt-engineer-not-deterministic'
 },{
     info: {
       title:'Table reservation CUI design',
@@ -33,7 +33,7 @@ layout: home
       author: 'Sunny May',
       date: '4/19/2025'
     },
-    path:'./reservation-cui-design.html'
+    path:'./reservation-cui-design'
 },{
     info: {
       title:'Reuse reservation module to build chatbot',
@@ -42,7 +42,7 @@ layout: home
       author: 'Sunny May',
       date: '4/27/2025'
     },
-    path:'./reuse-reservation-module.html'
+    path:'./reuse-reservation-module'
 },{
     info: {
       title:'Build a reservation module',
@@ -51,7 +51,7 @@ layout: home
       author: 'Sunny May',
       date: '3/2/2025'
     },
-    path:'./build-reservation-module.html'
+    path:'./build-reservation-module'
 },{
     info: {
       title:'From schema to snippets: a blueprint for chatbot',
@@ -60,7 +60,7 @@ layout: home
       author: 'Bird Zeng',
       date: '2/25/2025'
     },
-    path:'./from-schema-to-snippets.html'
+    path:'./from-schema-to-snippets'
 },{
     info: {
       title:'Chatbot development with OpenCUI',
@@ -69,6 +69,6 @@ layout: home
       author: 'Sean Wu',
       date: '1/3/2025'
     },
-    path:'./chatbot-development-with-opencui.html'
+    path:'./chatbot-development-with-opencui'
 }]
 }" />
