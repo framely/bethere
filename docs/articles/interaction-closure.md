@@ -104,25 +104,33 @@ This gap helps explain why capable voice AI has not yet produced widespread auto
 
 ## Interaction Closure: Prepare for Every Input and Return to Business Logic
 
-Interaction Closure is a business-defined interaction contract that preserves the essential advantage of an LLM—a soft surface that can interpret preferences, corrections, references, and compound requests—while giving the business core the same kind of explicit control that workflow provides for fulfillment.
+Voice is one of the most immediate ways to express intent: a person only needs to speak. It is already an important channel between customers and businesses, and it may become even more important as computing extends beyond screens. Unlike graphical interfaces, which people learn later in life, spoken interaction is learned from early childhood. That lifelong familiarity creates a high expectation: people expect the system to follow them as they think aloud, provide several details at once, correct themselves, interrupt, and change direction.
 
-Voice remains an important channel through which customers reach businesses, and recent advances in voice AI have raised expectations that these conversations should work well for both sides. Yet voice offers fewer constraints than a graphical interface, where fields, buttons, disabled actions, and page structure limit what users can do. Callers cannot see all required values, often speak while thinking, revise themselves mid-utterance, and interrupt once they understand where the assistant is going. This makes the Interaction Closure guarantee especially important in voice.
+Workflow assumes a best-known path: once the customer and business agree on what should be done, the business can govern how the work proceeds. Interaction begins before that agreement and must make a different assumption—convergence. Users may approach the same business understanding through different wording, ordering, corrections, and interruptions, so the interaction layer must allow many conversational paths to converge on the same agreement.
 
-Preparing for every input does not mean predicting every sentence or prescribing what users may say. Interaction Closure maps different expressions into canonical business meaning and maintains a structured summary of what has been established so far. Business logic operates on this accumulated meaning to determine what is resolved, what requires clarification or confirmation, and which outcomes are allowed. The interaction is therefore governed by meaning rather than wording or order.
+Interaction Closure is the complete, business-defined set of interactions through which open-ended user input is interpreted and returned to business logic. Here, **closure means completeness of the set, not the end of an interaction**. A conversation may continue across any number of interactions; what is complete is the business's definition of how input is handled.
 
-The guarantee is simple:
+Completeness does not mean predicting every sentence or prescribing what users may say. Natural-language expressions are effectively unlimited, but the business interactions they represent can be defined. The LLM maps different expressions into one or more proposed interactions from the complete set. Interaction Closure maintains a structured summary of what has been established, and business logic operates on that accumulated meaning to determine how each interaction changes the business state.
 
-> **Different expression or order + equivalent meaning = the same business-valid interaction result.**
+The completeness guarantee is:
 
-The guarantee does not prescribe a particular technical architecture. One practical implementation uses a fully connected invocation surface over a guarded state machine. Supported user acts can be invoked from any relevant conversational state, while validation, dependencies, confirmation, and authorization guard business state changes. The same act applied to the same business state therefore produces the same governed transition, regardless of the current dialog node.
+> **Every input maps to an interaction in the complete set and returns to business logic.**
 
-When free-form language needs interpretation, the LLM proposes a structured business action and renders a natural response. Closure logic decides how that proposal affects the interaction, what remains unresolved, and whether the business may proceed.
+The set includes interactions that add or revise information, satisfy multiple requirements, invoke another supported operation, request clarification, refuse an unsupported or prohibited request, and hand control to a person when necessary. Clarification, refusal, and handoff are part of Interaction Closure, not failures to achieve it.
 
-> **The LLM controls linguistic form. Business logic controls closure.**
+Interaction Closure also provides a consistency guarantee:
 
-Language understanding remains probabilistic. When meaning is ambiguous, closure logic requires clarification or a safe failure instead of allowing the model to improvise a business decision. Alternate wording, order, correction, and interruption may change the language, but not the business-valid state or outcome.
+> **Different expression or order + equivalent meaning = the same governed business interaction.**
 
-Interaction Closure is not the entire production voice stack. An inbound phone agent also needs accurate speech processing, low latency, identity and security controls, reliable fulfillment workflows, observability, and human escalation. Closure supplies the part those capabilities do not: control over how arbitrary user input becomes a business-valid interaction result.
+These guarantees do not prescribe a particular technical architecture. One practical implementation uses a fully connected invocation surface over a guarded state machine. Each applicable interaction can be invoked from any relevant conversational state, while validation, dependencies, confirmation, and authorization govern its effect on business state. The same interaction applied to the same business state therefore produces the same governed transition, regardless of the current dialog node.
+
+When free-form language needs interpretation, the LLM proposes one or more interactions from the complete set and renders a natural response. Business logic determines whether those interactions are applicable, how they affect the accumulated state, and what the system may do next.
+
+> **The LLM controls linguistic form. The business defines the complete interaction set.**
+
+Language understanding remains probabilistic. When meaning is ambiguous, unsupported, or insufficiently trusted, the system invokes a defined clarification, refusal, or handoff interaction instead of allowing the model to improvise a business decision. Alternate wording, order, correction, and interruption may change the language, but they do not take the conversation outside the business-defined interaction set.
+
+Interaction Closure is not the entire production voice stack. An inbound phone agent also needs accurate speech processing, low latency, identity and security controls, reliable fulfillment workflows, observability, and human escalation. Interaction Closure supplies the part those capabilities do not: a complete business-interaction surface that returns open-ended user input to governed business logic.
 
 ## Let Users Control the Path Without Surrendering Business Logic
 
