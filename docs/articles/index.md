@@ -9,6 +9,15 @@ layout: home
 <Article :articles="{
   items: [{
     info: {
+      title:'Interaction Closure: What Business Voice AI Needs',
+      description: ['Interaction Closure keeps conversation soft at the user-facing surface and rigid at the business-logic core.'],
+      image: './../images/blog/banner/interaction-closure.png',
+      author: 'Sean Wu',
+      date: '8/31/2026'
+    },
+    path:'./interaction-closure'
+},{
+    info: {
       title:'You don’t need an omnipotent AI agent',
       description: ['The best business agent is not the one that can do everything. It is the narrowest agent that can complete a specific task reliably, under explicit rules and permissions.'],
       image: './../images/blog/banner/ai-specialist-vs-omnipotent-agent.png',
