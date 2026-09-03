@@ -16,9 +16,11 @@ For users who want to follow our progress or contribute to this project, please 
 ## Local development
 
 ```
-yarn
-yarn dev
+npm ci
+npm run dev
 ```
+
+Set `VITE_POSTHOG_PROJECT_TOKEN` in `.env.local` to enable consent-gated PostHog page-view analytics.
 
 ## Contribution
 

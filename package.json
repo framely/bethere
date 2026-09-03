@@ -3,6 +3,7 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
+    "test": "node --test tests/*.test.mjs",
     "notice": "sh scripts/notice.sh"
   },
   "devDependencies": {
@@ -15,6 +16,7 @@
   "author": "Xiaoyun Wu <xiaoyun.wu@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "posthog-js": "^1.409.5",
     "vanilla-cookieconsent": "3.0.0",
     "vitepress": "^1.6.4"
   },
