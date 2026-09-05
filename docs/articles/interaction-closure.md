@@ -125,16 +125,18 @@ Because language understanding remains probabilistic, ambiguous, unsupported, or
 
 Interaction Closure is not the entire production voice stack. An inbound phone agent also needs accurate speech processing, low latency, identity and security controls, reliable fulfillment workflows, observability, and human escalation. Interaction Closure supplies the part those capabilities do not: a complete business-interaction surface that returns open-ended user input to governed business logic.
 
-This is why Interaction Closure works: it separates expression from control. Varied utterances become dialog acts, meaning accumulates across turns, and applicable business rules operate on that meaning rather than on raw wording or conversational order. Equivalent meaning in the same context therefore receives the same governed handling.
+For businesses to adopt inbound automation, it must be reliable. Interaction Closure brings together three qualities of reliable interaction: consistency, predictability, and robustness. The state machine supports consistency by applying the same business rules to equivalent meaning in the same context, and predictability by explicitly defining permitted state changes and system dialog acts. LLM-based dialog understanding contributes robustness by interpreting varied wording, compound requests, and corrections as structured dialog acts. LLM fallback handles unconstrained conversation outside explicitly modeled interactions, while consequential actions remain subject to business rules. When interpretation is uncertain, the state machine directs clarification or handoff to keep the interaction within business boundaries.
+
+Together, these qualities let the conversation follow the user while business logic governs how the system responds and acts. This is how Interaction Closure turns free-form conversation into reliable business interaction.
 
 ## Let Users Control the Path Without Surrendering Business Logic
 
-Workflow and Interaction Closure provide complementary forms of business control. Workflow governs how agreed work is executed; Interaction Closure governs business meaning and agreement—what the user wants, what remains unresolved, and whether fulfillment is authorized. The boundary is one of authority: the interaction layer governs meaning and agreement; the fulfillment layer governs execution.
+Workflow and Interaction Closure provide complementary forms of business control. Workflow governs how agreed work is executed; Interaction Closure governs business meaning and agreement—what the user wants, what remains unresolved, and whether fulfillment is authorized.
 
-> **Workflow over LLM for reliable fulfillment. Interaction Closure over LLM for predictable interaction.**
+> **Workflow over LLM for reliable fulfillment. Interaction Closure over LLM for reliable interaction.**
 
 The promise is simple:
 
 > **Do not control the user's conversational path. Control the interaction state and system emission according to the business goal.**
 
-At scale, neither extreme works. A rigid flow cannot absorb the ways people actually speak, while an end-to-end LLM cannot provide the repeatability, cost control, and business authority that consequential interactions require. Interaction Closure connects a soft interaction surface to a rigid business core, turning conversation into a dependable business channel rather than an impressive demonstration.
+Reliable business voice AI needs control over both interaction and fulfillment. Together, workflow and Interaction Closure provide the business-owned structure needed to turn natural conversation into dependable service.
