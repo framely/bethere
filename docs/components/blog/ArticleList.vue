@@ -57,9 +57,12 @@ defineProps({
     width: 16rem;
     min-width: 16rem;
     height: 10rem;
+    box-sizing: border-box;
+    padding: 8px;
     border: 1px solid var(--vp-c-divider);
     border-radius: 12px;
-    object-fit: cover;
+    background-color: var(--bethere-raised-surface);
+    object-fit: contain;
     margin: 0;
   }
 

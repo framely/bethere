@@ -2,119 +2,136 @@
 
 ## Purpose and scope
 
-Give each article one clear visual idea that can be understood at thumbnail size. Covers introduce the subject; the article and its technical diagrams explain the details.
+Give each article a distinct conceptual illustration that expresses its central relationship. Aim for a small, purposeful scene: richer than an isolated icon, simpler than a technical diagram.
 
-This guide applies to the eight editorial covers listed in [the article index](index.md). Reference documents under `reservation/` and instructional screenshots inside tutorials are outside the cover series. This is an internal production guide and is excluded from the built website.
+This guide covers the eight editorial images in [the article index](index.md). Reference documents under `reservation/` and instructional screenshots inside tutorials are outside this series. This production guide is excluded from the built website.
 
 ## Shared visual language
 
-- Simple matte paper-cut illustration with broad, softly rounded silhouettes.
-- One visual metaphor and one to three principal objects or groups per cover.
-- Nearly frontal compositions; a slight oblique angle is acceptable when layers are the subject.
-- Subtle paper texture and small contact shadows. Avoid deep 3D scenes or dramatic lighting.
-- Off-white background, navy structure, blue accents, and pale-blue surfaces.
-- No embedded titles, words, letters, numbers, logos, robot faces, decorative sparkles, or intricate diagrams.
-- Empty space is part of the composition. Keep all essential shapes away from the edges.
-- Favor a large readable silhouette over small details. Related articles share a style but must have distinct silhouettes.
+- Tangible, softly rounded objects with a matte finish, restrained grain, and shallow dimensional layering.
+- One central relationship, usually expressed through four to six purposeful elements or groups. Add detail that clarifies the subject, not decoration to fill space.
+- A consistent blue, teal, navy, and warm cream palette. Vary the composition and silhouette to distinguish articles.
+- Clear foreground/background hierarchy and clean separation between objects.
+- No embedded titles, readable text, logos, stock robot characters, or sprawling networks.
+- Keep the main idea readable at 256 x 160; use larger views for secondary detail.
 
-### Palette
+### Palette and theme support
 
 | Role | Target color |
 | --- | --- |
-| Background | `#F7F8FA` |
-| Structure / ink | `#20354F` |
-| Accent | `#4679B9` |
-| Light surfaces | `#DCE9F6` |
+| Main objects | Cornflower blue `#648FD0` |
+| Secondary objects and boundaries | Dusty teal `#69ACA9` |
+| Internal definition | Slate navy `#344B68` |
+| Small contrasting surfaces | Warm cream `#E7DFCF` |
+| Light card background (CSS, not PNG) | `#F5F5F5` |
+| Dark card background (CSS, not PNG) | `#171717` |
 
-These are generation targets; rendered paper and shadows naturally vary. Do not introduce unrelated accent colors for individual articles.
+These are art-direction targets, not exact pixel requirements. Materials and lighting produce natural variation.
+
+The PNG background must have **real alpha transparency**. Never bake a white rectangle, dark rectangle, checkerboard, or preview backdrop into the image. Use midtone blue/teal on important outer edges so forms remain visible against both themes. Avoid dark-only outlines or large pale backgrounds.
+
+The article card supplies its background through `var(--bethere-raised-surface)`, which follows the selected theme. Do not use CSS inversion, blend modes, or separate light/dark recolorings.
 
 ## Format and integration
 
-- Landscape composition, approximately 16:9. Current generated PNGs are 1672 x 941.
-- Replace the existing PNG at `docs/public/images/blog/banner/<filename>.png` when refreshing a cover.
-- Keep filenames stable so the article index and existing frontmatter references continue to work.
-- The desktop article list displays a 256 x 160 center crop; mobile uses 16:9. Check both.
-- Keep critical shapes inside the central 80% of the width and 85% of the height to allow cropping.
-- Preserve opaque off-white backgrounds across the set, including when the site is in dark mode.
-- The HTML supplies the article title and accessible alt text; keep text out of the image.
-- Use lossless PNG optimization if available. Avoid increasing dimensions or adding decorative detail just to fill the canvas.
-- Retain tutorial screenshots, code examples, and precise technical diagrams as factual documentation.
+- Generate on a landscape canvas, targeting 16:9. The current outputs range from 3:2 to 16:9; preserve generated proportions.
+- Replace `docs/public/images/blog/banner/<filename>.png`; keep filenames stable.
+- Desktop cards are 256 x 160; mobile cards use a 16:9 box.
+- Use `object-fit: contain`, 8px padding, and `box-sizing: border-box` so neither layout clips the artwork.
+- Compose with breathing room around every edge. Keep the main scene substantial within the canvas.
+- Preserve the alpha channel when copying or losslessly optimizing PNGs.
+- HTML supplies titles and accessible alt text; do not put article titles inside the artwork.
+- Keep existing tutorial screenshots, code examples, and precise diagrams unchanged.
 
 ## Cover concepts
 
-| Article | PNG filename | Single visual idea |
+| Article | PNG filename | Central relationship |
 | --- | --- | --- |
-| [Interaction Closure](interaction-closure.md) | `interaction-closure.png` | A soft speech bubble held inside a complete, stable frame: conversation within a business harness. |
-| [AI specialists](why-ai-agents-should-be-specialists.md) | `ai-specialist-vs-omnipotent-agent.png` | Three separate compartments with one job each: bounded, independently maintainable specialists. |
-| [Prompt determinism](prompt-engineer-not-deterministic.md) | `prompt.png` | One speech bubble with three diverging ribbons: varied interpretation of natural language. |
-| [Reservation CUI design](reservation-cui-design.md) | `tutorial_reservation_cui.png` | A table for two and a speech bubble: the customer-facing reservation conversation. |
-| [Reuse a reservation module](reuse-reservation-module.md) | `tutorial_reservation_chatbot.png` | A calendar component beside a socket in a speech bubble: adding an existing capability. |
-| [Build a reservation module](build-reservation-module.md) | `tutorial_reservation_module.png` | A calendar assembled from interlocking panels: constructing the reusable component. |
-| [Schema to snippets](from-schema-to-snippets.md) | `from-schema-to-snippets.png` | A structured card with two speech bubbles: service structure becomes conversational behavior. |
-| [Chatbot development](chatbot-development-with-opencui.md) | `chatbot_development_with_opencui.png` | Three stacked layers topped by a speech bubble: composable chatbot architecture. |
+| [Interaction Closure](interaction-closure.md) | `interaction-closure.png` | Varied voice paths enter one complete governed interaction space, including a return loop for corrections. |
+| [AI specialists](why-ai-agents-should-be-specialists.md) | `ai-specialist-vs-omnipotent-agent.png` | Three bounded workstations share a service base while keeping distinct responsibilities. |
+| [Prompt determinism](prompt-engineer-not-deterministic.md) | `prompt.png` | One loosely specified input produces varied outputs, contrasted with a precisely constrained track. |
+| [Reservation CUI design](reservation-cui-design.md) | `tutorial_reservation_cui.png` | A table for two with conversational guest and calendar details. |
+| [Reuse a reservation module](reuse-reservation-module.md) | `tutorial_reservation_chatbot.png` | A ready-made reservation module plugs into a chat application and connects to backend storage. |
+| [Build a reservation module](build-reservation-module.md) | `tutorial_reservation_module.png` | Date, capacity, and confirmation parts fit into a reusable module. |
+| [Schema to snippets](from-schema-to-snippets.md) | `from-schema-to-snippets.png` | A structured service blueprint leads to contextual conversation examples. |
+| [Chatbot development](chatbot-development-with-opencui.md) | `chatbot_development_with_opencui.png` | Conversation, interaction components, and backend services form connected layers. |
 
-For Interaction Closure, the frame represents completeness and governed interaction. Avoid finish flags or a lone success checkmark, which could imply that closure means ending the conversation.
+For Interaction Closure, completeness does not mean ending the conversation. Avoid finish flags, closed doors, or a lone success checkmark as the central metaphor.
 
 ## Generation recipe
 
-The September 2026 set was generated with the built-in image generator. The Interaction Closure cover was generated first; the other seven used that cover as a **style reference only**. The concepts came from reading the articles, rather than copying their old cover compositions.
+The September 2026 revised set was generated from scratch with the built-in image generator, **one cover at a time**. Each result was visually inspected on light and dark surfaces at both larger and card sizes before replacement. Do not reuse the earlier opaque, icon-only direction.
 
-Use the following shared prompt verbatim, followed by `Subject: <article-specific brief>`. The exact briefs for this set are recorded below. The palette, materials, and simplicity constraints stay fixed; change the metaphor for each new article.
+Use the following shared prompt followed by `Subject: <article-specific brief>`. These are the exact base prompts for this revision. The specialist cover received the targeted edits recorded below; the other covers were generated without input image references.
 
 ```text
 Use case: stylized-concept.
-Asset type: BeThere editorial article cover, landscape 16:9, intended to read clearly at 256 pixels wide.
-Style/medium: extremely simple matte paper-cut editorial illustration, nearly flat frontal view, gently rounded shapes, restrained paper texture and tiny soft contact shadows only. Calm and precise, not a technical diagram.
-Palette: warm off-white background #F7F8FA, dark ink navy #20354F, medium blue #4679B9, pale blue #DCE9F6. Only this palette, no rainbow colors.
-Composition: one large readable visual metaphor centered, no more than three principal objects, generous 25 percent empty margins, uncluttered silhouette. No text, letters, numbers, logos, robots, faces, tiny details, decorative sparkles, sprawling arrows, UI screenshots, gradients or elaborate backgrounds. Full-bleed off-white canvas with no frame. The image communicates a single editorial idea, not the entire article.
+Asset type: editorial illustration for a BeThere technical article, landscape 16:9.
+Art direction: polished conceptual editorial illustration, restrained but substantial, not an app icon and not an instructional flowchart. Carefully composed tangible objects, softly rounded geometry, precise ink edges, subtle matte screenprint grain and shallow dimensional layering. Four to six purposeful elements, strong visual hierarchy, meaningful relationships. No decorative filler.
+Palette: medium cornflower blue #648FD0, dusty teal #69ACA9, slate navy #344B68 for internal definition, small warm cream #E7DFCF accents. Midtone blue/teal outer silhouettes must remain legible on both light #F5F5F5 and dark #171717 surfaces. Avoid heavy black outlines, excessive pale surfaces, glossy 3D or neon.
+Composition: one coherent wide centered vignette filling approximately 78% of the canvas width and 76% height. Breathing room on all edges. Readable as a 256 x 160 thumbnail but rewarding at larger size.
+Background: actual transparent PNG alpha channel. Empty surrounding pixels and gaps between objects must be transparent, with no background rectangle, no checkerboard painted into the image, no white matte or vignette. Do not draw the light/dark preview surfaces.
+Constraints: no text, letters, numerals, logos, watermark, generic robots, sparkles, plants, extraneous props, dense networks or tangled arrows.
 ```
 
-For subsequent covers, attach `docs/public/images/blog/banner/interaction-closure.png` as the style reference and add this instruction before the subject:
-
-```text
-Input image: style reference ONLY. Match its paper-cut material, palette, bold shapes, and quiet background. Create a new composition for the following different subject. Do not copy its enclosing frame unless requested.
-```
-
-### Subject briefs used for this set
+### Subject briefs
 
 #### interaction-closure.png
 
-Interaction Closure. A single large pale-blue speech bubble held securely inside a thick dark navy rounded-square frame, with just three simple smooth blue conversational strokes inside the bubble. The speech bubble retains its soft organic outline; the outer frame is stable, complete, and visibly protective. Metaphor: free conversation inside a complete business-defined interaction harness. Do not depict a finish flag, checkmark, funnel, or conversation ending. No additional objects.
+Interaction Closure: a rounded blue interaction arena seen in shallow perspective contains three distinct business-state tiles: a calendar, two alternate choices, and a conversational reply. Its continuous teal rim represents a complete governed interaction space, not a closed door. Outside the arena, three differently shaped speech bubbles carry distinct simple voice-wave marks. Three flowing blue/teal ribbons from those bubbles enter the same arena from different directions; one ribbon makes a small clean return loop to suggest correction and continued conversation. The relationship is free conversational order with a consistent business core. Make the arena and varied paths dominant, with the tiles secondary. No endpoint checkmark, finish flag, funnel, lock, maze or extra stationery.
 
 #### ai-specialist-vs-omnipotent-agent.png
 
-Three separate compact paper-cut compartments arranged as one neat horizontal toolkit. Each compartment holds exactly one large simple symbol: a calendar, an envelope, a small wrench. Matching navy boundaries isolate the three responsibilities, blue symbols on pale-blue inserts. Metaphor: each specialist owns one bounded job; no central omnipotent brain, robot, network or connecting arrows.
+A small coordinated service desk with three separate upright open workstations, each visibly its own bounded compartment. One handles an appointment calendar, one handles customer messages with an envelope and a reply slip, and one handles repairs with a wrench and small gear. A single common blue reception rail subtly links their bases. Warm cream cards and teal separators. Editorial story: a team of focused AI specialists serves one business, with distinct tools and permissions. Include enough functional details to look like an illustration of a working system, not three flat app buttons. No robot characters, people, labels, tiny text, plants or unrelated props.
 
 #### prompt.png
 
-One pale-blue speech bubble above three short blue diverging paper ribbons with rounded tips. The three ribbons leave a common point below the speech bubble and gently fan apart, clearly visible and sparse. Metaphor: one natural-language prompt can lead to different interpretations. Just the bubble and the three ribbons as a single visual grouping. No question marks, exclamation marks, checkmarks, code, tangled wires or tiny dots.
+Two ways of shaping software behavior on one quiet tabletop vignette. A warm cream prompt card bearing just two loose blue wavy marks feeds three short blue/teal ribbons that land at three slightly different small response cards. Alongside it, a compact structured navy slot guide aligns three identical blue tokens in a single orderly track. The single visual comparison is flexible ambiguous interpretation versus a precisely defined interface. Not a literal flowchart: show tactile cards, tracks, and meaningful relationships. No question marks, labels, code text, plant, people, or busy network.
 
 #### tutorial_reservation_cui.png
 
-One simple navy round dining table seen directly from above, with two small blue chair shapes opposite each other. A single pale-blue speech bubble floats just above the table, visibly separate. Metaphor: designing a conversation to reserve a table. Just the table, two chairs as one dining group, and one speech bubble. No plates, cutlery, room scenery, people, calendar, clock or extra symbols.
+A tiny restaurant reservation vignette: one round blue dining table with two teal chairs and two simple cream place settings. Above it a short conversational exchange of two floating cream-and-blue speech bubbles, one containing a tiny pair-of-guests symbol and the other a small calendar tile. A modest reservation slip rests at the table edge. Editorial story: gathering the customer's dining requirements through conversation. Slight perspective, inviting service scene, no room backdrop, no people, no plant, no written text or elaborate UI.
 
 #### tutorial_reservation_chatbot.png
 
-One large pale-blue speech bubble with a clean square socket in its lower-right side, and one separate compact navy calendar module lined up to fit into that socket. Calendar module has two binding tabs and one simple blue square date marker, no grid of numbers. Metaphor: plug an existing reservation module into a chatbot. Two main objects with a small clean gap between them. No tools, arrows, additional blocks, branding or robots.
+A reusable reservation component being fitted into an existing conversational application. A blue upright chat workspace with two cream reply strips stands next to a separate teal module holding a small calendar and a simple table symbol. Matching connector tabs visibly align the module with a socket on the workspace; one short cable leads to a small shared calendar ledger behind it. Editorial story: connect a ready-made reservation capability and calendar backend to a chatbot. A composed workshop vignette, roughly four major objects, not a single puzzle icon. No text, people, plant, tools or sprawling connectors.
 
 #### tutorial_reservation_module.png
 
-A simple upright navy calendar-shaped module being assembled from three broad interlocking paper panels: two pale-blue lower panels already joined, one medium-blue top strip hovering a short distance above them ready to attach. Top strip has two simple binding tabs so the assembly reads as a calendar. Metaphor: build a reservation component from reusable parts and rules. No tool icons, extra calendar grids, arrows, lettering, chat bubbles or unrelated props.
+A small component-building workbench with an open blue reservation module in the center. Three purposeful parts are being assembled into it: a cream calendar tile, a teal table-capacity tile showing two simple seats, and a blue confirmation toggle tile. A small dark-blue wrench rests beside the base. Parts hover just slightly above their matching compartments, with clear shape fit and visible separation. Editorial story: constructing reservation behavior from service types, fields, and business rules. No completed chatbot screen, no letters, numbers, people, plant or additional tools.
 
 #### from-schema-to-snippets.png
 
-A single upright pale-blue schema card with three large navy horizontal slots along its left half. From the right edge of the card emerge two simple blue speech bubbles, stacked with plenty of breathing room, as if the structured card unfolds into conversation. Metaphor: structured service schema becomes contextual dialog snippets. Three principal shapes total: one card and two speech bubbles. No writing, code characters, tiny fields, arrows, branching network, pencils or decorative objects.
+An editorial design desk vignette where a structured service blueprint becomes contextual conversation examples. A large blue blueprint card with three cream field slots and small connector dots lies partly beneath two staggered warm cream snippet cards; each snippet card holds just two blue/teal speech shapes with simple wavy marks. One short linking ribbon and a modest blue pencil show the relationship of structured service design to authored dialog examples. Three cards and a pencil, generous spacing, slight perspective. No written text, code, tiny diagrams, plant or busy technical network.
 
 #### chatbot_development_with_opencui.png
 
-Three broad rounded paper slabs arranged as one simple separated vertical stack, shown with only a very slight oblique angle so each layer is visible. Top pale-blue slab carries one bold navy speech-bubble silhouette; middle layer medium blue, bottom layer navy. Metaphor: a conversational app built from three distinct composable layers. Keep the stack low and broad, paper-thin, nearly flat, no tall 3D tower, no extra icons, no connectors or UI screens.
+A conversational application illustrated as three separated but connected working layers in a gentle exploded view. Top layer is a small blue conversation panel with two cream/teal bubbles. Middle layer is an open teal module tray holding two simple interlocking interaction pieces. Bottom layer is a blue service base with a small cream data cylinder and two plug sockets. Two short clean supports connect the levels. Editorial story: dialog understanding, reusable interaction components, and backend services form a composable chatbot. Show functional details rather than three blank slabs. No text, letters, people, robots, plant or sprawling wiring.
+
+### Targeted specialist refinement
+
+The initial specialist draft added characters and excessive props. This edit restored the focus on bounded responsibilities:
+
+```text
+Edit this illustration: remove all three robot characters completely, all monitors, all loose desktop clutter, all file folders and all spare tools. Preserve the three bounded teal workstation compartments, their shared blue base, the blue/teal/cream palette, matte texture and perspective. Keep exactly one large calendar plus a small clock in the first compartment, one large envelope plus two reply bubbles in the second, and one large wrench plus a gear in the third. Arrange these as purposeful upright contents of each compartment, large enough to read at thumbnail size. No characters, faces, text, plants or new decorative props. Preserve the genuinely transparent PNG alpha background, no painted checkerboard or white matte.
+```
+
+The edit returned a painted checkerboard, so a second pass requested actual alpha:
+
+```text
+Use case: background-extraction. Remove the entire painted checkerboard background. Return the existing illustration unchanged as an isolated cutout with a genuinely transparent PNG alpha channel. Every surrounding background pixel must have alpha=0, not a white, black or checkerboard fill. Preserve the objects, colors, dimensions, composition, texture and edges. No other changes.
+```
+
+Do not assume a checkerboard-looking preview means the asset is transparent. Inspect decoded pixel alpha and composite the image on actual page colors.
 
 ## Review before replacement
 
-1. Read the article and write its central idea in one sentence.
-2. Choose one metaphor that expresses that idea without recreating the entire article.
-3. Generate with the shared prompt and a current cover as the style reference.
-4. Inspect the full image and the 256 x 160 crop. Check the silhouette, margins, meaning, and absence of accidental text.
-5. Compare all covers together. Match palette, texture, shadows, and visual complexity; preserve distinct concepts.
-6. Replace the corresponding tracked PNG. Add a new subject brief here when adding or substantially redesigning a cover.
-7. Check the article index at desktop and mobile sizes and run the docs build. Do not regenerate factual screenshots to match the cover style.
+1. Read the article; describe its core relationship in one sentence.
+2. Choose a distinct scene within the shared palette, materials, and level of detail.
+3. Generate one cover, inspect it, and make targeted corrections before starting the next.
+4. Decode the PNG and verify real transparent pixels and fully transparent corners. The cover-asset tests check these properties.
+5. Composite on both `#F5F5F5` and `#171717`. Inspect silhouettes, edges, halos, contrast, and unintended background remnants.
+6. Check at 256 x 160 and mobile card size with containment and padding, not a center crop.
+7. Compare the set for palette, density, and recognizable differences. Preserve useful detail without adding clutter.
+8. Replace the corresponding PNG and record its prompt or refinements here.
+9. Check the actual article index in both themes on desktop and mobile. Run `npm test` and `npm run build`.
