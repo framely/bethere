@@ -26,7 +26,7 @@ A workflow makes these controls explicit in code. It:
 
 This structure can also reduce unnecessary model calls. Decisions already encoded in the workflow do not require fresh inference, and individual steps can use smaller models where appropriate. More expensive reasoning can be reserved for the steps that need it.
 
-This is **workflow over LLM**. It works because the LLM operates within a workflow harness: the model reasons within individual steps, while the workflow controls when it is invoked, which actions are permitted, how its output is validated, and what happens next. The business retains control of execution while using the model's flexibility where it is needed. Business interaction needs a corresponding harness—one that accommodates what users say in any order while keeping the conversation governed by business logic.
+This is **workflow over LLM**. It works because the LLM operates within a workflow harness: the model reasons within individual steps, while the workflow controls when it is invoked, which actions are permitted, how its output is validated, and what happens next. The business retains control of execution while using the model's flexibility where it is needed.
 
 ## Why Inbound Automation Still Falls Short
 
@@ -49,7 +49,7 @@ User: Priya. Outside if possible.
 The second provides everything at once:
 
 ```text
-User: Book an outdoor table for two this Friday around seven under Priya.
+User: Book a table for two this Friday around seven under Priya, outside if possible.
 ```
 
 The third provides information through correction and interruption:
@@ -81,13 +81,19 @@ The interaction harness must therefore govern the business requirements without 
 
 Voice is already an important channel between customers and businesses, and it may become more important as computing extends beyond screens. Users can express intent by speaking, without a keyboard, mouse, or visual navigation. Familiarity with spoken conversation creates an expectation that the system will follow them as they think aloud, correct themselves, and change direction.
 
-Interaction Closure is a complete, business-defined interaction set that allows different conversational paths to converge on a permitted business agreement. Closure describes the completeness of that set. Natural-language expressions are effectively unlimited, but each business use case can define a finite set of dialog-act types: adding or revising information, satisfying requirements, invoking supported operations, clarifying, refusing, or handing control to a person. The set also includes a defined fallback for unconstrained conversation.
+Interaction Closure is a complete, business-defined interaction set that allows different conversational paths to converge on a permitted business agreement. Closure describes the completeness of that set: every input has a defined handling route from the current interaction state, including clarification, refusal, or fallback when no supported business act applies.
+
+Natural-language expressions are effectively unlimited, but each business use case can define a finite set of dialog-act types: adding or revising information, satisfying requirements, invoking supported operations, clarifying, refusing, or handing control to a person. The set also includes a defined fallback for unconstrained conversation.
 
 The LLM interprets an utterance as one or more proposed dialog acts. A business-defined state machine records accepted meaning in the accumulated interaction context, applies the relevant rules, and determines the next system act. The LLM renders that act as a natural response. This provides a fully connected invocation surface: applicable acts remain available across conversational states, while validation, dependencies, confirmation, and authorization govern their effects.
+
+For example, if the caller changes the party size after availability has been checked, the state machine invalidates that check and requires a new one before booking can proceed.
 
 > **The LLM interprets and renders language. Business logic governs consequential dialog acts.**
 
 The fallback lets the LLM use common sense for unconstrained conversation, such as responding to a casual remark. It is a defined member of the interaction set, and it does not authorize consequential actions or bypass business rules. When a business request is ambiguous, unsupported, or interpreted with low confidence, the system routes it to clarification, refusal, or handoff as appropriate.
+
+Business claims in any rendered response must remain consistent with the authorized system act and confirmed business state. For example, the assistant may say a reservation is confirmed only after fulfillment reports a successful booking. This is a requirement on response generation as well as action control; a state machine alone does not guarantee that generated language meets it.
 
 This design supports three qualities of reliable interaction:
 

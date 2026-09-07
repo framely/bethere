@@ -14,6 +14,7 @@ function canonicalUrl(page) {
 export default {
   base: '/',
   cleanUrls: true,
+  srcExclude: ['articles/style.md'],
   title: 'BeThere',
   sitemap: {
     hostname: siteUrl,
