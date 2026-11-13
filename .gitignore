@@ -15,6 +15,10 @@ coverage/
 # Node modules
 node_modules/
 
+# Local analytics configuration
+.env.local
+.env.*.local
+
 # MacOS Desktop Services Store
 .DS_Store
 

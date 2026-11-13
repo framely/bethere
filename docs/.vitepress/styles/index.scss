@@ -380,6 +380,20 @@ html.dark #cc-main {
   background-color: var(--cc-btn-secondary-hover-bg);
 }
 
+.website-cookie-settings {
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+
+  button:hover,
+  button:focus-visible {
+    color: var(--vp-c-text-1);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
