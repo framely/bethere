@@ -60,19 +60,6 @@ export default {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.classList.toggle('dark', theme === 'dark' || (theme === 'auto' && prefersDark));
       })()`
-    ],
-    [
-      'script',
-      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-L6RW3F0FPM' }
-    ],
-    [
-      'script',
-      {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-L6RW3F0FPM');`
     ]
   ],
   description: 'AI receptionist for service businesses, connected to calendars and messaging channels',

@@ -22,6 +22,7 @@ jobs:
       - name: CI Command
         env:
           VITE_POSTHOG_PROJECT_TOKEN: ${{ secrets.VITE_POSTHOG_PROJECT_TOKEN }}
+          VITE_GA_MEASUREMENT_ID: ${{ vars.VITE_GA_MEASUREMENT_ID || 'G-J2ZN330W2Z' }}
         run: |
           set -ex 
           npm ci && npm run build

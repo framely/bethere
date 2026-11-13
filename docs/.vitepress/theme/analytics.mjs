@@ -1,4 +1,5 @@
 import posthog from 'posthog-js'
+import { createGoogleAnalytics, googleAnalyticsMeasurementId } from './google-analytics.mjs'
 
 const postHogProjectToken = import.meta.env?.VITE_POSTHOG_PROJECT_TOKEN?.trim()
 
@@ -113,6 +114,16 @@ export function createWebsiteAnalytics(client, projectToken) {
 }
 
 const websiteAnalytics = createWebsiteAnalytics(posthog, postHogProjectToken)
+const googleAnalytics = createGoogleAnalytics(googleAnalyticsMeasurementId)
 
-export const captureWebsitePageview = websiteAnalytics.capturePageview
-export const setWebsiteAnalyticsConsent = websiteAnalytics.setConsent
+export function captureWebsitePageview(href) {
+  const postHogCaptured = websiteAnalytics.capturePageview(href)
+  const googleCaptured = googleAnalytics.capturePageview(href)
+  return postHogCaptured || googleCaptured
+}
+
+export function setWebsiteAnalyticsConsent(granted, href) {
+  const postHogCaptured = websiteAnalytics.setConsent(granted, href)
+  const googleCaptured = googleAnalytics.setConsent(granted, href)
+  return postHogCaptured || googleCaptured
+}
