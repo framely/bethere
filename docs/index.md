@@ -4,7 +4,7 @@ aside: false
 title: AI specialist for service businesses
 hero:
   name: Launch an AI specialist that strictly follows your business rules.
-  tagline: Just A reliable AI agent for your business -in just a few answers.
+  tagline: A reliable AI agent for your business -in just a few answers.
   actions:
     - theme: brand
       text: Add a specialist
