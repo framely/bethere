@@ -3,7 +3,7 @@ article: true
 date: 2023-01-03
 
 image:
-    - blog/banner/chatbot_development_with_opencui.png
+    - blog/banner/chatbot-development-hand-drawn.png
 description:
     - Reduce complexity of building functional chatbot
 author: Sean Wu
@@ -25,4 +25,4 @@ We also introduced other tools to make building full-fledged chatbot easier, lik
 1. Build a table reservation chatbot from scratch. You can learn how to reuse a table reservation module to build a chatbot. Then, try to build a table reservation module by yourself.
    1. [Requirements on reservation chatbot](reservation-cui-design.md)
    2. [Reuse table reservation to build a chatbot](reuse-reservation-module.md)
-   3. [Build table reservation module](build-reservation-module.md) 
+   3. [Build table reservation module](build-reservation-module.md)

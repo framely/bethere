@@ -17,7 +17,15 @@
           </a>
         </div>
         <div>
-          <img class="blog-card-image" :src="info.image" :alt="info.title || ''" />
+          <img
+            class="blog-card-image"
+            :src="info.image"
+            :alt="info.title || ''"
+            width="1672"
+            height="941"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </article>
@@ -56,9 +64,9 @@ defineProps({
     display: block;
     width: 16rem;
     min-width: 16rem;
-    height: 10rem;
+    height: auto;
+    aspect-ratio: 16 / 9;
     box-sizing: border-box;
-    padding: 8px;
     border: 1px solid var(--vp-c-divider);
     border-radius: 12px;
     background-color: var(--bethere-raised-surface);

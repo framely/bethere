@@ -20,8 +20,10 @@ const contentCard = computed(() => {
           <img
             :src="contentCard.image"
             :alt="contentCard.alt || ''"
-            width="1200"
-            height="900"
+            width="1672"
+            height="941"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="content">

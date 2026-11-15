@@ -1,0 +1,94 @@
+{
+  "scope": "Eight live article covers and three live homepage illustrations",
+  "method": "Read-only Pillow PNG decode and file integrity checks; local gallery link check",
+  "images": [
+    {
+      "file": "docs/public/images/blog/banner/ai-specialists-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3734426,
+      "sha256": "a6ab8609d93ed8e9787e4ba503bbc7df29d4157f621a02be0d77806a050fa578"
+    },
+    {
+      "file": "docs/public/images/blog/banner/interaction-closure-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3786545,
+      "sha256": "9ed32470750a5645fba8b7d6d91ed26442925d725e30d21db1482debf9b9915e"
+    },
+    {
+      "file": "docs/public/images/blog/banner/prompt-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3810161,
+      "sha256": "fb861319676996860ba00a4a555306f8c3491d6e3f0580aab865b46d51e35ed2"
+    },
+    {
+      "file": "docs/public/images/blog/banner/reservation-cui-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3761224,
+      "sha256": "eebf9d806d17f2f8b138131881d13059559a8d97b4a9c07e454983ac5a8e13fe"
+    },
+    {
+      "file": "docs/public/images/blog/banner/reuse-reservation-module-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3685504,
+      "sha256": "552de700f00edecd9b35326cf1870c167e84967edbaa3458ae47e60bbc66910f"
+    },
+    {
+      "file": "docs/public/images/blog/banner/build-reservation-module-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3680097,
+      "sha256": "f0cc255d4bbb591dbff650c15eb8f10d6e48b6cdf2a84b69ee3c8279aefdc2e7"
+    },
+    {
+      "file": "docs/public/images/blog/banner/schema-to-snippets-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3742599,
+      "sha256": "d0e4919f6666ec86a57ef01f2c48e8e727f7e002e71540d9e674e2105bba116d"
+    },
+    {
+      "file": "docs/public/images/blog/banner/chatbot-development-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3911858,
+      "sha256": "e8bf23e31a92114e111c0d8920d35e78cffed046fcd298e1e1b8219837974fad"
+    },
+    {
+      "file": "docs/public/images/home/customize-specialist-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3685593,
+      "sha256": "0c3301051b358fc489f84a7b06c65d13232dfc93e20c8aea90b74304a2f87df8"
+    },
+    {
+      "file": "docs/public/images/home/configure-coordinator-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3750330,
+      "sha256": "8b2511c36fcd3b0f4de274aa43a6f5aa245760c4a310619559746b5c0d68bdb8"
+    },
+    {
+      "file": "docs/public/images/home/deploy-operate-hand-drawn.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 3721647,
+      "sha256": "d169901774c3b0d91ec9d3ac36f484c5a79c32646ef6744862f7df06ff0083f2"
+    }
+  ]
+}

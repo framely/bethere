@@ -1,8 +1,9 @@
 # BeThere hand-drawn editorial illustration specification
 
-Status: revised direction requested by the user on 2026-11-15. Produce a
-specialists-article pilot first to establish the look before regenerating the
-complete cover series. The previous geometric candidates remain available.
+Status: the user approved the specialists pilot and requested the full article
+and homepage series. Eight article covers and three homepage illustrations now
+use this direction and are referenced by the actual site pages. The previous
+geometric candidates remain available for historical comparison.
 
 ## Reference and intent
 
@@ -57,9 +58,10 @@ Give the setting useful context: a reception desk, reservation book, workbench,
 or practical wall fittings. Keep backgrounds quieter than the subjects. Avoid
 copying the external reference's laboratory, scientist, conveyor, or robot designs.
 
-Before any website integration, update the existing alpha-only asset checks and
-card presentation to match this explicitly changed art direction. Do not make
-those production changes merely to display a style pilot.
+The site checks now validate the complete opaque scenes used by the actual
+article and homepage references. Blog cards display the full landscape artwork
+without the former cutout padding. This replaces the old transparent-cover
+expectations in response to the explicitly approved visual direction.
 
 ### Format and composition
 
@@ -95,7 +97,8 @@ different specialist jobs, believable hands, strong silhouettes, warm muted
 colors, expressive ink drawing, and a quieter background. Assess the authored
 character of the result before using it as the next full-series reference.
 
-The pilot is a separate review asset. Production website covers remain unchanged.
+The approved pilot is reused as the production specialists-article cover. All
+other covers were generated individually using that pilot as a style reference.
 
 ## Initial pilot assessment
 
@@ -107,5 +110,25 @@ necessary; simplify those details if the image loses clarity at card size.
 
 The image has a continuous pale-sage scene background, intentionally following
 this new specification rather than the former transparent-cutout specification.
-The production site's alpha-only tests have not been changed, because the pilot
-has not been integrated. [Pilot file validation](hand-drawn-validation.json).
+The prior alpha-only test expectations were replaced for this intentional style
+change. [Pilot file validation](hand-drawn-validation.json).
+
+## Homepage story briefs
+
+| Section | Story |
+| --- | --- |
+| Customize AI Specialists | The owner answers guided questions while a specialist turns business details into an explicit checklist and rules. |
+| Configure Coordinator | A central dispatcher routes telephone and message requests to booking and service specialists, each with its own job. |
+| Deploy and Operate | The owner oversees practice alongside live customer service and accepts a handoff when a person needs to take over. |
+
+## Production series
+
+- [Gallery of all eleven illustrations](hand-drawn-gallery.html)
+- [Exact prompts and production output paths](hand-drawn-series-prompts.json)
+- [Production file validation](hand-drawn-series-validation.json)
+
+Original PNGs remain at their documented public paths. Older site assets are
+retained but no longer referenced by the homepage or article index. The revised
+test expectations specifically require eight distinct article covers, three
+distinct homepage illustrations, decodable RGB/RGBA PNGs, a landscape ratio near
+16:9, and an opaque illustrated scene where an alpha channel is present.
