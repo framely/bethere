@@ -1,5 +1,15 @@
 # Blog illustration preview
 
+New direction: [hand-drawn editorial specification](hand-drawn-spec.md) and
+[specialists style pilot](samples/ai-specialists-hand-drawn-v1.png), based on the
+user's subsequent visual reference. The geometric set below is retained for comparison.
+
+![A business owner coordinates a scheduling specialist, a communications specialist, and a repair specialist at a shared service counter.](samples/ai-specialists-hand-drawn-v1.png)
+
+[Full-size hand-drawn pilot](samples/ai-specialists-hand-drawn-v1.png) ·
+[Exact generation prompt](hand-drawn-pilot-prompt.txt) ·
+[File validation](hand-drawn-validation.json)
+
 Eight new cover candidates in the agreed editorial engineering style. The website's current covers are unchanged.
 
 Open [the interactive gallery](preview.html) locally for light/dark surfaces, actual 256 x 160 thumbnails, and full-size views. The images below can also be reviewed directly on GitHub.
