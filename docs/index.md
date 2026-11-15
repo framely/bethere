@@ -12,18 +12,18 @@ hero:
 contentCards:
   - title: 01. Customize AI Specialists
     details: Pick a specialist type and customize it conversationally to follow your business rules. Connect your providers securely with OAuth.
-    image: /images/home/customize-specialist.webp
-    alt: A business owner turns a guided conversation into a checklist and branching business rules for an AI specialist.
+    image: /images/home/customize-specialist-hand-drawn.png
+    alt: A business owner and an AI specialist turn her answers into a checklist and business rules at a shared worktable.
     left: true
   - title: 02. Configure Coordinator
     details: Add a coordinator to connect specialists with messaging and voice channels, then configure it in chat.
-    image: /images/home/configure-coordinator.webp
-    alt: A central coordinator securely connects focused specialists with calendars, messaging, and phone channels.
+    image: /images/home/configure-coordinator-hand-drawn.png
+    alt: A coordinator routes phone and message requests to booking and service specialists at a shared dispatch desk.
     left: false
   - title: 03. Deploy and Operate
     details: Deploy coordinators to dev to test, or to prod to serve customers. Monitor activity and take over conversations when needed.
-    image: /images/home/deploy-operate.webp
-    alt: A tested conversation passes through deployment into live monitoring with human handoff available.
+    image: /images/home/deploy-operate-hand-drawn.png
+    alt: A business owner oversees a specialist in practice and another serving a customer, with human handoff available.
     left: true
 columnFooter:
   - title: BeThere

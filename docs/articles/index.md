@@ -11,7 +11,7 @@ layout: home
     info: {
       title:'Interaction Closure: What Business Voice AI Needs',
       description: ['Interaction Closure keeps conversation soft at the user-facing surface and rigid at the business-logic core.'],
-      image: './../images/blog/banner/interaction-closure.png',
+      image: './../images/blog/banner/interaction-closure-hand-drawn.png',
       author: 'Sean Wu',
       date: '8/31/2026'
     },
@@ -20,7 +20,7 @@ layout: home
     info: {
       title:'You don’t need an omnipotent AI agent',
       description: ['The best business agent is not the one that can do everything. It is the narrowest agent that can complete a specific task reliably, under explicit rules and permissions.'],
-      image: './../images/blog/banner/ai-specialist-vs-omnipotent-agent.png',
+      image: './../images/blog/banner/ai-specialists-hand-drawn.png',
       author: 'Sean Wu',
       date: '7/17/2026'
     },
@@ -29,7 +29,7 @@ layout: home
     info: {
       title:'Prompt Engineering will never be fully deterministic',
       description: ['If you are holding the hope that LLM will one day make the prompt engineering deterministic, you are holding the wrong hope. Prompt engineering is operated in a unnormalized distributed semantics space, it requires less setup, at the cost of less predictability.'],
-      image: './../images/blog/banner/prompt.png',
+      image: './../images/blog/banner/prompt-hand-drawn.png',
       author: 'Sean Wu',
       date: '5/28/2025'
     },
@@ -38,7 +38,7 @@ layout: home
     info: {
       title:'Table reservation CUI design',
       description: ['The high-level design of a conversational user interface (CUI) for table reservation. It includes detailed descriptions of each functionality, providing a shared understanding among stakeholders.'],
-      image: './../images/blog/banner/tutorial_reservation_cui.png',
+      image: './../images/blog/banner/reservation-cui-hand-drawn.png',
       author: 'Sunny May',
       date: '4/19/2025'
     },
@@ -47,7 +47,7 @@ layout: home
     info: {
       title:'Reuse reservation module to build chatbot',
       description: ['Reuse a pre-defined module to build a table reservation chatbot and manage resources in Google Calendar and Google Admin, allowing for quick integration of reservation functionality into your chatbot.'],
-      image: './../images/blog/banner/tutorial_reservation_chatbot.png',
+      image: './../images/blog/banner/reuse-reservation-module-hand-drawn.png',
       author: 'Sunny May',
       date: '4/27/2025'
     },
@@ -56,7 +56,7 @@ layout: home
     info: {
       title:'Build a reservation module',
       description: ['Utilize a pre-defined service to build CUI in a module. The step-by-step guide takes table reservation as an example and shows how to customize the service to fit your business needs.'],
-      image: './../images/blog/banner/tutorial_reservation_module.png',
+      image: './../images/blog/banner/build-reservation-module-hand-drawn.png',
       author: 'Sunny May',
       date: '3/2/2025'
     },
@@ -65,7 +65,7 @@ layout: home
     info: {
       title:'From schema to snippets: a blueprint for chatbot',
       description: ['Create powerful custom chatbots with schema-driven development. Define interaction logic by starting from a schema, and then use contextual snippets to describe conversational behavior.'],
-      image: './../images/blog/banner/from-schema-to-snippets.png',
+      image: './../images/blog/banner/schema-to-snippets-hand-drawn.png',
       author: 'Bird Zeng',
       date: '2/25/2025'
     },
@@ -74,7 +74,7 @@ layout: home
     info: {
       title:'Chatbot development with OpenCUI',
       description: ['Revolutionize chatbot development with open-source CUI framework. Streamline the process with a three-layer approach and necessary adaptations for CUI-based nature to deliver business results.'],
-      image: './../images/blog/banner/chatbot_development_with_opencui.png',
+      image: './../images/blog/banner/chatbot-development-hand-drawn.png',
       author: 'Sean Wu',
       date: '1/3/2025'
     },

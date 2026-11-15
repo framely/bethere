@@ -3,7 +3,7 @@ article: true
 date: 2023-02-25
 
 image:
-    - blog/banner/from-schema-to-snippets.png
+    - blog/banner/schema-to-snippets-hand-drawn.png
 description:
     - The 3 Essential Steps Every Business Should Follow After ChatGPT
 author: Bird Zeng

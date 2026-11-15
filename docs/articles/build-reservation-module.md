@@ -3,7 +3,7 @@ article: true
 date: 2023-03-02
 
 image:
-    - blog/banner/tutorial_reservation_module.png
+    - blog/banner/build-reservation-module-hand-drawn.png
 description:
     - We show you the way to build a reservation module step by step
 author: Sunny May
