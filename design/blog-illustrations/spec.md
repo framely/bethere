@@ -1,5 +1,9 @@
 # BeThere blog illustration specification
 
+Latest revision: the user requested a hand-drawn narrative direction after
+reviewing these geometric covers. See the [new hand-drawn specification](hand-drawn-spec.md).
+The document below records the earlier geometric direction and generated set.
+
 Status: visual direction selected by the user on 2026-11-15. The full set of
 eight candidates has been generated for review. Existing website images are not
 replaced yet. Open [the review gallery](preview.html) or [the cover list](README.md).

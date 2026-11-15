@@ -1,0 +1,14 @@
+{
+  "file": "samples/ai-specialists-hand-drawn-v1.png",
+  "width": 1672,
+  "height": 941,
+  "mode": "RGB",
+  "background": "Continuous opaque illustrated setting; intentional revision from transparent cutouts",
+  "alpha_extrema": null,
+  "sha256": "a6ab8609d93ed8e9787e4ba503bbc7df29d4157f621a02be0d77806a050fa578",
+  "generation_tool": "Built-in image_gen",
+  "prompt_file": "hand-drawn-pilot-prompt.txt",
+  "reference_role": "Drawing-language reference only; new characters and scene",
+  "reference_url": "https://venturebeat.com/orchestration/paypal-says-its-ai-assistant-went-from-43-to-95-accuracy-without-changing-the-model",
+  "production_assets_changed": false
+}
