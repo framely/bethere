@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeThere · Blog illustration review</title>
+<style>
+:root {color-scheme:light; --page:#fff; --ink:#262626; --muted:#666; --line:#ddd; --surface:#f5f5f5;}
+:root[data-theme="dark"] {color-scheme:dark; --page:#0a0a0a; --ink:#f5f5f5; --muted:#aaa; --line:#333; --surface:#171717;}
+* {box-sizing:border-box;}
+body {margin:0; background:var(--page); color:var(--ink); font:16px/1.55 system-ui,sans-serif;}
+header,main,footer {width:min(1280px,100% - 48px); margin:auto;}
+header {padding:56px 0 28px; border-bottom:1px solid var(--line);}
+.eyebrow {text-transform:uppercase; letter-spacing:.14em; font-size:12px; color:var(--muted);}
+h1 {font-size:clamp(28px,4vw,48px); line-height:1.1; letter-spacing:-.04em; margin:12px 0 18px;}
+h2 {font-size:20px; line-height:1.3; margin:0;}
+p {max-width:76ch; color:var(--muted);}
+.controls {display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:24px;}
+select,button,a.action {font:inherit; color:var(--ink); background:var(--page); border:1px solid var(--line); border-radius:6px; padding:7px 12px;}
+a {color:inherit; text-underline-offset:3px;}
+:focus-visible {outline:3px solid #648fd0; outline-offset:3px;}
+main {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px 28px; padding:32px 0;}
+article {min-width:0; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+.large {display:block; background:var(--surface); aspect-ratio:16/9; padding:16px;}
+.large img {width:100%; height:100%; object-fit:contain; display:block;}
+.copy {padding:22px;}
+.number {font-size:12px; letter-spacing:.08em; color:var(--muted); margin-bottom:8px;}
+.copy p {font-size:14px; margin:10px 0 20px;}
+.thumbnails {display:flex; flex-wrap:wrap; gap:12px;}
+figure {margin:0;}
+.thumb {width:256px; height:160px; object-fit:contain; padding:8px; border:1px solid #ddd; border-radius:12px; display:block;}
+.light {background:#f5f5f5;}
+.dark {background:#171717; border-color:#333;}
+figcaption {font-size:12px; color:var(--muted); margin:6px 0 16px;}
+.links {display:flex; flex-wrap:wrap; gap:16px; font-size:14px;}
+body[data-view="compact"] .large {display:none;}
+footer {padding:20px 0 48px; border-top:1px solid var(--line); font-size:14px; color:var(--muted);}
+@media(max-width:850px) {main{grid-template-columns:1fr;} header,main,footer{width:calc(100% - 32px);}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">BeThere / Editorial engineering / Review set 01</div>
+<h1>Eight articles. One visual language.</h1>
+<p>Flat geometry, subtle print grain, a shared blue/teal/cream palette, and a distinct visual metaphor for each article. These are review candidates; the website's current covers have not been replaced.</p>
+<div class="controls">
+<label for="theme">Gallery surface</label>
+<select id="theme"><option value="light">Light</option><option value="dark">Dark</option></select>
+<label for="view">View</label>
+<select id="view"><option value="large">Large and thumbnail</option><option value="compact">Thumbnails only</option></select>
+<a class="action" href="spec.md">Style specification</a>
+</div>
+</header>
+<main>
+<article>
+<a class="large" href="candidates/interaction-closure-v3.png" aria-label="Open full-size cover: Interaction Closure: What Business Voice AI Needs"><img src="candidates/interaction-closure-v3.png" alt="Conversational paths, governed states, and a return loop for corrections." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 01</div>
+<h2>Interaction Closure: What Business Voice AI Needs</h2>
+<p>Conversational paths, governed states, and a return loop for corrections.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/interaction-closure-v3.png" alt="Conversational paths, governed states, and a return loop for corrections. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/interaction-closure-v3.png" alt="Conversational paths, governed states, and a return loop for corrections. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/interaction-closure-v3.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/interaction-closure.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/ai-specialists-v2.png" aria-label="Open full-size cover: You don't need an omnipotent AI agent"><img src="candidates/ai-specialists-v2.png" alt="Three bounded responsibilities coordinated through a shared base." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 02</div>
+<h2>You don't need an omnipotent AI agent</h2>
+<p>Three bounded responsibilities coordinated through a shared base.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/ai-specialists-v2.png" alt="Three bounded responsibilities coordinated through a shared base. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/ai-specialists-v2.png" alt="Three bounded responsibilities coordinated through a shared base. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/ai-specialists-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/ai-specialist-vs-omnipotent-agent.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/prompt-determinism-v2.png" aria-label="Open full-size cover: Prompt Engineering will never be fully deterministic"><img src="candidates/prompt-determinism-v2.png" alt="Variable interpretation contrasted with a constrained, repeatable track." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 03</div>
+<h2>Prompt Engineering will never be fully deterministic</h2>
+<p>Variable interpretation contrasted with a constrained, repeatable track.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/prompt-determinism-v2.png" alt="Variable interpretation contrasted with a constrained, repeatable track. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/prompt-determinism-v2.png" alt="Variable interpretation contrasted with a constrained, repeatable track. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/prompt-determinism-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/prompt.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/reservation-cui-v2.png" aria-label="Open full-size cover: Table reservation CUI design"><img src="candidates/reservation-cui-v2.png" alt="A top-down restaurant table paired with a revisable reservation strip." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 04</div>
+<h2>Table reservation CUI design</h2>
+<p>A top-down restaurant table paired with a revisable reservation strip.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/reservation-cui-v2.png" alt="A top-down restaurant table paired with a revisable reservation strip. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/reservation-cui-v2.png" alt="A top-down restaurant table paired with a revisable reservation strip. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/reservation-cui-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/tutorial_reservation_cui.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/reuse-reservation-module-v2.png" aria-label="Open full-size cover: Reuse reservation module to build chatbot"><img src="candidates/reuse-reservation-module-v2.png" alt="A finished reservation capability inserted into an application." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 05</div>
+<h2>Reuse reservation module to build chatbot</h2>
+<p>A finished reservation capability inserted into an application.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/reuse-reservation-module-v2.png" alt="A finished reservation capability inserted into an application. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/reuse-reservation-module-v2.png" alt="A finished reservation capability inserted into an application. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/reuse-reservation-module-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/tutorial_reservation_chatbot.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/build-reservation-module-v2.png" aria-label="Open full-size cover: Build a reservation module"><img src="candidates/build-reservation-module-v2.png" alt="Separate typed components aligned with their matching slots." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 06</div>
+<h2>Build a reservation module</h2>
+<p>Separate typed components aligned with their matching slots.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/build-reservation-module-v2.png" alt="Separate typed components aligned with their matching slots. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/build-reservation-module-v2.png" alt="Separate typed components aligned with their matching slots. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/build-reservation-module-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/tutorial_reservation_module.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/schema-to-snippets-v2.png" aria-label="Open full-size cover: From schema to snippets: a blueprint for chatbot"><img src="candidates/schema-to-snippets-v2.png" alt="A structured schema feeding contextual conversation examples." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 07</div>
+<h2>From schema to snippets: a blueprint for chatbot</h2>
+<p>A structured schema feeding contextual conversation examples.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/schema-to-snippets-v2.png" alt="A structured schema feeding contextual conversation examples. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/schema-to-snippets-v2.png" alt="A structured schema feeding contextual conversation examples. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/schema-to-snippets-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/from-schema-to-snippets.png">Current website cover</a></div>
+</div></article>
+<article>
+<a class="large" href="candidates/chatbot-development-v2.png" aria-label="Open full-size cover: Chatbot development with OpenCUI"><img src="candidates/chatbot-development-v2.png" alt="Language, interaction, and service layers composed into one application." loading="lazy"></a>
+<div class="copy">
+<div class="number">COVER 08</div>
+<h2>Chatbot development with OpenCUI</h2>
+<p>Language, interaction, and service layers composed into one application.</p>
+<div class="thumbnails">
+<figure><img class="thumb light" src="candidates/chatbot-development-v2.png" alt="Language, interaction, and service layers composed into one application. on a light background" loading="lazy"><figcaption>Light · 256 × 160</figcaption></figure>
+<figure><img class="thumb dark" src="candidates/chatbot-development-v2.png" alt="Language, interaction, and service layers composed into one application. on a dark background" loading="lazy"><figcaption>Dark · 256 × 160</figcaption></figure>
+</div>
+<div class="links"><a href="candidates/chatbot-development-v2.png">Full-size PNG</a><a href="../../docs/public/images/blog/banner/chatbot_development_with_opencui.png">Current website cover</a></div>
+</div></article>
+</main>
+<footer>Generated with the built-in image generator. <a href="prompts.json">Exact prompts and output mapping</a> · <a href="validation.json">Image validation</a>. Open this file directly in a browser; it uses no external resources or services.</footer>
+<script>
+document.getElementById('theme').addEventListener('change',event=>{document.documentElement.dataset.theme=event.target.value;});
+document.getElementById('view').addEventListener('change',event=>{document.body.dataset.view=event.target.value;});
+</script>
+</body>
+</html>

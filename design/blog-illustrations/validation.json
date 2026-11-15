@@ -1,0 +1,125 @@
+{
+  "method": "Read-only PNG inspection with Pillow; local gallery link checks",
+  "covers": [
+    {
+      "file": "candidates/interaction-closure-v3.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.6412,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 975630,
+      "sha256": "57c84fb6d660710cc117c6fa3a082bdec07ea4a08afdc3d89cf0d645b40d25f6"
+    },
+    {
+      "file": "candidates/reservation-cui-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.5169,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 1270087,
+      "sha256": "b0b4dfda5b526a13e5c57318a02267610052f53dc6d4957fe322209aaa408be5"
+    },
+    {
+      "file": "candidates/ai-specialists-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.3762,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 1579694,
+      "sha256": "df0cc52d1c03217eeb12bee9a55897396c6082c0985d3172620d83b3239659db"
+    },
+    {
+      "file": "candidates/prompt-determinism-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.656,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 886065,
+      "sha256": "81abaefec536237a9397cae6b4f03ad00149bee2da558d0e6e871dd7280222a7"
+    },
+    {
+      "file": "candidates/reuse-reservation-module-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.6482,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 915974,
+      "sha256": "4000064197ba96db96e48c90ac4af0582c8363434bd3ffcc00b88865b93914fe"
+    },
+    {
+      "file": "candidates/build-reservation-module-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.6415,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 954886,
+      "sha256": "1fe788bdce08cb7d059563e509830b241f9cf3a5c4c5656d9a9fafb31b63cefb"
+    },
+    {
+      "file": "candidates/schema-to-snippets-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.5516,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 1204716,
+      "sha256": "8a78efe32df548b4f80e72e614a2330d9f37cbde6e062cbe85cd3c9247bea21a"
+    },
+    {
+      "file": "candidates/chatbot-development-v2.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "fully_transparent_fraction": 0.4919,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes": 1254019,
+      "sha256": "e4a7b3157f7f7e972b34cac314e059016ddb5bee3783d820a7a9cad2d5c0110f"
+    }
+  ]
+}
